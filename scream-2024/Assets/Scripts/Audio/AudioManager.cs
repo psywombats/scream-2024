@@ -15,7 +15,6 @@ public class AudioManager : SingletonBehavior
     private const float FadeSeconds = 0.5f;
 
     public float BaseVolume { get; set; } = 1.0f;
-    private float bgmVolumeMult = 1.0f;
 
     public string CurrentBGMKey { get; private set; }
 

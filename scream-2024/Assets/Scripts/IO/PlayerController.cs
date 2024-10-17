@@ -7,10 +7,9 @@ public class PlayerController : MonoBehaviour, IInputListener
     [SerializeField] private Camera fpsCam;
     [SerializeField] private Rigidbody body;
     [Space]
-    [SerializeField] private float degreesPerSecond = 120;
     [SerializeField] [Range(0f, 9f)] float mouseRotateSensitivity = 2f;
     [SerializeField] Vector2 RotationYBounds = new Vector2(-70, 70);
-    [SerializeField] private float rayRange = 2.5f;
+    //[SerializeField] private float rayRange = 2.5f;
     [SerializeField] private float tilesPerSecond = 6f;
     [Space]
     [SerializeField] private GameObject flarePrefab = null;
@@ -98,7 +97,7 @@ public class PlayerController : MonoBehaviour, IInputListener
                 switch (command)
                 {
                     case InputManager.Command.Primary:
-                        //ThrowFlare();
+                        ThrowFlare();
                         return false;
                     case InputManager.Command.Secondary:
                     case InputManager.Command.Menu:
