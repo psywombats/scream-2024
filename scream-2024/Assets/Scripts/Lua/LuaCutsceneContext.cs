@@ -50,7 +50,7 @@ public class LuaCutsceneContext : LuaContext
     {
         base.AssignGlobals();
         Lua.Globals["playBGM"] = (Action<DynValue>)PlayBGM;
-        Lua.Globals["playSound"] = (Action<DynValue>)PlaySound;
+        Lua.Globals["playSFX"] = (Action<DynValue>)PlaySound;
         Lua.Globals["sceneSwitch"] = (Action<DynValue, DynValue>)SetSwitch;
         Lua.Globals["cs_teleport"] = (Action<DynValue, DynValue, DynValue, DynValue>)TargetTeleport;
         Lua.Globals["cs_fadeOutBGM"] = (Action<DynValue>)FadeOutBGM;
