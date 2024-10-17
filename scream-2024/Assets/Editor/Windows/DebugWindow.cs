@@ -7,6 +7,7 @@ public class DebugWindow : EditorWindow
     private string customLua;
     private string switchName;
     private string switchOut;
+    private string audioKey;
 
     private LuaContext Lua => Global.Instance.Lua;
 
@@ -30,10 +31,28 @@ public class DebugWindow : EditorWindow
 
         scrollPos = EditorGUILayout.BeginScrollView(scrollPos, GUILayout.Width(position.width), GUILayout.Height(position.height - 50));
 
+        HandleAudio();
         HandleLua();
         HandleSwitchQuery();
 
         EditorGUILayout.EndScrollView();
+    }
+
+    private void HandleAudio()
+    {
+        GUILayout.Label("Audio debug");
+        audioKey = GUILayout.TextField(audioKey);
+
+        if (GUILayout.Button("Play SFX with this name"))
+        {
+            Global.Instance.Audio.PlaySFX(audioKey);
+        }
+        if (GUILayout.Button("Play BGM with this name"))
+        {
+            Global.Instance.Audio.PlayBGM(audioKey);
+        }
+
+        GUILayout.Space(24);
     }
 
     private void HandleLua()

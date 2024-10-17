@@ -14,7 +14,7 @@ public class Global : MonoBehaviour
     public InputManager Input => Get<InputManager>();
     public MapManager Maps => Get<MapManager>();
     public AudioManager Audio => Get<AudioManager>();
-    public LuaContext Lua { get; private set; } = new LuaContext();
+    public LuaContext Lua { get; private set; }
 
     public PlayerController Avatar { get; set; }
     public GameData Data { get; private set; }
@@ -47,7 +47,12 @@ public class Global : MonoBehaviour
         instance.InstanceID = UnityEngine.Random.Range(0, int.MaxValue);
         instance.ReadSerializedManagers();
         DontDestroyOnLoad(gameObject);
+
+        Lua = new LuaContext();
         Lua.Initialize();
+
+        Data = new GameData();
+
         MoonSharp.Interpreter.UserData.RegisterAssembly();
         QualitySettings.vSyncCount = 1;
     }
