@@ -34,23 +34,41 @@ public class MarchingTerrain : MonoBehaviour
         }
     }
 
-    private void EnsureChunks()
+    public void EnsureChunks(bool ensureAll = false, int radius = 0)
     {
-        var index = GetPlayerIndex();
-        for (var x = index.x - spawnRadius; x <= index.x + spawnRadius; x += 1)
+        var index = ensureAll ? Vector3Int.zero : GetPlayerIndex();
+        if (radius == 0)
         {
-            for (var y = index.y - spawnRadius; y <= index.y + spawnRadius; y += 1)
+            radius = spawnRadius;
+        }
+        for (var x = index.x - radius; x <= index.x + radius; x += 1)
+        {
+            for (var y = index.y - radius; y <= index.y + radius; y += 1)
             {
-                for (var z = index.z - spawnRadius; z <= index.z + spawnRadius; z += 1)
+                for (var z = index.z - radius; z <= index.z + radius; z += 1)
                 {
                     var checkIndex = new Vector3Int(x, y, z);
-                    if (!EnsureChunk(checkIndex))
+                    if (!EnsureChunk(checkIndex) && !ensureAll)
                     {
                         return;
                     }
                 }
             }
         }
+    }
+
+    public void CullAll()
+    {
+        foreach (var chunk in chunks)
+        {
+            DestroyImmediate(chunk.Value);
+        }
+        foreach (var layer in layers)
+        {
+            DestroyImmediate(layer.Value);
+        }
+        chunks.Clear();
+        layers.Clear();
     }
 
     private void EnsureLayer(int layerIndex)

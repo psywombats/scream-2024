@@ -109,7 +109,7 @@ public class TacticsTerrainEditor : Editor
         if (tileset != null && tool == SelectionTool.Paint)
         {
             wraparoundPaintMode = EditorGUILayout.Toggle("Paint all faces", wraparoundPaintMode);
-            Texture2D backer = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Resources/Textures/White.png");
+            Texture2D backer = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Resources/Sprites/UI/white.png");
             for (int y = tileset.size.y - 1; y >= 0; y -= 1)
             {
                 EditorGUILayout.BeginHorizontal();

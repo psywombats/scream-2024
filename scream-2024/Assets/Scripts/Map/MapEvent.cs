@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(RectTransform))]
 [DisallowMultipleComponent]
 public class MapEvent : MonoBehaviour
 {

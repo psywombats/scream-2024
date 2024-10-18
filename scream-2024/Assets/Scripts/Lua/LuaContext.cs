@@ -130,6 +130,10 @@ public class LuaContext
         {
             yield return MapOverlayUI.Instance.nvl.HideRoutine();
         }
+        if (MapOverlayUI.Instance.radio.IsShown)
+        {
+            yield return MapOverlayUI.Instance.radio.HideRoutine();
+        }
         activeScripts.Pop();
     }
 

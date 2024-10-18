@@ -6,12 +6,15 @@ using UnityEngine;
 /// </summary>
 public abstract class GameMap : MonoBehaviour
 {
+    public const string ResourcePath = "Maps/";
+
     [SerializeField] private List<string> displayNames;
     [Space]
     [SerializeField] private string bgmKey = null;
     [SerializeField][Range(0, 100)] private int spookiness;
+    [SerializeField] public LightingMode lighting;
     [Space]
-    [SerializeField] private GameObject eventLayer;
+    [SerializeField] public GameObject eventLayer;
 
     public virtual void Start()
     {
@@ -33,7 +36,7 @@ public abstract class GameMap : MonoBehaviour
         return null;
     }
 
-    public void OnTeleportTo()
+    public virtual void OnTeleportTo()
     {
         if (bgmKey != null)
         {
@@ -51,7 +54,7 @@ public abstract class GameMap : MonoBehaviour
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Spookiness", spookiness);
     }
 
-    public void OnTeleportAway(GameMap nextMap)
+    public virtual void OnTeleportAway(GameMap nextMap)
     {
 
     }

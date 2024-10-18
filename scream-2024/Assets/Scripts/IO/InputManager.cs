@@ -18,6 +18,7 @@ public class InputManager : SingletonBehavior
         Up,
         Down,
         Menu,
+        Debug,
     };
 
     public enum Event
@@ -202,6 +203,9 @@ public class InputManager : SingletonBehavior
                 action.AddBinding(Keyboard.current.backspaceKey);
                 action.AddBinding("<Gamepad>/buttonNorth");
                 action.AddBinding("<Gamepad>/buttonWest");
+                break;
+            case Command.Debug:
+                action.AddBinding(Keyboard.current.f12Key);
                 break;
         }
         action.Enable();

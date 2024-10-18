@@ -9,7 +9,7 @@ public class RadioUIComponent : MonoBehaviour
     [SerializeField] private LineAutotyper textTyper;
     [SerializeField] private Image portrait;
 
-    private bool active;
+    public bool IsShown { get; private set; }
 
     public void Start()
     {
@@ -23,17 +23,19 @@ public class RadioUIComponent : MonoBehaviour
         portrait.sprite = speaker.sprite;
         portrait.SetNativeSize();
 
-        if (!active)
+        if (!IsShown)
         {
             yield return expander.ShowRoutine();
-            active = true;
+            IsShown = true;
         }
+        yield return null;
         yield return textTyper.WriteLineRoutine(text);
+        yield return Global.Instance.Input.ConfirmRoutine();
     }
 
     public IEnumerator HideRoutine()
     {
         yield return expander.HideRoutine();
-        active = false;
+        IsShown = false;
     }
 }

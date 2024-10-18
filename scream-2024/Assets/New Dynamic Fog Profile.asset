@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7d20424549e4d02882c90a6614c0da, type: 3}
   m_Name: New Dynamic Fog Profile
   m_EditorClassIdentifier: 
-  baseAltitude: -138
+  baseAltitude: 0
   useXYZDistance: 1
-  densityLinear: 0.21
-  densityExponential: 0.58
+  densityLinear: 0.55
+  densityExponential: 0.94
   maxHeight: 10000
   distanceMax: 100000
-  tintColor: {r: 0, g: 0, b: 0, a: 1}
+  tintColor: {r: 0.7647059, g: 0.7647059, b: 0.78431374, a: 1}
   useVerticalGradient: 1
   verticalGradient:
     serializedVersion: 2

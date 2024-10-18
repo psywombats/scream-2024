@@ -86,7 +86,7 @@ public class LuaCutsceneContext : LuaContext
         OrthoDir? facing = null;
         if (!facingLua.IsNil()) facing = OrthoDirExtensions.Parse(facingLua.String);
         var raw = rawLua.IsNil() ? false : rawLua.Boolean;
-        //RunRoutineFromLua(Global.Instance.Maps.TeleportRoutine(mapName.String, targetEventName.String, facing, raw));
+        RunRoutineFromLua(Global.Instance.Maps.TeleportRoutine(mapName.String, targetEventName.String, facing, raw));
     }
 
     private void FadeOutBGM(DynValue seconds)

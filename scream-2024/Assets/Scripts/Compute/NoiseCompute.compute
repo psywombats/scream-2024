@@ -14,6 +14,9 @@ float _GroundPercent;
 float _BaseX, _BaseY, _BaseZ;
 
 float _PitRad;
+float _PitHard;
+float _PitOffX;
+float _PitOffZ;
 
 fnl_noise_type _NoiseTypeIn;
 fnl_fractal_type _FractalTypeIn;
@@ -31,11 +34,11 @@ void GenerateNoise(uint3 id : SV_DispatchThreadID)
     float noiseVal = fnlGetNoise3D(noise, pos.x, pos.y, pos.z);
     float n = noiseVal;
 
-    float biasX = pos.y * .2;
-    float biasY = pos.y * .4;
+    float biasX = pos.y * _PitOffX;
+    float biasY = pos.y * _PitOffZ;
     float offCenter = sqrt((pos.x - biasX) * (pos.x - biasX) + (pos.z - biasY) * (pos.z - biasY));
     if (offCenter < _PitRad) {
-        n -= (1.0 - offCenter / _PitRad);
+        n -= (1.0 - offCenter / _PitRad) * _PitHard;
     }
 
     _Weights[indexFromCoord(id.x, id.y, id.z)] = n;

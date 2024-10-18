@@ -26,4 +26,5 @@ public class MapOverlayUI : MonoBehaviour
     [SerializeField] public MapNameBox setting;
     [SerializeField] public NVLComponent nvl;
     [SerializeField] public RadioUIComponent radio;
+    [SerializeField] public CanvasGroup fader;
 }

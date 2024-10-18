@@ -12,6 +12,9 @@ public class NoiseGenerator : MonoBehaviour
     [SerializeField, Range(-1f, 1f)] public float isoLevel = 0.6f;
     [Space]
     [SerializeField, Range(0f, 64f)] public float pitRadius = 32f;
+    [SerializeField, Range(0f, 10f)] public float pitSlopeX = .2f;
+    [SerializeField, Range(0f, 10f)] public float pitSlopeZ = .4f;
+    [SerializeField, Range(0f, 10f)] public float pitHardness = 1f;
     [Space]
     [SerializeField] public NoiseType noiseType = NoiseType.NOISE_OPENSIMPLEX2;
     [SerializeField] public FractalType fractalType = FractalType.FRACTAL_RIDGED;
@@ -38,11 +41,6 @@ public class NoiseGenerator : MonoBehaviour
 
     private ComputeBuffer weightsBuffer;
 
-    private void Awake() 
-    {
-        CreateBuffers();
-    }
-
     private void OnDestroy() 
     {
         ReleaseBuffers();
@@ -62,6 +60,11 @@ public class NoiseGenerator : MonoBehaviour
 
     public float[] GenerateNoise(Vector3 pos)
     {
+        if (weightsBuffer == null)
+        {
+            CreateBuffers();
+        }
+
         var noise = new float[GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk];
         noiseShader.SetBuffer(0, "_Weights", weightsBuffer);
 
@@ -79,6 +82,9 @@ public class NoiseGenerator : MonoBehaviour
         noiseShader.SetInt("_FractalTypeIn", (int)fractalType);
 
         noiseShader.SetFloat("_PitRad", pitRadius);
+        noiseShader.SetFloat("_PitHard", pitHardness);
+        noiseShader.SetFloat("_PitOffX", pitSlopeX);
+        noiseShader.SetFloat("_PitOffZ", pitSlopeZ);
 
         noiseShader.Dispatch(0, 
             GridMetrics.PointsPerChunk / GridMetrics.ThreadCount, 
