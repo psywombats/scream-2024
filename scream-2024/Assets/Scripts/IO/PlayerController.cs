@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour, IInputListener
 {
     [SerializeField] private Camera fpsCam;
     [SerializeField] private Rigidbody body;
+    [SerializeField] public new Collider collider;
     [Space]
     [SerializeField] [Range(0f, 9f)] float mouseRotateSensitivity = 2f;
     [SerializeField] Vector2 RotationYBounds = new Vector2(-70, 70);
@@ -19,6 +20,8 @@ public class PlayerController : MonoBehaviour, IInputListener
 
     public GameObject OldFlare { get; private set; }
 
+    public bool IsPaused => pauseCount > 0;
+
     private void Start()
     {
         Global.Instance.Avatar = this;
@@ -29,12 +32,6 @@ public class PlayerController : MonoBehaviour, IInputListener
         if ( pauseCount == 0)
         {
             HandleFPC();
-        }
-
-        if (velocityThisFrame != Vector3.zero)
-        {
-            var xcom = new Vector3(velocityThisFrame.x, 0, 0);
-            var ycom = new Vector3(0, 0, velocityThisFrame.z);
         }
 
         body.velocity = new Vector3(velocityThisFrame.x, body.velocity.y, velocityThisFrame.z);
@@ -159,7 +156,7 @@ public class PlayerController : MonoBehaviour, IInputListener
     private void ThrowFlare()
     {
         Destroy(OldFlare);
-        OldFlare = GameObject.Instantiate(flarePrefab);
+        OldFlare = Instantiate(flarePrefab);
         OldFlare.transform.SetParent(fpsCam.transform);
         OldFlare.transform.localPosition = new Vector3(0f, -.2f, 0f);
         OldFlare.transform.SetParent(transform.parent);

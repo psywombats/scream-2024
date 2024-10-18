@@ -23,6 +23,7 @@ public class MapOverlayUI : MonoBehaviour
         }
     }
 
-    //public SettingBox setting;
+    [SerializeField] public MapNameBox setting;
     [SerializeField] public NVLComponent nvl;
+    [SerializeField] public RadioUIComponent radio;
 }

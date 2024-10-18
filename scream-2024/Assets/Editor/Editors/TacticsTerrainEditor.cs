@@ -8,8 +8,8 @@ using UnityEngine.Tilemaps;
 [CustomEditor(typeof(TacticsTerrainMesh))]
 public class TacticsTerrainEditor : Editor
 {
-    private static float tilesetScale = .096f;
-    private static int PxPerTile = 48;
+    private const float tilesetScale = .096f;
+    public const int PxPerTile = 166;
 
     private enum EditMode
     {
@@ -453,9 +453,9 @@ public class TacticsTerrainEditor : Editor
             mesh = new Mesh();
             if (terrain.meshName == null)
             {
-                terrain.meshName = "NEW MESH";
+                terrain.meshName = FindObjectOfType<TacticsMap>().name;
             }
-            AssetDatabase.CreateAsset(mesh, "Assets/Resources/TacticsMaps/Meshes/" + terrain.meshName + ".asset");
+            AssetDatabase.CreateAsset(mesh, "Assets/Resources/Maps/Meshes/" + terrain.meshName + ".asset");
             filter.sharedMesh = mesh;
         }
 

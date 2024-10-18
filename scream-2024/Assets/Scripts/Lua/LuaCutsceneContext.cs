@@ -60,7 +60,9 @@ public class LuaCutsceneContext : LuaContext
         Lua.Globals["cs_enter"] = (Action<DynValue, DynValue, DynValue>)Enter;
         Lua.Globals["cs_exit"] = (Action<DynValue>)Exit;
         Lua.Globals["cs_speak"] = (Action<DynValue, DynValue>)Speak;
+        Lua.Globals["cs_radio"] = (Action<DynValue, DynValue>)Radio;
         Lua.Globals["clear"] = (Action)ClearNVL;
+        Lua.Globals["hideRadio"] = (Action)HideRadio;
 
         Lua.Globals["cs_rotateTo"] = (Action<DynValue>)RotateToward;
         Lua.Globals["setting"] = (Action<DynValue>)Setting;
@@ -167,5 +169,20 @@ public class LuaCutsceneContext : LuaContext
     {
         //var @event = MapManager.Instance.ActiveMap.GetEventNamed(eventName.String);
         //RunRoutineFromLua(AvatarEvent.Instance.RotateTowardRoutine(@event));
+    }
+
+    private void Radio(DynValue speakerLua, DynValue textLua)
+    {
+        RunRoutineFromLua(RadioRoutine(speakerLua.String, textLua.String));
+    }
+    private IEnumerator RadioRoutine(string speakerKey, string message)
+    {
+        yield return MapOverlayUI.Instance.radio.SpeakRoutine(speakerKey, message);
+        yield break;
+    }
+
+    private void HideRadio()
+    {
+        Global.Instance.StartCoroutine(MapOverlayUI.Instance.radio.HideRoutine());
     }
 }
