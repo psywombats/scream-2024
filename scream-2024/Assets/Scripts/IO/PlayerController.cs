@@ -26,7 +26,10 @@ public class PlayerController : MonoBehaviour, IInputListener
 
     private void Update()
     {
-        HandleFPC();
+        if ( pauseCount == 0)
+        {
+            HandleFPC();
+        }
 
         if (velocityThisFrame != Vector3.zero)
         {
@@ -45,7 +48,7 @@ public class PlayerController : MonoBehaviour, IInputListener
 
     public void OnDisable()
     {
-        InputManager.Instance.RemoveListener(this);
+        InputManager.Instance?.RemoveListener(this);
     }
 
     public void PauseInput()
@@ -97,11 +100,21 @@ public class PlayerController : MonoBehaviour, IInputListener
                 switch (command)
                 {
                     case InputManager.Command.Primary:
-                        ThrowFlare();
+                        if (pauseCount == 0)
+                        {
+                            ThrowFlare();
+                        }
                         return false;
                     case InputManager.Command.Secondary:
                     case InputManager.Command.Menu:
-                        //ShowMenu();
+                        if (pauseCount > 0)
+                        {
+                            UnpauseInput();
+                        } 
+                        else
+                        {
+                            PauseInput();
+                        }
                         return false;
                     default:
                         return false;

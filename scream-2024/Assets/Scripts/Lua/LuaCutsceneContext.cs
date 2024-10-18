@@ -4,7 +4,6 @@ using MoonSharp.Interpreter;
 
 public class LuaCutsceneContext : LuaContext
 {
-
     private static readonly string DefinesPath = "Lua/Defines/CutsceneDefines";
 
     public override IEnumerator RunRoutine(LuaScript script, bool canBlock)
@@ -105,7 +104,7 @@ public class LuaCutsceneContext : LuaContext
     }
     private IEnumerator EnterNVLRoutine(bool lightMode)
     {
-        //yield return MapOverlayUI.Instance.adv.ShowRoutine(lightMode);
+        yield return MapOverlayUI.Instance.nvl.ShowRoutine(lightMode);
         yield break;
     }
 
@@ -115,7 +114,7 @@ public class LuaCutsceneContext : LuaContext
     }
     private IEnumerator ExitNVLRoutine()
     {
-        //yield return MapOverlayUI.Instance.adv.HideRoutine();
+        yield return MapOverlayUI.Instance.nvl.HideRoutine();
         yield break;
     }
 
@@ -128,7 +127,7 @@ public class LuaCutsceneContext : LuaContext
     }
     private IEnumerator EnterRoutine(SpeakerData speaker, string slot, string expr = null)
     {
-        //yield return MapOverlayUI.Instance.adv.EnterRoutine(speaker, slot, expr);
+        yield return MapOverlayUI.Instance.nvl.EnterRoutine(speaker, slot, expr);
         yield break;
     }
 
@@ -139,13 +138,13 @@ public class LuaCutsceneContext : LuaContext
     }
     private IEnumerator ExitRoutine(SpeakerData speaker)
     {
-        //yield return MapOverlayUI.Instance.adv.ExitRoutine(speaker);
+        yield return MapOverlayUI.Instance.nvl.ExitRoutine(speaker);
         yield break;
     }
 
     public void ClearNVL()
     {
-        //MapOverlayUI.Instance.adv.Wipe();
+        MapOverlayUI.Instance.nvl.Wipe();
     }
 
     public void Speak(DynValue speakerNameLua, DynValue messageLua)
@@ -155,7 +154,7 @@ public class LuaCutsceneContext : LuaContext
     }
     private IEnumerator SpeakRoutine(SpeakerData speaker, string message)
     {
-        //yield return MapOverlayUI.Instance.adv.SpeakRoutine(speaker, message);
+        yield return MapOverlayUI.Instance.nvl.SpeakRoutine(speaker, message);
         yield break;
     }
 

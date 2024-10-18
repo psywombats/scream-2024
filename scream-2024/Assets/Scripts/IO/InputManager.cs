@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class InputManager : SingletonBehavior
 {
-    public static InputManager Instance => Global.Instance.Input;
+    public static InputManager Instance => Global.Instance?.Input;
 
     public enum Command
     {

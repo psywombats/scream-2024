@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4753211634449085791}
   - component: {fileID: 6927429164770333557}
   - component: {fileID: 4302668890786595115}
+  - component: {fileID: 1652951866103148795}
   m_Layer: 0
   m_Name: Light1
   m_TagString: Untagged
@@ -44,9 +45,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.6886792, g: 0.041263275, b: 0, a: 1}
-  m_Intensity: 1
-  m_Range: 48
+  m_Color: {r: 0.6012545, g: 0.09787753, b: 0.033774003, a: 1}
+  m_Intensity: 5
+  m_Range: 200
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -118,6 +119,32 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &1652951866103148795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258060542050493715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cadb3786133d2c4eb9aba868352eb29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  durationSeconds: 0.1
+  offsetSeconds: 0
+  maxOffset: {x: 0, y: 0, z: 0}
+  movementMode: 0
+  offsetMode: 0
+  scaleMode: 0
+  posMode: 0
+  newColor: {r: 0.6, g: 0.063209824, b: 0.035294116, a: 1}
+  rangeOffset: 0
+  intensityOffset: 1
+  flickerChance: 0
+  flickerRange: 0
+  flickerIntensity: 0
+  flickerColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &4381754284828653593
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +156,7 @@ GameObject:
   - component: {fileID: 8271190296882872427}
   - component: {fileID: 6892126049108458237}
   - component: {fileID: 1441084932634920656}
+  - component: {fileID: 4531477073742656462}
   m_Layer: 0
   m_Name: Light1 (1)
   m_TagString: Untagged
@@ -162,9 +190,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.34317866, b: 0, a: 1}
-  m_Intensity: 3
-  m_Range: 24
+  m_Color: {r: 1, g: 0.34482405, b: 0, a: 1}
+  m_Intensity: 8
+  m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -236,6 +264,32 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &4531477073742656462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4381754284828653593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cadb3786133d2c4eb9aba868352eb29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  durationSeconds: 0.8
+  offsetSeconds: 0
+  maxOffset: {x: 0, y: 0, z: 0}
+  movementMode: 0
+  offsetMode: 0
+  scaleMode: 0
+  posMode: 0
+  newColor: {r: 1, g: 0.34509805, b: 0, a: 1}
+  rangeOffset: 0
+  intensityOffset: 1
+  flickerChance: 0
+  flickerRange: 0
+  flickerIntensity: 0
+  flickerColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5300663383339618054
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +303,6 @@ GameObject:
   - component: {fileID: 5731798873483319387}
   - component: {fileID: 8455595935060340508}
   - component: {fileID: 2096698585478732921}
-  - component: {fileID: 3669932195277584261}
   m_Layer: 0
   m_Name: Flare
   m_TagString: Untagged
@@ -265,9 +318,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5300663383339618054}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.024243962, y: 0.78661835, z: 0.60453916, w: 0.12319167}
-  m_LocalPosition: {x: 2.5294008, y: -60.72694, z: -0.54124767}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalRotation: {x: 0.8673286, y: -0.0670286, z: 0.41181764, w: 0.27139375}
+  m_LocalPosition: {x: 7.5257792, y: -65.53898, z: -14.46262}
+  m_LocalScale: {x: 0.29999998, y: 0.30000007, z: 0.29999998}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4753211634449085791}
@@ -372,16 +425,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3669932195277584261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5300663383339618054}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93e5829cd7f986044a560bfe3230bac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: {x: 2, y: 0, z: 0}

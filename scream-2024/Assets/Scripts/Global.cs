@@ -25,6 +25,10 @@ public class Global : MonoBehaviour
     {
         get
         {
+            if (IsDestructing)
+            {
+                //return null;
+            }
             if (instance == null)
             {
                 instance = FindObjectOfType<Global>();
@@ -48,7 +52,7 @@ public class Global : MonoBehaviour
         instance.ReadSerializedManagers();
         DontDestroyOnLoad(gameObject);
 
-        Lua = new LuaContext();
+        Lua = new LuaCutsceneContext();
         Lua.Initialize();
 
         Data = new GameData();

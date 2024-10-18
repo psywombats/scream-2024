@@ -10,7 +10,31 @@ public class NoiseGenerator : MonoBehaviour
     [SerializeField, Range(1, 10)] private int octaves = 8;
     [SerializeField, Range(0f, 1f)] float groundPercent = 0.2f;
     [SerializeField, Range(-1f, 1f)] public float isoLevel = 0.6f;
+    [Space]
     [SerializeField, Range(0f, 64f)] public float pitRadius = 32f;
+    [Space]
+    [SerializeField] public NoiseType noiseType = NoiseType.NOISE_OPENSIMPLEX2;
+    [SerializeField] public FractalType fractalType = FractalType.FRACTAL_RIDGED;
+
+    public enum NoiseType
+    {
+        NOISE_OPENSIMPLEX2 = 0,
+        NOISE_OPENSIMPLEX2S = 1,
+        NOISE_CELLULAR = 2,
+        NOISE_PERLIN = 3,
+        NOISE_VALUE_CUBIC = 4,
+        NOISE_VALUE = 5,
+    }
+
+    public enum FractalType
+    {
+        FRACTAL_NONE = 0,
+        FRACTAL_FBM = 1,
+        FRACTAL_RIDGED = 2,
+        FRACTAL_PINGPONG = 3,
+        FRACTAL_DOMAIN_WARP_PROGRESSIVE = 4,
+        FRACTAL_DOMAIN_WARP_INDEPENDENT = 5,
+    }
 
     private ComputeBuffer weightsBuffer;
 
@@ -50,6 +74,10 @@ public class NoiseGenerator : MonoBehaviour
         noiseShader.SetFloat("_BaseX", pos.x);
         noiseShader.SetFloat("_BaseY", pos.y);
         noiseShader.SetFloat("_BaseZ", pos.z);
+        
+        noiseShader.SetInt("_NoiseTypeIn", (int)noiseType);
+        noiseShader.SetInt("_FractalTypeIn", (int)fractalType);
+
         noiseShader.SetFloat("_PitRad", pitRadius);
 
         noiseShader.Dispatch(0, 

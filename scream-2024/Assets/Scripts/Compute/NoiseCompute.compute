@@ -12,14 +12,18 @@ int _Octaves;
 float _GroundPercent;
 
 float _BaseX, _BaseY, _BaseZ;
+
 float _PitRad;
+
+fnl_noise_type _NoiseTypeIn;
+fnl_fractal_type _FractalTypeIn;
 
 [numthreads(threadCount, threadCount, threadCount)]
 void GenerateNoise(uint3 id : SV_DispatchThreadID)
 {
     fnl_state noise = fnlCreateState();
-    noise.noise_type = FNL_NOISE_OPENSIMPLEX2;
-    noise.fractal_type = FNL_FRACTAL_RIDGED;
+    noise.noise_type = _NoiseTypeIn;
+    noise.fractal_type = 2;
     noise.frequency = _Frequency;
     noise.octaves = _Octaves;
 

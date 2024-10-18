@@ -10,7 +10,6 @@ using System.Collections.Generic;
 /// </summary>
 public class LuaContext
 {
-
     private const string DefinesPath = "Lua/Defines/GlobalDefines";
     private const string ScenesPath = "Lua/Scenes";
 
@@ -127,10 +126,10 @@ public class LuaContext
         {
             yield return null;
         }
-        //if (MapOverlayUI.Instance.adv.IsShown)
-        //{
-        //    yield return MapOverlayUI.Instance.adv.HideRoutine();
-        //}
+        if (MapOverlayUI.Instance.nvl.IsShown)
+        {
+            yield return MapOverlayUI.Instance.nvl.HideRoutine();
+        }
         activeScripts.Pop();
     }
 
