@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b295d278-2317-49c8-9441-4678b417ed7b}">
+		<property name="assetPath">
+			<value>Env/env_amb_thunder_var_03.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>10</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{26690a29-87ff-43cc-b713-4b9482589813}</destination>
+		</relationship>
+	</object>
+</objects>
