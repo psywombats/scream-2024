@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{fb72047d-1eb9-4cec-b75e-045b7e4dbbb7}">
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7e626f41-7be9-46a0-8b9e-9644890298c4}">
 		<property name="assetPath">
-			<value>SFX_MENU_ARROW.mp3</value>
+			<value>ui_menu_close.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>0.47999999999999998</value>
+			<value>0.52049999999999996</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{26690a29-87ff-43cc-b713-4b9482589813}</destination>

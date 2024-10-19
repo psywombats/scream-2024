@@ -83,7 +83,6 @@
 		<relationship name="markers">
 			<destination>{5bcdb0e0-8205-4d0b-8ef2-d2522903ec43}</destination>
 			<destination>{f519220e-429e-401f-9567-d5ad121762bc}</destination>
-			<destination>{0ef849f8-00b0-4b9d-8926-8d968ce88a15}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{de5abfbc-733f-4b3e-b9ce-360b3b6b5782}">
@@ -104,9 +103,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{75291e7e-8f75-4101-b947-f9236eeb72ea}" />
 	<object class="SingleSound" id="{0859abdc-a295-4e02-988a-52a72bd17516}">
-		<property name="triggerProbabilityEnabled">
-			<value>true</value>
-		</property>
 		<property name="isAsync">
 			<value>true</value>
 		</property>
@@ -118,6 +114,9 @@
 		</property>
 		<property name="maxVoices">
 			<value>1</value>
+		</property>
+		<property name="looping">
+			<value>true</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{ad9ff904-276c-49b6-963a-0d804b4f5466}</destination>
@@ -177,20 +176,6 @@
 		</relationship>
 		<relationship name="markerTrack">
 			<destination>{6d9ab004-b235-4512-ae13-7c0cdc534e1c}</destination>
-		</relationship>
-	</object>
-	<object class="NamedMarker" id="{0ef849f8-00b0-4b9d-8926-8d968ce88a15}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="name">
-			<value>Start</value>
-		</property>
-		<relationship name="timeline">
-			<destination>{7be19baf-8d3f-42b6-891c-5692024678e5}</destination>
-		</relationship>
-		<relationship name="markerTrack">
-			<destination>{e42e89c9-48cc-4224-ad54-0785a1a5c309}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{88b1106b-16dd-4371-bb48-591e05450804}">
