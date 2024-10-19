@@ -1,0 +1,3 @@
+CONTROL: "And that concludes Spelonky. I hope you enjoyed playing it as much as I enjoyed developing it."
+CONTROL: "The caves in this game use real-world data gathered from hundreds of real mines and caves around A&M University in addition to procedural generation to create levels on the fly."
+CONTROL: "The story was written by a good friend of mine, YOU, and I hope it leaves you - "
