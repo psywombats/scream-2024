@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{bfcb3993-3f40-4217-af55-f0b1953f9e13}">
 		<property name="name">
-			<value>menu_up_down</value>
+			<value>up_down</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -56,7 +56,7 @@
 			<destination>{3df5b499-2302-4e1a-bbc7-09311c821177}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{5af502cd-8836-4d9c-b345-8f72735fb99f}</destination>
+			<destination>{56ba6540-9766-448f-a749-0b89e826f2fe}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{8ca7a94a-4c16-4ac9-bb4d-0604b6ad176b}" />

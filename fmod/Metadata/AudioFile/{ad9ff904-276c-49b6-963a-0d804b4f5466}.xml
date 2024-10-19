@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{ad9ff904-276c-49b6-963a-0d804b4f5466}">
 		<property name="assetPath">
-			<value>MainMenu.mp3</value>
+			<value>testing_main_menu.mp3</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

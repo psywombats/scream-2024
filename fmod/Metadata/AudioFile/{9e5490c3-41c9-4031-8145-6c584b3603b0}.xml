@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{b1f09851-420d-48a8-a47d-043b80fd36a6}">
+	<object class="AudioFile" id="{9e5490c3-41c9-4031-8145-6c584b3603b0}">
 		<property name="assetPath">
-			<value>UI/ui_inventory_close.wav</value>
+			<value>steps.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +14,7 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>0.88</value>
+			<value>25.454166666666666</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{26690a29-87ff-43cc-b713-4b9482589813}</destination>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Snapshot" id="{0cdefc39-77f4-4766-9a51-4ff01c1aa429}">
+		<property name="name">
+			<value>Dead</value>
+		</property>
+		<relationship name="mixer">
+			<destination>{98022dfb-b43e-4cc4-9005-86bc38991b8a}</destination>
+		</relationship>
+		<relationship name="automatableProperties">
+			<destination>{a890e97a-9570-4189-9728-6895c04e60bc}</destination>
+		</relationship>
+		<relationship name="markerTracks">
+			<destination>{298f9d88-f07b-486c-b76f-7c38bf7c088f}</destination>
+		</relationship>
+		<relationship name="timeline">
+			<destination>{79f18d40-a4e9-421b-9a46-cc52b86f576c}</destination>
+		</relationship>
+		<relationship name="snapshotMasterTrack">
+			<destination>{3b2f2384-eb22-4bdc-b557-17c351fa53fe}</destination>
+		</relationship>
+	</object>
+	<object class="EventAutomatableProperties" id="{a890e97a-9570-4189-9728-6895c04e60bc}" />
+	<object class="MarkerTrack" id="{298f9d88-f07b-486c-b76f-7c38bf7c088f}" />
+	<object class="Timeline" id="{79f18d40-a4e9-421b-9a46-cc52b86f576c}" />
+	<object class="SnapshotMasterTrack" id="{3b2f2384-eb22-4bdc-b557-17c351fa53fe}" />
+</objects>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{59b0546a-fb1e-44d1-a099-cfbf7804eeed}">
 		<property name="name">
-			<value>menu_open</value>
+			<value>open</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -56,7 +56,7 @@
 			<destination>{1b28712c-4642-4b7a-97f7-d31fb9acd5a3}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{5af502cd-8836-4d9c-b345-8f72735fb99f}</destination>
+			<destination>{56ba6540-9766-448f-a749-0b89e826f2fe}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{268dd007-4ee8-470e-8283-d3163b4a10d9}" />
