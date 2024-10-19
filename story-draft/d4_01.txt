@@ -1,0 +1,7 @@
+LEADER: "We've been waiting two hours. YOU, can you call PAL again?"
+YOU: "It just keeps ringing."
+CONTROL: "I'm getting a busy signal."
+JERK: "Because you two are calling at the same time. Face it. He's not showing."
+LEADER: "I didn't expect him to be the one to sell us out..."
+CONTROL: "What do we do?"
+LEADER: "Look, just give me a second to think."

@@ -1,0 +1,6 @@
+JERK: "YOU, I have to ask..."
+JERK: "You really can't get in touch with PAL? You don't know where he's going?"
+YOU: "No, it's like I told LEADER: I've got no idea."
+JERK: "I just wondered if you didn't trust him enough to say. Given the circumstances, I wouldn't."
+YOU: "What do you mean?"
+JERK: "...Forget it."

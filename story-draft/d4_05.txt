@@ -1,0 +1,4 @@
+LEADER: "YOU, do you think you can sleep a bit?"
+YOU: "Is it nighttime already?"
+LEADER: "It's hard to tell, but JERK and I are going to try to get some rest. Tomorrow we make the final dive."
+YOU: "...Then I'll try to sleep. Goodnight."

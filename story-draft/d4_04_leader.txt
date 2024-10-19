@@ -1,0 +1,7 @@
+LEADER: "We're so close. I know it."
+YOU: "Close to PAL?"
+LEADER: "Close to the bottom. There's something down there. You feel it too, right?"
+YOU: "I can't feel anything."
+LEADER: "Listen harder. Use all your senses. Vision will fail you down here, but your spirit won't."
+LEADER: "Just keep that picture in your mind: you, succeeding. You, fulfilling your dreams. That's what's down there. It'll all be worth it. Everything a means to an end."
+LEADER: "It's good to talk with you, YOU. You're the only one who understands."
