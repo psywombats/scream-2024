@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{576313cc-63f4-42bc-9594-70d2cdd5a64b}">
+		<property name="assetPath">
+			<value>pigeons_rising.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9.3759999999999994</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{26690a29-87ff-43cc-b713-4b9482589813}</destination>
+		</relationship>
+	</object>
+</objects>
