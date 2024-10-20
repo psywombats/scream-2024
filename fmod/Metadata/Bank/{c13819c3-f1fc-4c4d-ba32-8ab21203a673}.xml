@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Bank" id="{c13819c3-f1fc-4c4d-ba32-8ab21203a673}">
 		<property name="note">
 			<value>try not to dump stuff in master as that'll have to come in over the network for webgl builds before the game loads and that will suck</value>
