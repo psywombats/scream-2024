@@ -282,7 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   src: {fileID: 0}
   envNames:
-  - title_screen
+  - apartment
 --- !u!1 &2917487081558337046
 GameObject:
   m_ObjectHideFlags: 0

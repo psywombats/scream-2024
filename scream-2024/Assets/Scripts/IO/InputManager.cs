@@ -13,6 +13,7 @@ public class InputManager : SingletonBehavior
     {
         Primary,
         Secondary,
+        Tertiary,
         Left,
         Right,
         Up,
@@ -194,15 +195,19 @@ public class InputManager : SingletonBehavior
                 action.AddBinding(Keyboard.current.bKey);
                 action.AddBinding(Keyboard.current.xKey);
                 action.AddBinding(Keyboard.current.eKey);
-                action.AddBinding(Keyboard.current.ctrlKey);
                 action.AddBinding(Keyboard.current.rightShiftKey);
                 action.AddBinding(Mouse.current.rightButton);
+                action.AddBinding("<Gamepad>/buttonEast");
+                break;
+            case Command.Tertiary:
+                action.AddBinding(Keyboard.current.vKey);
+                action.AddBinding(Keyboard.current.qKey);
+                action.AddBinding(Keyboard.current.ctrlKey);
                 action.AddBinding("<Gamepad>/buttonEast");
                 break;
             case Command.Menu:
                 action.AddBinding(Keyboard.current.escapeKey);
                 action.AddBinding(Keyboard.current.cKey);
-                action.AddBinding(Keyboard.current.qKey);
                 action.AddBinding(Keyboard.current.backspaceKey);
                 action.AddBinding("<Gamepad>/buttonNorth");
                 break;
