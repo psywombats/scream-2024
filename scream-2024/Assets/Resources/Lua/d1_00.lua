@@ -1,3 +1,5 @@
+wait(1)
+
 enterNVL()
 enter('PAL', 'b')
 speak('PAL', "Phoebe! Glad you could make it. Feels like I last saw you in the Cretaceous.")
@@ -27,7 +29,10 @@ speak('YOU', "I would literally kill someone to just get my doctorate and get ou
 exit('PAL')
 enter('PAL', 'e')
 speak('PAL', "Then follow me. The HQ is about an hour's walk from campus. It's one of those prefab buildings they've got set up in the fields for agriculture students. This is your big shot, Phoebe, so come on!")
+exitNVL()
 
 setSwitch('d1_00', true)
 setString('date', "");
-setString('time', "");
+setString('time', "11:30 AM");
+teleport('Clubhouse', 'start')
+unstick()

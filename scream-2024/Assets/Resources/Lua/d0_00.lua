@@ -1,5 +1,6 @@
 fade('normal')
 
+wait(1)
 enterNVL()
 enter('YOU', 'c')
 speak('YOU', "AH!")

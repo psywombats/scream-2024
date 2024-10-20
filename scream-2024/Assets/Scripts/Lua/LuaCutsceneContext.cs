@@ -67,6 +67,7 @@ public class LuaCutsceneContext : LuaContext
 
         Lua.Globals["cs_rotateTo"] = (Action<DynValue>)RotateToward;
         Lua.Globals["setting"] = (Action<DynValue>)Setting;
+        Lua.Globals["unstick"] = (Action)Unstick;
     }
 
     // === LUA CALLABLE ============================================================================
@@ -164,7 +165,6 @@ public class LuaCutsceneContext : LuaContext
     private IEnumerator SpeakRoutine(SpeakerData speaker, string message)
     {
         yield return MapOverlayUI.Instance.nvl.SpeakRoutine(speaker, message);
-        yield break;
     }
 
     private void Setting(DynValue textVal)
@@ -191,5 +191,10 @@ public class LuaCutsceneContext : LuaContext
     private void HideRadio()
     {
         Global.Instance.StartCoroutine(MapOverlayUI.Instance.radio.HideRoutine());
+    }
+
+    private void Unstick()
+    {
+        //InputManager.Instance.RemoveListener("confirm");
     }
 }

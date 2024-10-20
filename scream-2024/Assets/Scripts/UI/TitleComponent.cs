@@ -152,6 +152,7 @@ class TitleComponent : MonoBehaviour, IInputListener
 
         yield return SceneManager.LoadSceneAsync("Map3D", LoadSceneMode.Single);
         yield return Global.Instance.Maps.TeleportRoutine(map, target, dir);
+        avatar.UnpauseInput();
     }
 
     private void ShowDates(bool show)

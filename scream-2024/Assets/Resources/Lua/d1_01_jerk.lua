@@ -1,0 +1,27 @@
+enterNVL()
+if not getSwitch('d1_01_jerk') then
+	enter('YOU', 'b')
+	speak('YOU', "Hi, I don't think we've met, but my name's - ")
+	enter('JERK', 'e')
+	speak('JERK', "Phoebe. Amador mentioned.")
+	exit('JERK')
+	enter('JERK', 'd')
+	speak('JERK', "You talked about a research trip, and applying for grant money. You're a field researcher, then?")
+	speak('YOU', "Er, well, I'd like to just stay in the lab, but my advisor thought I was too caught up in my papers, so that was why I failed the first thesis defense, so - ")
+	speak('JERK', "So you're not used to fieldwork.")
+	speak('YOU', "Not underground, anyway.")
+	speak('JERK', "Then what makes you think you'll do well with us, in a new cave, deep below the earth, where no human has tread before?")
+	speak('YOU', "I'm sorry, I didn't think it was that serious.")
+	speak('JERK', "Lesson number one is that you need to take things seriously. Evaluate yourself. Really think if you belong here.")
+	speak('JERK', "I'm not trying to be a jerk about this, but if you think working with us is going to be a cakewalk, you need to reconsider, and if you're not cut out for it, turn around before you get too involved.")
+	speak('JERK', "...although Jeanne would probably kill you rather than let you walk. She's convinced any outsiders will break the news and she'll loose her scoop. Idiocy.")
+	speak('YOU', "I didn't realize you guys, were, um...")
+	speak('JERK', "She's fine, really. Just don't think Jeanne is without shortcomings just because he talks big. That's just ego.")
+else
+	enter('JERK', 'c')
+	speak('JERK', "Jeanne is fine, really. Just don't think she's without shortcomings just because he talks big. That's just ego.")
+end
+exitNVL()
+
+setSwitch('d1_01_jerk', true)
+play('d1_01_next')

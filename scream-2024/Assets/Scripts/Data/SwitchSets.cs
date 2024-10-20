@@ -25,10 +25,17 @@ public static class SwitchSets
     {
         new string[]
         {
-            "d0_00"
+            "d0_00",
         },
         new string[]
         {
+            "d1_00",
+            "d1_01",
+            "d1_01_leader",
+            "d1_01_control",
+            "d1_01_jerk",
+            "d1_01_pal",
+            "d1_02",
         },
         new string[]
         {

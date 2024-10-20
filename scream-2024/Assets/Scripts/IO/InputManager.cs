@@ -121,7 +121,7 @@ public class InputManager : SingletonBehavior
     public void PushListener(string id, Func<Command, Event, bool> responder)
     {
         IInputListener listener = new AnonymousListener(responder);
-        anonymousListeners[id] = listener;
+        anonymousListeners.Add(id, listener);
         PushListener(listener);
     }
     public void PushListener(IInputListener listener)
@@ -132,6 +132,7 @@ public class InputManager : SingletonBehavior
     public void RemoveListener(string id)
     {
         listeners.Remove(anonymousListeners[id]);
+        anonymousListeners.Remove(id);
     }
     public void RemoveListener(IInputListener listener)
     {

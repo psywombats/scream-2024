@@ -24,7 +24,7 @@ public class MapNameBox : MonoBehaviour
         {
             if (setting.StartsWith('{'))
             {
-                setting = setting.Substring(0, setting.Length - 2);
+                setting = setting.Substring(1, setting.Length - 2);
                 setting = Global.Instance.Data.GetStringVariable(setting);
             }
             if (!string.IsNullOrEmpty(setting))
