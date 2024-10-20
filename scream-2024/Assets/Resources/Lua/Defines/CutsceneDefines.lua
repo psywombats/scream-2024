@@ -5,13 +5,13 @@ function teleportCoords(mapName, x, y)
     await()
 end
 
-function teleport(mapName, eventName, dir)
-    cs_teleport(mapName, eventName, dir)
+function teleport(mapName, eventName, dir, raw)
+    cs_teleport(mapName, eventName, dir, raw)
     await()
 end
 
-function targetTele(mapName, eventName, dir)
-    cs_teleport(mapName, eventName, dir)
+function targetTele(mapName, eventName, dir, raw)
+    cs_teleport(mapName, eventName, dir, raw)
     await()
 end
 
@@ -30,8 +30,8 @@ function radio(speaker, line)
 	await()
 end
 
-function fade(fadeType)
-    cs_fade(fadeType)
+function fade(fadeType, dur)
+    cs_fade(fadeType, dur)
     await()
 end
 

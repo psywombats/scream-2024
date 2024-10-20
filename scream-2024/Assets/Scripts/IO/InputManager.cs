@@ -193,6 +193,7 @@ public class InputManager : SingletonBehavior
             case Command.Secondary:
                 action.AddBinding(Keyboard.current.bKey);
                 action.AddBinding(Keyboard.current.xKey);
+                action.AddBinding(Keyboard.current.eKey);
                 action.AddBinding(Keyboard.current.ctrlKey);
                 action.AddBinding(Keyboard.current.rightShiftKey);
                 action.AddBinding(Mouse.current.rightButton);
@@ -201,9 +202,9 @@ public class InputManager : SingletonBehavior
             case Command.Menu:
                 action.AddBinding(Keyboard.current.escapeKey);
                 action.AddBinding(Keyboard.current.cKey);
+                action.AddBinding(Keyboard.current.qKey);
                 action.AddBinding(Keyboard.current.backspaceKey);
                 action.AddBinding("<Gamepad>/buttonNorth");
-                action.AddBinding("<Gamepad>/buttonWest");
                 break;
             case Command.Debug:
                 action.AddBinding(Keyboard.current.f12Key);
@@ -220,9 +221,9 @@ public class InputManager : SingletonBehavior
         anonymousListeners.Clear();
     }
 
-    public IEnumerator ConfirmRoutine()
+    public IEnumerator ConfirmRoutine(bool eatsOthers = true)
     {
-        var id = "confirm";
+        var id = "confirm" + UnityEngine.Random.Range(0, 100000);
         var done = false;
         PushListener(id, (command, type) =>
         {
@@ -230,8 +231,9 @@ public class InputManager : SingletonBehavior
             {
                 RemoveListener(id);
                 done = true;
+                return true;
             }
-            return true;
+            return eatsOthers;
         });
         while (!done) yield return null;
     }

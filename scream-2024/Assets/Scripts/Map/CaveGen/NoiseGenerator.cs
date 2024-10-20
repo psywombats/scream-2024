@@ -8,7 +8,6 @@ public class NoiseGenerator : MonoBehaviour
     [SerializeField, Range(1f, 10f)] private float amplitude = 5f;
     [SerializeField, Range(0f, 1f)] private float frequency = 0.005f;
     [SerializeField, Range(1, 10)] private int octaves = 8;
-    [SerializeField, Range(0f, 1f)] float groundPercent = 0.2f;
     [SerializeField, Range(-1f, 1f)] public float isoLevel = 0.6f;
     [Space]
     [SerializeField] public NoiseType noiseType = NoiseType.NOISE_OPENSIMPLEX2;
@@ -68,7 +67,6 @@ public class NoiseGenerator : MonoBehaviour
         noiseShader.SetFloat("_Amplitude", amplitude);
         noiseShader.SetFloat("_Frequency", frequency);
         noiseShader.SetInt("_Octaves", octaves);
-        noiseShader.SetFloat("_GroundPercent", groundPercent);
         noiseShader.SetFloat("_BaseX", pos.x);
         noiseShader.SetFloat("_BaseY", pos.y);
         noiseShader.SetFloat("_BaseZ", pos.z);

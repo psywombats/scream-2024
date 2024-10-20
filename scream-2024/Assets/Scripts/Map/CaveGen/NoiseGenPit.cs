@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PitNoiseGen : NoiseGenerator
+public class NoiseGenPit : NoiseGenerator
 {
     [Space]
     [SerializeField, Range(0f, 64f)] public float pitRadius = 32f;

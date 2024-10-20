@@ -27,3 +27,10 @@ speak('CONTROL', "And radio me when you get there! Please! Else I'll be lonely h
 exitNVL()
 
 setSwitch('d1_02', true)
+fade('black')
+wait(1)
+
+setSwitch('abseiling_enabled', true)
+setSwitch('auto_abseil', true)
+teleport('Cave01_Rocklift', 'start', 'north', true)
+fade('normal')

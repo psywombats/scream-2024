@@ -29,6 +29,7 @@ public static class SwitchSets
         },
         new string[]
         {
+            "abseiling_enabled",
             "d1_00",
             "d1_01",
             "d1_01_leader",

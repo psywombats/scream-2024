@@ -15,11 +15,11 @@ if not getSwitch('d1_01_jerk') then
 	speak('JERK', "Lesson number one is that you need to take things seriously. Evaluate yourself. Really think if you belong here.")
 	speak('JERK', "I'm not trying to be a jerk about this, but if you think working with us is going to be a cakewalk, you need to reconsider, and if you're not cut out for it, turn around before you get too involved.")
 	speak('JERK', "...although Jeanne would probably kill you rather than let you walk. She's convinced any outsiders will break the news and she'll loose her scoop. Idiocy.")
-	speak('YOU', "I didn't realize you guys, were, um...")
-	speak('JERK', "She's fine, really. Just don't think Jeanne is without shortcomings just because he talks big. That's just ego.")
+	speak('YOU', "Oh, I'm sorry, the way Amador was talking was like this was some tight-knit family, I didn't realize you guys weren't the best - ")
+	speak('JERK', "She's fine, really. Just don't think Jeanne is without shortcomings just because she talks big. That's just ego.")
 else
 	enter('JERK', 'c')
-	speak('JERK', "Jeanne is fine, really. Just don't think she's without shortcomings just because he talks big. That's just ego.")
+	speak('JERK', "Jeanne is fine, really. Just don't think she's without shortcomings just because she talks big. That's just ego.")
 end
 exitNVL()
 

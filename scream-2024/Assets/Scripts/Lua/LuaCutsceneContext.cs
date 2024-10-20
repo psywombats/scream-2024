@@ -54,7 +54,7 @@ public class LuaCutsceneContext : LuaContext
         Lua.Globals["sceneSwitch"] = (Action<DynValue, DynValue>)SetSwitch;
         Lua.Globals["cs_teleport"] = (Action<DynValue, DynValue, DynValue, DynValue>)TargetTeleport;
         Lua.Globals["cs_fadeOutBGM"] = (Action<DynValue>)FadeOutBGM;
-        Lua.Globals["cs_fade"] = (Action<DynValue>)Fade;
+        Lua.Globals["cs_fade"] = (Action<DynValue, DynValue>)Fade;
 
         Lua.Globals["cs_enterNVL"] = (Action<DynValue>)EnterNVL;
         Lua.Globals["cs_exitNVL"] = (Action)ExitNVL;
@@ -96,15 +96,15 @@ public class LuaCutsceneContext : LuaContext
         RunRoutineFromLua(Global.Instance.Audio.FadeOutRoutine((float)seconds.Number));
     }
 
-    private void Fade(DynValue type)
+    private void Fade(DynValue type, DynValue dur)
     {
         var str = type.String;
-        RunRoutineFromLua(FadeRoutine(str));
+        RunRoutineFromLua(FadeRoutine(str, dur.IsNil() ? .8f : (float)dur.Number));
     }
-    private IEnumerator FadeRoutine(string str)
+    private IEnumerator FadeRoutine(string str, float dur)
     {
         var targetAlpha = str == "black" ? 1f : 0f;
-        yield return CoUtils.RunTween(MapOverlayUI.Instance.fader.DOFade(targetAlpha, .8f));
+        yield return CoUtils.RunTween(MapOverlayUI.Instance.fader.DOFade(targetAlpha, dur));
     }
 
     public void EnterNVL(DynValue lightLua)

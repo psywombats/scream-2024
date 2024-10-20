@@ -18,6 +18,7 @@ public class RadioUIComponent : MonoBehaviour
 
     public IEnumerator SpeakRoutine(string speakerKey, string text)
     {
+        textTyper.Clear();
         var speaker = IndexDatabase.Instance.Speakers.GetData(speakerKey);
         nameText.text = speaker.displayName;
         portrait.sprite = speaker.sprite;
@@ -30,12 +31,13 @@ public class RadioUIComponent : MonoBehaviour
         }
         yield return null;
         yield return textTyper.WriteLineRoutine(text);
-        yield return Global.Instance.Input.ConfirmRoutine();
+        yield return Global.Instance.Input.ConfirmRoutine(true);
     }
 
     public IEnumerator HideRoutine()
     {
         yield return expander.HideRoutine();
+        textTyper.Clear();
         IsShown = false;
     }
 }

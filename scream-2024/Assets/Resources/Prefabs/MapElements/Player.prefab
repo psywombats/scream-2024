@@ -414,13 +414,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2565660187341263143}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.004363274, z: 0, w: 0.9999905}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 574509820882417408}
-  m_LocalEulerAnglesHint: {x: 0, y: 0.5, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &7478163787598281774
 Light:
   m_ObjectHideFlags: 0
@@ -533,7 +533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3954022223172314357}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.35355338, y: -0.35355338, z: -0.1464466, w: 0.8535535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -541,7 +541,7 @@ Transform:
   - {fileID: 5839755370234527461}
   - {fileID: 5505169021009078895}
   m_Father: {fileID: 1398854933385255603}
-  m_LocalEulerAnglesHint: {x: -45, y: -45, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &4543538341362460436
 Camera:
   m_ObjectHideFlags: 0
@@ -1029,6 +1029,7 @@ MonoBehaviour:
   body: {fileID: 8655773204828170593}
   collider: {fileID: 6733263080349593781}
   camera: {fileID: 4543538341362460436}
+  probe: {fileID: 0}
   godObjects:
   - {fileID: 1928079921812838946}
   nonGodObjects:
@@ -1040,6 +1041,12 @@ MonoBehaviour:
   mouseRotateSensitivity: 0.2
   RotationYBounds: {x: -70, y: 70}
   tilesPerSecond: 4
+  abseilCutoff: -18
+  abseilAcc: 5
+  abseilDeacc: 40
+  abseilV: -6
+  abseilOscPeriod: 7
+  abseilOscSpeed: 1
   flarePrefab: {fileID: 5300663383339618054, guid: 22dd96c5a6099454da5a3e0261c8a6d2,
     type: 3}
 --- !u!54 &8655773204828170593

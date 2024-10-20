@@ -103,8 +103,7 @@ public class MapManager : SingletonBehavior
 
     private GameMap InstantiateMap(string mapName)
     {
-        GameObject newMapObject = null;
-        newMapObject = Resources.Load<GameObject>("Maps/" + mapName);
+        var newMapObject = Resources.Load<GameObject>("Maps/" + mapName);
         Assert.IsNotNull(newMapObject);
         var obj = Instantiate(newMapObject);
         obj.name = newMapObject.name;

@@ -9,6 +9,7 @@ public class TextAutotyper : MonoBehaviour, IInputListener {
     [SerializeField] public float charsPerSecond = 120f;
     [SerializeField] protected GameObject advanceArrow;
     [SerializeField] protected bool speedUpWhenHurried;
+    [SerializeField] protected bool consumesUI = true;
 
     public bool mode2 = false;
 
@@ -28,14 +29,14 @@ public class TextAutotyper : MonoBehaviour, IInputListener {
                 if (command == InputManager.Command.Primary) {
                     hurried = true;
                 }
-                break;
+                return true;
             case InputManager.Event.Down:
                 if (command == InputManager.Command.Primary) {
                     confirmed = true;
                 }
-                break;
+                return true;
         }
-        return true;
+        return consumesUI;
     }
 
     public IEnumerator TypeRoutine(string text, bool waitForConfirm = true) {

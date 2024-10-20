@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour, IInputListener
     [SerializeField] private Rigidbody body;
     [SerializeField] public new Collider collider;
     [SerializeField] public new Camera camera;
+    [SerializeField] public Collider probe;
     [Space]
     [SerializeField] private List<GameObject> godObjects;
     [SerializeField] private List<GameObject> nonGodObjects;
@@ -19,11 +21,21 @@ public class PlayerController : MonoBehaviour, IInputListener
     //[SerializeField] private float rayRange = 2.5f;
     [SerializeField] private float tilesPerSecond = 6f;
     [Space]
+    [SerializeField] private float abseilCutoff = -10f;
+    [SerializeField] private float abseilAcc = 1f;
+    [SerializeField] private float abseilDeacc = 10f;
+    [SerializeField] private float abseilV = -2f;
+    [SerializeField] private float abseilOscPeriod = 3f;
+    [SerializeField] private float abseilOscSpeed = 3f;
+    [Space]
     [SerializeField] private GameObject flarePrefab = null;
 
     private bool godMode;
+    private bool isAbseiling, isAbsDown;
     private int pauseCount;
-    private Vector3 velocityThisFrame;
+    private float currentAbsV, absTimer, oldV;
+    private Vector3 targetFrameV;
+    private float timeSinceGrounding;
 
     public GameObject OldFlare { get; private set; }
 
@@ -36,15 +48,71 @@ public class PlayerController : MonoBehaviour, IInputListener
 
     private void Update()
     {
-        if ( !IsPaused )
+        if (!IsPaused)
         {
             HandleFPC();
         }
 
         HandleRay();
 
-        body.velocity = new Vector3(velocityThisFrame.x, body.velocity.y, velocityThisFrame.z);
-        velocityThisFrame = Vector3.zero;
+        if (Global.Instance.Data.GetSwitch("auto_abseil"))
+        {
+            Global.Instance.Data.SetSwitch("auto_abseil", false);
+            SetAbseil(true);
+        }
+        if (isAbseiling)
+        {
+            if (IsGrounded)
+            {
+                SetAbseil(false);
+            }
+            else
+            {
+                absTimer += Time.deltaTime;
+                var targetAbsV = isAbsDown ? abseilV : 0f;
+                if (isAbsDown)
+                {
+                    isAbsDown = false;
+                    absTimer = 0f;
+                }
+                if (currentAbsV < targetAbsV)
+                {
+                    currentAbsV += abseilAcc * Time.deltaTime;
+                }
+                else if (currentAbsV > targetAbsV)
+                {
+                    currentAbsV -= abseilAcc * Time.deltaTime;
+                }
+                var absX = MathF.Sin(absTimer * 2 * Mathf.PI / abseilOscPeriod) * abseilOscSpeed;
+                var absY = MathF.Sin(absTimer * 2 * Mathf.PI / abseilOscPeriod) * abseilOscSpeed * .2f;
+                if (oldV < 0)
+                {
+                    oldV += Time.deltaTime * abseilDeacc;
+                }
+                else if (oldV > 0)
+                {
+                    oldV = 0F;
+                }
+                body.velocity = new Vector3(absX, oldV + currentAbsV, absY);
+            }
+        }
+        else
+        {
+            body.velocity = new Vector3(targetFrameV.x, body.velocity.y, targetFrameV.z);
+        }
+
+        targetFrameV = Vector3.zero;
+
+        if (body.velocity.y < abseilCutoff && !isAbseiling)
+        {
+            SetAbseil(true);
+        }
+
+        var fallSpeed = Mathf.Abs(body.velocity.y / abseilCutoff);
+        if (body.velocity.y > 0) fallSpeed = 0f;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("FallSpeed", fallSpeed);
+
+        timeSinceGrounding += Time.deltaTime;
     }
 
     public void OnEnable()
@@ -55,6 +123,14 @@ public class PlayerController : MonoBehaviour, IInputListener
     public void OnDisable()
     {
         InputManager.Instance?.RemoveListener(this);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.GetComponent<Chunk>() != null)
+        {
+            timeSinceGrounding = 0f;
+        }
     }
 
     public void PauseInput()
@@ -87,6 +163,8 @@ public class PlayerController : MonoBehaviour, IInputListener
         camera.transform.localEulerAngles = localEulers;
     }
 
+    public bool IsGrounded => timeSinceGrounding < .5f;
+
     private Vector2Int GetMouse()
     {
         var pos = Mouse.current.position;
@@ -110,8 +188,13 @@ public class PlayerController : MonoBehaviour, IInputListener
                 {
                     case InputManager.Command.Up:
                         TryStep(OrthoDir.North);
+                        SetAbseil(false);
                         return false;
                     case InputManager.Command.Down:
+                        if (isAbseiling)
+                        {
+                            isAbsDown = true;
+                        }
                         TryStep(OrthoDir.South);
                         return false;
                     case InputManager.Command.Right:
@@ -133,6 +216,8 @@ public class PlayerController : MonoBehaviour, IInputListener
                         ToggleGodMode();
                         return false;
                     case InputManager.Command.Secondary:
+                        ThrowFlare();
+                        return false;
                     case InputManager.Command.Menu:
                         if (pauseCount > 0)
                         {
@@ -186,17 +271,16 @@ public class PlayerController : MonoBehaviour, IInputListener
         {
             chara.Interact();
         }
-        else
-        {
-            ThrowFlare();
-        }
     }
 
     private bool TryStep(OrthoDir dir)
     {
-        var component = dir.Px3D() * tilesPerSecond * 1.2f;
-        var c2 = Quaternion.AngleAxis(camera.transform.localEulerAngles.y, Vector3.up) * component;
-        velocityThisFrame += c2;
+        if (!isAbseiling)
+        {
+            var component = dir.Px3D() * tilesPerSecond * 1.2f;
+            var c2 = Quaternion.AngleAxis(camera.transform.localEulerAngles.y, Vector3.up) * component;
+            targetFrameV += c2;
+        }
 
         return true;
     }
@@ -227,7 +311,9 @@ public class PlayerController : MonoBehaviour, IInputListener
     private void ThrowFlare()
     {
         Destroy(OldFlare);
-        if (godMode || MapManager.Instance.ActiveMap.lighting != LightingMode.Cave)
+        if (IsPaused
+            || MapManager.Instance.ActiveMap.lighting != LightingMode.Cave
+            || !Global.Instance.Data.GetSwitch("enable_flares"))
         {
             return;
         }
@@ -249,6 +335,21 @@ public class PlayerController : MonoBehaviour, IInputListener
         foreach (var obj in nonGodObjects)
         {
             obj.SetActive(!godMode);
+        }
+    }
+
+    private void SetAbseil(bool on)
+    {
+        if (isAbseiling == on || !Global.Instance.Data.GetSwitch("abseiling_enabled"))
+        {
+            return;
+        }
+        isAbseiling = on;
+        body.useGravity = !isAbseiling;
+        StartCoroutine(CoUtils.RunTween(MapOverlayUI.Instance.abseilInfo.DOFade(on ? 1f : 0f, .7f)));
+        if (on)
+        {
+            oldV = body.velocity.y;
         }
     }
 }

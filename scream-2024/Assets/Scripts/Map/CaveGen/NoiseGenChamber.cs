@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ChamberNoiseGen : NoiseGenerator
+public class NoiseGenChamber : NoiseGenerator
 {
     [Space]
     [SerializeField, Range(0f, 64f)] public float chamberR = 32f;
