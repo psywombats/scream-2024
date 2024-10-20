@@ -118,9 +118,6 @@
 		<property name="looping">
 			<value>true</value>
 		</property>
-		<relationship name="fadeInCurve">
-			<destination>{98850138-438c-4577-9f4f-bf85c467cdd3}</destination>
-		</relationship>
 		<relationship name="audioFile">
 			<destination>{9575e202-388c-4ebd-a182-ec0c0490d7d5}</destination>
 		</relationship>
@@ -129,6 +126,9 @@
 		<property name="name">
 			<value>Title Room</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{330335bd-11ad-4ead-a281-56fd00ecfdc6}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{b63cf4cc-746b-4958-b3de-4fd1037b532d}</destination>
 		</relationship>
@@ -246,13 +246,28 @@
 	</object>
 	<object class="MixerBusPanner" id="{68dc11f9-fb47-4adc-b852-108efada3a8a}" />
 	<object class="MixerBusFader" id="{a80e61c5-0e7d-4658-a1b8-8e357972afc4}" />
-	<object class="FadeCurve" id="{98850138-438c-4577-9f4f-bf85c467cdd3}">
-		<relationship name="startPoint">
-			<destination>{7ebb0791-776b-47ce-976f-0bdaacfd4f6b}</destination>
-		</relationship>
-		<relationship name="endPoint">
-			<destination>{0bfe74f2-4a5c-48ef-b48f-0eeb60fa1d94}</destination>
-		</relationship>
+	<object class="ADSRModulator" id="{330335bd-11ad-4ead-a281-56fd00ecfdc6}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>1807.6925</value>
+		</property>
+		<property name="attackShape">
+			<value>0.162485629</value>
+		</property>
+		<property name="releaseTime">
+			<value>5442.30762</value>
+		</property>
+		<property name="releaseShape">
+			<value>-0.128746212</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{b63cf4cc-746b-4958-b3de-4fd1037b532d}">
 		<relationship name="effects">
@@ -319,25 +334,6 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{47b4949d-4d30-4a32-8898-79ebb5701183}" />
-	<object class="AutomationPoint" id="{7ebb0791-776b-47ce-976f-0bdaacfd4f6b}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>0</value>
-		</property>
-		<property name="curveShape">
-			<value>0.397345781</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{0bfe74f2-4a5c-48ef-b48f-0eeb60fa1d94}">
-		<property name="position">
-			<value>4</value>
-		</property>
-		<property name="value">
-			<value>1</value>
-		</property>
-	</object>
 	<object class="ThreeEQEffect" id="{b1416f70-7fd4-48e5-beb3-9071e34549e8}">
 		<property name="lowGain">
 			<value>-28</value>
