@@ -369,7 +369,6 @@ GameObject:
   - component: {fileID: 6623167944932828096}
   - component: {fileID: 5163342470830722239}
   - component: {fileID: 3333721998436239076}
-  - component: {fileID: 4177664108203877847}
   m_Layer: 0
   m_Name: Cave02_EntryChasm
   m_TagString: Untagged
@@ -394,6 +393,7 @@ Transform:
   - {fileID: 5529586280229200329}
   - {fileID: 8987506912097996046}
   - {fileID: 3494569994829183743}
+  - {fileID: 2236967474957877095}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5163342470830722239
@@ -414,8 +414,9 @@ MonoBehaviour:
   lighting: 2
   eventLayer: {fileID: 5013854137374017943}
   noise: {fileID: 3333721998436239076}
-  caveSize: 0
-  spookiness: 0
+  caveSize: 0.7
+  spookiness: 0.2
+  humidity: 0
   terrain: {fileID: 8854301409924677441}
 --- !u!114 &3333721998436239076
 MonoBehaviour:
@@ -441,21 +442,6 @@ MonoBehaviour:
   pitSlopeX: 0.2
   pitSlopeZ: 0.5
   pitHardness: 1
---- !u!114 &4177664108203877847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7485188852334662207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bank: 2
-  bgmKey: cave_wind_system
-  source: {fileID: 0}
 --- !u!1 &8771255660019899631
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,4 +669,78 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8877683284904961261, guid: 9e8b9ea619168184aa923560cca8305d,
     type: 3}
   m_PrefabInstance: {fileID: 5425967890193374738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8816583457770763989
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6623167944932828096}
+    m_Modifications:
+    - target: {fileID: 1157537161652373687, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_Name
+      value: CaveBGM
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe9b937e9ab54464b986bd912672e842, type: 3}
+--- !u!4 &2236967474957877095 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+    type: 3}
+  m_PrefabInstance: {fileID: 8816583457770763989}
   m_PrefabAsset: {fileID: 0}

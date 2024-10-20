@@ -141,7 +141,6 @@ class TitleComponent : MonoBehaviour, IInputListener
         outriderListener.SetActive(false);
         playerListener.SetActive(true);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByNameWithLabel("cave_dry_humid", "humid");
-        AudioManager.Instance.PlayBGM("cave_dry_humid", AudioManager.Bank.ENV);
 
         begun = true;
         yield return CoUtils.RunParallel(Global.Instance,

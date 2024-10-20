@@ -2,10 +2,17 @@
 
 public class CaveMap : GameMap
 {
+    public enum Humidity
+    {
+        dry,
+        humid,
+    }
+
     [Header("Config")]
     [SerializeField] private NoiseGenerator noise;
     [SerializeField][Range(0, 1f)] private float caveSize;
     [SerializeField][Range(0, 1f)] private float spookiness;
+    [SerializeField] private Humidity humidity;
     [Space]
     [Header("References")]
     [SerializeField] public MarchingTerrain terrain;
@@ -14,8 +21,8 @@ public class CaveMap : GameMap
     {
         base.OnTeleportTo();
         Regenerate();
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Cave Size", caveSize);
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Spookiness", spookiness);
+        AudioManager.Instance.SetGlobalParam("Cave Size", caveSize);
+        AudioManager.Instance.SetGlobalParam("Spookiness", spookiness);
     }
 
     public void Regenerate(int radius = 0)

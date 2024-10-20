@@ -222,6 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3022827631907575764}
   - component: {fileID: 5565056522554877861}
+  - component: {fileID: 2301012690502123226}
   m_Layer: 0
   m_Name: PalMap
   m_TagString: Untagged
@@ -264,11 +265,24 @@ MonoBehaviour:
   - A&M University
   - Cheap apartment
   - 10:00 AM
-  bgmKey: 
-  spookiness: 0
   lighting: 0
   eventLayer: {fileID: 8745626077840585958}
   mesh: {fileID: 7764492765690164915}
+--- !u!114 &2301012690502123226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844996610015290092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c7e2e0c622e424dbd4013090dd2ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  src: {fileID: 0}
+  envNames:
+  - title_screen
 --- !u!1 &2917487081558337046
 GameObject:
   m_ObjectHideFlags: 0

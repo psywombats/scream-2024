@@ -1,6 +1,7 @@
 ﻿using FMOD.Studio;
 using FMODUnity;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
 
@@ -17,7 +18,10 @@ public class AudioManager : SingletonBehavior
 
     public static AudioManager Instance => Global.Instance.Audio;
 
-    private EventInstance bgmEvent, envEvent;
+    private EventInstance bgmEvent;
+    private EventInstance sfxEvent;
+    private Dictionary<string, EventInstance> envEvents = new();
+    private Dictionary<string, string> envParams = new();
 
     public const string NoBGMKey = "none";
     private const string NoChangeBGMKey = "no_change";
@@ -27,15 +31,13 @@ public class AudioManager : SingletonBehavior
 
     public string CurrentBGMKey { get; private set; }
 
-    private EventInstance sfxEvent;
-
     public void Start()
     {
         CurrentBGMKey = NoBGMKey;
         SetVolume();
     }
 
-    public void PlayBGM(string key, Bank bank = Bank.BGM, GameObject src = null)
+    public void PlayBGM(string key)
     {
         if (Global.Instance.Data.GetSwitch("disable_bgm"))
         {
@@ -48,29 +50,20 @@ public class AudioManager : SingletonBehavior
                 bgmEvent.stop(STOP_MODE.ALLOWFADEOUT);
                 bgmEvent.clearHandle();
             }
-            if (envEvent.hasHandle())
+            foreach (var ev in envEvents.Values)
             {
-                envEvent.stop(STOP_MODE.ALLOWFADEOUT);
-                envEvent.clearHandle();
+                if (ev.hasHandle())
+                {
+                    ev.stop(STOP_MODE.ALLOWFADEOUT);
+                    ev.clearHandle();
+                }
             }
+            envEvents.Clear();
             BaseVolume = 1f;
             SetVolume();
             CurrentBGMKey = key;
-            if (bank == Bank.BGM)
-            {
-                bgmEvent = RuntimeManager.CreateInstance($"event:/{bank}/{key}");
-                bgmEvent.start();
-            }
-            else if (bank == Bank.ENV)
-            {
-                envEvent = RuntimeManager.CreateInstance($"event:/{bank}/{key}");
-                if (src != null)
-                {
-                    FMODUnity.RuntimeManager.AttachInstanceToGameObject(envEvent, src.transform);
-                }
-                envEvent.setParameterByNameWithLabel("cave_type", "humid");
-                envEvent.start();
-            }
+            bgmEvent = RuntimeManager.CreateInstance($"event:/BGM/{key}");
+            bgmEvent.start();
         }
     }
 
@@ -80,9 +73,48 @@ public class AudioManager : SingletonBehavior
         sfxEvent.start();
     }
 
+    public void PlayENV(string envKey, GameObject src = null)
+    {
+        if (envEvents.ContainsKey(envKey))
+        {
+            return;
+        }
+        var envEvent = RuntimeManager.CreateInstance($"event:/ENV/{envKey}");
+        RuntimeManager.AttachInstanceToGameObject(envEvent, src == null ? Global.Instance.Avatar.transform : src.transform);
+        foreach (var param in envParams)
+        {
+            envEvent.setParameterByNameWithLabel(param.Key, param.Value);
+        }
+        envEvent.start();
+        envEvents[envKey] = envEvent;
+    }
+
+    public void SetENVParam(string key, string value)
+    {
+        envParams[key] = value;
+    }
+
+    public void SetGlobalParam(string key, float value)
+    {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName(key, value);
+    }
+
     public void StopSFX()
     {
         sfxEvent.stop(STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void StopENV()
+    {
+        foreach (var envEvent in envEvents.Values)
+        {
+            if (envEvent.hasHandle())
+            {
+                envEvent.stop(STOP_MODE.ALLOWFADEOUT);
+                envEvent.clearHandle();
+            } 
+        }
+        envEvents.Clear();
     }
 
     public void SetVolume()
@@ -115,11 +147,8 @@ public class AudioManager : SingletonBehavior
             bgmEvent.stop(STOP_MODE.ALLOWFADEOUT);
             bgmEvent.clearHandle();
         }
-        if (envEvent.hasHandle())
-        {
-            envEvent.stop(STOP_MODE.ALLOWFADEOUT);
-            envEvent.clearHandle();
-        }
+        StopENV();
+
         BaseVolume = 1.0f;
         SetVolume();
         PlayBGM(NoBGMKey);
@@ -131,6 +160,6 @@ public class AudioManager : SingletonBehavior
         {
             yield return FadeOutRoutine(FadeSeconds);
         }
-        PlayBGM(tag, bank);
+        PlayBGM(tag);
     }
 }

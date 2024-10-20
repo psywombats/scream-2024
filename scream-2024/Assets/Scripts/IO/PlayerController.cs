@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour, IInputListener
 
         var fallSpeed = Mathf.Abs(body.velocity.y / abseilCutoff);
         if (body.velocity.y > 0) fallSpeed = 0f;
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("FallSpeed", fallSpeed);
+        
 
         timeSinceGrounding += Time.deltaTime;
     }

@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7930705647635270855}
   - component: {fileID: 79612083312106832}
   - component: {fileID: 3462636470823042657}
+  - component: {fileID: 5680583336331896835}
   m_Layer: 0
   m_Name: MeetingMap
   m_TagString: Untagged
@@ -85,7 +86,6 @@ MonoBehaviour:
   displayNames:
   - Outside Phoebe's Apartment
   - 11:00 AM
-  spookiness: 0
   lighting: 0
   eventLayer: {fileID: 3473831592667386}
   mesh: {fileID: 6473528673539812963}
@@ -101,9 +101,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bank: 1
   bgmKey: best_friends
-  source: {fileID: 0}
+--- !u!114 &5680583336331896835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72671749489402955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96341a3fa21682c429f2eaf16f475339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &796592903612087956
 GameObject:
   m_ObjectHideFlags: 0
