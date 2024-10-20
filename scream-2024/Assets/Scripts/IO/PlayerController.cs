@@ -27,11 +27,12 @@ public class PlayerController : MonoBehaviour, IInputListener
     [SerializeField] private float abseilV = -2f;
     [SerializeField] private float abseilOscPeriod = 3f;
     [SerializeField] private float abseilOscSpeed = 3f;
+    [SerializeField] private float climbSpeed = 3f;
     [Space]
     [SerializeField] private GameObject flarePrefab = null;
 
     private bool godMode;
-    private bool isAbseiling, isAbsDown;
+    private bool isAbseiling, isAbsDown, isAbsUp;
     private int pauseCount;
     private float currentAbsV, absTimer, oldV;
     private Vector3 targetFrameV;
@@ -74,6 +75,11 @@ public class PlayerController : MonoBehaviour, IInputListener
                 {
                     isAbsDown = false;
                     absTimer = 0f;
+                }
+                if (isAbsUp)
+                {
+                    isAbsUp = false;
+                    targetAbsV = climbSpeed;
                 }
                 if (currentAbsV < targetAbsV)
                 {
@@ -181,6 +187,10 @@ public class PlayerController : MonoBehaviour, IInputListener
 
     public bool OnCommand(InputManager.Command command, InputManager.Event eventType)
     {
+        if (IsPaused)
+        {
+            return true;
+        }
         switch (eventType)
         {
             case InputManager.Event.Hold:
@@ -202,6 +212,13 @@ public class PlayerController : MonoBehaviour, IInputListener
                         return false;
                     case InputManager.Command.Left:
                         TryStep(OrthoDir.West);
+                        return false;
+                    case InputManager.Command.Tertiary:
+                        if (!isAbseiling)
+                        {
+                            SetAbseil(true);
+                        }
+                        isAbsUp = true;
                         return false;
                     default:
                         return false;

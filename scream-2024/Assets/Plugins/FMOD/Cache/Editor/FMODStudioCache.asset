@@ -218,11 +218,38 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638650340461326308
+  lastModified: 638650439329926463
   FileSizes:
   - Name: Desktop
     Value: 4632
   Exists: 1
+--- !u!114 &-4356153807621144668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ENV/apartment
+  m_EditorClassIdentifier: 
+  Path: event:/ENV/apartment
+  Guid:
+    Data1: -578907572
+    Data2: 1096246213
+    Data3: 1500041617
+    Data4: -1740433992
+  Banks:
+  - {fileID: 2859527245825937077}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 63000
 --- !u!114 &-1843735171507437879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,6 +443,7 @@ MonoBehaviour:
   - {fileID: 4203100035898798932}
   - {fileID: 4395006535294856550}
   - {fileID: 9114232304394559968}
+  - {fileID: -4356153807621144668}
   EditorParameters:
   - {fileID: 396220204858183252}
   - {fileID: -1843735171507437879}
@@ -423,7 +451,7 @@ MonoBehaviour:
   - {fileID: -4763852708050613231}
   StringsBanks:
   - {fileID: 971565201425812555}
-  cacheTime: 638650340500698918
+  cacheTime: 638650439331260724
   cacheVersion: 131603
 --- !u!114 &396220204858183252
 MonoBehaviour:
@@ -464,10 +492,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638650340461346169
+  lastModified: 638650439329941345
   FileSizes:
   - Name: Desktop
-    Value: 2232
+    Value: 2272
   Exists: 1
 --- !u!114 &1204330058058080618
 MonoBehaviour:
@@ -538,10 +566,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Environnement.bank
   Name: Environnement
   StudioPath: bank:/Environnement
-  lastModified: 638650340461197353
+  lastModified: 638650439329832240
   FileSizes:
   - Name: Desktop
-    Value: 1154880
+    Value: 1995616
   Exists: 1
 --- !u!114 &3801018839563984082
 MonoBehaviour:
@@ -776,10 +804,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 638650340500698918
+  lastModified: 638650439331260724
   FileSizes:
   - Name: Desktop
-    Value: 6168512
+    Value: 6168576
   Exists: 1
 --- !u!114 &7483668337875326329
 MonoBehaviour:

@@ -3834,7 +3834,6 @@ MonoBehaviour:
   - '{date}'
   - University outskirts
   - '{time}'
-  spookiness: 0
   lighting: 0
   eventLayer: {fileID: 8480509899435552877}
   mesh: {fileID: 7702724417612358988}
@@ -3850,9 +3849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bank: 1
-  bgmKey: prepared_for_anything
-  source: {fileID: 0}
+  bgmKey: prepared_for_everything
 --- !u!1 &5627947600549160883
 GameObject:
   m_ObjectHideFlags: 0

@@ -94,6 +94,7 @@ public class MathHelper3D {
     }
 
     public static float GetHeightAtMouse(TerrainQuad relativeToQuad) {
+#if UNITY_EDITOR
         Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
         Vector3 midpoint = relativeToQuad.pos + new Vector3(0.5f, 0.0f, 0.5f);
         Plane plane = new Plane(-1.0f * Camera.current.transform.forward, midpoint);
@@ -102,9 +103,13 @@ public class MathHelper3D {
         Vector3 hit = ray.GetPoint(enter);
         float height = Mathf.Round(hit.y * 2.0f) / 2.0f;
         return height > 0 ? height : 0;
+#else
+        return 0f;
+#endif
     }
 
     public static void DrawQuads(List<TerrainQuad> selectedQuads, Color color) {
+#if UNITY_EDITOR
         foreach (TerrainQuad quad in selectedQuads) {
             Vector3 mid = quad.pos + new Vector3(0.5f, -0.25f, 0.5f) + new Vector3(
                 quad.normal.x * 0.5f,
@@ -117,6 +122,7 @@ public class MathHelper3D {
             Handles.color = color;
             Handles.DrawWireCube(mid, size);
         }
+#endif
     }
 
     public static List<TerrainQuad> GetQuadsAroundQuad(Dictionary<Vector3, Dictionary<Vector3, TerrainQuad>> quads, 

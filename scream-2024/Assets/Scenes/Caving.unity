@@ -304,6 +304,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cave01_Rocklift
       objectReference: {fileID: 0}
+    - target: {fileID: 8803830683977665581, guid: beb2f002a900edc4891a7d0359c0cb8b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

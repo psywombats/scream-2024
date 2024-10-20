@@ -14,6 +14,7 @@ public class InputManager : SingletonBehavior
         Primary,
         Secondary,
         Tertiary,
+        Quaternary,
         Left,
         Right,
         Up,
@@ -88,7 +89,7 @@ public class InputManager : SingletonBehavior
 
             if (down)
             {
-                listener.OnCommand(command, Event.Down);
+                endProcessing = listener.OnCommand(command, Event.Down);
                 if (endProcessing)
                 {
                     break;
@@ -96,7 +97,7 @@ public class InputManager : SingletonBehavior
             }
             if (up)
             {
-                listener.OnCommand(command, Event.Up);
+                endProcessing = listener.OnCommand(command, Event.Up);
                 if (endProcessing)
                 {
                     break;
@@ -104,7 +105,7 @@ public class InputManager : SingletonBehavior
             }
             if (held && holdStartTimes.ContainsKey(command))
             {
-                listener.OnCommand(command, Event.Hold);
+                endProcessing = listener.OnCommand(command, Event.Hold);
                 if (Time.time - holdStartTimes[command] > KeyRepeatSeconds)
                 {
                     endProcessing |= listener.OnCommand(command, Event.Down);
@@ -122,6 +123,7 @@ public class InputManager : SingletonBehavior
 
     public void PushListener(string id, Func<Command, Event, bool> responder)
     {
+        //Debug.Log("PUSHING LISTENER: " + id);
         IInputListener listener = new AnonymousListener(responder);
         anonymousListeners.Add(id, listener);
         PushListener(listener);
@@ -133,6 +135,7 @@ public class InputManager : SingletonBehavior
 
     public void RemoveListener(string id)
     {
+        //Debug.Log("REMOVING LISTENER: " + id);
         listeners.Remove(anonymousListeners[id]);
         anonymousListeners.Remove(id);
     }
@@ -235,7 +238,7 @@ public class InputManager : SingletonBehavior
         var done = false;
         PushListener(id, (command, type) =>
         {
-            if (type == Event.Down)
+            if (type == Event.Up && command == Command.Primary || command == Command.Click)
             {
                 RemoveListener(id);
                 done = true;
@@ -252,7 +255,7 @@ public class InputManager : SingletonBehavior
         var source = new TaskCompletionSource<bool>();
         PushListener(id, (command, type) =>
         {
-            if (type == Event.Down)
+            if (type == Event.Up && command == Command.Primary || command == Command.Click)
             {
                 RemoveListener(id);
                 source.SetResult(true);
