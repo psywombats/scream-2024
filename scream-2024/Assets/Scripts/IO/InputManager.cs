@@ -19,6 +19,7 @@ public class InputManager : SingletonBehavior
         Down,
         Menu,
         Debug,
+        Click,
     };
 
     public enum Event
@@ -188,7 +189,6 @@ public class InputManager : SingletonBehavior
                 action.AddBinding(Keyboard.current.zKey);
                 action.AddBinding(Keyboard.current.numpadEnterKey);
                 action.AddBinding("<Gamepad>/buttonSouth");
-                action.AddBinding(Mouse.current.leftButton);
                 break;
             case Command.Secondary:
                 action.AddBinding(Keyboard.current.bKey);
@@ -208,6 +208,9 @@ public class InputManager : SingletonBehavior
                 break;
             case Command.Debug:
                 action.AddBinding(Keyboard.current.f12Key);
+                break;
+            case Command.Click:
+                action.AddBinding(Mouse.current.leftButton);
                 break;
         }
         action.Enable();

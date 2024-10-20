@@ -210,6 +210,7 @@ public class PlayerController : MonoBehaviour, IInputListener
                 switch (command)
                 {
                     case InputManager.Command.Primary:
+                    case InputManager.Command.Click:
                         Interact();
                         return false;
                     case InputManager.Command.Debug:

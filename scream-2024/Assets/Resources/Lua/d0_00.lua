@@ -16,4 +16,5 @@ exitNVL()
 
 setSwitch('d0_00', true)
 
+setString('time', "11:00 AM");
 teleport('MeetingMap', 'start')

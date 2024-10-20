@@ -40,6 +40,8 @@ public static class SwitchSets
             "enable_flares",
             "d1_03",
             "d1_04",
+            "d1_05",
+            "d1_06",
         },
         new string[]
         {
