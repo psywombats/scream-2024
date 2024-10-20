@@ -85,7 +85,7 @@ void updateWeights(uint3 id : SV_DispatchThreadID)
 {
     if (id.x >= _ChunkSize - 1 || id.y >= _ChunkSize - 1 || id.z >= _ChunkSize - 1)
     {
-        return;
+        //return;
     }
 
     if (distance(id, _HitPosition) <= _Radius)

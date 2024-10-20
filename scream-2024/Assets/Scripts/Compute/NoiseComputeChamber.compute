@@ -1,0 +1,55 @@
+#pragma kernel GenerateNoise
+ 
+#include "Includes\FastNoiseLite.compute"
+#include "Includes\MetricsCompute.compute"
+
+RWStructuredBuffer<float> _Weights;
+
+float _NoiseScale;
+float _Amplitude;
+float _Frequency;
+int _Octaves;
+float _GroundPercent;
+
+float _BaseX, _BaseY, _BaseZ;
+
+float _ChamberR;
+float _ChamberOblX, _ChamberOblZ;
+float _ChamberWeight, _NoiseWeight, _CeilHardness, _FloorHardness;
+
+fnl_noise_type _NoiseTypeIn;
+fnl_fractal_type _FractalTypeIn;
+
+[numthreads(threadCount, threadCount, threadCount)]
+void GenerateNoise(uint3 id : SV_DispatchThreadID)
+{
+    fnl_state noise = fnlCreateState();
+    noise.noise_type = _NoiseTypeIn;
+    noise.fractal_type = 2;
+    noise.frequency = _Frequency;
+    noise.octaves = _Octaves;
+
+    float3 pos = (id + float3(_BaseX, _BaseY, _BaseZ)) * _NoiseScale;
+    float noiseVal = fnlGetNoise3D(noise, pos.x, pos.y, pos.z);
+    float n = noiseVal * _NoiseWeight;
+
+    float ceilMult;
+    if (pos.y < 0)
+    {
+        ceilMult = _CeilHardness;
+    }
+    else
+    {
+        ceilMult = _FloorHardness;
+    }
+
+    float off = sqrt(
+        ((pos.x * pos.x) * _ChamberOblX) +
+        ((pos.y * pos.y) * ceilMult) +
+        ((pos.z * pos.z) * _ChamberOblZ));
+    off /= _ChamberR;
+    if (off > 5) off = 5;
+    n += off * _ChamberWeight;
+
+    _Weights[indexFromCoord(id.x, id.y, id.z)] = n;
+}

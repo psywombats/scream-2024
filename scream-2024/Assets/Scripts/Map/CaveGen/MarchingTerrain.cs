@@ -13,11 +13,14 @@ public class MarchingTerrain : MonoBehaviour
 
     public void Update()
     {
-        EnsureChunks();
-        CullChunks();
+        if (Global.Instance.Avatar != null)
+        {
+            EnsureChunks();
+            CullChunks();
+        }
     }
 
-    public void AdjustWeights(Chunk chunk, Vector3 hit, float r, int sign)
+    public void AdjustWeights(Chunk chunk, Vector3 hit, float r, float mult)
     {
         var index = chunk.Index;
         for (var x = index.x - 1; x <= index.x + 1; x += 1)
@@ -28,7 +31,7 @@ public class MarchingTerrain : MonoBehaviour
                 {
                     var checkIndex = new Vector3Int(x, y, z);
                     EnsureChunk(checkIndex);
-                    chunks[checkIndex].AdjustWeights(hit, r, sign);
+                    chunks[checkIndex].AdjustWeights(hit, r, mult);
                 }
             }
         }

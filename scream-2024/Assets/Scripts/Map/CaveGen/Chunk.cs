@@ -28,7 +28,7 @@ public class Chunk : MonoBehaviour
         UpdateMesh();
     }
 
-    public void AdjustWeights(Vector3 hit, float r, int sign)
+    public void AdjustWeights(Vector3 hit, float r, float mult)
     {
         var kernel = marchShader.FindKernel("updateWeights");
 
@@ -37,7 +37,7 @@ public class Chunk : MonoBehaviour
         marchShader.SetInt("_ChunkSize", GridMetrics.PointsPerChunk);
         marchShader.SetVector("_HitPosition", hit - transform.position);
         marchShader.SetFloat("_Radius", r);
-        marchShader.SetFloat("_Delta", sign * .05f);
+        marchShader.SetFloat("_Delta", mult);
 
         marchShader.Dispatch(kernel, 
             GridMetrics.PointsPerChunk / GridMetrics.ThreadCount, 

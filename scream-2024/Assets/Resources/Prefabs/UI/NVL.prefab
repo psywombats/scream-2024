@@ -527,7 +527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1092302300445612312
 RectTransform:
   m_ObjectHideFlags: 0
@@ -718,12 +718,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2043942678014392003}
     m_Modifications:
-    - target: {fileID: 300676493698467070, guid: 6eb9ca1eba45b124ba2216440205109f,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 53f26010cd70d5047848892ac4d1a7e5,
-        type: 3}
     - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -733,11 +727,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
@@ -768,11 +757,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 563
-      objectReference: {fileID: 0}
-    - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
@@ -833,16 +817,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3261420035815512951, guid: 6eb9ca1eba45b124ba2216440205109f,
-        type: 3}
-      propertyPath: nvl
-      value: 
-      objectReference: {fileID: 2043942678048246229}
-    - target: {fileID: 3261420035815512951, guid: 6eb9ca1eba45b124ba2216440205109f,
-        type: 3}
-      propertyPath: moveSibling
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4619610061212187396, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
@@ -1032,12 +1006,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2043942678014392003}
     m_Modifications:
-    - target: {fileID: 300676493698467070, guid: 6eb9ca1eba45b124ba2216440205109f,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 53f26010cd70d5047848892ac4d1a7e5,
-        type: 3}
     - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1047,11 +1015,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
@@ -1142,16 +1105,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3261420035815512951, guid: 6eb9ca1eba45b124ba2216440205109f,
-        type: 3}
-      propertyPath: nvl
-      value: 
-      objectReference: {fileID: 2043942678048246229}
-    - target: {fileID: 3261420035815512951, guid: 6eb9ca1eba45b124ba2216440205109f,
-        type: 3}
-      propertyPath: moveSibling
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4619610061212187396, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
@@ -1395,6 +1348,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 563
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}

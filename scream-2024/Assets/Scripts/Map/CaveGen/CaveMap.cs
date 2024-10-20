@@ -6,7 +6,7 @@ public class CaveMap : GameMap
     [SerializeField] private NoiseGenerator noise;
     [Space]
     [Header("References")]
-    [SerializeField] private MarchingTerrain terrain;
+    [SerializeField] public MarchingTerrain terrain;
 
     public override void OnTeleportTo()
     {

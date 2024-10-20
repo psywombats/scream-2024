@@ -58,7 +58,7 @@ public class MapManager : SingletonBehavior
     private void RawTeleport(string mapName, string targetName, OrthoDir? facing = null)
     {
         GameMap newMapInstance;
-        if (mapName == ActiveMap?.name)
+        if (ActiveMap != null && mapName == ActiveMap.name)
         {
             newMapInstance = ActiveMap;
         }
@@ -87,7 +87,7 @@ public class MapManager : SingletonBehavior
 
         ActiveMap = newMapInstance;
         AddInitialAvatar();
-        Avatar.transform.position = target.transform.position + new Vector3(0, 1f, 0);
+        Avatar.transform.position = target.transform.position;
         if (facing.HasValue)
         {
             Avatar.SetFacing(facing.Value);

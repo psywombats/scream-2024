@@ -16,3 +16,18 @@ MonoBehaviour:
   - tag: test
     displayName: Test
     sprite: {fileID: 21300000, guid: 4f3e19f853d45944f9cb6cb21c7becde, type: 3}
+  - tag: YOU
+    displayName: Phoebe
+    sprite: {fileID: 21300000, guid: 3b5afafffe663c344aa8f518c5c59ae6, type: 3}
+  - tag: PAL
+    displayName: Amador
+    sprite: {fileID: 21300000, guid: 80925e95645487e49a356b5e423162be, type: 3}
+  - tag: LEADER
+    displayName: Jeanne
+    sprite: {fileID: 21300000, guid: ed1b6eb1dc20386408b97e932b72b96f, type: 3}
+  - tag: JERK
+    displayName: Tom
+    sprite: {fileID: 21300000, guid: 5a5fa13e0d64aec4e8e32e1ce830667f, type: 3}
+  - tag: CONTROL
+    displayName: Nika
+    sprite: {fileID: 21300000, guid: 4f066851a70acd64e9cb54b491359a78, type: 3}

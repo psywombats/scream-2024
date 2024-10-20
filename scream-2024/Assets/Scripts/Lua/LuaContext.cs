@@ -164,6 +164,7 @@ public class LuaContext
         Lua.Globals["cs_play"] = (Action<DynValue, DynValue>)Play;
         Lua.Globals["getSwitch"] = (Func<DynValue, DynValue>)GetSwitch;
         Lua.Globals["setSwitch"] = (Action<DynValue, DynValue>)SetSwitch;
+        Lua.Globals["setString"] = (Action<DynValue, DynValue>)SetString;
     }
 
     protected void LoadDefines(string path)
@@ -183,6 +184,11 @@ public class LuaContext
     protected void SetSwitch(DynValue switchName, DynValue value)
     {
         Global.Instance.Data.SetSwitch(switchName.String, value.Boolean);
+    }
+
+    protected void SetString(DynValue varName, DynValue value)
+    {
+        Global.Instance.Data.SetStringVariable(varName.String, value.String);
     }
 
     protected void DebugLog(DynValue message)

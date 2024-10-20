@@ -1,8 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class NoiseGenerator : MonoBehaviour
 {
-    [SerializeField] private ComputeShader noiseShader;
+    [SerializeField] protected ComputeShader noiseShader;
     [Space]
     [SerializeField, Range(.1f, 10f)] private float noiseScale = 1f;
     [SerializeField, Range(1f, 10f)] private float amplitude = 5f;
@@ -10,11 +10,6 @@ public class NoiseGenerator : MonoBehaviour
     [SerializeField, Range(1, 10)] private int octaves = 8;
     [SerializeField, Range(0f, 1f)] float groundPercent = 0.2f;
     [SerializeField, Range(-1f, 1f)] public float isoLevel = 0.6f;
-    [Space]
-    [SerializeField, Range(0f, 64f)] public float pitRadius = 32f;
-    [SerializeField, Range(0f, 10f)] public float pitSlopeX = .2f;
-    [SerializeField, Range(0f, 10f)] public float pitSlopeZ = .4f;
-    [SerializeField, Range(0f, 10f)] public float pitHardness = 1f;
     [Space]
     [SerializeField] public NoiseType noiseType = NoiseType.NOISE_OPENSIMPLEX2;
     [SerializeField] public FractalType fractalType = FractalType.FRACTAL_RIDGED;
@@ -41,7 +36,7 @@ public class NoiseGenerator : MonoBehaviour
 
     private ComputeBuffer weightsBuffer;
 
-    private void OnDestroy() 
+    private void OnDestroy()
     {
         ReleaseBuffers();
     }
@@ -77,20 +72,19 @@ public class NoiseGenerator : MonoBehaviour
         noiseShader.SetFloat("_BaseX", pos.x);
         noiseShader.SetFloat("_BaseY", pos.y);
         noiseShader.SetFloat("_BaseZ", pos.z);
-        
+
         noiseShader.SetInt("_NoiseTypeIn", (int)noiseType);
         noiseShader.SetInt("_FractalTypeIn", (int)fractalType);
 
-        noiseShader.SetFloat("_PitRad", pitRadius);
-        noiseShader.SetFloat("_PitHard", pitHardness);
-        noiseShader.SetFloat("_PitOffX", pitSlopeX);
-        noiseShader.SetFloat("_PitOffZ", pitSlopeZ);
+        SetSpecificNoiseVars();
 
-        noiseShader.Dispatch(0, 
-            GridMetrics.PointsPerChunk / GridMetrics.ThreadCount, 
-            GridMetrics.PointsPerChunk / GridMetrics.ThreadCount, 
+        noiseShader.Dispatch(0,
+            GridMetrics.PointsPerChunk / GridMetrics.ThreadCount,
+            GridMetrics.PointsPerChunk / GridMetrics.ThreadCount,
             GridMetrics.PointsPerChunk / GridMetrics.ThreadCount);
         weightsBuffer.GetData(noise);
         return noise;
     }
+
+    protected virtual void SetSpecificNoiseVars() { }
 }

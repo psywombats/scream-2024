@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System;
 using MoonSharp.Interpreter;
+using DG.Tweening;
 
 public class LuaCutsceneContext : LuaContext
 {
@@ -96,7 +97,13 @@ public class LuaCutsceneContext : LuaContext
 
     private void Fade(DynValue type)
     {
-        //
+        var str = type.String;
+        RunRoutineFromLua(FadeRoutine(str));
+    }
+    private IEnumerator FadeRoutine(string str)
+    {
+        var targetAlpha = str == "black" ? 1f : 0f;
+        yield return CoUtils.RunTween(MapOverlayUI.Instance.fader.DOFade(targetAlpha, .8f));
     }
 
     public void EnterNVL(DynValue lightLua)

@@ -1,0 +1,45 @@
+#pragma kernel GenerateNoise
+ 
+#include "Includes\FastNoiseLite.compute"
+#include "Includes\MetricsCompute.compute"
+
+RWStructuredBuffer<float> _Weights;
+
+float _NoiseScale;
+float _Amplitude;
+float _Frequency;
+int _Octaves;
+float _GroundPercent;
+
+float _BaseX, _BaseY, _BaseZ;
+
+float _PitRad;
+float _PitHard;
+float _PitOffX;
+float _PitOffZ;
+
+fnl_noise_type _NoiseTypeIn;
+fnl_fractal_type _FractalTypeIn;
+
+[numthreads(threadCount, threadCount, threadCount)]
+void GenerateNoise(uint3 id : SV_DispatchThreadID)
+{
+    fnl_state noise = fnlCreateState();
+    noise.noise_type = _NoiseTypeIn;
+    noise.fractal_type = 2;
+    noise.frequency = _Frequency;
+    noise.octaves = _Octaves;
+
+    float3 pos = (id + float3(_BaseX, _BaseY, _BaseZ)) * _NoiseScale;
+    float noiseVal = fnlGetNoise3D(noise, pos.x, pos.y, pos.z);
+    float n = noiseVal;
+
+    float biasX = pos.y * _PitOffX;
+    float biasY = pos.y * _PitOffZ;
+    float offCenter = sqrt((pos.x - biasX) * (pos.x - biasX) + (pos.z - biasY) * (pos.z - biasY));
+    if (offCenter < _PitRad) {
+        n -= (1.0 - offCenter / _PitRad) * _PitHard;
+    }
+
+    _Weights[indexFromCoord(id.x, id.y, id.z)] = n;
+}

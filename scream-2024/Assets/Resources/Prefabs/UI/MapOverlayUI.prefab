@@ -521,6 +521,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MapNameBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6228515776107903447, guid: d8cf7b33e8bf45f43af51b3f05d897fa,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8,
+        type: 3}
     - target: {fileID: 6542343776983898013, guid: d8cf7b33e8bf45f43af51b3f05d897fa,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -529,6 +535,11 @@ PrefabInstance:
     - target: {fileID: 6542343776983898013, guid: d8cf7b33e8bf45f43af51b3f05d897fa,
         type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542343776983898013, guid: d8cf7b33e8bf45f43af51b3f05d897fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6542343776983898013, guid: d8cf7b33e8bf45f43af51b3f05d897fa,
@@ -546,6 +557,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7807043270613089194, guid: d8cf7b33e8bf45f43af51b3f05d897fa,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6bee375e90fc67b47b4561b59dda0490,
+        type: 3}
+    - target: {fileID: 7807043270613089194, guid: d8cf7b33e8bf45f43af51b3f05d897fa,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: da4c2f23e53fca2439e0ac0878dfb1f8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

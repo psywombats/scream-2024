@@ -22,7 +22,15 @@ public class MapNameBox : MonoBehaviour
     {
         if (!toShow.Contains(setting))
         {
-            toShow.Add(setting);
+            if (setting.StartsWith('{'))
+            {
+                setting = setting.Substring(0, setting.Length - 2);
+                setting = Global.Instance.Data.GetStringVariable(setting);
+            }
+            if (!string.IsNullOrEmpty(setting))
+            {
+                toShow.Add(setting);
+            }
         }
     }
 
