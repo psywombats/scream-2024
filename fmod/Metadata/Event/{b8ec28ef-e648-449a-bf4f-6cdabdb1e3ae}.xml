@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{b8ec28ef-e648-449a-bf4f-6cdabdb1e3ae}">
 		<property name="name">
-			<value>wildlife_system</value>
+			<value>cave_wildlife_creepy</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -28,6 +28,12 @@
 		<relationship name="timeline">
 			<destination>{7c49dca6-6f4a-4fd0-8322-1dcbc3b27988}</destination>
 		</relationship>
+		<relationship name="parameters">
+			<destination>{585f917a-6de0-484f-a0ae-174ab9a4e8a3}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{948ce788-3035-48b0-b523-5de251ac9a60}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{b1c749a3-481d-4123-8de9-fd1addc5a790}">
 		<relationship name="masterBus">
@@ -47,7 +53,7 @@
 			<destination>{c1c7ab84-25b9-478b-935b-d1ae50afd33d}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{5af502cd-8836-4d9c-b345-8f72735fb99f}</destination>
+			<destination>{24865801-8cb8-459c-abc3-8e0c97d392fb}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{e4b82147-677d-494d-8103-f3ffdc6a9f38}" />
@@ -56,6 +62,11 @@
 		<property name="isProxyEnabled">
 			<value>false</value>
 		</property>
+	</object>
+	<object class="ParameterProxy" id="{585f917a-6de0-484f-a0ae-174ab9a4e8a3}">
+		<relationship name="preset">
+			<destination>{8ccb7c2b-9c4a-4d85-84c3-a4d95dadada9}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{6e0bb1f9-3653-4892-947d-8a2777c38ff8}">
 		<relationship name="effectChain">

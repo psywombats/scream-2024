@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{8dacfda6-a9ef-449e-855c-a320839bcf96}">
 		<property name="name">
-			<value>wind_system</value>
+			<value>cave_wind_system</value>
 		</property>
 		<property name="outputFormat">
 			<value>5</value>
@@ -193,6 +193,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{b8107658-15bb-4b11-88e0-afec91858411}">
+		<property name="volume">
+			<value>-9.5</value>
+		</property>
 		<property name="name">
 			<value>Wind Tracks</value>
 		</property>
@@ -387,7 +390,7 @@
 	</object>
 	<object class="PlayPercentage" id="{d0bc8c69-1ea9-41cd-ad2e-bf84e853c1fd}">
 		<property name="percentage">
-			<value>30</value>
+			<value>25</value>
 		</property>
 		<relationship name="sound">
 			<destination>{efd783cc-c728-419a-937e-fd9afe1c131d}</destination>
@@ -396,10 +399,10 @@
 	<object class="MixerBusFader" id="{f9c69122-2013-41d1-97d4-9b6b831cf5c7}" />
 	<object class="DelayEffect" id="{bd2c9378-81cc-4bd1-87fb-6e6d2bdfe8da}">
 		<property name="delay">
-			<value>5000</value>
+			<value>3800</value>
 		</property>
 		<property name="level">
-			<value>-30</value>
+			<value>-24</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{07a4b325-4f83-42f7-9cac-2c00f5ee17af}">
