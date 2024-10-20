@@ -80,7 +80,10 @@ public class AudioManager : SingletonBehavior
             return;
         }
         var envEvent = RuntimeManager.CreateInstance($"event:/ENV/{envKey}");
-        RuntimeManager.AttachInstanceToGameObject(envEvent, src == null ? Global.Instance.Avatar.transform : src.transform);
+        if (src != null || Global.Instance.Avatar != null)
+        {
+            RuntimeManager.AttachInstanceToGameObject(envEvent, src == null ? Global.Instance.Avatar.transform : src.transform);
+        }
         foreach (var param in envParams)
         {
             envEvent.setParameterByNameWithLabel(param.Key, param.Value);

@@ -16,6 +16,7 @@ class TitleComponent : MonoBehaviour, IInputListener
     [SerializeField] private PlayerController avatar;
     [SerializeField] private Camera avCam;
     [SerializeField] private GameObject playerListener;
+    [SerializeField] private GameObject playerEnv;
     [SerializeField] private GameObject outriderListener;
     [SerializeField] private CanvasGroup slowFlash;
     [SerializeField] private PitOpenerComponent opener;
@@ -140,6 +141,7 @@ class TitleComponent : MonoBehaviour, IInputListener
 
         outriderListener.SetActive(false);
         playerListener.SetActive(true);
+        playerEnv.SetActive(true);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByNameWithLabel("cave_dry_humid", "humid");
 
         begun = true;
