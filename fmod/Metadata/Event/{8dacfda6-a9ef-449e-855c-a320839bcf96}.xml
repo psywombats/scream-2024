@@ -56,7 +56,7 @@
 			<destination>{0b558925-b967-4981-b488-5fb6348a5ff1}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{24865801-8cb8-459c-abc3-8e0c97d392fb}</destination>
+			<destination>{5af502cd-8836-4d9c-b345-8f72735fb99f}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{ec0e1fd9-9fca-4883-946d-dfa921adec74}" />
@@ -193,9 +193,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{b8107658-15bb-4b11-88e0-afec91858411}">
-		<property name="volume">
-			<value>-8.5</value>
-		</property>
 		<property name="name">
 			<value>Wind Tracks</value>
 		</property>
@@ -212,6 +209,7 @@
 	<object class="MixerBusEffectChain" id="{b7beaddf-655e-4fad-a6c9-5e6fcc803081}">
 		<relationship name="effects">
 			<destination>{355ac036-6fce-4baa-9d9f-d549bc364183}</destination>
+			<destination>{9615ea40-f4af-44fb-8407-7cd4d9b6e807}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{86a026d6-edf5-471e-b5d9-5aa9e9a3a32e}">
@@ -271,6 +269,23 @@
 	</object>
 	<object class="MixerBusPanner" id="{05202d50-9b65-4278-a813-d50b968fa485}" />
 	<object class="MixerBusFader" id="{355ac036-6fce-4baa-9d9f-d549bc364183}" />
+	<object class="CompressorEffect" id="{9615ea40-f4af-44fb-8407-7cd4d9b6e807}">
+		<property name="threshold">
+			<value>-29.5</value>
+		</property>
+		<property name="ratio">
+			<value>3.70000005</value>
+		</property>
+		<property name="attackTime">
+			<value>2.60000014</value>
+		</property>
+		<property name="releaseTime">
+			<value>180</value>
+		</property>
+		<property name="linkChannels">
+			<value>false</value>
+		</property>
+	</object>
 	<object class="LFOModulator" id="{daf56709-f4b7-49d2-830f-0d45d8eb306a}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>surroundPanDirection</value>
@@ -346,9 +361,6 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{ef61323c-83b0-4d11-bbb8-f8ca92a81596}">
-		<property name="volume">
-			<value>3.5</value>
-		</property>
 		<property name="pitch">
 			<value>-2.79999995</value>
 		</property>
