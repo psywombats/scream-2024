@@ -151,10 +151,13 @@
 			<value>2500</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>10000</value>
+			<value>6000</value>
 		</property>
 		<property name="spawnRate">
 			<value>30</value>
+		</property>
+		<property name="maximumScatterDistance">
+			<value>5.20000029</value>
 		</property>
 		<property name="pitchRandomization">
 			<value>2.9000001</value>
@@ -174,13 +177,16 @@
 			<value>7</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
-			<value>4500</value>
+			<value>3500</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>7000</value>
+			<value>6000</value>
 		</property>
 		<property name="spawnRate">
 			<value>36</value>
+		</property>
+		<property name="maximumScatterDistance">
+			<value>8</value>
 		</property>
 		<relationship name="sound">
 			<destination>{0d155f08-5309-4155-a5ce-4f39fb9aaa33}</destination>
@@ -206,11 +212,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{86a026d6-edf5-471e-b5d9-5aa9e9a3a32e}">
-		<property name="surroundPanExtent">
-			<value>346</value>
+		<property name="surroundLFELevel">
+			<value>-10</value>
 		</property>
 		<relationship name="modulators">
-			<destination>{134e9a28-4d6c-423e-8971-2b45f429d3ab}</destination>
+			<destination>{daf56709-f4b7-49d2-830f-0d45d8eb306a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{663235e2-dbb4-4f59-bfa0-ccd6c9383f8d}" />
@@ -260,27 +266,26 @@
 			<destination>{bd2c9378-81cc-4bd1-87fb-6e6d2bdfe8da}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{05202d50-9b65-4278-a813-d50b968fa485}">
-		<property name="surroundPanDirection">
-			<value>-49.8990936</value>
-		</property>
-		<property name="surroundPanExtent">
-			<value>117.412552</value>
-		</property>
-	</object>
+	<object class="MixerBusPanner" id="{05202d50-9b65-4278-a813-d50b968fa485}" />
 	<object class="MixerBusFader" id="{355ac036-6fce-4baa-9d9f-d549bc364183}" />
-	<object class="LFOModulator" id="{134e9a28-4d6c-423e-8971-2b45f429d3ab}">
+	<object class="LFOModulator" id="{daf56709-f4b7-49d2-830f-0d45d8eb306a}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>surroundPanDirection</value>
 		</property>
+		<property name="shape">
+			<value>6</value>
+		</property>
 		<property name="rate">
-			<value>0.699999988</value>
+			<value>3</value>
+		</property>
+		<property name="phase">
+			<value>10</value>
 		</property>
 		<property name="depth">
-			<value>37.5</value>
+			<value>61</value>
 		</property>
 		<property name="direction">
-			<value>-14</value>
+			<value>40</value>
 		</property>
 	</object>
 	<object class="AutomationCurve" id="{7d6068bc-eb19-4ca5-9105-7d64b3166384}">
