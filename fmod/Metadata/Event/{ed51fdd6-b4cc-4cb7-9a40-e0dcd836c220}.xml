@@ -95,9 +95,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{45cb7149-1fa3-469d-9ad1-1fc1c40fc403}">
-		<property name="volume">
-			<value>1.5</value>
-		</property>
 		<relationship name="effectChain">
 			<destination>{fbb54be1-3b63-473c-b697-a65c8b75c3fb}</destination>
 		</relationship>
@@ -129,9 +126,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{7b54b5d2-5969-4829-a1de-1d022fcec29d}">
-		<property name="volume">
-			<value>-6.5</value>
-		</property>
 		<property name="name">
 			<value>Title Room</value>
 		</property>
@@ -147,10 +141,10 @@
 	</object>
 	<object class="SoundScatterer" id="{15bdd7dd-8f3d-407e-8dce-99f076fc562c}">
 		<property name="start">
-			<value>4</value>
+			<value>12</value>
 		</property>
 		<property name="length">
-			<value>59</value>
+			<value>51</value>
 		</property>
 		<property name="polyphony">
 			<value>3</value>
@@ -162,7 +156,7 @@
 			<value>3000</value>
 		</property>
 		<property name="spawnRate">
-			<value>60</value>
+			<value>42</value>
 		</property>
 		<property name="minimumScatterDistance">
 			<value>6.20000029</value>
@@ -202,7 +196,7 @@
 			<value>59</value>
 		</property>
 		<property name="volume">
-			<value>-18.5</value>
+			<value>-14</value>
 		</property>
 		<property name="pitch">
 			<value>-11.5</value>
@@ -266,7 +260,11 @@
 			<destination>{e7b4af90-9662-4f8f-8302-36d1cf05f49b}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{8dff1645-555f-4579-a3e9-604b96439fa4}" />
+	<object class="MixerBusPanner" id="{8dff1645-555f-4579-a3e9-604b96439fa4}">
+		<property name="stereoPan">
+			<value>-42</value>
+		</property>
+	</object>
 	<object class="MultiSound" id="{59dd5f36-49b9-4433-8c73-1eb769eed0e0}">
 		<relationship name="sounds">
 			<destination>{1d19cd62-6d34-4f80-a279-282bc2f8f618}</destination>
@@ -346,9 +344,6 @@
 		</property>
 		<property name="midGain">
 			<value>-1.5</value>
-		</property>
-		<property name="highGain">
-			<value>-4</value>
 		</property>
 		<property name="crossoverSlope">
 			<value>0</value>
