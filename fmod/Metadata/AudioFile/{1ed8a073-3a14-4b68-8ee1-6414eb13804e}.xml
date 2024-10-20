@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{fb65e283-0052-4221-95cf-5b37a78d0d36}">
+	<object class="AudioFile" id="{1ed8a073-3a14-4b68-8ee1-6414eb13804e}">
 		<property name="assetPath">
-			<value>testing/Birdsong.wav</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>Env/env_amb_wind_var_03.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -14,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>35.61866666666667</value>
+			<value>7.2414166666666668</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{26690a29-87ff-43cc-b713-4b9482589813}</destination>

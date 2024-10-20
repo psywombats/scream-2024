@@ -55,7 +55,7 @@
 			<destination>{00c332f8-9740-4557-9dec-c025c21afed2}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{bebc6b70-584e-4439-8c45-7883d83f8e44}</destination>
+			<destination>{24865801-8cb8-459c-abc3-8e0c97d392fb}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{970fa03a-bd86-405b-9fbe-7354de7e2590}">
@@ -182,9 +182,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{11d9a10c-873a-4c54-adcc-1cbf61f27991}">
-		<property name="volume">
-			<value>-1.5</value>
-		</property>
 		<property name="name">
 			<value>Thunders</value>
 		</property>
@@ -267,7 +264,6 @@
 	<object class="MixerBusEffectChain" id="{fbb54be1-3b63-473c-b697-a65c8b75c3fb}">
 		<relationship name="effects">
 			<destination>{47b4949d-4d30-4a32-8898-79ebb5701183}</destination>
-			<destination>{d8b116d6-1970-43ec-8f53-ae933a428680}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{68dc11f9-fb47-4adc-b852-108efada3a8a}" />
@@ -282,6 +278,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{b63cf4cc-746b-4958-b3de-4fd1037b532d}">
 		<relationship name="effects">
+			<destination>{b1416f70-7fd4-48e5-beb3-9071e34549e8}</destination>
 			<destination>{e7b4af90-9662-4f8f-8302-36d1cf05f49b}</destination>
 		</relationship>
 	</object>
@@ -331,7 +328,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{1b826497-63ad-4060-8d65-2ce45c73637d}" />
 	<object class="MixerBusFader" id="{47b4949d-4d30-4a32-8898-79ebb5701183}" />
-	<object class="LoudnessMeter" id="{d8b116d6-1970-43ec-8f53-ae933a428680}" />
 	<object class="AutomationPoint" id="{7ebb0791-776b-47ce-976f-0bdaacfd4f6b}">
 		<property name="position">
 			<value>0</value>
@@ -349,6 +345,14 @@
 		</property>
 		<property name="value">
 			<value>1</value>
+		</property>
+	</object>
+	<object class="ThreeEQEffect" id="{b1416f70-7fd4-48e5-beb3-9071e34549e8}">
+		<property name="highGain">
+			<value>-4</value>
+		</property>
+		<property name="crossoverSlope">
+			<value>0</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{e7b4af90-9662-4f8f-8302-36d1cf05f49b}" />
