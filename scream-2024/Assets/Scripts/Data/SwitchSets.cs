@@ -37,6 +37,9 @@ public static class SwitchSets
             "d1_01_jerk",
             "d1_01_pal",
             "d1_02",
+            "enable_flares",
+            "d1_03",
+            "d1_04",
         },
         new string[]
         {

@@ -15,6 +15,8 @@ class TitleComponent : MonoBehaviour, IInputListener
     [SerializeField] private CanvasGroup rawGroup;
     [SerializeField] private PlayerController avatar;
     [SerializeField] private Camera avCam;
+    [SerializeField] private GameObject playerListener;
+    [SerializeField] private GameObject outriderListener;
     [SerializeField] private CanvasGroup slowFlash;
     [SerializeField] private PitOpenerComponent opener;
     [SerializeField] private CanvasGroup finalFade;
@@ -34,6 +36,7 @@ class TitleComponent : MonoBehaviour, IInputListener
 
     public void Start()
     {
+        Global.Instance.Data.SetSwitch("abseiling_disabled", true);
         InputManager.Instance.PushListener(this);
         StartCoroutine(CoUtils.RunTween(laptopPivot.transform.DORotate(pivotRot, 1.2f)));
         //StartCoroutine(SlowFlashRoutine());
@@ -121,6 +124,7 @@ class TitleComponent : MonoBehaviour, IInputListener
 
     private void Advance()
     {
+        AudioManager.Instance.PlaySFX("menu/select", AudioManager.Bank.UI);
         InputManager.Instance.RemoveListener(this);
         Global.Instance.StartCoroutine(StartGameRoutine("PalMap", "start", OrthoDir.North));
     }
@@ -129,9 +133,16 @@ class TitleComponent : MonoBehaviour, IInputListener
     {
         yield return CoUtils.RunParallel(Global.Instance,
             CoUtils.RunTween(DOTween.To(() => rotter.rot, val => rotter.rot = val, Vector3.zero, 2.5f)),
-            CoUtils.RunTween(uiGroup.DOFade(0f, 2.5f)));
+            CoUtils.RunTween(uiGroup.DOFade(0f, 2.5f)),
+            AudioManager.Instance.FadeOutRoutine(2.5f));
         yield return CoUtils.Wait(.8f);
         avCam.enabled = true;
+
+        outriderListener.SetActive(false);
+        playerListener.SetActive(true);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByNameWithLabel("cave_dry_humid", "humid");
+        AudioManager.Instance.PlayBGM("cave_dry_humid", AudioManager.Bank.ENV);
+
         begun = true;
         yield return CoUtils.RunParallel(Global.Instance,
             CoUtils.RunTween(cameraToMove.transform.DOMove(transRef.transform.position, .5f)),
@@ -153,10 +164,13 @@ class TitleComponent : MonoBehaviour, IInputListener
         yield return SceneManager.LoadSceneAsync("Map3D", LoadSceneMode.Single);
         yield return Global.Instance.Maps.TeleportRoutine(map, target, dir);
         avatar.UnpauseInput();
+
+        Global.Instance.Data.SetSwitch("abseiling_disabled", false);
     }
 
     private void ShowDates(bool show)
     {
+        AudioManager.Instance.PlaySFX("menu/select", AudioManager.Bank.UI);
         datesOnGroup.SetActive(show);
         datesOffGroup.SetActive(!show);
         selectingDate = show;
@@ -164,6 +178,7 @@ class TitleComponent : MonoBehaviour, IInputListener
 
     private void IncrDate(int delta)
     {
+        AudioManager.Instance.PlaySFX("menu/config_slider", AudioManager.Bank.UI);
         dateIndex += delta;
         if (dateIndex >= SwitchSets.Sets.Length)
         {
@@ -180,12 +195,14 @@ class TitleComponent : MonoBehaviour, IInputListener
 
     private void LaunchBookmark()
     {
+        AudioManager.Instance.PlaySFX("menu/select", AudioManager.Bank.UI);
         InputManager.Instance.RemoveListener(this);
         Global.Instance.StartCoroutine(ResumeGameRoutine());
     }
 
     private void ToggleMainCursor()
     {
+        AudioManager.Instance.PlaySFX("menu/up_down", AudioManager.Bank.UI);
         mainCursorOnDates = !mainCursorOnDates;
         datesCursorGroup.SetActive(mainCursorOnDates);
         datesNoCursorGroup.SetActive(!mainCursorOnDates);

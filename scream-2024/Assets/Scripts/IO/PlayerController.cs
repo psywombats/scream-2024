@@ -340,7 +340,7 @@ public class PlayerController : MonoBehaviour, IInputListener
 
     private void SetAbseil(bool on)
     {
-        if (isAbseiling == on || !Global.Instance.Data.GetSwitch("abseiling_enabled"))
+        if (isAbseiling == on  || Global.Instance.Data.GetSwitch("abseiling_disabled"))
         {
             return;
         }

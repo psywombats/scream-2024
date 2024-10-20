@@ -10,8 +10,6 @@ public abstract class GameMap : MonoBehaviour
 
     [SerializeField] private List<string> displayNames;
     [Space]
-    [SerializeField] private string bgmKey = null;
-    [SerializeField][Range(0, 100)] private int spookiness;
     [SerializeField] public LightingMode lighting;
     [Space]
     [SerializeField] public GameObject eventLayer;
@@ -38,11 +36,6 @@ public abstract class GameMap : MonoBehaviour
 
     public virtual void OnTeleportTo()
     {
-        if (bgmKey != null)
-        {
-            AudioManager.Instance.PlayBGM(bgmKey);
-        }
-
         if (!Global.Instance.Data.GetSwitch("no_settings"))
         {
             foreach (var setting in displayNames)
@@ -50,8 +43,6 @@ public abstract class GameMap : MonoBehaviour
                 MapOverlayUI.Instance.setting.Show(setting);
             }
         }
-
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Spookiness", spookiness);
     }
 
     public virtual void OnTeleportAway(GameMap nextMap)

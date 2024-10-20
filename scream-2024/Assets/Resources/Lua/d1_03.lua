@@ -1,4 +1,4 @@
-wait(2)
+wait(5)
 
 radio('CONTROL', "Hey! Phoebe! You can hear me?")
 radio('YOU', "Oh, hi Nika. That's you, right?")

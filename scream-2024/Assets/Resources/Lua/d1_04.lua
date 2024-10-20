@@ -1,0 +1,13 @@
+radio('YOU', "This is Entry Chasm?")
+radio('PAL', "Yup. This is where the cave starts to split off from the old mining shaft.")
+radio('YOU', "Is it normal that it's this dark? Or is my headlamp not working?")
+radio('LEADER', "It's just untouched darkness down here. The light isn't able to penetrate that far, just in a narrow beam ahead. It's one of the unique things about the environment down here.")
+radio('CONTROL', "Did you guys tell her about the flares?")
+radio('PAL', "Oh, yeah Phoebe, Nika found a bunch of magnesium flares from when the College of Mining shut down. They'll keep things nice and bright.")
+radio('YOU', "You're trusting ME with these? I don't think I should be entrusted with uh, incendiary devices.")
+radio('YOU', "And what about the ecosystem? I don't want to blind any animals. Or burn anything.")
+radio('JERK', "Then stick to your headlamp. But if you really need to see into the distance, you should know the tools available to you.")
+radio('JERK', "It's better than stumbling into a pit.")
+
+setSwitch('enable_flares', true)
+setSwitch('d1_04', true)

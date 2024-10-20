@@ -1,6 +1,189 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5611487728214326424
+--- !u!114 &-9012432457147041593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/cave_wildlife/Spookiness
+  m_EditorClassIdentifier: 
+  Name: Spookiness
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 44935439
+    data2: 177502786
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-8743561747820935657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/testing/footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/testing/footsteps
+  Guid:
+    Data1: 1954058387
+    Data2: 1198508308
+    Data3: -1183362899
+    Data4: -1162643252
+  Banks:
+  - {fileID: -1018819588327325940}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 25454
+--- !u!114 &-7490728343601726425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/cave_wind_system/Spookiness
+  m_EditorClassIdentifier: 
+  Name: Spookiness
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 44935439
+    data2: 177502786
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-6664053956446155595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/menu/close
+  m_EditorClassIdentifier: 
+  Path: event:/UI/menu/close
+  Guid:
+    Data1: -21651360
+    Data2: 1290626419
+    Data3: 370048132
+    Data4: -21398350
+  Banks:
+  - {fileID: 7068862522396925872}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6461200730499402050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/testing/birdsong
+  m_EditorClassIdentifier: 
+  Path: event:/testing/birdsong
+  Guid:
+    Data1: -133473486
+    Data2: 1105407168
+    Data3: -1305555070
+    Data4: 724578857
+  Banks:
+  - {fileID: -1018819588327325940}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 35618
+--- !u!114 &-5991295665506389208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ENV/cave_wind_system
+  m_EditorClassIdentifier: 
+  Path: event:/ENV/cave_wind_system
+  Guid:
+    Data1: -1918042714
+    Data2: 1151248879
+    Data3: 547576965
+    Data4: -1764779133
+  Banks:
+  - {fileID: 2859527245825937077}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -7490728343601726425}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4904655649958765695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/cave_dry_humid/cave_type
+  m_EditorClassIdentifier: 
+  Name: cave_type
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4078730666
+    data2: 391461987
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - dry
+  - humid
+  Exists: 1
+--- !u!114 &-4889572033319351706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,15 +193,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Map.bank
+  m_Name: bank:/SFX.bank
   m_EditorClassIdentifier: 
-  Path: ../fmod/Build/Desktop/Map.bank
-  Name: Map
-  StudioPath: bank:/Map
-  lastModified: 638647180692177113
+  Path: ../fmod/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638650340462496873
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 52384
   Exists: 1
 --- !u!114 &-4763852708050613231
 MonoBehaviour:
@@ -35,11 +218,163 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638647180692296152
+  lastModified: 638650340461326308
   FileSizes:
   - Name: Desktop
-    Value: 2314
+    Value: 4632
   Exists: 1
+--- !u!114 &-1843735171507437879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Spookiness
+  m_EditorClassIdentifier: 
+  Name: Spookiness
+  StudioPath: parameter:/Spookiness
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 44935439
+    data2: 177502786
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-1575212144298928208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/testing/cave
+  m_EditorClassIdentifier: 
+  Path: event:/testing/cave
+  Guid:
+    Data1: 983544083
+    Data2: 1228777991
+    Data3: -1613655636
+    Data4: -727544917
+  Banks:
+  - {fileID: -1018819588327325940}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1536598014998311973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/in_game/inventory_close
+  m_EditorClassIdentifier: 
+  Path: event:/UI/in_game/inventory_close
+  Guid:
+    Data1: -163792044
+    Data2: 1335427702
+    Data3: -1084518011
+    Data4: -261281099
+  Banks:
+  - {fileID: -4889572033319351706}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1018819588327325940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Tests Only.bank
+  m_EditorClassIdentifier: 
+  Path: ../fmod/Build/Desktop/Tests Only.bank
+  Name: Tests Only
+  StudioPath: bank:/Tests Only
+  lastModified: 638650340470809866
+  FileSizes:
+  - Name: Desktop
+    Value: 855584
+  Exists: 1
+--- !u!114 &-995357628554202288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/in_game/inventory_open
+  m_EditorClassIdentifier: 
+  Path: event:/UI/in_game/inventory_open
+  Guid:
+    Data1: -524929027
+    Data2: 1112626849
+    Data3: 1548562598
+    Data4: -1288348052
+  Banks:
+  - {fileID: -4889572033319351706}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-223053393791101202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/in_game/inventory_up_down
+  m_EditorClassIdentifier: 
+  Path: event:/UI/in_game/inventory_up_down
+  Guid:
+    Data1: 2064350239
+    Data2: 1091287924
+    Data3: -208974457
+    Data4: 253682090
+  Banks:
+  - {fileID: -4889572033319351706}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,21 +390,42 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 971565201425812555}
   - {fileID: -4763852708050613231}
-  - {fileID: 2653625535667845246}
-  - {fileID: -5611487728214326424}
   - {fileID: 7068862522396925872}
+  - {fileID: 2859527245825937077}
+  - {fileID: -4889572033319351706}
+  - {fileID: -1018819588327325940}
   EditorEvents:
-  - {fileID: 459077721975362308}
   - {fileID: 5506358196972287878}
+  - {fileID: -5991295665506389208}
+  - {fileID: 6153157323093656440}
+  - {fileID: 3801018839563984082}
+  - {fileID: -223053393791101202}
+  - {fileID: -1536598014998311973}
+  - {fileID: 4544495487345483357}
+  - {fileID: -995357628554202288}
+  - {fileID: -1575212144298928208}
+  - {fileID: -6461200730499402050}
+  - {fileID: 7483668337875326329}
+  - {fileID: -8743561747820935657}
+  - {fileID: 2485479634853997085}
+  - {fileID: -6664053956446155595}
+  - {fileID: 8658497598644001137}
+  - {fileID: 6547918870963000383}
+  - {fileID: 1204330058058080618}
+  - {fileID: 5869604307188290453}
+  - {fileID: 4203100035898798932}
+  - {fileID: 4395006535294856550}
+  - {fileID: 9114232304394559968}
   EditorParameters:
-  - {fileID: 408355942799172081}
+  - {fileID: 396220204858183252}
+  - {fileID: -1843735171507437879}
   MasterBanks:
   - {fileID: -4763852708050613231}
   StringsBanks:
   - {fileID: 971565201425812555}
-  cacheTime: 638647180708783933
+  cacheTime: 638650340500698918
   cacheVersion: 131603
---- !u!114 &408355942799172081
+--- !u!114 &396220204858183252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,47 +435,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/RoomSize
+  m_Name: parameter:/Cave Size
   m_EditorClassIdentifier: 
-  Name: RoomSize
-  StudioPath: parameter:/RoomSize
+  Name: Cave Size
+  StudioPath: parameter:/Cave Size
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 1178479279
-    data2: 2078172913
+    data1: 468620747
+    data2: 320753421
   Type: 0
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &459077721975362308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/cursor
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/cursor
-  Guid:
-    Data1: 1654505577
-    Data2: 1167494729
-    Data3: -57908327
-    Data4: 1691979461
-  Banks:
-  - {fileID: 7068862522396925872}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &971565201425812555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,12 +464,66 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638647180692335832
+  lastModified: 638650340461346169
   FileSizes:
   - Name: Desktop
-    Value: 1100
+    Value: 2232
   Exists: 1
---- !u!114 &2653625535667845246
+--- !u!114 &1204330058058080618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM/prepared_for_everything
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/prepared_for_everything
+  Guid:
+    Data1: 2027813512
+    Data2: 1122400739
+    Data3: -1685686337
+    Data4: 659158562
+  Banks:
+  - {fileID: 7068862522396925872}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 71000
+--- !u!114 &2485479634853997085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/menu/config_slider
+  m_EditorClassIdentifier: 
+  Path: event:/UI/menu/config_slider
+  Guid:
+    Data1: -1464342740
+    Data2: 1314994481
+    Data3: 2002013359
+    Data4: -1727600103
+  Banks:
+  - {fileID: 7068862522396925872}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2859527245825937077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,16 +533,124 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/LateSFX.bank
+  m_Name: bank:/Environnement.bank
   m_EditorClassIdentifier: 
-  Path: ../fmod/Build/Desktop/LateSFX.bank
-  Name: LateSFX
-  StudioPath: bank:/LateSFX
-  lastModified: 638647180692107688
+  Path: ../fmod/Build/Desktop/Environnement.bank
+  Name: Environnement
+  StudioPath: bank:/Environnement
+  lastModified: 638650340461197353
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 1154880
   Exists: 1
+--- !u!114 &3801018839563984082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Dead
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Dead
+  Guid:
+    Data1: 215940153
+    Data2: 1197897716
+    Data3: -263237222
+    Data4: 698620444
+  Banks:
+  - {fileID: -4763852708050613231}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &4203100035898798932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/menu/select
+  m_EditorClassIdentifier: 
+  Path: event:/UI/menu/select
+  Guid:
+    Data1: -1150087795
+    Data2: 1328757605
+    Data3: -2093090666
+    Data4: -498017995
+  Banks:
+  - {fileID: 7068862522396925872}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4395006535294856550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/menu/up_down
+  m_EditorClassIdentifier: 
+  Path: event:/UI/menu/up_down
+  Guid:
+    Data1: -1077200493
+    Data2: 1108819776
+    Data3: -1309649489
+    Data4: 329138069
+  Banks:
+  - {fileID: 7068862522396925872}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4544495487345483357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/in_game/inventory_select
+  m_EditorClassIdentifier: 
+  Path: event:/UI/in_game/inventory_select
+  Guid:
+    Data1: 1505321884
+    Data2: 1179039880
+    Data3: -1226586197
+    Data4: -291514087
+  Banks:
+  - {fileID: -4889572033319351706}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5506358196972287878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +677,90 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 148440
+  Length: 78576
+--- !u!114 &5869604307188290453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ENV/cave_dry_humid
+  m_EditorClassIdentifier: 
+  Path: event:/ENV/cave_dry_humid
+  Guid:
+    Data1: -140773493
+    Data2: 1251772472
+    Data3: 1042882702
+    Data4: -364793942
+  Banks:
+  - {fileID: 7068862522396925872}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4904655649958765695}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 91000
+--- !u!114 &6153157323093656440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ENV/cave_wildlife
+  m_EditorClassIdentifier: 
+  Path: event:/ENV/cave_wildlife
+  Guid:
+    Data1: 627239158
+    Data2: 1267196202
+    Data3: 840254371
+    Data4: -970335871
+  Banks:
+  - {fileID: 2859527245825937077}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -9012432457147041593}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6547918870963000383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM/best_friends
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/best_friends
+  Guid:
+    Data1: -1902735738
+    Data2: 1316653903
+    Data3: -449650560
+    Data4: 1578309697
+  Banks:
+  - {fileID: 7068862522396925872}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 108000
 --- !u!114 &7068862522396925872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,8 +776,89 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 638647180708783933
+  lastModified: 638650340500698918
   FileSizes:
   - Name: Desktop
-    Value: 1002656
+    Value: 6168512
   Exists: 1
+--- !u!114 &7483668337875326329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/testing/pigeons_rising
+  m_EditorClassIdentifier: 
+  Path: event:/testing/pigeons_rising
+  Guid:
+    Data1: -1757298833
+    Data2: 1250543273
+    Data3: 2061727881
+    Data4: 1511002629
+  Banks:
+  - {fileID: -1018819588327325940}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8658497598644001137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/menu/open
+  m_EditorClassIdentifier: 
+  Path: event:/UI/menu/open
+  Guid:
+    Data1: 1504728170
+    Data2: 1154611998
+    Data3: -1076913760
+    Data4: -303168392
+  Banks:
+  - {fileID: 7068862522396925872}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &9114232304394559968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ENV/title_screen
+  m_EditorClassIdentifier: 
+  Path: event:/ENV/title_screen
+  Guid:
+    Data1: -313393706
+    Data2: 1287107788
+    Data3: -589283174
+    Data4: 549598936
+  Banks:
+  - {fileID: 7068862522396925872}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 63000

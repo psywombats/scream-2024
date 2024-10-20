@@ -1,5 +1,77 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1417744201974282690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8752261351247730902}
+  - component: {fileID: 2589348508643364585}
+  - component: {fileID: 2479091172907498043}
+  m_Layer: 0
+  m_Name: trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8752261351247730902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417744201974282690}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8987506912097996046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2589348508643364585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417744201974282690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76b968faddefd047b848c852ddbbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luaCondition: return not getSwitch('d1_04')
+  luaOnInteract: 
+  luaOnCollide: play('d1_04')
+  luaOnEnter: 
+  enableChild: {fileID: 0}
+  collider: {fileID: 2479091172907498043}
+--- !u!65 &2479091172907498043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417744201974282690}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 200, y: 2, z: 200}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2666075491478611701
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,6 +306,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 497695079596974889}
+  - {fileID: 8752261351247730902}
   m_Father: {fileID: 6623167944932828096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5096824248789036526
@@ -296,6 +369,7 @@ GameObject:
   - component: {fileID: 6623167944932828096}
   - component: {fileID: 5163342470830722239}
   - component: {fileID: 3333721998436239076}
+  - component: {fileID: 4177664108203877847}
   m_Layer: 0
   m_Name: Cave02_EntryChasm
   m_TagString: Untagged
@@ -335,13 +409,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayNames:
-  - Really Dank Cave
-  - 1500m
-  bgmKey: 
-  spookiness: 0
+  - Entry Chasm
+  - 100m
   lighting: 2
   eventLayer: {fileID: 5013854137374017943}
   noise: {fileID: 3333721998436239076}
+  caveSize: 0
+  spookiness: 0
   terrain: {fileID: 8854301409924677441}
 --- !u!114 &3333721998436239076
 MonoBehaviour:
@@ -367,6 +441,21 @@ MonoBehaviour:
   pitSlopeX: 0.2
   pitSlopeZ: 0.5
   pitHardness: 1
+--- !u!114 &4177664108203877847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7485188852334662207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bank: 2
+  bgmKey: cave_wind_system
+  source: {fileID: 0}
 --- !u!1 &8771255660019899631
 GameObject:
   m_ObjectHideFlags: 0

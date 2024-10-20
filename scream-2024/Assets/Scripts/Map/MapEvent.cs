@@ -50,6 +50,10 @@ public class MapEvent : MonoBehaviour
                 {
                     enableChild.SetActive(value);
                 }
+                if (collider != null)
+                {
+                    collider.enabled = value;
+                }
             }
             isSwitchEnabled = value;
         }
