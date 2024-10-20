@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour, IInputListener
 
     public GameObject OldFlare { get; private set; }
 
+    private bool selfPaused;
     public bool IsPaused => pauseCount > 0;
 
     private void Start()
@@ -187,6 +188,20 @@ public class PlayerController : MonoBehaviour, IInputListener
 
     public bool OnCommand(InputManager.Command command, InputManager.Event eventType)
     {
+        if (command == InputManager.Command.Menu && eventType == InputManager.Event.Up)
+        {
+            if (selfPaused)
+            {
+                UnpauseInput();
+                selfPaused = false;
+            }
+            else
+            {
+                PauseInput();
+                selfPaused = true;
+            }
+        }
+        
         if (IsPaused)
         {
             return true;
@@ -198,13 +213,8 @@ public class PlayerController : MonoBehaviour, IInputListener
                 {
                     case InputManager.Command.Up:
                         TryStep(OrthoDir.North);
-                        SetAbseil(false);
                         return false;
                     case InputManager.Command.Down:
-                        if (isAbseiling)
-                        {
-                            isAbsDown = true;
-                        }
                         TryStep(OrthoDir.South);
                         return false;
                     case InputManager.Command.Right:
@@ -214,44 +224,37 @@ public class PlayerController : MonoBehaviour, IInputListener
                         TryStep(OrthoDir.West);
                         return false;
                     case InputManager.Command.Tertiary:
+                        isAbsDown = true;
+                        break;
+                    case InputManager.Command.Quaternary:
                         if (!isAbseiling)
                         {
                             SetAbseil(true);
                         }
                         isAbsUp = true;
-                        return false;
-                    default:
-                        return false;
+                        break;
                 }
+                break;
             case InputManager.Event.Up:
                 switch (command)
                 {
                     case InputManager.Command.Primary:
                     case InputManager.Command.Click:
+                        SetAbseil(false);
                         Interact();
-                        return false;
+                        break;
                     case InputManager.Command.Debug:
                         ToggleGodMode();
-                        return false;
+                        break;
                     case InputManager.Command.Secondary:
                         ThrowFlare();
-                        return false;
-                    case InputManager.Command.Menu:
-                        if (pauseCount > 0)
-                        {
-                            UnpauseInput();
-                        } 
-                        else
-                        {
-                            PauseInput();
-                        }
-                        return false;
+                        break;
                     default:
-                        return false;
+                        break;
                 }
-            default:
-                return false;
+                break;
         }
+        return true;
     }
 
     private CharaEvent GetLookingChara()

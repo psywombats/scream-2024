@@ -195,24 +195,28 @@ public class InputManager : SingletonBehavior
                 action.AddBinding("<Gamepad>/buttonSouth");
                 break;
             case Command.Secondary:
-                action.AddBinding(Keyboard.current.bKey);
                 action.AddBinding(Keyboard.current.xKey);
-                action.AddBinding(Keyboard.current.eKey);
-                action.AddBinding(Keyboard.current.rightShiftKey);
+                action.AddBinding(Keyboard.current.shiftKey);
                 action.AddBinding(Mouse.current.rightButton);
                 action.AddBinding("<Gamepad>/buttonEast");
                 break;
             case Command.Tertiary:
-                action.AddBinding(Keyboard.current.vKey);
+                action.AddBinding(Keyboard.current.cKey);
                 action.AddBinding(Keyboard.current.qKey);
                 action.AddBinding(Keyboard.current.ctrlKey);
-                action.AddBinding("<Gamepad>/buttonEast");
+                action.AddBinding("<Gamepad>/buttonNorth");
+                break;
+            case Command.Quaternary:
+                action.AddBinding(Keyboard.current.eKey);
+                action.AddBinding(Keyboard.current.vKey);
+                action.AddBinding(Keyboard.current.tabKey);
+                action.AddBinding("<Gamepad>/buttonWest");
                 break;
             case Command.Menu:
                 action.AddBinding(Keyboard.current.escapeKey);
-                action.AddBinding(Keyboard.current.cKey);
+                action.AddBinding(Keyboard.current.bKey);
                 action.AddBinding(Keyboard.current.backspaceKey);
-                action.AddBinding("<Gamepad>/buttonNorth");
+                action.AddBinding("<Gamepad>/startButton");
                 break;
             case Command.Debug:
                 action.AddBinding(Keyboard.current.f12Key);
