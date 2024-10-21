@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf9d1f8dbde8404f838cdc0e11f5536, type: 3}
   m_Name: canvas[11][9]
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 7412378912720880958, guid: a9346de22b9860745b82c9c5bbd09d3f,
+  m_Sprite: {fileID: 4994685564055134976, guid: a9346de22b9860745b82c9c5bbd09d3f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:

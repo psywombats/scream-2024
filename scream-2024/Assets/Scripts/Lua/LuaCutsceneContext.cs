@@ -115,7 +115,6 @@ public class LuaCutsceneContext : LuaContext
     private IEnumerator EnterNVLRoutine(bool lightMode)
     {
         yield return MapOverlayUI.Instance.nvl.ShowRoutine(lightMode);
-        yield break;
     }
 
     public void ExitNVL()
@@ -125,7 +124,6 @@ public class LuaCutsceneContext : LuaContext
     private IEnumerator ExitNVLRoutine()
     {
         yield return MapOverlayUI.Instance.nvl.HideRoutine();
-        yield break;
     }
 
     public void Enter(DynValue speakerNameLua, DynValue slotLua, DynValue exprLua)
@@ -138,7 +136,6 @@ public class LuaCutsceneContext : LuaContext
     private IEnumerator EnterRoutine(SpeakerData speaker, string slot, string expr = null)
     {
         yield return MapOverlayUI.Instance.nvl.EnterRoutine(speaker, slot, expr);
-        yield break;
     }
 
     public void Exit(DynValue speakerNameLua)
@@ -149,7 +146,6 @@ public class LuaCutsceneContext : LuaContext
     private IEnumerator ExitRoutine(SpeakerData speaker)
     {
         yield return MapOverlayUI.Instance.nvl.ExitRoutine(speaker);
-        yield break;
     }
 
     public void ClearNVL()
@@ -185,7 +181,6 @@ public class LuaCutsceneContext : LuaContext
     private IEnumerator RadioRoutine(string speakerKey, string message)
     {
         yield return MapOverlayUI.Instance.radio.SpeakRoutine(speakerKey, message);
-        yield break;
     }
 
     private void HideRadio()

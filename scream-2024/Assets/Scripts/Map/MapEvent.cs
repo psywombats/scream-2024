@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -89,12 +90,12 @@ public class MapEvent : MonoBehaviour
             CheckEnabled();
         }
 
-        if (IsSwitchEnabled)
+        if (IsSwitchEnabled && !Global.Instance.Avatar.IsPaused)
         {
             if (!autod && luaOnEnter.Length > 0)
             {
-                LuaObject.Run(PropertyEnter);
                 autod = true;
+                LuaObject.Run(PropertyEnter);
             }
         }
     }

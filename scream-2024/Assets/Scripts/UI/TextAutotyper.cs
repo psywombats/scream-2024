@@ -28,12 +28,12 @@ public class TextAutotyper : MonoBehaviour, IInputListener
         switch (eventType)
         {
             case InputManager.Event.Hold:
-                if (command == InputManager.Command.Primary)
+                if (command == InputManager.Command.Primary || command == InputManager.Command.Click)
                 {
                     hurried = true;
                 }
                 break;
-            case InputManager.Event.Down:
+            case InputManager.Event.Up:
                 if (command == InputManager.Command.Primary)
                 {
                     confirmed = true;
@@ -51,6 +51,8 @@ public class TextAutotyper : MonoBehaviour, IInputListener
 
     public IEnumerator TypeRoutine(string text, bool waitForConfirm = true)
     {
+        Global.Instance.Input.PushListener(this);
+
         hurried = false;
         confirmed = false;
         float elapsed = 0.0f;
@@ -130,5 +132,7 @@ public class TextAutotyper : MonoBehaviour, IInputListener
             }
             if (advanceArrow != null) advanceArrow.SetActive(false);
         }
+
+        Global.Instance.Input.RemoveListener(this);
     }
 }

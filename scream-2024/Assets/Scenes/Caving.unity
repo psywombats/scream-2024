@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &203868022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,17 +403,32 @@ PrefabInstance:
     - target: {fileID: 3381923086304788452, guid: b6f4ff4681d886c4ebcd399f1fc58b16,
         type: 3}
       propertyPath: chamberR
-      value: 64
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 3381923086304788452, guid: b6f4ff4681d886c4ebcd399f1fc58b16,
         type: 3}
       propertyPath: floorHard
-      value: 5
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381923086304788452, guid: b6f4ff4681d886c4ebcd399f1fc58b16,
+        type: 3}
+      propertyPath: frequency
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3381923086304788452, guid: b6f4ff4681d886c4ebcd399f1fc58b16,
         type: 3}
       propertyPath: chamberOblX
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381923086304788452, guid: b6f4ff4681d886c4ebcd399f1fc58b16,
+        type: 3}
+      propertyPath: noiseWeight
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381923086304788452, guid: b6f4ff4681d886c4ebcd399f1fc58b16,
+        type: 3}
+      propertyPath: chamberWeight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5903816728811778536, guid: b6f4ff4681d886c4ebcd399f1fc58b16,
         type: 3}

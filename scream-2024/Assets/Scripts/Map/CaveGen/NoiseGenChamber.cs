@@ -3,11 +3,11 @@
 public class NoiseGenChamber : NoiseGenerator
 {
     [Space]
-    [SerializeField, Range(0f, 64f)] public float chamberR = 32f;
-    [SerializeField, Range(0f, 5f)] public float chamberOblX = 1f;
-    [SerializeField, Range(0f, 5f)] public float chamberOblZ = 1f;
-    [SerializeField, Range(0f, 5f)] public float ceilHard = 1f;
-    [SerializeField, Range(0f, 5f)] public float floorHard = 1f;
+    [SerializeField, Range(0f, 512f)] public float chamberR = 32f;
+    [SerializeField, Range(0f, 32f)] public float chamberOblX = 1f;
+    [SerializeField, Range(0f, 32f)] public float chamberOblZ = 1f;
+    [SerializeField, Range(0f, 32f)] public float ceilHard = 1f;
+    [SerializeField, Range(0f, 32f)] public float floorHard = 1f;
     [SerializeField, Range(0f, 5f)] public float chamberWeight = 1f;
     [SerializeField, Range(0f, 5f)] public float noiseWeight = 1f;
 
