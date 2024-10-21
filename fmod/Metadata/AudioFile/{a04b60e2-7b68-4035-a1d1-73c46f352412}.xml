@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a04b60e2-7b68-4035-a1d1-73c46f352412}">
+		<property name="assetPath">
+			<value>Sfx/sfx_cough_var_02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.77189583333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{26690a29-87ff-43cc-b713-4b9482589813}</destination>
+		</relationship>
+	</object>
+</objects>
