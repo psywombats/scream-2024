@@ -75,7 +75,7 @@ public class CharaEvent : MonoBehaviour
         if (!Application.isPlaying)
         {
             UpdateRenderer();
-            SetFacing(dir);
+            //SetFacing(dir);
         }
     }
 
@@ -97,7 +97,7 @@ public class CharaEvent : MonoBehaviour
                 renderer.sprite = speaker.sprite;
             }
             doll.highlightRenderer.transform.localScale = new Vector3(factor, factor, factor);
-            //doll.highlightRenderer.sprite = speaker.glow;
+            doll.highlightRenderer.sprite = speaker.glow;
         }
     }
 

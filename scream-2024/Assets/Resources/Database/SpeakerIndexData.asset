@@ -15,22 +15,56 @@ MonoBehaviour:
   dataObjects:
   - tag: test
     displayName: Test
-    sprite: {fileID: 21300000, guid: 4f3e19f853d45944f9cb6cb21c7becde, type: 3}
+    sprite: {fileID: 21300000, guid: ba83a2cc03307614cae10fbfc0c41645, type: 3}
+    glow: {fileID: 21300000, guid: 695ed269ae2993449b82406910efa683, type: 3}
+    exprs:
+    - key: huh
+      sprite: {fileID: 21300000, guid: d0b6f656039c16b459e9573a55f9a84e, type: 3}
+    - key: grin
+      sprite: {fileID: 21300000, guid: fcde899e84b280d428ba71bd78cdf2e3, type: 3}
   - tag: YOU
     displayName: Phoebe
-    sprite: {fileID: 21300000, guid: 3b5afafffe663c344aa8f518c5c59ae6, type: 3}
+    sprite: {fileID: 21300000, guid: 913988375eecc604e930d021b86c67ca, type: 3}
+    glow: {fileID: 21300000, guid: 846445f5cb5dd1b48aa6f74b19be54bb, type: 3}
+    exprs: []
   - tag: PAL
     displayName: Amador
-    sprite: {fileID: 21300000, guid: 80925e95645487e49a356b5e423162be, type: 3}
+    sprite: {fileID: 21300000, guid: ba83a2cc03307614cae10fbfc0c41645, type: 3}
+    glow: {fileID: 21300000, guid: 695ed269ae2993449b82406910efa683, type: 3}
+    exprs:
+    - key: grin
+      sprite: {fileID: 21300000, guid: fcde899e84b280d428ba71bd78cdf2e3, type: 3}
+    - key: huh
+      sprite: {fileID: 21300000, guid: d0b6f656039c16b459e9573a55f9a84e, type: 3}
   - tag: LEADER
     displayName: Jeanne
-    sprite: {fileID: 21300000, guid: ed1b6eb1dc20386408b97e932b72b96f, type: 3}
+    sprite: {fileID: 21300000, guid: 9fd8ac88aeebff94289582e28239cdca, type: 3}
+    glow: {fileID: 21300000, guid: 5b78cecd34953a148904083a2fcc7bb5, type: 3}
+    exprs:
+    - key: grin
+      sprite: {fileID: 21300000, guid: 03f1ddc6d308c3d49aeef39731ab9599, type: 3}
+    - key: serious
+      sprite: {fileID: 21300000, guid: 69f189746afffb347ae3a48206da6c1a, type: 3}
   - tag: JERK
     displayName: Tom
-    sprite: {fileID: 21300000, guid: 5a5fa13e0d64aec4e8e32e1ce830667f, type: 3}
+    sprite: {fileID: 21300000, guid: 75e723ae630baa44b8d4fe49337bedf7, type: 3}
+    glow: {fileID: 21300000, guid: 6ceb1aa5b82afd642a6284b768185adf, type: 3}
+    exprs:
+    - key: grimace
+      sprite: {fileID: 21300000, guid: 39e703412bb95fe459b0c37ac644bf29, type: 3}
+    - key: meh
+      sprite: {fileID: 21300000, guid: 554760fd4c18eac44a81a4db256d260b, type: 3}
   - tag: CONTROL
     displayName: Nika
-    sprite: {fileID: 21300000, guid: 4f066851a70acd64e9cb54b491359a78, type: 3}
+    sprite: {fileID: 21300000, guid: 0062c9cc1af8ee244820a6d1e6cc8fb8, type: 3}
+    glow: {fileID: 21300000, guid: ed00bc58f8e39574786f52aa416ce475, type: 3}
+    exprs:
+    - key: grump
+      sprite: {fileID: 21300000, guid: 23f255ea51c5e644098ed6423cc4a20d, type: 3}
+    - key: yay
+      sprite: {fileID: 21300000, guid: 89b7afefe82981343972d76fd965066c, type: 3}
   - tag: OLDGUY
     displayName: wtf
     sprite: {fileID: 21300000, guid: 0cebd3df5438abe43be012406ec301c7, type: 3}
+    glow: {fileID: 21300000, guid: 914b198b2a2dbf846979eab4a83a4a21, type: 3}
+    exprs: []

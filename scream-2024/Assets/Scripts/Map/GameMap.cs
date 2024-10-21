@@ -35,15 +35,17 @@ public abstract class GameMap : MonoBehaviour
         return null;
     }
 
-    public virtual void OnTeleportTo()
+    public virtual void OnTeleportTo(GameMap from)
     {
-        if (!Global.Instance.Data.GetSwitch("no_settings"))
+        if (!Global.Instance.Data.GetSwitch("no_settings") && from != this)
         {
             foreach (var setting in displayNames)
             {
                 MapOverlayUI.Instance.setting.Show(setting);
             }
         }
+        MapOverlayUI.Instance.ascendInfo.alpha = allowAbseil ? 1f : 0f;
+        MapOverlayUI.Instance.flareInfo.alpha = Global.Instance.Avatar.CanFlare ? 1f : 0f;
     }
 
     public virtual void OnTeleportAway(GameMap nextMap)

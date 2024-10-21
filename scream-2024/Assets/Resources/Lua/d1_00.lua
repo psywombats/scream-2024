@@ -35,4 +35,3 @@ setSwitch('d1_00', true)
 setString('date', "");
 setString('time', "11:30 AM");
 teleport('Clubhouse', 'start')
-unstick()

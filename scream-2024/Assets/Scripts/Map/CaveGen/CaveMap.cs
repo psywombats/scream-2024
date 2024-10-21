@@ -17,9 +17,9 @@ public class CaveMap : GameMap
     [Header("References")]
     [SerializeField] public MarchingTerrain terrain;
 
-    public override void OnTeleportTo()
+    public override void OnTeleportTo(GameMap from)
     {
-        base.OnTeleportTo();
+        base.OnTeleportTo(from);
         Regenerate(1, true);
         AudioManager.Instance.SetGlobalParam("Cave Size", caveSize);
         AudioManager.Instance.SetGlobalParam("Spookiness", spookiness);

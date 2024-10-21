@@ -112,7 +112,7 @@ public class TextAutotyper : MonoBehaviour, IInputListener
                 hurried = false;
                 if (speedUpWhenHurried)
                 {
-                    elapsed += Time.deltaTime * 4;
+                    elapsed += 10000;
                 }
             }
             if (confirmed && !containsGlitch)

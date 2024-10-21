@@ -62,13 +62,14 @@ public class LuaCutsceneContext : LuaContext
         Lua.Globals["cs_exit"] = (Action<DynValue>)Exit;
         Lua.Globals["cs_speak"] = (Action<DynValue, DynValue>)Speak;
         Lua.Globals["cs_radio"] = (Action<DynValue, DynValue>)Radio;
+        Lua.Globals["cs_expr"] = (Action<DynValue, DynValue>)Express;
         Lua.Globals["clear"] = (Action)ClearNVL;
         Lua.Globals["hideRadio"] = (Action)HideRadio;
         Lua.Globals["exitRadio"] = (Action)HideRadio;
 
         Lua.Globals["cs_rotateTo"] = (Action<DynValue>)RotateToward;
         Lua.Globals["setting"] = (Action<DynValue>)Setting;
-        Lua.Globals["unstick"] = (Action)Unstick;
+        Lua.Globals["showFlares"] = (Action)ShowFlares;
     }
 
     // === LUA CALLABLE ============================================================================
@@ -139,6 +140,17 @@ public class LuaCutsceneContext : LuaContext
         yield return MapOverlayUI.Instance.nvl.EnterRoutine(speaker, slot, expr);
     }
 
+    public void Express(DynValue charaLu, DynValue expr)
+    {
+        RunRoutineFromLua(ExpressRoutine(charaLu.String, expr.String));
+    }
+    private IEnumerator ExpressRoutine(string charaTag, string expr)
+    {
+        var adv = MapOverlayUI.Instance.nvl;
+        var speaker = IndexDatabase.Instance.Speakers.GetData(charaTag);
+        return adv.GetPortrait(speaker).ExpressRoutine(expr);
+    }
+
     public void Exit(DynValue speakerNameLua)
     {
         var speaker = IndexDatabase.Instance.Speakers.GetData(speakerNameLua.String);
@@ -189,8 +201,8 @@ public class LuaCutsceneContext : LuaContext
         Global.Instance.StartCoroutine(MapOverlayUI.Instance.radio.HideRoutine());
     }
 
-    private void Unstick()
+    private void ShowFlares()
     {
-        //InputManager.Instance.RemoveListener("confirm");
+        MapOverlayUI.Instance.flareInfo.alpha = 1f;
     }
 }

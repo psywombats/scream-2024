@@ -5,35 +5,41 @@ public abstract class SerializableObjectIndex<T> : ScriptableObjectIndexParent, 
 {
     [SerializeField] protected List<T> dataObjects = null;
 
-    protected Dictionary<string, T> tagToDataObject;
-
-    public void OnEnable()
+    private Dictionary<string, T> tagToDataObject;
+    protected Dictionary<string, T> TagToDataObject
     {
-        if (dataObjects == null)
+        get
         {
-            return;
-        }
-        tagToDataObject = new Dictionary<string, T>();
-        foreach (T dataObject in dataObjects)
-        {
-            if (dataObject == null || dataObject.Key == null) continue;
-            tagToDataObject[dataObject.Key.ToLower()] = dataObject;
+            if ( tagToDataObject == null )
+            {
+                if (dataObjects == null)
+                {
+                    return new Dictionary<string, T>();
+                }
+                tagToDataObject = new Dictionary<string, T>();
+                foreach (T dataObject in dataObjects)
+                {
+                    if (dataObject == null || dataObject.Key == null) continue;
+                    TagToDataObject[dataObject.Key.ToLower()] = dataObject;
+                }
+            }
+            return tagToDataObject;
         }
     }
 
     public T GetData(string key)
     {
-        if (!tagToDataObject.ContainsKey(key.ToLower()))
+        if (!TagToDataObject.ContainsKey(key.ToLower()))
         {
             Debug.LogError("Index " + GetType().Name + " does not contain key\"" + key + "\"");
             return default;
         }
-        return tagToDataObject[key.ToLower()];
+        return TagToDataObject[key.ToLower()];
     }
 
     public T GetDataOrNull(string tag)
     {
-        if (tagToDataObject.ContainsKey(tag.ToLower()))
+        if (TagToDataObject.ContainsKey(tag.ToLower()))
         {
             return GetData(tag);
         }

@@ -332,9 +332,7 @@ public class PlayerController : MonoBehaviour, IInputListener
     private void ThrowFlare()
     {
         Destroy(OldFlare);
-        if (IsPaused
-            || MapManager.Instance.ActiveMap.lighting != LightingMode.Cave
-            || !Global.Instance.Data.GetSwitch("enable_flares"))
+        if (IsPaused || !CanFlare)
         {
             return;
         }
@@ -344,6 +342,9 @@ public class PlayerController : MonoBehaviour, IInputListener
         OldFlare.transform.SetParent(transform.parent);
         OldFlare.GetComponent<Rigidbody>().velocity = camera.transform.forward * 10;
     }
+
+    public bool CanFlare => MapManager.Instance.ActiveMap.lighting == LightingMode.Cave
+            && Global.Instance.Data.GetSwitch("enable_flares");
 
     private void ToggleGodMode()
     {

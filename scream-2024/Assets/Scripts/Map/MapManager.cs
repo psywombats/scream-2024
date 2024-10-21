@@ -58,6 +58,7 @@ public class MapManager : SingletonBehavior
     private void RawTeleport(string mapName, string targetName, OrthoDir? facing = null)
     {
         GameMap newMapInstance;
+        var oldMap = ActiveMap;
         if (ActiveMap != null && mapName == ActiveMap.name)
         {
             newMapInstance = ActiveMap;
@@ -98,7 +99,7 @@ public class MapManager : SingletonBehavior
         }
 
         Avatar.OnTeleport();
-        ActiveMap.OnTeleportTo();
+        ActiveMap.OnTeleportTo(oldMap);
     }
 
     private GameMap InstantiateMap(string mapName)

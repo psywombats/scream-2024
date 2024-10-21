@@ -33,7 +33,14 @@ public class PortraitComponent : MonoBehaviour
             yield return ExitRoutine();
         }
         Speaker = speaker;
-        sprite.sprite = speaker.sprite;
+        if (!string.IsNullOrEmpty(expr))
+        {
+            sprite.sprite = GetSpriteForExpr(speaker, expr);
+        }
+        else
+        {
+            sprite.sprite = speaker.sprite;
+        }
 
         sprite.SetNativeSize();
         sprite.color = new Color(1, 1, 1, 0);
@@ -42,6 +49,25 @@ public class PortraitComponent : MonoBehaviour
         yield return CoUtils.RunTween(tween);
 
         IsHighlighted = true;
+    }
+
+    private Sprite GetSpriteForExpr(SpeakerData speaker, string expr)
+    {
+        Sprite found = null;
+        foreach (var sub in speaker.exprs)
+        {
+            if (sub.key == expr)
+            {
+                found = sub.sprite;
+                break;
+            }
+        }
+        if (found == null)
+        {
+            found = speaker.sprite;
+            Debug.LogWarning("Couldn't find expression " + expr + " for " + speaker.Key);
+        }
+        return found;
     }
 
     public IEnumerator ExitRoutine()
@@ -81,7 +107,7 @@ public class PortraitComponent : MonoBehaviour
             yield return nvl.SetHighlightRoutine(Speaker);
         }
         altSprite.color = new Color(1, 1, 1, 0);
-        //altSprite.sprite = Speaker.sprite; <= neuter'd
+        altSprite.sprite = GetSpriteForExpr(Speaker, expr);
         altSprite.SetNativeSize();
         yield return CoUtils.RunParallel(this,
             //CoUtils.RunTween(sprite.DOColor(new Color(inactiveAlpha, inactiveAlpha, inactiveAlpha, 1f), highlightTime)),

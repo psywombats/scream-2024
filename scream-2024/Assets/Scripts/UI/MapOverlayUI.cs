@@ -29,4 +29,5 @@ public class MapOverlayUI : MonoBehaviour
     [SerializeField] public CanvasGroup fader;
     [SerializeField] public CanvasGroup abseilInfo;
     [SerializeField] public CanvasGroup ascendInfo;
+    [SerializeField] public CanvasGroup flareInfo;
 }
