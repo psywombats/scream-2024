@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{b9b95b50-9c1b-4e70-8238-b682a9167bea}">
+	<object class="AudioFile" id="{45617236-29ab-49aa-8af7-f188d9c343f3}">
 		<property name="assetPath">
 			<value>Env/env_amb_apartment.wav</value>
 		</property>
@@ -14,7 +14,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>63</value>
+			<value>32</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{26690a29-87ff-43cc-b713-4b9482589813}</destination>
