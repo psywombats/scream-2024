@@ -37,7 +37,7 @@
 			<destination>{1321d26c-67f5-40a2-ab52-2cde359eb0a2}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{daf31f6c-70aa-4408-9944-5e6f702b88b5}</destination>
+			<destination>{e1569e99-09c3-40d7-9e43-083d3978ebb4}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{6fa240c1-48bb-40db-b712-1d912b68e2e5}">
@@ -143,11 +143,14 @@
 	</object>
 	<object class="EventMixerGroup" id="{1b331e9d-7f34-4329-8f70-f569c484a9ea}">
 		<property name="volume">
-			<value>-7.5</value>
+			<value>2</value>
 		</property>
 		<property name="name">
 			<value>Footsteps</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{fd29f7f0-0a46-4c0c-8e9e-8ceb8e9c0271}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{d16e0f79-3b8b-4d4c-b3a7-dd253b8f8c12}</destination>
 		</relationship>
@@ -201,13 +204,9 @@
 		<relationship name="sounds">
 			<destination>{1b78a21b-437b-4061-a85b-7dc85408b962}</destination>
 			<destination>{c53637a6-9205-4d24-b04b-543745213686}</destination>
-			<destination>{ed43bf7c-e7ab-40ec-8c87-667cc028301c}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{ccaa661f-d21c-45b6-8f9b-44de413c475a}">
-		<property name="volume">
-			<value>-6</value>
-		</property>
 		<property name="name">
 			<value>Rocks falling</value>
 		</property>
@@ -265,6 +264,14 @@
 		<relationship name="audioFile">
 			<destination>{cf25ec95-686e-436a-8745-09c0ef765532}</destination>
 		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{fd29f7f0-0a46-4c0c-8e9e-8ceb8e9c0271}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>9.5</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{d16e0f79-3b8b-4d4c-b3a7-dd253b8f8c12}">
 		<relationship name="effects">
@@ -336,11 +343,6 @@
 			<destination>{dfde10f7-8b9d-4276-b1a4-926dbce9e642}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{ed43bf7c-e7ab-40ec-8c87-667cc028301c}">
-		<relationship name="audioFile">
-			<destination>{2c7cc59c-fb4f-47bc-8b38-e8998a695719}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusEffectChain" id="{1c57f024-e249-4d09-944f-21126f9ec0f7}">
 		<relationship name="effects">
 			<destination>{779d0a29-e327-4941-a553-bc6126a2bc89}</destination>
@@ -383,7 +385,7 @@
 			<value>userPanExtent</value>
 		</property>
 		<property name="amount">
-			<value>19</value>
+			<value>16.5</value>
 		</property>
 	</object>
 	<object class="ADSRModulator" id="{4fe32953-1b43-45a0-9db2-3d3e2d67f618}">
