@@ -5,7 +5,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(CanvasGroup))]
 public class TextAutotyper : MonoBehaviour, IInputListener
 {
-
     [SerializeField] public Text textbox;
     [SerializeField] public float charsPerSecond = 120f;
     [SerializeField] protected GameObject advanceArrow;
@@ -52,7 +51,6 @@ public class TextAutotyper : MonoBehaviour, IInputListener
 
     public IEnumerator TypeRoutine(string text, bool waitForConfirm = true)
     {
-        Debug.Log("!!! type routine begins");
         hurried = false;
         confirmed = false;
         float elapsed = 0.0f;
@@ -65,14 +63,12 @@ public class TextAutotyper : MonoBehaviour, IInputListener
 
         while (elapsed <= total)
         {
-            Debug.Log("!!! while elapsed < total");
             elapsed += Time.deltaTime;
             int charsToShow = Mathf.FloorToInt(elapsed * charsPerSecond) + typingStartIndex;
             int cutoff = charsToShow > text.Length ? text.Length : charsToShow;
             textbox.text = text.Substring(0, cutoff);
 
             var uCount = 0;
-            Debug.Log("!!! foreach c in text");
             foreach (var c in textbox.text)
             {
                 if (c == '_')
@@ -80,7 +76,6 @@ public class TextAutotyper : MonoBehaviour, IInputListener
                     uCount += 1;
                 }
             }
-            Debug.Log("!!! glitch search");
             if (glitchesDelayed < uCount)
             {
                 var tryg = textbox.text.Length;
@@ -125,7 +120,6 @@ public class TextAutotyper : MonoBehaviour, IInputListener
         }
         textbox.text = text;
 
-        Debug.Log("!!! confirm wait check");
         if (waitForConfirm)
         {
             confirmed = false;

@@ -136,6 +136,12 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3528398687215632369, guid: 5765cc8de83aa174bb3666949d4617c7,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8,
+        type: 3}
     - target: {fileID: 3778149307142867462, guid: 5765cc8de83aa174bb3666949d4617c7,
         type: 3}
       propertyPath: m_Name
@@ -241,11 +247,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3982906181117368305, guid: 5765cc8de83aa174bb3666949d4617c7,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8,
+        type: 3}
     - target: {fileID: 4607203423667170542, guid: 5765cc8de83aa174bb3666949d4617c7,
         type: 3}
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6763771797360104581, guid: 5765cc8de83aa174bb3666949d4617c7,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8,
+        type: 3}
+    - target: {fileID: 7241886776095195825, guid: 5765cc8de83aa174bb3666949d4617c7,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8,
+        type: 3}
     - target: {fileID: 7487808498748073834, guid: 5765cc8de83aa174bb3666949d4617c7,
         type: 3}
       propertyPath: m_Maskable

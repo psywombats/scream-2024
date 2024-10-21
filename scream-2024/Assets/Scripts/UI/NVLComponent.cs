@@ -16,7 +16,8 @@ public class NVLComponent : MonoBehaviour
     public PortraitComponent slotE;
 
     public ExpanderComponent backer;
-    public LineAutotyper text;
+    //public LineAutotyper text;
+    public TextAutotyper text;
     public Text nameText;
     public CanvasGroup fader;
     public CanvasGroup background;
@@ -105,7 +106,8 @@ public class NVLComponent : MonoBehaviour
 
         string toType = message;
         nameText.text = name;
-        yield return text.WriteLineRoutine(toType);
+        //yield return text.WriteLineRoutine(toType);
+        yield return text.TypeRoutine(toType, waitForConfirm: false);
         yield return Global.Instance.Input.ConfirmRoutine();
     }
 

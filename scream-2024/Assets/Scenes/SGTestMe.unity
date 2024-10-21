@@ -251,6 +251,11 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6763771797360104579, guid: 5765cc8de83aa174bb3666949d4617c7,
+        type: 3}
+      propertyPath: lineCount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6763771797360104581, guid: 5765cc8de83aa174bb3666949d4617c7,
         type: 3}
       propertyPath: m_Color.a

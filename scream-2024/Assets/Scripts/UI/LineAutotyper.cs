@@ -15,11 +15,9 @@ public class LineAutotyper : TextAutotyper
 
     public void Start()
     {
-        Debug.Log("!!! line autotype starts");
         lines = new string[lineCount];
         Clear();
-        Debug.Log("!!! Starting line autotyper");
-        StartCoroutine(TestRoutine());
+        //StartCoroutine(TestRoutine());
     }
 
     public override void Clear()
@@ -42,7 +40,6 @@ public class LineAutotyper : TextAutotyper
 
     public IEnumerator TestRoutine()
     {
-        Debug.Log("!!! Test routine is beginnging");
         yield return WriteLineRoutine("The combat begins!!");
         yield return WriteLineRoutine("");
         yield return WriteLineRoutine("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do " +
@@ -61,25 +58,21 @@ public class LineAutotyper : TextAutotyper
 
     public IEnumerator WriteLineRoutine(string line)
     {
-        Debug.Log("!!! Write line is beginging");
-        //Global.Instance.Input.PushListener(this);
+        Global.Instance.Input.PushListener(this);
 
         var words = line.Split(' ');
         for (var at = 0; at < words.Length;)
         {
-            Debug.Log("!!! Entering the word for loop");
             var firstLine = new StringBuilder();
             var leadingSpace = false;
             while (at < words.Length)
             {
-                Debug.Log("!!! Entering the while length loop");
                 string word = words[at];
                 var nextString = firstLine.ToString();
                 if (leadingSpace) nextString += " ";
                 nextString += word;
                 if (ExceedsLineWidth(nextString))
                 {
-                    Debug.Log("!!! exceeded line width");
                     break;
                 }
                 if (leadingSpace)
@@ -94,7 +87,6 @@ public class LineAutotyper : TextAutotyper
             if (fullLines < lineCount)
             {
                 lines[fullLines] = firstLine.ToString();
-                Debug.Log("!!! full lines +=1");
                 fullLines += 1;
             }
             else
@@ -108,7 +100,6 @@ public class LineAutotyper : TextAutotyper
 
             typingStartIndex = 0;
             var fullMessage = new StringBuilder();
-            Debug.Log("!!! iterating over full lines");
             for (var i = 0; i < fullLines; i += 1)
             {
                 if (i < fullLines - 1)
@@ -119,11 +110,10 @@ public class LineAutotyper : TextAutotyper
                 fullMessage.AppendLine(lines[i]);
             }
 
-            Debug.Log("!!! yield return type routine");
             yield return TypeRoutine(fullMessage.ToString(), false);
         }
 
-       // Global.Instance.Input.RemoveListener(this);
+       Global.Instance.Input.RemoveListener(this);
     }
 
     public bool ExceedsLineWidth(string line)
