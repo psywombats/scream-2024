@@ -6,7 +6,7 @@ public class RadioUIComponent : MonoBehaviour
 {
     [SerializeField] private ExpanderComponent expander;
     [SerializeField] private Text nameText;
-    [SerializeField] private LineAutotyper textTyper;
+    [SerializeField] private TextAutotyper textTyper;
     [SerializeField] private Image portrait;
 
     public bool IsShown { get; private set; }
@@ -30,8 +30,7 @@ public class RadioUIComponent : MonoBehaviour
             IsShown = true;
         }
         yield return null;
-        yield return textTyper.WriteLineRoutine(text);
-        yield return Global.Instance.Input.ConfirmRoutine(true);
+        yield return textTyper.TypeRoutine(text, true);
     }
 
     public IEnumerator HideRoutine()

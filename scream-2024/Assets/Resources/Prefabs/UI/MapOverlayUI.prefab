@@ -350,7 +350,6 @@ MonoBehaviour:
   textbox: {fileID: 8601805060425346940}
   charsPerSecond: 42
   advanceArrow: {fileID: 0}
-  speedUpWhenHurried: 0
   mode2: 1
 --- !u!1 &935071200621032909
 GameObject:
@@ -709,7 +708,6 @@ MonoBehaviour:
   textbox: {fileID: 935071202580420807}
   charsPerSecond: 42
   advanceArrow: {fileID: 0}
-  speedUpWhenHurried: 0
   mode2: 1
 --- !u!1 &1249432840807586030
 GameObject:
@@ -1079,7 +1077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setting: {fileID: 5980622159654490511}
   nvl: {fileID: 935071200653839066}
-  radio: {fileID: 7779059729740808757}
+  radio: {fileID: 58184634572515790}
   fader: {fileID: 4607203423667170542}
   abseilInfo: {fileID: 6307831253012594347}
   ascendInfo: {fileID: 1397169586283324733}
@@ -1192,7 +1190,6 @@ MonoBehaviour:
   textbox: {fileID: 3866319903534632691}
   charsPerSecond: 60
   advanceArrow: {fileID: 0}
-  speedUpWhenHurried: 0
   mode2: 0
   lineHeightPx: 21
   lineCount: 32
@@ -1205,7 +1202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3293790927481003960}
-  - component: {fileID: 7779059729740808757}
+  - component: {fileID: 58184634572515790}
   m_Layer: 5
   m_Name: Radio
   m_TagString: Untagged
@@ -1233,7 +1230,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -32}
   m_SizeDelta: {x: -64, y: 172}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &7779059729740808757
+--- !u!114 &58184634572515790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1247,7 +1244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expander: {fileID: 539303732285581603}
   nameText: {fileID: 8137586542178404220}
-  textTyper: {fileID: 0}
+  textTyper: {fileID: 3564474728126936675}
   portrait: {fileID: 5308491356541752319}
 --- !u!1 &4784903416022053243
 GameObject:

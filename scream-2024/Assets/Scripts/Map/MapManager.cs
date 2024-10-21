@@ -89,6 +89,7 @@ public class MapManager : SingletonBehavior
         ActiveMap = newMapInstance;
         AddInitialAvatar();
         Avatar.transform.position = target.transform.position;
+        Avatar.camera.transform.eulerAngles = target.transform.eulerAngles;
         if (facing.HasValue)
         {
             Avatar.SetFacing(facing.Value);

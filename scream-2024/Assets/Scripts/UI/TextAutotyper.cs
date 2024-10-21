@@ -8,7 +8,6 @@ public class TextAutotyper : MonoBehaviour, IInputListener
     [SerializeField] public Text textbox;
     [SerializeField] public float charsPerSecond = 120f;
     [SerializeField] protected GameObject advanceArrow;
-    [SerializeField] protected bool speedUpWhenHurried;
 
     public bool mode2 = false;
 
@@ -34,13 +33,10 @@ public class TextAutotyper : MonoBehaviour, IInputListener
                 }
                 break;
             case InputManager.Event.Up:
-                if (command == InputManager.Command.Primary)
-                {
-                    confirmed = true;
-                }
-                if (command == InputManager.Command.Click)
+                if (command == InputManager.Command.Primary || command == InputManager.Command.Click)
                 {
                     hurried = true;
+                    confirmed = true;
                 }
                 break;
         }
@@ -110,18 +106,7 @@ public class TextAutotyper : MonoBehaviour, IInputListener
             if (hurried)
             {
                 hurried = false;
-                if (speedUpWhenHurried)
-                {
-                    elapsed += 10000;
-                }
-            }
-            if (confirmed && !containsGlitch)
-            {
-                confirmed = false;
-                if (!speedUpWhenHurried)
-                {
-                    break;
-                }
+                elapsed += 10000;
             }
         }
         textbox.text = text;

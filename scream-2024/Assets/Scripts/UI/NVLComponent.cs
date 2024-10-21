@@ -107,8 +107,7 @@ public class NVLComponent : MonoBehaviour
         string toType = message;
         nameText.text = name;
         //yield return text.WriteLineRoutine(toType);
-        yield return text.TypeRoutine(toType, waitForConfirm: false);
-        yield return Global.Instance.Input.ConfirmRoutine();
+        yield return text.TypeRoutine(toType, waitForConfirm: true);
     }
 
     public IEnumerator SetHighlightRoutine(SpeakerData speaker)
