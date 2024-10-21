@@ -453,6 +453,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3846577395191937334}
     m_Modifications:
+    - target: {fileID: 2328610243120545022, guid: d214c4a2af65b4d428e261d933929cd5,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8,
+        type: 3}
+    - target: {fileID: 2873755424015602942, guid: d214c4a2af65b4d428e261d933929cd5,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8,
+        type: 3}
     - target: {fileID: 7419294539651048343, guid: d214c4a2af65b4d428e261d933929cd5,
         type: 3}
       propertyPath: consumesUI
@@ -767,6 +779,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8,
         type: 3}
+    - target: {fileID: 6228515776107903447, guid: d8cf7b33e8bf45f43af51b3f05d897fa,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 6542343776983898013, guid: d8cf7b33e8bf45f43af51b3f05d897fa,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -844,6 +861,12 @@ PrefabInstance:
       propertyPath: stepSize
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 2043942677295717320, guid: af8a5e78d3ca11b40a394a81c480416d,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8,
+        type: 3}
     - target: {fileID: 2043942678048246219, guid: af8a5e78d3ca11b40a394a81c480416d,
         type: 3}
       propertyPath: m_Name
@@ -949,6 +972,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2666249947427130876, guid: af8a5e78d3ca11b40a394a81c480416d,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
