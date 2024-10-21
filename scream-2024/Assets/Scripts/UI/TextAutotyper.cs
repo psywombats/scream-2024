@@ -3,13 +3,13 @@ using System.Collections;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CanvasGroup))]
-public class TextAutotyper : MonoBehaviour, IInputListener {
+public class TextAutotyper : MonoBehaviour, IInputListener
+{
 
     [SerializeField] public Text textbox;
     [SerializeField] public float charsPerSecond = 120f;
     [SerializeField] protected GameObject advanceArrow;
     [SerializeField] protected bool speedUpWhenHurried;
-    [SerializeField] protected bool consumesUI = true;
 
     public bool mode2 = false;
 
@@ -19,34 +19,51 @@ public class TextAutotyper : MonoBehaviour, IInputListener {
     protected bool hurried;
     protected bool confirmed;
 
-    public virtual void Clear() {
+    public virtual void Clear()
+    {
         textbox.text = "";
     }
 
-    public bool OnCommand(InputManager.Command command, InputManager.Event eventType) {
-        switch (eventType) {
+    public bool OnCommand(InputManager.Command command, InputManager.Event eventType)
+    {
+        switch (eventType)
+        {
             case InputManager.Event.Hold:
-                if (command == InputManager.Command.Primary) {
+                if (command == InputManager.Command.Primary)
+                {
                     hurried = true;
                 }
-                return true;
+                break;
             case InputManager.Event.Down:
-                if (command == InputManager.Command.Primary) {
+                if (command == InputManager.Command.Primary)
+                {
                     confirmed = true;
                 }
-                return true;
+                break;
         }
-        return consumesUI;
+        return true;
     }
 
-    public IEnumerator TypeRoutine(string text, bool waitForConfirm = true) {
+    //public void StartGlitch()
+    //{
+    //    StartCoroutine(MapOverlayUI.Instance.adv.GetHighlightedPortrait().JoltRoutine());
+    //    StartCoroutine(AudioManager.Instance.JumpscareRoutine());
+    //}
+
+    public IEnumerator TypeRoutine(string text, bool waitForConfirm = true)
+    {
         hurried = false;
         confirmed = false;
         float elapsed = 0.0f;
         float total = (text.Length - typingStartIndex) / charsPerSecond;
         textbox.GetComponent<CanvasGroup>().alpha = 1.0f;
 
-        while (elapsed <= total) {
+        var containsGlitch = text.IndexOf("____") >= 0;
+        var glitchesDelayed = 0;
+        var glitchStartedAt = -1;
+
+        while (elapsed <= total)
+        {
 
             elapsed += Time.deltaTime;
             int charsToShow = Mathf.FloorToInt(elapsed * charsPerSecond) + typingStartIndex;
@@ -54,13 +71,31 @@ public class TextAutotyper : MonoBehaviour, IInputListener {
             textbox.text = text.Substring(0, cutoff);
 
             var uCount = 0;
-            foreach (var c in textbox.text) {
-                if (c == '_') {
+            foreach (var c in textbox.text)
+            {
+                if (c == '_')
+                {
                     uCount += 1;
                 }
             }
-            
-            if (!mode2) {
+            if (glitchesDelayed < uCount)
+            {
+                var tryg = textbox.text.Length;
+                while (tryg > 0 && textbox.text[tryg - 1] == '_')
+                {
+                    tryg -= 1;
+                }
+                if (tryg > glitchStartedAt)
+                {
+                    glitchStartedAt = tryg;
+                    //StartGlitch();
+                }
+                yield return CoUtils.Wait(.175f);
+                glitchesDelayed = uCount;
+            }
+
+            if (!mode2)
+            {
                 textbox.text += "<color=#aa000000>";
                 textbox.text += text.Substring(cutoff);
                 textbox.text += "</color>";
@@ -68,25 +103,31 @@ public class TextAutotyper : MonoBehaviour, IInputListener {
             yield return null;
 
             elapsed += Time.deltaTime;
-            if (hurried) {
+            if (hurried)
+            {
                 hurried = false;
-                if (speedUpWhenHurried) {
+                if (speedUpWhenHurried)
+                {
                     elapsed += Time.deltaTime * 4;
                 }
             }
-            if (confirmed) {
+            if (confirmed && !containsGlitch)
+            {
                 confirmed = false;
-                if (!speedUpWhenHurried) {
+                if (!speedUpWhenHurried)
+                {
                     break;
                 }
             }
         }
         textbox.text = text;
 
-        if (waitForConfirm) {
+        if (waitForConfirm)
+        {
             confirmed = false;
             if (advanceArrow != null) advanceArrow.SetActive(true);
-            while (!confirmed) {
+            while (!confirmed)
+            {
                 yield return null;
             }
             if (advanceArrow != null) advanceArrow.SetActive(false);

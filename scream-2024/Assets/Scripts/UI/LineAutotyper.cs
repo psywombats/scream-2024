@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 using System.Text;
 
 public class LineAutotyper : TextAutotyper
 {
+
     public int lineHeightPx = 30;
     public int lineCount = 32;
 
@@ -121,4 +123,5 @@ public class LineAutotyper : TextAutotyper
         var height = textGen.GetPreferredHeight(line, generationSettings);
         return height > lineHeightPx;
     }
+
 }
