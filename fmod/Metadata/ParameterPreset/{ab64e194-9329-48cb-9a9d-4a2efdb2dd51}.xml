@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{ab64e194-9329-48cb-9a9d-4a2efdb2dd51}">
 		<property name="name">
 			<value>Floor_Type</value>
@@ -13,13 +13,23 @@
 	</object>
 	<object class="GameParameter" id="{d6c3a9f0-ed68-4651-987b-df3bab6ff59c}">
 		<property name="parameterType">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<property name="maximum">
 			<value>2</value>
 		</property>
+		<property name="enumerationLabels">
+			<value>Rock</value>
+			<value>Other</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
 		<property name="initialValue">
-			<value>0</value>
+			<value>1</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
 		</property>
 	</object>
 </objects>

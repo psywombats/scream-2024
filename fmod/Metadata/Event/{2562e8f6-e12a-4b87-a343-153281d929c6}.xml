@@ -38,7 +38,7 @@
 			<destination>{d600386d-5e25-4555-8001-77b615eda3be}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{948ce788-3035-48b0-b523-5de251ac9a60}</destination>
+			<destination>{e1569e99-09c3-40d7-9e43-083d3978ebb4}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{d4716dc6-4716-431a-8b5b-6a391ebe4533}">
@@ -204,6 +204,12 @@
 		<property name="polyphony">
 			<value>3</value>
 		</property>
+		<property name="minimumTimeBetweenSounds">
+			<value>3000</value>
+		</property>
+		<property name="maximumTimeBetweenSounds">
+			<value>9500</value>
+		</property>
 		<property name="spawnRate">
 			<value>28</value>
 		</property>
@@ -235,8 +241,14 @@
 		<property name="polyphony">
 			<value>3</value>
 		</property>
+		<property name="minimumTimeBetweenSounds">
+			<value>5500</value>
+		</property>
+		<property name="maximumTimeBetweenSounds">
+			<value>12500</value>
+		</property>
 		<property name="spawnRate">
-			<value>30</value>
+			<value>20</value>
 		</property>
 		<relationship name="sound">
 			<destination>{67691d8f-8500-49ad-ab69-ddb2ddd7baab}</destination>
@@ -316,6 +328,9 @@
 			<destination>{84ae6a40-ca9b-4423-be4e-d509edb99c6a}</destination>
 			<destination>{0570618c-4de8-4331-96fa-0e625ac69cc6}</destination>
 			<destination>{3947a861-2541-4087-9468-22c220cec9b6}</destination>
+		</relationship>
+		<relationship name="playPercentages">
+			<destination>{9772b5e7-41f3-46b2-8d7f-6e8c4171bd9d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{1faaf3ad-a00a-430e-bf1b-3cc4211ddd3a}">
@@ -430,6 +445,14 @@
 	<object class="SingleSound" id="{3947a861-2541-4087-9468-22c220cec9b6}">
 		<relationship name="audioFile">
 			<destination>{36ee7007-5d5c-44ea-976a-6e12587c317c}</destination>
+		</relationship>
+	</object>
+	<object class="PlayPercentage" id="{9772b5e7-41f3-46b2-8d7f-6e8c4171bd9d}">
+		<property name="percentage">
+			<value>15</value>
+		</property>
+		<relationship name="sound">
+			<destination>{84ae6a40-ca9b-4423-be4e-d509edb99c6a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{024a7b5f-2e3a-4cb7-a35b-0475078f60c5}" />
