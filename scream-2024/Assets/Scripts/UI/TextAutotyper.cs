@@ -38,6 +38,10 @@ public class TextAutotyper : MonoBehaviour, IInputListener
                 {
                     confirmed = true;
                 }
+                if (command == InputManager.Command.Click)
+                {
+                    hurried = true;
+                }
                 break;
         }
         return true;

@@ -8,6 +8,9 @@ radio('LEADER', "We've only got a limited amount of time before word gets out. A
 radio('YOU', "Sorry, I wasn't questioning it. I understand. I want to go even deeper too.")
 radio('PAL', "C'mon, everyone. Let's head for the surface and talk there.")
 
+hideRadio()
+wait(1)
+
 setSwitch('d1_05', true)
 setString('time', "9:30 PM");
 teleport('MeetingMap', 'start')

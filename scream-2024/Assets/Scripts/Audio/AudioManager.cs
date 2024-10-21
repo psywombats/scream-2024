@@ -50,6 +50,10 @@ public class AudioManager : SingletonBehavior
                 bgmEvent.stop(STOP_MODE.ALLOWFADEOUT);
                 bgmEvent.clearHandle();
             }
+            if (key == NoBGMKey)
+            {
+                return;
+            }
             foreach (var ev in envEvents.Values)
             {
                 if (ev.hasHandle())

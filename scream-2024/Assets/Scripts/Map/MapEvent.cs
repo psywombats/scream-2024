@@ -90,7 +90,7 @@ public class MapEvent : MonoBehaviour
             CheckEnabled();
         }
 
-        if (IsSwitchEnabled && !Global.Instance.Avatar.IsPaused)
+        if (IsSwitchEnabled && Global.Instance.Avatar != null && !Global.Instance.Avatar.IsPaused)
         {
             if (!autod && luaOnEnter != null && luaOnEnter.Length > 0)
             {
