@@ -15,6 +15,7 @@ public class LineAutotyper : TextAutotyper
 
     public void Start()
     {
+        Debug.Log("!!! line autotype starts");
         lines = new string[lineCount];
         Clear();
         Debug.Log("!!! Starting line autotyper");
