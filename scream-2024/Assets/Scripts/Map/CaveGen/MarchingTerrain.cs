@@ -37,9 +37,9 @@ public class MarchingTerrain : MonoBehaviour
         }
     }
 
-    public void EnsureChunks(bool ensureAll = false, int radius = 0)
+    public void EnsureChunks(bool ensureAll = false, int radius = 0, bool usePlayer = false)
     {
-        var index = ensureAll ? Vector3Int.zero : GetPlayerIndex();
+        var index = (ensureAll && !usePlayer) ? Vector3Int.zero : GetPlayerIndex();
         if (radius == 0)
         {
             radius = spawnRadius;

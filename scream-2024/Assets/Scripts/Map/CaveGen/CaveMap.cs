@@ -20,15 +20,15 @@ public class CaveMap : GameMap
     public override void OnTeleportTo()
     {
         base.OnTeleportTo();
-        Regenerate();
+        Regenerate(1, true);
         AudioManager.Instance.SetGlobalParam("Cave Size", caveSize);
         AudioManager.Instance.SetGlobalParam("Spookiness", spookiness);
     }
 
-    public void Regenerate(int radius = 0)
+    public void Regenerate(int radius = 0, bool usePlayer = false)
     {
         DestroyChunks();
-        terrain.EnsureChunks(ensureAll: true, radius: radius);
+        terrain.EnsureChunks(ensureAll: true, radius: radius, usePlayer: usePlayer);
     }
 
     public void DestroyChunks()

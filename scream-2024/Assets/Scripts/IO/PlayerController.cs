@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour, IInputListener
 {
     [SerializeField] private GameObject firstPersonParent;
-    [SerializeField] private Rigidbody body;
+    [SerializeField] public Rigidbody body;
     [SerializeField] public new Collider collider;
     [SerializeField] public new Camera camera;
     [SerializeField] public Collider probe;

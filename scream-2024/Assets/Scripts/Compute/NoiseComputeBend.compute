@@ -1,0 +1,51 @@
+#pragma kernel GenerateNoise
+
+#include "Includes\FastNoiseLite.compute"
+#include "Includes\MetricsCompute.compute"
+
+RWStructuredBuffer<float> _Weights;
+
+float _NoiseScale;
+float _Amplitude;
+float _Frequency;
+int _Octaves;
+
+float _BaseX, _BaseY, _BaseZ;
+
+float _PitRad;
+float _X1, _X2, _X3;
+float _Y1, _Y2, _Y3;
+float _ScaleX, _ScaleY;
+float _NoiseWeight;
+
+fnl_noise_type _NoiseTypeIn;
+fnl_fractal_type _FractalTypeIn;
+
+[numthreads(threadCount, threadCount, threadCount)]
+void GenerateNoise(uint3 id : SV_DispatchThreadID)
+{
+    fnl_state noise = fnlCreateState();
+    noise.noise_type = _NoiseTypeIn;
+    noise.fractal_type = 2;
+    noise.frequency = _Frequency;
+    noise.octaves = _Octaves;
+
+    float3 pos = (id + float3(_BaseX, _BaseY, _BaseZ)) * _NoiseScale;
+    float noiseVal = fnlGetNoise3D(noise, pos.x, pos.y, pos.z);
+
+    float targetZ =
+        (_X1 * pos.x / 100 * pos.x / 100 * pos.x / 100) +
+        (_X2 * pos.x / 100 * pos.x / 100) +
+        (_X3 * pos.x / 100);
+    float targetY =
+        (_Y1 * pos.x / 100 * pos.x / 100 * pos.x / 100) +
+        (_Y2 * pos.x / 100 * pos.x / 100) +
+        (_Y3 * pos.x / 100);
+    float offZ = (targetZ - pos.z) * _ScaleX;
+    float offY = (targetY - pos.y) * _ScaleY;
+    float offCenter = sqrt(offZ * offZ + offY * offY);
+    offCenter += noiseVal * _NoiseWeight;
+    float n = offCenter / _PitRad;
+
+    _Weights[indexFromCoord(id.x, id.y, id.z)] = n;
+}

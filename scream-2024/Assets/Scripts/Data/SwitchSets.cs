@@ -12,7 +12,7 @@ public static class SwitchSets
     {
         "11:00 AM",
         "12:00 PM",
-        "11:00 AM",
+        "7:00 AM",
         "11:00 AM",
     };
 
@@ -59,7 +59,9 @@ public static class SwitchSets
         },
         new string[]
         {
-
+            "d3_00",
+            "d3_01",
+            "d3_02",
         },
     };
 }

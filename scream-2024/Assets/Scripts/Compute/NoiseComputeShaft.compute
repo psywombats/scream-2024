@@ -1,5 +1,5 @@
 #pragma kernel GenerateNoise
- 
+
 #include "Includes\FastNoiseLite.compute"
 #include "Includes\MetricsCompute.compute"
 
@@ -16,10 +16,28 @@ float _PitRad;
 float _PitHard;
 float _PitOffX;
 float _PitOffZ;
+float _Curvature;
 float _WallWeight;
 
 fnl_noise_type _NoiseTypeIn;
 fnl_fractal_type _FractalTypeIn;
+
+float sinus(float theta)
+{
+    float PI = 3.14159265358979323846;
+    float a = theta + PI / 2.0, b = PI * 2.0;
+    theta = ((a > 0) ? a - b * ((int)(a / b)) : (-a + b * (((int)(a / b))))) - PI / 2.0;
+    if (theta > PI / 2.0)
+        theta = PI - theta;
+    float x3 = (theta * theta * theta);
+    float x5 = (x3 * theta * theta);
+    return theta - x3 / 6.0 + x5 / 120.0;
+}
+
+float cosinus(float x)
+{
+    return sinus(x + 1.57079632679489661923);
+}
 
 [numthreads(threadCount, threadCount, threadCount)]
 void GenerateNoise(uint3 id : SV_DispatchThreadID)
@@ -33,8 +51,18 @@ void GenerateNoise(uint3 id : SV_DispatchThreadID)
     float3 pos = (id + float3(_BaseX, _BaseY, _BaseZ)) * _NoiseScale;
     float noiseVal = fnlGetNoise3D(noise, pos.x, pos.y, pos.z);
 
-    float biasX = pos.y * _PitOffX;
-    float biasY = pos.y * _PitOffZ;
+    float biasX = _PitOffX;
+    float biasY = _PitOffZ;
+    if (_Curvature > 0)
+    {
+        biasX *= sinus(pos.y * _Curvature);
+        biasY *= cosinus(pos.y * _Curvature);
+    }
+    else
+    {
+        biasX *= pos.y;
+        biasY *= pos.y;
+    }
     float offCenter = sqrt((pos.x - biasX) * (pos.x - biasX) + (pos.z - biasY) * (pos.z - biasY));
     offCenter += noiseVal * _WallWeight;
     float n = offCenter / _PitRad;

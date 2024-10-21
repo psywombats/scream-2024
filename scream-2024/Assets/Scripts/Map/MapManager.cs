@@ -120,5 +120,6 @@ public class MapManager : SingletonBehavior
         }
         Avatar.gameObject.name = "hero";
         Avatar.transform.SetParent(ActiveMap.eventLayer.transform, false);
+        Avatar.body.velocity = Vector3.zero;
     }
 }
