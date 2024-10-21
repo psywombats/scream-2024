@@ -15,7 +15,7 @@ float _BaseX, _BaseY, _BaseZ;
 
 float _ChamberR;
 float _ChamberOblX, _ChamberOblZ;
-float _ChamberWeight, _NoiseWeight, _CeilHardness, _FloorHardness;
+float _ChamberWeight, _NoiseWeight, _CeilHardness, _FloorHardness, _WallHardness;
 
 fnl_noise_type _NoiseTypeIn;
 fnl_fractal_type _FractalTypeIn;

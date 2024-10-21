@@ -92,7 +92,7 @@ public class MapEvent : MonoBehaviour
 
         if (IsSwitchEnabled && !Global.Instance.Avatar.IsPaused)
         {
-            if (!autod && luaOnEnter.Length > 0)
+            if (!autod && luaOnEnter != null && luaOnEnter.Length > 0)
             {
                 autod = true;
                 LuaObject.Run(PropertyEnter);
