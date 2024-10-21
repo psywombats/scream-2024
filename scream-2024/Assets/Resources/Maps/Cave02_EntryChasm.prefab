@@ -303,7 +303,7 @@ Transform:
   m_GameObject: {fileID: 4783338738950083435}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -70, z: -100}
+  m_LocalPosition: {x: 0, y: -64, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -485,6 +485,7 @@ MonoBehaviour:
   - Entry Chasm
   - 100m
   lighting: 2
+  allowAbseil: 1
   eventLayer: {fileID: 5013854137374017943}
   noise: {fileID: 3333721998436239076}
   caveSize: 0.7
