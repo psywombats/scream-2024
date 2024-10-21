@@ -72,8 +72,11 @@ public class CharaEvent : MonoBehaviour
 
     public void OnValidate()
     {
-        UpdateRenderer();
-        SetFacing(dir);
+        if (!Application.isPlaying)
+        {
+            UpdateRenderer();
+            SetFacing(dir);
+        }
     }
 
     public void Interact() => Event.Interact();

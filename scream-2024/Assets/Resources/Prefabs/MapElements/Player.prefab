@@ -90,7 +90,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8
+  m_Intensity: 10
   m_Range: 80
   m_SpotAngle: 50
   m_InnerSpotAngle: 3
@@ -326,7 +326,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 3
   m_Range: 48
   m_SpotAngle: 85
   m_InnerSpotAngle: 6
@@ -1093,6 +1093,7 @@ MonoBehaviour:
   abseilV: -6
   abseilOscPeriod: 7
   abseilOscSpeed: 1
+  climbSpeed: 3
   flarePrefab: {fileID: 5300663383339618054, guid: 22dd96c5a6099454da5a3e0261c8a6d2,
     type: 3}
 --- !u!54 &8655773204828170593

@@ -37,7 +37,6 @@ class TitleComponent : MonoBehaviour, IInputListener
 
     public void Start()
     {
-        Global.Instance.Data.SetSwitch("abseiling_disabled", true);
         InputManager.Instance.PushListener(this);
         StartCoroutine(CoUtils.RunTween(laptopPivot.transform.DORotate(pivotRot, 1.2f)));
         //StartCoroutine(SlowFlashRoutine());
@@ -132,6 +131,10 @@ class TitleComponent : MonoBehaviour, IInputListener
 
     public IEnumerator StartGameRoutine(string map, string target, OrthoDir dir)
     {
+        Global.Instance.Data.SetStringVariable("date", "Tuesday 10/1");
+        Global.Instance.Data.SetStringVariable("time", "10:00 AM");
+
+        Global.Instance.Data.SetSwitch("abseiling_disabled", true);
         yield return CoUtils.RunParallel(Global.Instance,
             CoUtils.RunTween(DOTween.To(() => rotter.rot, val => rotter.rot = val, Vector3.zero, 2.5f)),
             CoUtils.RunTween(uiGroup.DOFade(0f, 2.5f)),
@@ -196,6 +199,7 @@ class TitleComponent : MonoBehaviour, IInputListener
 
     private void LaunchBookmark()
     {
+        AudioManager.Instance.StopENV();
         AudioManager.Instance.PlaySFX("menu/select", AudioManager.Bank.UI);
         InputManager.Instance.RemoveListener(this);
         Global.Instance.StartCoroutine(ResumeGameRoutine());
@@ -211,7 +215,7 @@ class TitleComponent : MonoBehaviour, IInputListener
 
     private IEnumerator ResumeGameRoutine()
     {
-        for (var i = 0; i < dateIndex; i += 1)
+        for (var i = 0; i <= dateIndex; i += 1)
         {
             foreach (var s in SwitchSets.Sets[i])
             {

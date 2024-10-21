@@ -1,0 +1,11 @@
+fade('normal', .1)
+wait(2)
+enterNVL()
+enter('YOU', 'c')
+speak('YOU', "That stupid dream again!")
+speak('YOU', "Was that place... Rocklift?")
+speak('YOU', "Never mind. I should just get over to the caving club.")
+exitNVL()
+
+setSwitch('d3_00', true)
+teleport('Clubhouse', 'start')

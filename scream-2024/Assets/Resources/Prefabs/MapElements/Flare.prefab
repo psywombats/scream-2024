@@ -46,8 +46,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.6012545, g: 0.09787753, b: 0.033774003, a: 1}
-  m_Intensity: 5
-  m_Range: 200
+  m_Intensity: 7
+  m_Range: 256
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -191,8 +191,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.34482405, b: 0, a: 1}
-  m_Intensity: 8
-  m_Range: 50
+  m_Intensity: 13
+  m_Range: 64
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -285,7 +285,7 @@ MonoBehaviour:
   posMode: 0
   newColor: {r: 1, g: 0.34509805, b: 0, a: 1}
   rangeOffset: 0
-  intensityOffset: 1
+  intensityOffset: 1.2
   flickerChance: 0
   flickerRange: 0
   flickerIntensity: 0

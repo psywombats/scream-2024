@@ -31,3 +31,6 @@ MonoBehaviour:
   - tag: CONTROL
     displayName: Nika
     sprite: {fileID: 21300000, guid: 4f066851a70acd64e9cb54b491359a78, type: 3}
+  - tag: OLDGUY
+    displayName: wtf
+    sprite: {fileID: 21300000, guid: 0cebd3df5438abe43be012406ec301c7, type: 3}

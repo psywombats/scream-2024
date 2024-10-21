@@ -88,6 +88,7 @@ MonoBehaviour:
   - Outside Phoebe's Apartment
   - '{time}'
   lighting: 0
+  allowAbseil: 0
   eventLayer: {fileID: 3473831592667386}
   mesh: {fileID: 6473528673539812963}
 --- !u!114 &3462636470823042657

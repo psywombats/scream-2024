@@ -64,6 +64,7 @@ public class LuaCutsceneContext : LuaContext
         Lua.Globals["cs_radio"] = (Action<DynValue, DynValue>)Radio;
         Lua.Globals["clear"] = (Action)ClearNVL;
         Lua.Globals["hideRadio"] = (Action)HideRadio;
+        Lua.Globals["exitRadio"] = (Action)HideRadio;
 
         Lua.Globals["cs_rotateTo"] = (Action<DynValue>)RotateToward;
         Lua.Globals["setting"] = (Action<DynValue>)Setting;

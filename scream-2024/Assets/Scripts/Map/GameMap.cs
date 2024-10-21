@@ -11,6 +11,7 @@ public abstract class GameMap : MonoBehaviour
     [SerializeField] private List<string> displayNames;
     [Space]
     [SerializeField] public LightingMode lighting;
+    [SerializeField] public bool allowAbseil = true;
     [Space]
     [SerializeField] public GameObject eventLayer;
 

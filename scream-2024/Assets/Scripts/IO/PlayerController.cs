@@ -361,7 +361,9 @@ public class PlayerController : MonoBehaviour, IInputListener
 
     private void SetAbseil(bool on)
     {
-        if (isAbseiling == on  || Global.Instance.Data.GetSwitch("abseiling_disabled"))
+        if (isAbseiling == on  
+            || Global.Instance.Data.GetSwitch("abseiling_disabled")
+            || Global.Instance.Maps.ActiveMap != null && !Global.Instance.Maps.ActiveMap.allowAbseil)
         {
             return;
         }

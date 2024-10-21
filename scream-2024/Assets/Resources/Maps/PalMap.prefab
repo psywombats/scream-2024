@@ -261,11 +261,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayNames:
-  - Tuesday 10/1
+  - '{date}'
   - A&M University
   - Cheap apartment
-  - 10:00 AM
+  - '{time}'
   lighting: 0
+  allowAbseil: 0
   eventLayer: {fileID: 8745626077840585958}
   mesh: {fileID: 7764492765690164915}
 --- !u!114 &2301012690502123226
@@ -294,7 +295,7 @@ GameObject:
   - component: {fileID: 8700607490874654509}
   - component: {fileID: 604771478576128184}
   m_Layer: 0
-  m_Name: auto
+  m_Name: d0_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76b968faddefd047b848c852ddbbf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  luaCondition: 
+  luaCondition: return not getSwitch('d0_00')
   luaOnInteract: 
   luaOnCollide: 
   luaOnEnter: play('d0_00')
@@ -436,7 +437,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -466,7 +467,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -496,7 +497,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -646,7 +647,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -676,7 +677,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -736,7 +737,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -766,7 +767,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -886,7 +887,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -916,7 +917,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -946,7 +947,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1079,18 +1080,16 @@ Tilemap:
   - m_RefCount: 4
     m_Data: {fileID: 4526027083023366416, guid: a9346de22b9860745b82c9c5bbd09d3f,
       type: 3}
-  - m_RefCount: 5
-    m_Data: {fileID: -7606461401406847045, guid: a9346de22b9860745b82c9c5bbd09d3f,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 8
     m_Data: {fileID: 6352485350352462925, guid: a9346de22b9860745b82c9c5bbd09d3f,
       type: 3}
   - m_RefCount: 6
     m_Data: {fileID: -1602211849960596742, guid: a9346de22b9860745b82c9c5bbd09d3f,
       type: 3}
-  - m_RefCount: 5
-    m_Data: {fileID: 3557670472398129643, guid: a9346de22b9860745b82c9c5bbd09d3f,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 5
     m_Data: {fileID: 0, guid: a9346de22b9860745b82c9c5bbd09d3f, type: 3}
   - m_RefCount: 3
@@ -1098,6 +1097,12 @@ Tilemap:
       type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 706928518876948407, guid: a9346de22b9860745b82c9c5bbd09d3f, type: 3}
+  - m_RefCount: 5
+    m_Data: {fileID: 7537486514573334428, guid: a9346de22b9860745b82c9c5bbd09d3f,
+      type: 3}
+  - m_RefCount: 5
+    m_Data: {fileID: 1447396628381591446, guid: a9346de22b9860745b82c9c5bbd09d3f,
+      type: 3}
   m_TileMatrixArray:
   - m_RefCount: 61
     m_Data:
@@ -1701,5 +1706,56 @@ Transform:
   m_Children:
   - {fileID: 3742286114189150625}
   - {fileID: 8700607490874654509}
+  - {fileID: 8339971797786815907}
   m_Father: {fileID: 3022827631907575764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9198739000260660256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8339971797786815907}
+  - component: {fileID: 517031971519209887}
+  m_Layer: 0
+  m_Name: d3_00
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8339971797786815907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9198739000260660256}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4584104947955876487}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &517031971519209887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9198739000260660256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76b968faddefd047b848c852ddbbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luaCondition: return not getSwitch('d3_00') and getSwitch('d2_04')
+  luaOnInteract: 
+  luaOnCollide: 
+  luaOnEnter: play('d3_00')
+  enableChild: {fileID: 0}
+  collider: {fileID: 0}

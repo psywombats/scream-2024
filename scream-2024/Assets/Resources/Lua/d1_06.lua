@@ -28,4 +28,10 @@ exit('PAL')
 speak('YOU', "Thanks, Amador. Really.")
 exitNVL()
 
+fade('black', 2)
+fadeOutBGM(2)
+
 setSwitch('d1_06', true)
+
+teleport('Cave03_BigFlat', 'start', 'NORTH', true)
+fade('normal', 2)
