@@ -15,6 +15,7 @@ public class LineAutotyper : TextAutotyper
     {
         lines = new string[lineCount];
         Clear();
+        StartCoroutine(TestRoutine());
     }
 
     public override void Clear()
