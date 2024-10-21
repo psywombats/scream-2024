@@ -146,7 +146,6 @@
 		<property name="maxVoices">
 			<value>1</value>
 		</property>
-		<property name="name" />
 		<relationship name="fadeInCurve">
 			<destination>{0d0754fb-301f-4483-bb50-6ae2d0506a6e}</destination>
 		</relationship>

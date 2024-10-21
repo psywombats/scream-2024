@@ -61,7 +61,11 @@
 			<destination>{bebc6b70-584e-4439-8c45-7883d83f8e44}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{22e103f1-53b2-4389-8e39-da9d8fd8b8ce}" />
+	<object class="EventAutomatableProperties" id="{22e103f1-53b2-4389-8e39-da9d8fd8b8ce}">
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{dac0904b-cb34-46b8-9de9-7293fad7b435}" />
 	<object class="GroupTrack" id="{015d47ad-547e-4d3b-ad8e-84d252539211}">
 		<relationship name="modules">
@@ -143,7 +147,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{1b331e9d-7f34-4329-8f70-f569c484a9ea}">
 		<property name="volume">
-			<value>2</value>
+			<value>1.5</value>
 		</property>
 		<property name="name">
 			<value>Footsteps</value>
@@ -270,7 +274,7 @@
 			<value>volume</value>
 		</property>
 		<property name="amount">
-			<value>9.5</value>
+			<value>4</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{d16e0f79-3b8b-4d4c-b3a7-dd253b8f8c12}">
