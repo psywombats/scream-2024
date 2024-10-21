@@ -58,7 +58,7 @@ public class LineAutotyper : TextAutotyper
 
     public IEnumerator WriteLineRoutine(string line)
     {
-        Global.Instance.Input.PushListener(this);
+        //Global.Instance.Input.PushListener(this);
 
         var words = line.Split(' ');
         for (var at = 0; at < words.Length;)
@@ -113,7 +113,7 @@ public class LineAutotyper : TextAutotyper
             yield return TypeRoutine(fullMessage.ToString(), false);
         }
 
-        Global.Instance.Input.RemoveListener(this);
+       // Global.Instance.Input.RemoveListener(this);
     }
 
     public bool ExceedsLineWidth(string line)
