@@ -22,6 +22,7 @@ public abstract class GameMap : MonoBehaviour
         if (Global.Instance.Maps.ActiveMap == null)
         {
             Global.Instance.Maps.ActiveMap = this;
+            OnTeleportTo(null);
         }
     }
 

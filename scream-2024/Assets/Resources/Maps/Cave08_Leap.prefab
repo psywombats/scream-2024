@@ -54,9 +54,11 @@ MonoBehaviour:
   - 850m
   lighting: 2
   allowAbseil: 1
+  allowFlare: 1
+  waterHeight: -1000
   eventLayer: {fileID: 7896453020550271063}
   noise: {fileID: 4964484547817666064}
-  caveSize: 1
+  caveSize: 0.9
   spookiness: 0.8
   humidity: 0
   terrain: {fileID: 1467969359165405676}

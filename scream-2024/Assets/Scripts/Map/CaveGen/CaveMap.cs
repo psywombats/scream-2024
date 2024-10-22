@@ -23,6 +23,7 @@ public class CaveMap : GameMap
         Regenerate(1, true);
         AudioManager.Instance.SetGlobalParam("Cave Size", caveSize);
         AudioManager.Instance.SetGlobalParam("Spookiness", spookiness);
+        AudioManager.Instance.SetGlobalParam("cave_type", humidity.ToString());
     }
 
     public void Regenerate(int radius = 0, bool usePlayer = false)

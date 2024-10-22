@@ -121,7 +121,20 @@ public class PlayerController : MonoBehaviour, IInputListener
 
         var fallSpeed = Mathf.Abs(body.velocity.y / abseilCutoff);
         if (body.velocity.y > 0) fallSpeed = 0f;
-        
+        AudioManager.Instance.SetGlobalParam("FallSpeed", fallSpeed);
+        var floorType = "Rock";
+        if (Global.Instance.Maps.ActiveMap.lighting == LightingMode.Cave)
+        {
+            if (transform.localPosition.y < Global.Instance.Maps.ActiveMap.waterHeight)
+            {
+                floorType = "Puddle";
+            }
+        }
+        else
+        {
+            floorType = "Other";
+        }
+        AudioManager.Instance.SetGlobalParam("Floor_Type", floorType);
 
         timeSinceGrounding += Time.deltaTime;
     }
