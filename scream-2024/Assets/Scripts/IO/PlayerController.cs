@@ -119,9 +119,6 @@ public class PlayerController : MonoBehaviour, IInputListener
             SetAbseil(true);
         }
 
-        var fallSpeed = Mathf.Abs(body.velocity.y / abseilCutoff);
-        if (body.velocity.y > 0) fallSpeed = 0f;
-        AudioManager.Instance.SetGlobalParam("FallSpeed", fallSpeed);
         var floorType = "Rock";
         if (Global.Instance.Maps.ActiveMap.lighting == LightingMode.Cave)
         {
@@ -135,6 +132,10 @@ public class PlayerController : MonoBehaviour, IInputListener
             floorType = "Other";
         }
         AudioManager.Instance.SetGlobalParam("Floor_Type", floorType);
+
+        var fallSpeed = Mathf.Abs(body.velocity.y / abseilCutoff);
+        if (body.velocity.y > 0) fallSpeed = 0f;
+        AudioManager.Instance.SetGlobalParam("FallSpeed", fallSpeed);
 
         timeSinceGrounding += Time.deltaTime;
     }
