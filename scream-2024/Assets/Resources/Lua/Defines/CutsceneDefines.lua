@@ -50,6 +50,12 @@ function rotateTo(event)
 	await()
 end
 
+function lookAt(event)
+	cs_rotateTo(event)
+	await()
+end
+
+
 function bootGazer(on)
 	cs_bootGazer(on)
 	await()

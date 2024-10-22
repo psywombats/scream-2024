@@ -1,0 +1,23 @@
+enterNVL()
+enter('LEADER', 'b')
+enter('YOU', 'd')
+if not getSwitch('d4_04_leader') then
+	speak('LEADER', "We're so close. I know it.")
+	speak('YOU', "Close to PAL?")
+	expr('LEADER', 'grin')
+	speak('LEADER', "Close to the bottom. There's something down there. You feel it too, right?")
+	speak('YOU', "I can't feel anything.")
+	expr('LEADER', '')
+	speak('LEADER', "Listen harder. Use all your senses. Vision will fail you down here, but your spirit won't.")
+	speak('LEADER', "Just keep that picture in your mind: You, succeeding. You, fulfilling your dreams.")
+	speak('LEADER', "What is it that you see?")
+	speak('YOU', "I... I'm holding a new species of axlotl. Amador's laughing next to me.")
+	expr('LEADER', 'serious')
+	speak('LEADER', "That's what's waiting down there, then. It'll all be worth it. Everything a means to an end.")
+	expr('LEADER', '')
+end
+speak('LEADER', "It's good to talk with you, Phoebe. You're the only one who understands.")
+exitNVL()
+
+setSwitch('d4_04_leader', true)
+play('d4_04_next')

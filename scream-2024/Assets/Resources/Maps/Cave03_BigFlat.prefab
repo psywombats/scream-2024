@@ -352,7 +352,7 @@ MonoBehaviour:
   - Big Flat
   - 300m
   lighting: 2
-  allowAbseil: 1
+  allowAbseil: 0
   eventLayer: {fileID: 4611957950880064135}
   noise: {fileID: 1723300446726338284}
   caveSize: 0.6

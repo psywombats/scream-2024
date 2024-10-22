@@ -7,15 +7,22 @@ public class Chunk : MonoBehaviour
     [Space]
     [SerializeField] private MeshFilter filter;
     [SerializeField] private new MeshCollider collider;
+    [Space]
+    [SerializeField] private float pulsarPeriod;
+    [SerializeField] private float pulsarAmplitude;
 
     [SerializeField] [HideInInspector] private float[] weights;
 
     public MarchingTerrain Terrain { get; private set; }
     public Vector3Int Index { get; private set; }
 
+    public bool IsPulsar { get; set; }
+
     private ComputeBuffer trianglesBuffer;
     private ComputeBuffer trianglesCountBuffer;
     private ComputeBuffer weightsBuffer;
+
+    private float elapsed;
 
     public void Init(MarchingTerrain terrain, Vector3Int index, Vector3 pos)
     {
@@ -28,7 +35,17 @@ public class Chunk : MonoBehaviour
         UpdateMesh();
     }
 
-    public void AdjustWeights(Vector3 hit, float r, float mult)
+    public void Update()
+    {
+        if (IsPulsar)
+        {
+            elapsed += Time.deltaTime;
+            var pulsarRate = Mathf.Sin(elapsed / pulsarPeriod) * pulsarAmplitude;
+            AdjustWeights(Vector3.zero, 0f, Time.deltaTime * pulsarRate, alwaysApply: true);
+        }
+    }
+
+    public void AdjustWeights(Vector3 hit, float r, float mult, bool alwaysApply = false)
     {
         var kernel = marchShader.FindKernel("updateWeights");
 
@@ -38,6 +55,7 @@ public class Chunk : MonoBehaviour
         marchShader.SetVector("_HitPosition", hit - transform.position);
         marchShader.SetFloat("_Radius", r);
         marchShader.SetFloat("_Delta", mult);
+        marchShader.SetFloat("_AllGood", alwaysApply ? 1 : 0);
 
         marchShader.Dispatch(kernel, 
             GridMetrics.PointsPerChunk / GridMetrics.ThreadCount, 

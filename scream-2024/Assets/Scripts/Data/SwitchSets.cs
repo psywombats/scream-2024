@@ -6,6 +6,7 @@ public static class SwitchSets
         "Tuesday 10/2",
         "Wednesday 10/3",
         "Thursday 10/4",
+        "Friday 10/5",
     };
 
     public static string[] BookmarkTimes = new string[]
@@ -14,6 +15,7 @@ public static class SwitchSets
         "12:00 PM",
         "7:00 AM",
         "11:00 AM",
+        "??:?? AM",
     };
 
     public static string[] MapNames = new string[]
@@ -21,7 +23,8 @@ public static class SwitchSets
         "MeetingMap",
         "Cave03_BigFlat",
         "FallCave",
-        "FallCave",
+        "DreamChamber",
+        "DreamChamber",
     };
 
     public static string[][] Sets = new string[][]
@@ -62,6 +65,30 @@ public static class SwitchSets
             "d3_00",
             "d3_01",
             "d3_02",
+            "d3_03",
+            "d3_03",
+            "d3_04_jerk",
+            "d3_04_leader",
+            "d3_04_control",
+            "d3_04_pal",
         },
+        new string[]
+        {
+            "d4_00",
+            "d4_01",
+            "d4_01_control",
+            "d4_01_jerk",
+            "d4_01_leader",
+            "d4_02",
+            "d4_03",
+            "d4_04_control",
+            "d4_04_jerk",
+            "d4_04_leader",
+            "d4_05",
+        },
+        new string[]
+        {
+
+        }
     };
 }

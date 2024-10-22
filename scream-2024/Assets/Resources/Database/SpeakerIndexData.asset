@@ -68,3 +68,21 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 0cebd3df5438abe43be012406ec301c7, type: 3}
     glow: {fileID: 21300000, guid: 914b198b2a2dbf846979eab4a83a4a21, type: 3}
     exprs: []
+  - tag: OTHER
+    displayName: Phoebe?
+    sprite: {fileID: 21300000, guid: 964b586e825be5648ad80ee39898200b, type: 3}
+    glow: {fileID: 21300000, guid: 653dc9e9cdb51754a90ef9cb221c47e6, type: 3}
+    exprs:
+    - key: flirty
+      sprite: {fileID: 21300000, guid: b8ad9f5589d5a894fb885309f4a93fa2, type: 3}
+    - key: smirk
+      sprite: {fileID: 21300000, guid: 8c8f4f6056678114098080ce7b7c3538, type: 3}
+  - tag: LEADER2
+    displayName: wtf
+    sprite: {fileID: 21300000, guid: b76aa2c508e31014f903317ff1979394, type: 3}
+    glow: {fileID: 21300000, guid: e5857e29a4c55f941ad5aeaa68d61e58, type: 3}
+    exprs:
+    - key: flirty
+      sprite: {fileID: 21300000, guid: b8ad9f5589d5a894fb885309f4a93fa2, type: 3}
+    - key: smirk
+      sprite: {fileID: 21300000, guid: 8c8f4f6056678114098080ce7b7c3538, type: 3}

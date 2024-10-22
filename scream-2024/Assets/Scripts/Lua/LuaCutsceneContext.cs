@@ -183,8 +183,11 @@ public class LuaCutsceneContext : LuaContext
 
     private void RotateToward(DynValue eventName)
     {
-        //var @event = MapManager.Instance.ActiveMap.GetEventNamed(eventName.String);
-        //RunRoutineFromLua(AvatarEvent.Instance.RotateTowardRoutine(@event));
+        var @event = MapManager.Instance.ActiveMap.GetEventNamed(eventName.String);
+        RunRoutineFromLua(Global.Instance.Avatar.RotateTowardRoutine(
+            Global.Instance.Avatar.firstPersonParent, 
+            @event.gameObject,
+            Global.Instance.Avatar.camera.gameObject));
     }
 
     private void Radio(DynValue speakerLua, DynValue textLua)

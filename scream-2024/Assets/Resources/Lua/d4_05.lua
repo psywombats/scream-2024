@@ -1,0 +1,12 @@
+lookAt('leader02')
+wait(1)
+enterNVL()
+enter('LEADER', 'c')
+speak('LEADER', "Phoebe, do you think you can sleep a bit?")
+speak('YOU', "Is it nighttime already?")
+speak('LEADER', "It's hard to tell, but Tom and I are going to try to get some rest. Tomorrow we make the final dive.")
+speak('YOU', "...Then I'll try to sleep. Goodnight.")
+
+fade('black', 2)
+setSwitch('d4_05', true)
+teleport("DreamChamber", 'start')

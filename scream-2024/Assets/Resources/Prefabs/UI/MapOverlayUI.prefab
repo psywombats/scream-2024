@@ -788,7 +788,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Rlick/shift for Flare
+  m_Text: Rclick/shift for Flare
 --- !u!225 &316955107309053599
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -986,13 +986,13 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 935071200653839067}
   - {fileID: 433823490292336292}
   - {fileID: 3293790927481003960}
   - {fileID: 1068781307509793211}
   - {fileID: 4164964210448962581}
   - {fileID: 528481828711336048}
   - {fileID: 6237989180195212255}
+  - {fileID: 935071200653839067}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

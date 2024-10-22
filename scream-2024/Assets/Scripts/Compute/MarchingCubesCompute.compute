@@ -79,6 +79,7 @@ void march(uint3 id : SV_DispatchThreadID)
 float3 _HitPosition;
 float _Radius;
 float _Delta;
+int _AllGood;
 
 [numthreads(threadCount, threadCount, threadCount)]
 void updateWeights(uint3 id : SV_DispatchThreadID)
@@ -88,7 +89,7 @@ void updateWeights(uint3 id : SV_DispatchThreadID)
         //return;
     }
 
-    if (distance(id, _HitPosition) <= _Radius)
+    if (_AllGood > 0 || distance(id, _HitPosition) <= _Radius)
     {
         _Weights[indexFromCoord(id.x, id.y, id.z)] += _Delta;
     }

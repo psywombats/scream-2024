@@ -1,12 +1,13 @@
 using DG.Tweening;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour, IInputListener
 {
-    [SerializeField] private GameObject firstPersonParent;
+    [SerializeField] public GameObject firstPersonParent;
     [SerializeField] public Rigidbody body;
     [SerializeField] public new Collider collider;
     [SerializeField] public new Camera camera;
@@ -186,6 +187,23 @@ public class PlayerController : MonoBehaviour, IInputListener
         }
     }
 
+    public IEnumerator RotateTowardRoutine(GameObject mover, GameObject target, GameObject rotater)
+    {
+        var targetPos = target.transform.position + new Vector3(0, 1f, 0);
+        var dir = (targetPos - mover.transform.position).normalized;
+        if (mover == rotater)
+        {
+            dir *= -1;
+        }
+        var lookAngles = Quaternion.LookRotation(dir).eulerAngles;
+        if (mover == rotater)
+        {
+            lookAngles.x = 0f;
+        }
+
+        return CoUtils.RunTween(rotater.transform.DORotate(lookAngles, .5f));
+    }
+
     public bool OnCommand(InputManager.Command command, InputManager.Event eventType)
     {
         if (command == InputManager.Command.Menu && eventType == InputManager.Event.Up)
@@ -264,7 +282,7 @@ public class PlayerController : MonoBehaviour, IInputListener
         {
             var obj = hit.transform.gameObject;
             var chara = obj.GetComponentInParent<CharaEvent>();
-            if (chara != null && hit.distance < 3f)
+            if (chara != null && hit.distance < chara.interactDistance)
             {
                 return chara;
             }
@@ -290,6 +308,8 @@ public class PlayerController : MonoBehaviour, IInputListener
         var chara = GetLookingChara();
         if (chara != null)
         {
+            StartCoroutine(RotateTowardRoutine(firstPersonParent, chara.gameObject, camera.gameObject));
+            StartCoroutine(RotateTowardRoutine(chara.gameObject, firstPersonParent, chara.gameObject));
             chara.Interact();
         }
     }
@@ -340,11 +360,12 @@ public class PlayerController : MonoBehaviour, IInputListener
         OldFlare.transform.SetParent(camera.transform);
         OldFlare.transform.localPosition = new Vector3(0f, 0f, .5f);
         OldFlare.transform.SetParent(transform.parent);
-        OldFlare.GetComponent<Rigidbody>().velocity = camera.transform.forward * 10;
+        OldFlare.GetComponent<Rigidbody>().velocity = camera.transform.forward * 10 + body.velocity;
     }
 
     public bool CanFlare => MapManager.Instance.ActiveMap.lighting == LightingMode.Cave
-            && Global.Instance.Data.GetSwitch("enable_flares");
+            && Global.Instance.Data.GetSwitch("enable_flares")
+            && Global.Instance.Maps.ActiveMap.allowFlare;
 
     private void ToggleGodMode()
     {

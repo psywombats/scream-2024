@@ -1,0 +1,21 @@
+enterNVL()
+enter('YOU', 'b')
+if not getSwitch('d4_04_jerk') then
+	enter('JERK', 'd', 'meh')
+	speak('YOU', "Tom, about what you were talking about last night, about mental health...")
+	speak('JERK', "Go away. I'm busy.")
+	speak('YOU', "Are you alright?")
+	speak('JERK', "I will be better if you leave me be.")
+	exit('JERK')
+	enter('JERK', 'e')
+	speak('JERK', "One of the most pleasant things about being this far beneath the earth is that you can be truly alone.")
+	speak('JERK', "No need to trust anyone, no need to pretend to be friendly, no facades and no fakery.")
+	speak('JERK', "I prefer my own company. So, leave.")
+	speak('YOU', "You don't have to be a jerk about it.")
+	exit('JERK')
+end
+speak('YOU', "I thought I was finally getting through to him...")
+exitNVL()
+
+setSwitch('d4_04_jerk', true)
+play('d4_04_next')

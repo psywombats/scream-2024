@@ -7,6 +7,8 @@ public class MarchingTerrain : MonoBehaviour
     [Space]
     [SerializeField] private int spawnRadius = 1;
     [SerializeField] private int cullDist = 2;
+    [Space]
+    [SerializeField] private List<Vector3Int> pulsars;
 
     private Dictionary<Vector3Int, Chunk> chunks = new();
     private Dictionary<int, GameObject> layers = new();
@@ -141,6 +143,16 @@ public class MarchingTerrain : MonoBehaviour
 
     private void MakeChunk(Vector3Int chunkIndex)
     {
+        var isPulsar = false;
+        foreach (var index in pulsars)
+        {
+            if (chunkIndex == index)
+            {
+                isPulsar = true;
+            }
+            break;
+        }
+
         var chunk = Instantiate(chunkPrefab.gameObject).GetComponent<Chunk>();
         var pos = (Vector3)(chunkIndex * GridMetrics.ChunkSize);
         var off = GridMetrics.ChunkSize / 2f;
@@ -148,6 +160,7 @@ public class MarchingTerrain : MonoBehaviour
         chunks[chunkIndex] = chunk;
 
         chunk.gameObject.SetActive(true);
+        chunk.IsPulsar = isPulsar;
         chunk.gameObject.name = $"{chunkIndex.x}, {chunkIndex.z}";
 
         EnsureLayer(chunkIndex.y);

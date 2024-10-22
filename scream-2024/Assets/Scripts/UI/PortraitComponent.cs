@@ -33,14 +33,8 @@ public class PortraitComponent : MonoBehaviour
             yield return ExitRoutine();
         }
         Speaker = speaker;
-        if (!string.IsNullOrEmpty(expr))
-        {
-            sprite.sprite = GetSpriteForExpr(speaker, expr);
-        }
-        else
-        {
-            sprite.sprite = speaker.sprite;
-        }
+        sprite.sprite = GetSpriteForExpr(speaker, expr);
+        sprite.sprite = speaker.sprite;
 
         sprite.SetNativeSize();
         sprite.color = new Color(1, 1, 1, 0);
@@ -53,6 +47,10 @@ public class PortraitComponent : MonoBehaviour
 
     private Sprite GetSpriteForExpr(SpeakerData speaker, string expr)
     {
+        if (string.IsNullOrEmpty(expr))
+        {
+            return speaker.sprite;
+        }
         Sprite found = null;
         foreach (var sub in speaker.exprs)
         {

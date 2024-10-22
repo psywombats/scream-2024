@@ -123,6 +123,8 @@ MonoBehaviour:
   marchShader: {fileID: 7200000, guid: db23f073406cdad46a7481327ae01f60, type: 3}
   filter: {fileID: 1050376699554989721}
   collider: {fileID: 4039100465428233135}
+  pulsarPeriod: 0
+  pulsarAmplitude: 0
   weights: []
 --- !u!1 &1690045469779821363
 GameObject:
@@ -293,7 +295,7 @@ GameObject:
   - component: {fileID: 3381923086304788452}
   - component: {fileID: 4464967469740108560}
   m_Layer: 0
-  m_Name: TestChamber
+  m_Name: TitleChamber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -315,6 +317,7 @@ Transform:
   - {fileID: 5622568548657199861}
   - {fileID: 5270685936943064469}
   - {fileID: 7140526158851391482}
+  - {fileID: 7654793325209627670}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6391411416858143900
@@ -333,6 +336,7 @@ MonoBehaviour:
   - Really Dank Cave
   - 1500m
   lighting: 2
+  allowAbseil: 1
   eventLayer: {fileID: 8033848021120395650}
   noise: {fileID: 3381923086304788452}
   caveSize: 0
@@ -364,6 +368,7 @@ MonoBehaviour:
   chamberOblZ: 1
   ceilHard: 3
   floorHard: 4
+  wallHard: 1
   chamberWeight: 0.6
   noiseWeight: 1
 --- !u!114 &4464967469740108560
@@ -427,6 +432,7 @@ MonoBehaviour:
   chunkPrefab: {fileID: 7893863425117558734}
   spawnRadius: 2
   cullDist: 3
+  pulsars: []
 --- !u!1 &4602638061777598330
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,3 +514,77 @@ Transform:
   - {fileID: 3076918556460733660}
   m_Father: {fileID: 5903816728811778536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7153973735613991745
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5903816728811778536}
+    m_Modifications:
+    - target: {fileID: 578014910998951666, guid: bc8422d1aca0a454f9d238959f024851,
+        type: 3}
+      propertyPath: m_Name
+      value: Water!
+      objectReference: {fileID: 0}
+    - target: {fileID: 680972414055196503, guid: bc8422d1aca0a454f9d238959f024851,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 680972414055196503, guid: bc8422d1aca0a454f9d238959f024851,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.319
+      objectReference: {fileID: 0}
+    - target: {fileID: 680972414055196503, guid: bc8422d1aca0a454f9d238959f024851,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -33.639
+      objectReference: {fileID: 0}
+    - target: {fileID: 680972414055196503, guid: bc8422d1aca0a454f9d238959f024851,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99846023
+      objectReference: {fileID: 0}
+    - target: {fileID: 680972414055196503, guid: bc8422d1aca0a454f9d238959f024851,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680972414055196503, guid: bc8422d1aca0a454f9d238959f024851,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.05547298
+      objectReference: {fileID: 0}
+    - target: {fileID: 680972414055196503, guid: bc8422d1aca0a454f9d238959f024851,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680972414055196503, guid: bc8422d1aca0a454f9d238959f024851,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680972414055196503, guid: bc8422d1aca0a454f9d238959f024851,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 6.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 680972414055196503, guid: bc8422d1aca0a454f9d238959f024851,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc8422d1aca0a454f9d238959f024851, type: 3}
+--- !u!4 &7654793325209627670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 680972414055196503, guid: bc8422d1aca0a454f9d238959f024851,
+    type: 3}
+  m_PrefabInstance: {fileID: 7153973735613991745}
+  m_PrefabAsset: {fileID: 0}

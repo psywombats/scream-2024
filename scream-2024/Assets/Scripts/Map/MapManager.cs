@@ -90,14 +90,6 @@ public class MapManager : SingletonBehavior
         AddInitialAvatar();
         Avatar.transform.position = target.transform.position;
         Avatar.camera.transform.eulerAngles = target.transform.eulerAngles;
-        if (facing.HasValue)
-        {
-            Avatar.SetFacing(facing.Value);
-        }
-        else
-        {
-            Avatar.SetFacing(target.transform.localEulerAngles);
-        }
 
         Avatar.OnTeleport();
         ActiveMap.OnTeleportTo(oldMap);

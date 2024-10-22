@@ -12,7 +12,7 @@ public class CharaEvent : MonoBehaviour
     [SerializeField] private string speakerTag;
     [SerializeField] private bool phaseIn;
     [SerializeField] private float phaserDelay = .8f;
-    [SerializeField] public OrthoDir dir = OrthoDir.South;
+    [SerializeField] public float interactDistance = 3f;
 
     private MapEvent @event;
     public MapEvent Event => @event ?? (@event = GetComponent<MapEvent>());
@@ -27,7 +27,6 @@ public class CharaEvent : MonoBehaviour
         {
             StartCoroutine(PhaseInRoutine());
         }
-        SetFacing(dir);
         Event.enableChild = doll.gameObject;
         doll.gameObject.SetActive(Event.IsSwitchEnabled);
     }
@@ -62,20 +61,11 @@ public class CharaEvent : MonoBehaviour
         }
     }
 
-    public void SetFacing(OrthoDir dir)
-    {
-        if (doll != null)
-        {
-            doll.offsetter.transform.localEulerAngles = new Vector3(0, dir.Rot3D(), 0);
-        }
-    }
-
     public void OnValidate()
     {
         if (!Application.isPlaying)
         {
             UpdateRenderer();
-            //SetFacing(dir);
         }
     }
 

@@ -1,0 +1,17 @@
+fade('normal', 4)
+
+enterNVL()
+speak('LEADER', " - can't split up without the radio. It's just - ")
+speak('JERK', " - not another minute with you. It's unbearable.")
+enter('YOU', 'c')
+speak('YOU', "Good morning?")
+enter('LEADER', 'e')
+enter('JERK', 'a')
+speak('JERK', "Oh good, you're awake. There's no time to lose. We've got to dive.")
+speak('LEADER', "Certain people were even going to leave you behind!")
+speak('JERK', "Don't mispresent me! I only meant - ")
+speak('JERK', "Come on, Phoebe. Let's move.")
+exitNVL()
+
+setSwitch('d5_01', true)
+teleport('Cave10_Sump', 'start')
