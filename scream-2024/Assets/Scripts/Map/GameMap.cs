@@ -49,9 +49,9 @@ public abstract class GameMap : MonoBehaviour
                     MapOverlayUI.Instance.setting.Show(setting);
                 }
             }
+            MapOverlayUI.Instance.ascendInfo.alpha = allowAbseil ? 1f : 0f;
+            MapOverlayUI.Instance.flareInfo.alpha = Global.Instance.Avatar.CanFlare ? 1f : 0f;
         }
-        MapOverlayUI.Instance.ascendInfo.alpha = allowAbseil ? 1f : 0f;
-        MapOverlayUI.Instance.flareInfo.alpha = Global.Instance.Avatar.CanFlare ? 1f : 0f;
     }
 
     public virtual void OnTeleportAway(GameMap nextMap)

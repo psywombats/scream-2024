@@ -2,7 +2,7 @@ enterNVL()
 enter('LEADER', 'b')
 enter('YOU', 'd')
 if not getSwitch('d4_01_leader') then
-	speak('LEADER', "Hey, YOU, can I get you to promise something?")
+	speak('LEADER', "Hey, Phoebe, can I get you to promise something?")
 	speak('YOU', "Yeah?")
 	expr('LEADER', 'serious')
 	speak('LEADER', "No matter what happened to Amador, you won't let the university know until after we've found the bottom, right?")

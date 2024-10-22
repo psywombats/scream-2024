@@ -1,4 +1,4 @@
-radio('YOU', "Hey! Jeanne, Adamar. I found him.")
+radio('YOU', "Hey! Jeanne, Amador. I found him.")
 exitRadio()
 
 wait(1)

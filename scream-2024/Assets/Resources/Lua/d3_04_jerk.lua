@@ -22,7 +22,7 @@ if not getSwitch('d3_04_jerk') then
 	enter('JERK', 'a', 'meh')
 	speak('JERK', "And... I honestly still struggle with relying on others. But you're a good person. You're kind and personable. Don't feel like you're trapped here with us lunatics.")
 end
-speak('YOU', "Thank you for trusting me. But I'm a lot more persistent than you think, JERK. I know I'm a newbie but I'll help as much as I can. I need this.")
+speak('YOU', "Thank you for trusting me. But I'm a lot more persistent than you think, Tom. I know I'm a newbie but I'll help as much as I can. I need this.")
 exitNVL()
 
 setSwitch('d3_04_jerk', true)
