@@ -86,3 +86,12 @@ MonoBehaviour:
       sprite: {fileID: 21300000, guid: b8ad9f5589d5a894fb885309f4a93fa2, type: 3}
     - key: smirk
       sprite: {fileID: 21300000, guid: 8c8f4f6056678114098080ce7b7c3538, type: 3}
+  - tag: OTHER2
+    displayName: Phoebe
+    sprite: {fileID: 21300000, guid: 227b6401e8ce9524091114824db8f0f8, type: 3}
+    glow: {fileID: 21300000, guid: 653dc9e9cdb51754a90ef9cb221c47e6, type: 3}
+    exprs:
+    - key: flirty
+      sprite: {fileID: 21300000, guid: d0deea32dbb8eb2408486f87e8b2cb05, type: 3}
+    - key: smirk
+      sprite: {fileID: 21300000, guid: b52ee9136c013e0419abf8533d353381, type: 3}

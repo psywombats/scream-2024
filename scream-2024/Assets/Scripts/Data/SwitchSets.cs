@@ -7,6 +7,7 @@ public static class SwitchSets
         "Wednesday 10/3",
         "Thursday 10/4",
         "Friday 10/5",
+        "Final Day",
     };
 
     public static string[] BookmarkTimes = new string[]
@@ -16,6 +17,7 @@ public static class SwitchSets
         "7:00 AM",
         "11:00 AM",
         "??:?? AM",
+        "",
     };
 
     public static string[] MapNames = new string[]
@@ -25,6 +27,7 @@ public static class SwitchSets
         "FallCave",
         "DreamChamber",
         "DreamChamber",
+        "Clubhouse",
     };
 
     public static string[][] Sets = new string[][]
@@ -88,7 +91,12 @@ public static class SwitchSets
         },
         new string[]
         {
-
+            "d5_00",
+            "d5_01",
+            "d5_02",
+            "d5_03",
+            "d5_04",
+            "d5_05",
         }
     };
 }

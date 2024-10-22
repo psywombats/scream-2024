@@ -2,6 +2,8 @@
 using System;
 using MoonSharp.Interpreter;
 using DG.Tweening;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LuaCutsceneContext : LuaContext
 {
@@ -70,6 +72,7 @@ public class LuaCutsceneContext : LuaContext
         Lua.Globals["cs_rotateTo"] = (Action<DynValue>)RotateToward;
         Lua.Globals["setting"] = (Action<DynValue>)Setting;
         Lua.Globals["showFlares"] = (Action)ShowFlares;
+        Lua.Globals["endGame"] = (Action)EndGame;
     }
 
     // === LUA CALLABLE ============================================================================
@@ -207,5 +210,17 @@ public class LuaCutsceneContext : LuaContext
     private void ShowFlares()
     {
         MapOverlayUI.Instance.flareInfo.alpha = 1f;
+    }
+
+    private void EndGame()
+    {
+        Global.Instance.StartCoroutine(EndGameCommand());
+    }
+    private IEnumerator EndGameCommand()
+    {
+        Global.Instance.Avatar.PauseInput();
+        Global.Instance.Avatar.Screenshot();
+        yield return CoUtils.Wait(5);
+        SceneManager.LoadSceneAsync("Outro", LoadSceneMode.Single);
     }
 }

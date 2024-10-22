@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour, IInputListener
     [SerializeField] private float climbSpeed = 3f;
     [Space]
     [SerializeField] private GameObject flarePrefab = null;
+    [Space]
+    [SerializeField] private GameObject endCam1;
+    [SerializeField] private GameObject endCam2;
 
     private bool godMode;
     private bool isAbseiling, isAbsDown, isAbsUp;
@@ -202,6 +205,12 @@ public class PlayerController : MonoBehaviour, IInputListener
         }
 
         return CoUtils.RunTween(rotater.transform.DORotate(lookAngles, .5f));
+    }
+
+    public void Screenshot()
+    {
+        endCam1.gameObject.SetActive(true);
+        endCam2.gameObject.SetActive(true);
     }
 
     public bool OnCommand(InputManager.Command command, InputManager.Event eventType)

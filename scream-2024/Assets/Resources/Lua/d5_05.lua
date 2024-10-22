@@ -42,4 +42,8 @@ wait(.5)
 exitNVL()
 
 fade('black', 4)
+setString('date', '')
+setString('time', '')
 setSwitch('d5_05')
+teleport('Clubhouse', 'start', 'NORTH', true)
+fade('normal', 2)

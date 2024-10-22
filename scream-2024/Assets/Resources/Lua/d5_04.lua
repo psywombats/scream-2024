@@ -38,3 +38,4 @@ speak('YOU', "Never mind. The bottom. Focus.")
 exitNVL()
 
 setSwitch('d5_04', true)
+teleport('Cave13_Squeeze', 'start')
