@@ -14,7 +14,7 @@ if not getSwitch('d3_04_jerk') then
 	speak('JERK', "Everything carries risk. And maybe I'm being overcautious and we're not in mortal danger down there.")
 	speak('JERK', "But this is clearly stressing you out. Don't think I don't notice.")
 	speak('YOU', "Oh I'm just stressed from my research. I've been trying and failing for so long that honestly this opportunity feels like a relief.")
-	expr('JERK', '')
+	expr('JERK', 'meh')
 	speak('JERK', "Then I'm sorry if I misunderstood. I saw that burn on your face, and I may have jumped to conclusions.")
 	speak('YOU', "Well... No, my mental health isn't the greatest.")
 	speak('JERK', "...Mine wasn't for a long time either. I struggled mightily in undergrad. I felt alone, and insufficient, and unworthy of friendship or support.")

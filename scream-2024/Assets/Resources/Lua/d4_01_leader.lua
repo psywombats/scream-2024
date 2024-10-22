@@ -17,8 +17,10 @@ if not getSwitch('d4_01_leader') then
 	speak('YOU', "This... is probably my last real shot at my doctorate. I understand.")
 	expr('LEADER', 'grin')
 	speak('LEADER', "I knew you'd get it. Tom doesn't, but he thinks I'm a ghoul. I just want to do what's best for us.")
+	expr('LEADER', '')
+	speak('LEADER', "Besides, whatever happened to Amador...")
 	expr('LEADER', 'serious')
-	speak('LEADER', "Besides, whatever happened to PAL... It was his fault.")
+	speak('LEADER', "... It was his fault.")
 	speak('YOU', "...")
 else
 	speak('LEADER', "No matter what happened to Amador, you won't let the university know until after we've found the bottom, right?")

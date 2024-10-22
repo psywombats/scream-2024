@@ -40,11 +40,14 @@ public abstract class GameMap : MonoBehaviour
 
     public virtual void OnTeleportTo(GameMap from)
     {
-        if (!Global.Instance.Data.GetSwitch("no_settings") && from != this)
+        if (MapOverlayUI.Instance != null)
         {
-            foreach (var setting in displayNames)
+            if (!Global.Instance.Data.GetSwitch("no_settings") && from != this)
             {
-                MapOverlayUI.Instance.setting.Show(setting);
+                foreach (var setting in displayNames)
+                {
+                    MapOverlayUI.Instance.setting.Show(setting);
+                }
             }
         }
         MapOverlayUI.Instance.ascendInfo.alpha = allowAbseil ? 1f : 0f;

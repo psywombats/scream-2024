@@ -20,3 +20,5 @@ speak('YOU', "...")
 exitNVL()
 
 setSwitch('d3_05', true)
+fade('black', 2)
+teleport('DreamChamber', 'start')

@@ -3,7 +3,7 @@ enter('LEADER', 'b')
 enter('YOU', 'd')
 if not getSwitch('d4_04_leader') then
 	speak('LEADER', "We're so close. I know it.")
-	speak('YOU', "Close to PAL?")
+	speak('YOU', "Close to Amador?")
 	expr('LEADER', 'grin')
 	speak('LEADER', "Close to the bottom. There's something down there. You feel it too, right?")
 	speak('YOU', "I can't feel anything.")

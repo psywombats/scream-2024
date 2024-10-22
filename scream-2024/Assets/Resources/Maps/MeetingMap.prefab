@@ -89,6 +89,8 @@ MonoBehaviour:
   - '{time}'
   lighting: 0
   allowAbseil: 0
+  allowFlare: 1
+  waterHeight: -1000
   eventLayer: {fileID: 3473831592667386}
   mesh: {fileID: 6473528673539812963}
 --- !u!114 &3462636470823042657
@@ -643,7 +645,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4, y: 1.2, z: 8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7930705647635270855}
@@ -690,7 +692,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cf217051a9026894f8f82af28292b796, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.16470589, g: 0.7372549, b: 0.6156863, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

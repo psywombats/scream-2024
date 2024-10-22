@@ -47,6 +47,7 @@ wait(.5)
 speak('JERK', "Thank you, Amador.")
 exit('JERK')
 speak('LEADER', "Sorry, Phoebe, but it looks like this wraps things up for today. Let's turn around.")
+exitNVL()
 
 fade('black', 2)
 setSwitch('d3_03', true)

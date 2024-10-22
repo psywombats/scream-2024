@@ -11,7 +11,7 @@ if not getSwitch('d3_04_control') then
 	expr('CONTROL', '')
 	speak('CONTROL', "The cave really does exist, right?")
 	speak('YOU', "Yes?")
-	speak('CONTROL', "Okay. If this is some sort of long-term plan from PAL to troll me, I swear I'd murder him. It's not funny.")
+	speak('CONTROL', "Okay. I swear, If this is some sort of long-term plan from Amador to troll me, I'd murder him. It's not funny.")
 	speak('CONTROL', "If this place is half as mysterious as the data you're bringing back up implies, I want to go down there so badly. Like I literally dream about it.")
 	speak('YOU', "That is, uh, relatable.")
 	expr('CONTROL', 'yay')

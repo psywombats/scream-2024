@@ -18,9 +18,9 @@ speak('LEADER', "I'll go over the plan once Tom and Nika show up, but, we're goi
 speak('LEADER', "...and bring up the personal effects from the body.")
 exitNVL()
 
+setSwitch('d3_01', true)
+
 fade('black', 2)
 setString('time', "2:00 PM")
 teleport('Cave05_Camp', 'start', 'NORTH', true)
 fade('normal', 2)
-
-setSwitch('d3_01', true)
