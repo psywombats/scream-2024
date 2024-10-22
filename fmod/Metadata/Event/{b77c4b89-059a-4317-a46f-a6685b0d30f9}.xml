@@ -5,7 +5,7 @@
 			<value>flare</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{90abb2a6-56cf-4461-a565-05d79e5790a0}</destination>
@@ -59,7 +59,17 @@
 			<destination>{5af502cd-8836-4d9c-b345-8f72735fb99f}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{79f1e45d-e05a-4557-bb30-1e28b36c94b1}" />
+	<object class="EventAutomatableProperties" id="{79f1e45d-e05a-4557-bb30-1e28b36c94b1}">
+		<property name="dopplerEnabled">
+			<value>true</value>
+		</property>
+		<property name="dopplerScale">
+			<value>205</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0.900000036</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{c71daa9f-a92e-4794-be1c-8b777f12c9ef}" />
 	<object class="Timeline" id="{ada5abb1-e7a6-43d4-bf5d-b2ee3c17aec0}">
 		<property name="isProxyEnabled">
@@ -84,7 +94,7 @@
 	</object>
 	<object class="MultiSound" id="{7eff0cd6-e3f0-4b24-b24c-52a1e8e54af6}">
 		<relationship name="sounds">
-			<destination>{739b2d96-55d2-4f0c-a901-c65aacc59218}</destination>
+			<destination>{1a56ab30-2326-4ae8-9020-7a438b13010e}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{1874e8e2-af77-4398-a4ad-336345877b18}">
@@ -95,11 +105,24 @@
 	<object class="MixerBusPanner" id="{3efe4442-6241-43cc-96cd-b1db08ba2552}" />
 	<object class="MixerBusEffectChain" id="{7c82df04-2d7a-457c-a0a6-fffa869b2237}">
 		<relationship name="effects">
+			<destination>{ff79b63c-9b03-4cce-961f-72c012432e54}</destination>
 			<destination>{de2f3327-943e-4631-88ef-28278daa447f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{3cf992d3-84f0-4aef-99bc-38564476fac3}" />
-	<object class="SingleSound" id="{739b2d96-55d2-4f0c-a901-c65aacc59218}" />
+	<object class="SingleSound" id="{1a56ab30-2326-4ae8-9020-7a438b13010e}">
+		<relationship name="audioFile">
+			<destination>{d56d4ce2-787b-4e27-b755-a33341741a2c}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{1103ffa6-4b23-43a4-b641-ab6bd7817dec}" />
+	<object class="SpatialiserEffect" id="{ff79b63c-9b03-4cce-961f-72c012432e54}">
+		<property name="soundSize">
+			<value>0.200000003</value>
+		</property>
+		<property name="minimumExtent">
+			<value>360</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{de2f3327-943e-4631-88ef-28278daa447f}" />
 </objects>
