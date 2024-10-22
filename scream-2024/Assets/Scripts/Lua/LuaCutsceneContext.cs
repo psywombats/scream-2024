@@ -73,6 +73,7 @@ public class LuaCutsceneContext : LuaContext
         Lua.Globals["setting"] = (Action<DynValue>)Setting;
         Lua.Globals["showFlares"] = (Action)ShowFlares;
         Lua.Globals["endGame"] = (Action)EndGame;
+        Lua.Globals["endGame2"] = (Action)EndGame2;
     }
 
     // === LUA CALLABLE ============================================================================
@@ -112,14 +113,14 @@ public class LuaCutsceneContext : LuaContext
         yield return CoUtils.RunTween(MapOverlayUI.Instance.fader.DOFade(targetAlpha, dur));
     }
 
-    public void EnterNVL(DynValue lightLua)
+    public void EnterNVL(DynValue hideBackersLua)
     {
-        var lightMode = !lightLua.IsNil() && lightLua.Boolean;
-        RunRoutineFromLua(EnterNVLRoutine(lightMode));
+        var hideBackers = !hideBackersLua.IsNil() && hideBackersLua.Boolean;
+        RunRoutineFromLua(EnterNVLRoutine(hideBackers));
     }
-    private IEnumerator EnterNVLRoutine(bool lightMode)
+    private IEnumerator EnterNVLRoutine(bool hideBackers)
     {
-        yield return MapOverlayUI.Instance.nvl.ShowRoutine(lightMode);
+        yield return MapOverlayUI.Instance.nvl.ShowRoutine(hideBackers);
     }
 
     public void ExitNVL()
@@ -220,7 +221,12 @@ public class LuaCutsceneContext : LuaContext
     {
         Global.Instance.Avatar.PauseInput();
         Global.Instance.Avatar.Screenshot();
-        yield return CoUtils.Wait(5);
-        SceneManager.LoadSceneAsync("Outro", LoadSceneMode.Single);
+        yield return null;
+        UnityEngine.Object.FindObjectOfType<EndGameComponent>(includeInactive: true).gameObject.SetActive(true);
+    }
+
+    private void EndGame2()
+    {
+        Global.Instance.StartCoroutine(UnityEngine.Object.FindObjectOfType<EndGameComponent>().EndGame2Routine());
     }
 }

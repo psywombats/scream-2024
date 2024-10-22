@@ -447,6 +447,7 @@ MonoBehaviour:
   slotC: {fileID: 8913169845042492794}
   slotD: {fileID: 2429954179826606994}
   slotE: {fileID: 2429954178845824721}
+  backerArea: {fileID: 5986950428114602991}
   backer: {fileID: 935071201883713861}
   text: {fileID: 935071202580420801}
   nameText: {fileID: 3866319903534632691}

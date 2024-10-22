@@ -106,6 +106,11 @@ public class AudioManager : SingletonBehavior
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName(key, value);
     }
 
+    public void SetGlobalParam(string key, string value)
+    {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByNameWithLabel(key, value);
+    }
+
     public void StopSFX()
     {
         sfxEvent.stop(STOP_MODE.ALLOWFADEOUT);

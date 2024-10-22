@@ -1382,8 +1382,8 @@ MonoBehaviour:
   climbSpeed: 3
   flarePrefab: {fileID: 5300663383339618054, guid: 22dd96c5a6099454da5a3e0261c8a6d2,
     type: 3}
-  endCam1: {fileID: 4274768729150637786}
-  endCam2: {fileID: 3431795494560377115}
+  lapTex: {fileID: 8600000, guid: 751c3eea07136b44c9029c531bb524dd, type: 2}
+  transTex: {fileID: 8400000, guid: fc516b4fa1457724bb3b27e56e2010c5, type: 2}
 --- !u!54 &8655773204828170593
 Rigidbody:
   m_ObjectHideFlags: 0

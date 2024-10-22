@@ -15,6 +15,7 @@ public class NVLComponent : MonoBehaviour
     public PortraitComponent slotD;
     public PortraitComponent slotE;
 
+    public GameObject backerArea;
     public ExpanderComponent backer;
     //public LineAutotyper text;
     public TextAutotyper text;
@@ -32,7 +33,7 @@ public class NVLComponent : MonoBehaviour
         nameText.text = "";
     }
 
-    public IEnumerator ShowRoutine(bool lightMode = false)
+    public IEnumerator ShowRoutine(bool hideBackers = false)
     {
         IsShown = true;
         backer.Hide();
@@ -43,9 +44,14 @@ public class NVLComponent : MonoBehaviour
             portrait.Clear();
         }
 
-        if (!lightMode)
+        if (!hideBackers)
         {
+            backerArea.gameObject.SetActive(true);
             StartCoroutine(CoUtils.RunTween(background.DOFade(1, bgTime)));
+        }
+        else
+        {
+            backerArea.gameObject.SetActive(false);
         }
         yield return backer.ShowRoutine();
         text.Clear();
@@ -96,7 +102,7 @@ public class NVLComponent : MonoBehaviour
 
         if (!IsShown)
         {
-            yield return ShowRoutine(lightMode: true);
+            yield return ShowRoutine(hideBackers: true);
         }
 
         if (speaker != null)

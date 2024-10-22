@@ -32,8 +32,8 @@ public class PlayerController : MonoBehaviour, IInputListener
     [Space]
     [SerializeField] private GameObject flarePrefab = null;
     [Space]
-    [SerializeField] private GameObject endCam1;
-    [SerializeField] private GameObject endCam2;
+    [SerializeField] private RenderTexture lapTex;
+    [SerializeField] private RenderTexture transTex;
 
     private bool godMode;
     private bool isAbseiling, isAbsDown, isAbsUp;
@@ -209,8 +209,13 @@ public class PlayerController : MonoBehaviour, IInputListener
 
     public void Screenshot()
     {
-        endCam1.gameObject.SetActive(true);
-        endCam2.gameObject.SetActive(true);
+        camera.enabled = false;
+        camera.targetTexture = lapTex;
+        camera.Render();
+        camera.targetTexture = transTex;
+        camera.Render();
+        camera.targetTexture = null;
+        camera.enabled = true;
     }
 
     public bool OnCommand(InputManager.Command command, InputManager.Event eventType)

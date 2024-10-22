@@ -35,8 +35,8 @@ function fade(fadeType, dur)
     await()
 end
 
-function enterNVL()
-    cs_enterNVL()
+function enterNVL(arg)
+    cs_enterNVL(arg)
     await()
 end
 

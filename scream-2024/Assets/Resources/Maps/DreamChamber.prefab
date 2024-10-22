@@ -54,6 +54,7 @@ MonoBehaviour:
   lighting: 2
   allowAbseil: 0
   allowFlare: 0
+  waterHeight: -15
   eventLayer: {fileID: 4464321890118159954}
   noise: {fileID: 8489605036299559023}
   caveSize: 0
@@ -609,6 +610,7 @@ Transform:
   - {fileID: 3862732260201992984}
   - {fileID: 8668401331680010100}
   - {fileID: 2298655811489710750}
+  - {fileID: 8139156174935931967}
   m_Father: {fileID: 264988857917413577}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4503654992767320006
@@ -642,7 +644,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6493756278055474735}
-  - {fileID: 8139156174935931967}
   m_Father: {fileID: 3577409354604039895}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5445727993737210682
@@ -1014,7 +1015,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 5595347476652417774}
+    m_TransformParent: {fileID: 3577409354604039895}
     m_Modifications:
     - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8,
         type: 3}
@@ -1024,17 +1025,17 @@ PrefabInstance:
     - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -9.22
       objectReference: {fileID: 0}
     - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32
+      value: -15.41
       objectReference: {fileID: 0}
     - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -36.16
       objectReference: {fileID: 0}
     - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8,
         type: 3}

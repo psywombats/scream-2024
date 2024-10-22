@@ -49,4 +49,10 @@ speak('CONTROL', "Thanks Tom. I hate handling the finances.")
 speak('OTHER2', "You said you had a demo to show us today, though, Nika?")
 speak('CONTROL', "Yep. This should about wrap it up.")
 
+wait(.4)
+exitNVL()
+wait(.3)
 endGame()
+wait(2)
+
+play('d6_01')

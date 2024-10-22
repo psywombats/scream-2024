@@ -13,6 +13,7 @@ public abstract class GameMap : MonoBehaviour
     [SerializeField] public LightingMode lighting;
     [SerializeField] public bool allowAbseil = true;
     [SerializeField] public bool allowFlare = true;
+    [SerializeField] public float waterHeight = -1000;
     [Space]
     [SerializeField] public GameObject eventLayer;
 
