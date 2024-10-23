@@ -54,6 +54,14 @@ public class RadioUIComponent : MonoBehaviour
 
         if (!IsShown)
         {
+            if (qual == RadioQual.bad)
+            {
+                Global.Instance.Audio.PlaySFX("in_game/radio_broken", null, AudioManager.Bank.UI);
+            }
+            else
+            {
+                Global.Instance.Audio.PlaySFX("in_game/radio_on", null, AudioManager.Bank.UI);
+            }
             yield return expander.ShowRoutine();
             IsShown = true;
         }
@@ -63,6 +71,7 @@ public class RadioUIComponent : MonoBehaviour
 
     public IEnumerator HideRoutine()
     {
+        Global.Instance.Audio.PlaySFX("in_game/radio_off", null, AudioManager.Bank.UI);
         yield return expander.HideRoutine();
         textTyper.Clear();
         IsShown = false;
