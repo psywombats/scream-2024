@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 637098851196922065}
   - component: {fileID: 6464341405085897070}
   - component: {fileID: 1723300446726338284}
-  - component: {fileID: 5657860638293184281}
+  - component: {fileID: -7816782727808921996}
   m_Layer: 0
   m_Name: Cave03_BigFlat
   m_TagString: Untagged
@@ -358,7 +358,7 @@ MonoBehaviour:
   allowFlare: 1
   allowCompass: 1
   waterHeight: -1000
-  spookiness: 0.5
+  spookiness: 0.35
   eventLayer: {fileID: 4611957950880064135}
   noise: {fileID: 1723300446726338284}
   caveSize: 0.6
@@ -393,7 +393,7 @@ MonoBehaviour:
   wallHard: 0
   chamberWeight: 0.7
   noiseWeight: 0.71
---- !u!114 &5657860638293184281
+--- !u!114 &-7816782727808921996
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -402,10 +402,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3566302810669860930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af2edc519db15f34eaddf8532ad2fd83, type: 3}
+  m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
+  bgmKey: bright_pads
 --- !u!1 &4164070287172609003
 GameObject:
   m_ObjectHideFlags: 0

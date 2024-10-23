@@ -13,6 +13,8 @@ public class CharaEvent : MonoBehaviour
     [SerializeField] private bool phaseIn;
     [SerializeField] private float phaserDelay = .8f;
     [SerializeField] public float interactDistance = 3f;
+    [SerializeField] public float moonDistanceOn = 10f;
+    [SerializeField] public float moonDistanceOff = 8f;
 
     private MapEvent @event;
     public MapEvent Event => @event ?? (@event = GetComponent<MapEvent>());
@@ -59,6 +61,18 @@ public class CharaEvent : MonoBehaviour
         {
             highlightNow = false;
         }
+
+        if (doll.moonRenderer != null)
+        {
+            var dist = Vector3.Distance(doll.transform.position, Global.Instance.Avatar.transform.position);
+            var factorOn = Mathf.Clamp((dist - moonDistanceOn) / (moonDistanceOn - moonDistanceOff), 0f, 1f);
+            var factorOff = 1 - factorOn;
+            doll.moonRenderer.color = new Color(1, 1, 1, factorOn);
+            foreach (var rend in doll.renderers)
+            {
+                //rend.color = new Color(1, 1, 1, factorOff);
+            }
+        }
     }
 
     public void OnValidate()
@@ -88,6 +102,12 @@ public class CharaEvent : MonoBehaviour
             }
             doll.highlightRenderer.transform.localScale = new Vector3(factor, factor, factor);
             doll.highlightRenderer.sprite = speaker.glow;
+
+            if (doll.moonRenderer != null)
+            {
+                doll.moonRenderer.transform.localScale = new Vector3(factor, factor, factor);
+                doll.moonRenderer.sprite = speaker.moonSprite;
+            }
         }
     }
 

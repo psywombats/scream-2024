@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 3847855696738789092}
   - component: {fileID: 4300691247316287185}
   - component: {fileID: 4875241940299639585}
+  - component: {fileID: 1166253271967443451}
   m_Layer: 0
   m_Name: Cave07_Canal2
   m_TagString: Untagged
@@ -371,7 +372,7 @@ MonoBehaviour:
   allowFlare: 1
   allowCompass: 1
   waterHeight: -1000
-  spookiness: 0.8
+  spookiness: 0.7
   eventLayer: {fileID: 1407766366845972896}
   noise: {fileID: 4875241940299639585}
   caveSize: 0.4
@@ -404,6 +405,19 @@ MonoBehaviour:
   pitHardness: 4.04
   wallWeight: 30
   curvature: 0.152
+--- !u!114 &1166253271967443451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4373302856356326750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmKey: bright_pads
 --- !u!1 &4585280561718891598
 GameObject:
   m_ObjectHideFlags: 0

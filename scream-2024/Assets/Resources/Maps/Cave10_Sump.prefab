@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5285392632745960204}
   - component: {fileID: 4634680255070354733}
   - component: {fileID: 7548914056277867777}
+  - component: {fileID: 5301053138439016943}
   m_Layer: 0
   m_Name: Cave10_Sump
   m_TagString: Untagged
@@ -57,7 +58,7 @@ MonoBehaviour:
   allowFlare: 1
   allowCompass: 1
   waterHeight: -1000
-  spookiness: 0.7
+  spookiness: 0.9
   eventLayer: {fileID: 5713576127553485716}
   noise: {fileID: 7548914056277867777}
   caveSize: 0.6
@@ -90,6 +91,19 @@ MonoBehaviour:
   yCoefs: {x: -183, y: 351, z: -150}
   scaleX: 2
   scaleY: 0.4
+--- !u!114 &5301053138439016943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971933643660305174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmKey: bright_pads
 --- !u!1 &1514981387464347607
 GameObject:
   m_ObjectHideFlags: 0

@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 6623167944932828096}
   - component: {fileID: 5163342470830722239}
   - component: {fileID: 4607397103986274725}
+  - component: {fileID: -1875613008794532020}
   m_Layer: 0
   m_Name: Cave14_Fly
   m_TagString: Untagged
@@ -342,12 +343,15 @@ MonoBehaviour:
   lighting: 2
   allowAbseil: 0
   allowFlare: 1
+  allowCompass: 0
+  waterHeight: -1000
+  spookiness: 1
   eventLayer: {fileID: 5013854137374017943}
   noise: {fileID: 4607397103986274725}
   caveSize: 0.8
-  spookiness: 1
   humidity: 0
   terrain: {fileID: 8854301409924677441}
+  initRadius: 1
 --- !u!114 &4607397103986274725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +378,19 @@ MonoBehaviour:
   pitHardness: 2
   wallWeight: 9
   curvature: 0
+--- !u!114 &-1875613008794532020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7485188852334662207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmKey: bright_pads
 --- !u!1 &8634404400216191350
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,6 +37,10 @@ class TitleComponent : MonoBehaviour, IInputListener
 
     public void Start()
     {
+#if UNITY_STANDALONE_WIN
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+#endif
         InputManager.Instance.PushListener(this);
         StartCoroutine(CoUtils.RunTween(laptopPivot.transform.DORotate(pivotRot, 1.2f)));
         //StartCoroutine(SlowFlashRoutine());

@@ -443,6 +443,7 @@ GameObject:
   - component: {fileID: 6623167944932828096}
   - component: {fileID: 5163342470830722239}
   - component: {fileID: 3333721998436239076}
+  - component: {fileID: -4608706349930410070}
   m_Layer: 0
   m_Name: Cave02_EntryChasm
   m_TagString: Untagged
@@ -490,7 +491,7 @@ MonoBehaviour:
   allowFlare: 1
   allowCompass: 1
   waterHeight: -1000
-  spookiness: 0.2
+  spookiness: 0
   eventLayer: {fileID: 5013854137374017943}
   noise: {fileID: 3333721998436239076}
   caveSize: 0.7
@@ -521,6 +522,19 @@ MonoBehaviour:
   pitSlopeX: 0.2
   pitSlopeZ: 0.5
   pitHardness: 1
+--- !u!114 &-4608706349930410070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7485188852334662207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmKey: bright_pads
 --- !u!1 &8771255660019899631
 GameObject:
   m_ObjectHideFlags: 0

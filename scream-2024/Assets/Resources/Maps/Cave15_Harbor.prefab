@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3899064347245882968}
   - component: {fileID: 8489605036299559023}
   - component: {fileID: 3231926023987100085}
+  - component: {fileID: 658357659212397941}
   m_Layer: 0
   m_Name: Cave15_Harbor
   m_TagString: Untagged
@@ -57,12 +58,15 @@ MonoBehaviour:
   lighting: 2
   allowAbseil: 0
   allowFlare: 0
+  allowCompass: 0
+  waterHeight: -1000
+  spookiness: 0
   eventLayer: {fileID: 4464321890118159954}
   noise: {fileID: 8489605036299559023}
   caveSize: 0.3
-  spookiness: 1
   humidity: 1
   terrain: {fileID: 3852659569316397490}
+  initRadius: 1
 --- !u!114 &8489605036299559023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +108,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2
+--- !u!114 &658357659212397941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138978954571359968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmKey: none
 --- !u!1 &761739598596936719
 GameObject:
   m_ObjectHideFlags: 0

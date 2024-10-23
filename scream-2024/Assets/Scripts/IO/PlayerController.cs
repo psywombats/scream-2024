@@ -39,8 +39,9 @@ public class PlayerController : MonoBehaviour, IInputListener
     [SerializeField] private RenderTexture transTex;
 
     private bool godMode;
-    private bool isAbseiling, isAbsDown, isAbsUp, wasAbseiling;
-    private bool isClimbing, wasClimbing;
+    private bool isAbseiling, isAbsDown, isAbsUp;
+    private bool isClimbing;
+    private bool isClimbEmit, isAbseilEmit;
     private int pauseCount;
     private float currentAbsV, absTimer, oldV;
     private Vector3 targetFrameV;
@@ -446,25 +447,28 @@ public class PlayerController : MonoBehaviour, IInputListener
 
         timeSinceJumping += Time.deltaTime;
 
-        if (isClimbing && !wasClimbing)
+
+        var playClimb = isAbseiling && isClimbing;
+        var playAbs = isAbseiling && !isClimbing;
+        if (playClimb && !isClimbEmit)
         {
             climbEmitter.Play();
         }
-        if (!isClimbing && wasClimbing)
+        if (!playClimb && isClimbEmit)
         {
             climbEmitter.Stop();
         }
-        wasClimbing = isClimbing;
+        isClimbEmit = playClimb;
 
-        if (isAbseiling && !wasAbseiling)
+        if (playAbs && !isAbseilEmit)
         {
             abseilEmitter.Play();
         }
-        if (!isAbseiling && wasAbseiling)
+        if (!playAbs && isAbseilEmit)
         {
             abseilEmitter.Stop();
         }
-        wasAbseiling = isAbseiling;
+        isAbseilEmit = playAbs;
     }
 
     private void SetAbseil(bool on, bool playAudio)

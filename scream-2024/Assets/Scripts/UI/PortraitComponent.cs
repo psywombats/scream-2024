@@ -14,6 +14,7 @@ public class PortraitComponent : MonoBehaviour
     public Image sprite;
     public Image altSprite;
     public bool moveSibling;
+    public bool crater;
 
     public SpeakerData Speaker { get; private set; }
     public bool IsHighlighted { get; private set; }
@@ -39,10 +40,27 @@ public class PortraitComponent : MonoBehaviour
         sprite.SetNativeSize();
         sprite.color = new Color(1, 1, 1, 0);
         IsHighlighted = true;
-        var tween = sprite.DOFade(1.0f, fadeTime);
-        yield return CoUtils.RunTween(tween);
+        if (speaker.moonSprite != null && crater)
+        {
+            yield return CoUtils.RunParallel(this,
+                CoUtils.RunTween(sprite.DOFade(1.0f, fadeTime)),
+                MooncraterRoutine(fadeTime));
+        }
+        else
+        {
+            yield return CoUtils.RunTween(sprite.DOFade(1.0f, fadeTime));
+        }
 
         IsHighlighted = true;
+    }
+
+    public IEnumerator MooncraterRoutine(float fadeTime)
+    {
+        altSprite.color = new Color(1, 1, 1, 0);
+        altSprite.sprite = Speaker.moonSprite;
+        altSprite.SetNativeSize();
+        yield return CoUtils.RunTween(altSprite.DOFade(1f, fadeTime / 2f));
+        yield return CoUtils.RunTween(altSprite.DOFade(0f, fadeTime / 2f));
     }
 
     private Sprite GetSpriteForExpr(SpeakerData speaker, string expr)
@@ -72,8 +90,16 @@ public class PortraitComponent : MonoBehaviour
     {
         if (Speaker != null)
         {
-            var tween = sprite.DOFade(0.0f, fadeTime);
-            yield return CoUtils.RunTween(tween);
+            if (Speaker.moonSprite != null && crater)
+            {
+                yield return CoUtils.RunParallel(this,
+                    CoUtils.RunTween(sprite.DOFade(0f, fadeTime)),
+                    MooncraterRoutine(fadeTime));
+            }
+            else
+            {
+                yield return CoUtils.RunTween(sprite.DOFade(0f, fadeTime));
+            }
             Clear();
         }
         if (moveSibling)

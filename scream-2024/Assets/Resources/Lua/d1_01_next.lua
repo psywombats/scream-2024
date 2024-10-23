@@ -2,6 +2,7 @@ if not getSwitch('d1_01_leader') or not getSwitch('d1_01_control') or not getSwi
 	return
 end
 
+showBasics(false)
 wait(.7)
 teleport('Clubhouse', 'd1_next')
 wait(.5)

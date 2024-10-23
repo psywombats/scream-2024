@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 3529858654509094656}
   - component: {fileID: 7011051036241197651}
   - component: {fileID: 2449806636387587919}
+  - component: {fileID: -7239368612596452326}
   m_Layer: 0
   m_Name: Cave12_Depths
   m_TagString: Untagged
@@ -261,6 +262,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2
+--- !u!114 &-7239368612596452326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280965599954484604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmKey: drone
 --- !u!1 &8463344813196867021
 GameObject:
   m_ObjectHideFlags: 0

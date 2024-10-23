@@ -927,7 +927,7 @@ GameObject:
   - component: {fileID: 3393160950545813870}
   - component: {fileID: 4119480500052263907}
   - component: {fileID: 4621358142903299125}
-  - component: {fileID: 1511346504015619140}
+  - component: {fileID: -1222333904188790981}
   m_Layer: 0
   m_Name: Cave05_Camp
   m_TagString: Untagged
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   wallHard: 1
   chamberWeight: 0.4
   noiseWeight: 1.41
---- !u!114 &1511346504015619140
+--- !u!114 &-1222333904188790981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1018,10 +1018,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8245277062228359358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af2edc519db15f34eaddf8532ad2fd83, type: 3}
+  m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
+  bgmKey: none
 --- !u!1001 &2113126693345907849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1136,6 +1136,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7982962330543252326, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.63
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1211,6 +1216,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: jerk02
       objectReference: {fileID: 0}
+    - target: {fileID: 6635215843826455287, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.09469501
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635215843826455287, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.09469501
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635215843826455287, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.09469501
+      objectReference: {fileID: 0}
     - target: {fileID: 6761330124672803083, guid: 8d1f65d374108ff439f0d65767db0ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1266,6 +1286,17 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6ceb1aa5b82afd642a6284b768185adf,
+        type: 3}
+    - target: {fileID: 7234867771547733766, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 23.232481
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234867771547733766, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c0e8f8c0f7d1b5f4abaf78dba9e4738a,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1397,6 +1428,12 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 695ed269ae2993449b82406910efa683,
+        type: 3}
+    - target: {fileID: 7234867771547733766, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ccb87e0a589a0540a3f45d0237fd7ad,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1534,6 +1571,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 914b198b2a2dbf846979eab4a83a4a21,
         type: 3}
+    - target: {fileID: 7234867771547733766, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234867771547733766, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

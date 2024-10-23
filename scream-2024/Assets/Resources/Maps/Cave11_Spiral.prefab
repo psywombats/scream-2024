@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 3847855696738789092}
   - component: {fileID: 4300691247316287185}
   - component: {fileID: 4875241940299639585}
+  - component: {fileID: -2545646373779504272}
   m_Layer: 0
   m_Name: Cave11_Spiral
   m_TagString: Untagged
@@ -422,6 +423,19 @@ MonoBehaviour:
   pitHardness: 2.56
   wallWeight: 52.7
   curvature: 0.229
+--- !u!114 &-2545646373779504272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4373302856356326750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmKey: drone
 --- !u!1 &4585280561718891598
 GameObject:
   m_ObjectHideFlags: 0
