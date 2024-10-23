@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{422374e7-af32-4493-9159-fca39a19230a}">
 		<property name="assetPath">
-			<value>sfx_breath_calm.wav</value>
+			<value>Sfx/sfx_breath_calm.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

@@ -8,7 +8,7 @@
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{db3d2e24-b3be-4490-be75-852ca77d037e}</destination>
+			<destination>{41159cde-2b49-4e52-82e2-6c4eb3a7abb1}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{ebfe7b6d-de08-42e5-ba53-4bd0ceecac52}</destination>
@@ -31,6 +31,9 @@
 		<relationship name="timeline">
 			<destination>{05b21c49-d3fa-4c9c-abe6-aac5c7ccd353}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{e1569e99-09c3-40d7-9e43-083d3978ebb4}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{ebfe7b6d-de08-42e5-ba53-4bd0ceecac52}">
 		<relationship name="masterBus">
@@ -49,8 +52,15 @@
 		<relationship name="panner">
 			<destination>{82a03f85-d0f3-4a5b-8408-d3799271b667}</destination>
 		</relationship>
+		<relationship name="output">
+			<destination>{5af502cd-8836-4d9c-b345-8f72735fb99f}</destination>
+		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{dbc51b4e-c774-4323-ae80-91b32d9ec704}" />
+	<object class="EventAutomatableProperties" id="{dbc51b4e-c774-4323-ae80-91b32d9ec704}">
+		<property name="isPersistent">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{eb0d476c-c352-48ad-9bae-be49ab9015e1}" />
 	<object class="GroupTrack" id="{08b636a4-6768-4aca-a3d6-94ba282af056}">
 		<relationship name="modules">

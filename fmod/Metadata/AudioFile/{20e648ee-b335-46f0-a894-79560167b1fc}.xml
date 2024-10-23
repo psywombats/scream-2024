@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{20e648ee-b335-46f0-a894-79560167b1fc}">
 		<property name="assetPath">
-			<value>sfx_abseiling_rope_stretch_var_03.wav</value>
+			<value>Sfx/sfx_abseiling_rope_stretch_var_03.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

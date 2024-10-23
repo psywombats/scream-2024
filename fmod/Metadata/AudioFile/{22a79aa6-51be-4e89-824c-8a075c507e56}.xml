@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{0adde499-bb1c-4897-b00a-79a0f8f64920}">
+	<object class="AudioFile" id="{22a79aa6-51be-4e89-824c-8a075c507e56}">
 		<property name="assetPath">
-			<value>Sfx/sfx_abseiling_rope_stretch_var_02.wav</value>
+			<value>sfx_radio_out.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +11,7 @@
 			<value>1</value>
 		</property>
 		<property name="length">
-			<value>1.1975208333333334</value>
+			<value>0.67652083333333335</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{26690a29-87ff-43cc-b713-4b9482589813}</destination>

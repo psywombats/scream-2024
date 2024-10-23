@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{ade2adf5-eb63-4ac1-b486-d44ad8564c74}">
 		<property name="assetPath">
-			<value>sfx_abseiling_drop_stop.wav</value>
+			<value>Sfx/sfx_abseiling_drop_stop.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
