@@ -138,6 +138,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{bde658e6-8655-48da-8757-79e541ed9329}">
+		<property name="volume">
+			<value>-14.5</value>
+		</property>
 		<property name="name">
 			<value>Tools</value>
 		</property>
@@ -206,6 +209,12 @@
 		</property>
 		<property name="spawnRate">
 			<value>50</value>
+		</property>
+		<property name="minimumScatterDistance">
+			<value>8.60000038</value>
+		</property>
+		<property name="maximumScatterDistance">
+			<value>10</value>
 		</property>
 		<relationship name="sound">
 			<destination>{2914872a-c151-413f-a2ef-4c4bfb665a61}</destination>

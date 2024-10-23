@@ -140,16 +140,16 @@
 	</object>
 	<object class="SingleSound" id="{f1e10b7e-bc8e-4eeb-a1a2-50d563533922}">
 		<property name="length">
-			<value>50.463206772905146</value>
-		</property>
-		<property name="timelockedOffset">
-			<value>4.736793227094763</value>
+			<value>17.354687499999965</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{b0e44a7c-c401-48c9-8888-768da5df9134}</destination>
+			<destination>{65f3b40f-7e05-4c9c-82a1-985bd4c7348c}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{3f1ca816-47d8-47ce-a7fc-90ec455ae491}">
+		<property name="volume">
+			<value>-6</value>
+		</property>
 		<property name="name">
 			<value>Audio 2</value>
 		</property>

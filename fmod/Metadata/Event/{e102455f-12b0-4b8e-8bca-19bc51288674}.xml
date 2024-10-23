@@ -487,7 +487,7 @@
 			<value>4</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{b0e44a7c-c401-48c9-8888-768da5df9134}</destination>
+			<destination>{65f3b40f-7e05-4c9c-82a1-985bd4c7348c}</destination>
 		</relationship>
 	</object>
 	<object class="AutomationCurve" id="{c8755c50-f0d2-454d-9241-197055a7af6c}">
