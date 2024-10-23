@@ -14,6 +14,7 @@ public class SpeakerData : GenericDataObject
     public string displayName;
     public Sprite sprite;
     public Sprite glow;
+    public Sprite radioSprite;
     public List<Expression> exprs;
 }
 

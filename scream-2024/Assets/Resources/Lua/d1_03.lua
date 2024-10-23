@@ -1,6 +1,6 @@
 wait(5)
 
-radio('CONTROL', "Hey! Phoebe! You can hear me?")
+radio('CONTROL', "Hey! Phoebe! You can hear me?", 'okay')
 radio('YOU', "Oh, hi Nika. That's you, right?")
 radio('CONTROL', "Yep. Just wanted to check in with you guys. Where you at now?")
 radio('PAL', "Just coming down Rocklift. Phoebe is learning how to abseil.")

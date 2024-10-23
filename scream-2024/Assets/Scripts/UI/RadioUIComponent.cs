@@ -4,11 +4,20 @@ using UnityEngine.UI;
 
 public class RadioUIComponent : MonoBehaviour
 {
+    public enum RadioQual
+    {
+        good,
+        okay,
+        bad,
+    }
+
     [SerializeField] private ExpanderComponent expander;
     [SerializeField] private Text nameText;
     [SerializeField] private TextAutotyper textTyper;
-    [SerializeField] private Image portrait;
-
+    [SerializeField] private Image portraitGood;
+    [SerializeField] private Image portraitOkay;
+    [SerializeField] private Image portraitBad;
+    
     public bool IsShown { get; private set; }
 
     public void Start()
@@ -16,13 +25,32 @@ public class RadioUIComponent : MonoBehaviour
         expander.Hide();
     }
 
-    public IEnumerator SpeakRoutine(string speakerKey, string text)
+    public IEnumerator SpeakRoutine(string speakerKey, string text, RadioQual qual = RadioQual.good)
     {
         textTyper.Clear();
         var speaker = IndexDatabase.Instance.Speakers.GetData(speakerKey);
         nameText.text = speaker.displayName;
-        portrait.sprite = speaker.sprite;
-        portrait.SetNativeSize();
+
+        Image portrait = null;
+        switch (qual)
+        {
+            case RadioQual.bad:
+                portrait = portraitBad;
+                break;
+            case RadioQual.good:
+                portrait = portraitGood;
+                break;
+            case RadioQual.okay:
+                portrait = portraitOkay;
+                break;
+        }
+
+        portraitBad.gameObject.SetActive(false);
+        portraitGood.gameObject.SetActive(false);
+        portraitOkay.gameObject.SetActive(false);
+
+        portrait.gameObject.SetActive(true);
+        portrait.sprite = speaker.radioSprite;
 
         if (!IsShown)
         {

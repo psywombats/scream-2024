@@ -17,6 +17,7 @@ MonoBehaviour:
     displayName: Test
     sprite: {fileID: 21300000, guid: ba83a2cc03307614cae10fbfc0c41645, type: 3}
     glow: {fileID: 21300000, guid: 695ed269ae2993449b82406910efa683, type: 3}
+    radioSprite: {fileID: 0}
     exprs:
     - key: huh
       sprite: {fileID: 21300000, guid: d0b6f656039c16b459e9573a55f9a84e, type: 3}
@@ -26,11 +27,13 @@ MonoBehaviour:
     displayName: Phoebe
     sprite: {fileID: 21300000, guid: 913988375eecc604e930d021b86c67ca, type: 3}
     glow: {fileID: 21300000, guid: 846445f5cb5dd1b48aa6f74b19be54bb, type: 3}
+    radioSprite: {fileID: 21300000, guid: 7e045074f7544c046a36a73b948bfc38, type: 3}
     exprs: []
   - tag: PAL
     displayName: Amador
     sprite: {fileID: 21300000, guid: ba83a2cc03307614cae10fbfc0c41645, type: 3}
     glow: {fileID: 21300000, guid: 695ed269ae2993449b82406910efa683, type: 3}
+    radioSprite: {fileID: 21300000, guid: fbb6a46acaa137146835f10c8355a1ec, type: 3}
     exprs:
     - key: grin
       sprite: {fileID: 21300000, guid: fcde899e84b280d428ba71bd78cdf2e3, type: 3}
@@ -40,6 +43,7 @@ MonoBehaviour:
     displayName: Jeanne
     sprite: {fileID: 21300000, guid: 9fd8ac88aeebff94289582e28239cdca, type: 3}
     glow: {fileID: 21300000, guid: 5b78cecd34953a148904083a2fcc7bb5, type: 3}
+    radioSprite: {fileID: 21300000, guid: 522eee54454b1824cbe8baaecc014951, type: 3}
     exprs:
     - key: grin
       sprite: {fileID: 21300000, guid: 03f1ddc6d308c3d49aeef39731ab9599, type: 3}
@@ -49,6 +53,7 @@ MonoBehaviour:
     displayName: Tom
     sprite: {fileID: 21300000, guid: 75e723ae630baa44b8d4fe49337bedf7, type: 3}
     glow: {fileID: 21300000, guid: 6ceb1aa5b82afd642a6284b768185adf, type: 3}
+    radioSprite: {fileID: 21300000, guid: c1d3499928fefa04290eb57df8f0039a, type: 3}
     exprs:
     - key: grimace
       sprite: {fileID: 21300000, guid: 39e703412bb95fe459b0c37ac644bf29, type: 3}
@@ -58,6 +63,7 @@ MonoBehaviour:
     displayName: Nika
     sprite: {fileID: 21300000, guid: 0062c9cc1af8ee244820a6d1e6cc8fb8, type: 3}
     glow: {fileID: 21300000, guid: ed00bc58f8e39574786f52aa416ce475, type: 3}
+    radioSprite: {fileID: 21300000, guid: 01349c467ca30e64aade9607ef598a9f, type: 3}
     exprs:
     - key: grump
       sprite: {fileID: 21300000, guid: 23f255ea51c5e644098ed6423cc4a20d, type: 3}
@@ -67,11 +73,13 @@ MonoBehaviour:
     displayName: wtf
     sprite: {fileID: 21300000, guid: 0cebd3df5438abe43be012406ec301c7, type: 3}
     glow: {fileID: 21300000, guid: 914b198b2a2dbf846979eab4a83a4a21, type: 3}
+    radioSprite: {fileID: 0}
     exprs: []
   - tag: OTHER
     displayName: Phoebe?
     sprite: {fileID: 21300000, guid: 964b586e825be5648ad80ee39898200b, type: 3}
     glow: {fileID: 21300000, guid: 653dc9e9cdb51754a90ef9cb221c47e6, type: 3}
+    radioSprite: {fileID: 0}
     exprs:
     - key: flirty
       sprite: {fileID: 21300000, guid: b8ad9f5589d5a894fb885309f4a93fa2, type: 3}
@@ -81,6 +89,7 @@ MonoBehaviour:
     displayName: wtf
     sprite: {fileID: 21300000, guid: b76aa2c508e31014f903317ff1979394, type: 3}
     glow: {fileID: 21300000, guid: e5857e29a4c55f941ad5aeaa68d61e58, type: 3}
+    radioSprite: {fileID: 0}
     exprs:
     - key: flirty
       sprite: {fileID: 21300000, guid: b8ad9f5589d5a894fb885309f4a93fa2, type: 3}
@@ -90,8 +99,27 @@ MonoBehaviour:
     displayName: Phoebe
     sprite: {fileID: 21300000, guid: 227b6401e8ce9524091114824db8f0f8, type: 3}
     glow: {fileID: 21300000, guid: 653dc9e9cdb51754a90ef9cb221c47e6, type: 3}
+    radioSprite: {fileID: 0}
     exprs:
     - key: flirty
       sprite: {fileID: 21300000, guid: d0deea32dbb8eb2408486f87e8b2cb05, type: 3}
     - key: smirk
       sprite: {fileID: 21300000, guid: b52ee9136c013e0419abf8533d353381, type: 3}
+  - tag: LEADERD
+    displayName: Jeanne
+    sprite: {fileID: 21300000, guid: 9fd8ac88aeebff94289582e28239cdca, type: 3}
+    glow: {fileID: 21300000, guid: 5b78cecd34953a148904083a2fcc7bb5, type: 3}
+    radioSprite: {fileID: 21300000, guid: c7b5daddd872ab24794aac0acf80c2b2, type: 3}
+    exprs: []
+  - tag: CONTROLD
+    displayName: Nika
+    sprite: {fileID: 21300000, guid: 9fd8ac88aeebff94289582e28239cdca, type: 3}
+    glow: {fileID: 21300000, guid: 5b78cecd34953a148904083a2fcc7bb5, type: 3}
+    radioSprite: {fileID: 21300000, guid: 1b2a85cdc2d383f4281b2a7fd6d8b609, type: 3}
+    exprs: []
+  - tag: PALD
+    displayName: Pal
+    sprite: {fileID: 21300000, guid: fce56a3a11f51814aa0cf7b03ea0734f, type: 3}
+    glow: {fileID: 21300000, guid: 695ed269ae2993449b82406910efa683, type: 3}
+    radioSprite: {fileID: 21300000, guid: fbb6a46acaa137146835f10c8355a1ec, type: 3}
+    exprs: []

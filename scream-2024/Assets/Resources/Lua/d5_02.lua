@@ -12,7 +12,7 @@ speak('YOU', "Jeanne!")
 speak('JERK', "...She slipped down into the shaft.")
 expr('JERK', 'meh')
 speak('JERK', "That's a lethal fall.")
-speak('YOU', "You can't know that! We have to get down there an help her!")
+speak('YOU', "You can't know that! We have to get down there and help her!")
 exitNVL()
 
 radio('YOU', "Nika! Nika, come in!")

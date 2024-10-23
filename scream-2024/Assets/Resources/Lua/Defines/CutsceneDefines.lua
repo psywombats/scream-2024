@@ -25,8 +25,8 @@ function speak(speaker, line)
     await()
 end
 
-function radio(speaker, line)
-	cs_radio(speaker, line)
+function radio(speaker, line, qual)
+	cs_radio(speaker, line, qual)
 	await()
 end
 

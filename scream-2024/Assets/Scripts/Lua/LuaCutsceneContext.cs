@@ -63,7 +63,7 @@ public class LuaCutsceneContext : LuaContext
         Lua.Globals["cs_enter"] = (Action<DynValue, DynValue, DynValue>)Enter;
         Lua.Globals["cs_exit"] = (Action<DynValue>)Exit;
         Lua.Globals["cs_speak"] = (Action<DynValue, DynValue>)Speak;
-        Lua.Globals["cs_radio"] = (Action<DynValue, DynValue>)Radio;
+        Lua.Globals["cs_radio"] = (Action<DynValue, DynValue, DynValue>)Radio;
         Lua.Globals["cs_expr"] = (Action<DynValue, DynValue>)Express;
         Lua.Globals["clear"] = (Action)ClearNVL;
         Lua.Globals["hideRadio"] = (Action)HideRadio;
@@ -194,13 +194,18 @@ public class LuaCutsceneContext : LuaContext
             Global.Instance.Avatar.camera.gameObject));
     }
 
-    private void Radio(DynValue speakerLua, DynValue textLua)
+    private void Radio(DynValue speakerLua, DynValue textLua, DynValue qualLua)
     {
-        RunRoutineFromLua(RadioRoutine(speakerLua.String, textLua.String));
+        var qual = RadioUIComponent.RadioQual.good;
+        if (!qualLua.IsNil())
+        {
+            qual = Enum.Parse<RadioUIComponent.RadioQual>(qualLua.String);
+        }
+        RunRoutineFromLua(RadioRoutine(speakerLua.String, textLua.String, qual));
     }
-    private IEnumerator RadioRoutine(string speakerKey, string message)
+    private IEnumerator RadioRoutine(string speakerKey, string message, RadioUIComponent.RadioQual qual)
     {
-        yield return MapOverlayUI.Instance.radio.SpeakRoutine(speakerKey, message);
+        yield return MapOverlayUI.Instance.radio.SpeakRoutine(speakerKey, message, qual);
     }
 
     private void HideRadio()

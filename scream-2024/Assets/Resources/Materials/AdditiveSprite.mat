@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AdditiveSprite
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - ETC1_EXTERNAL_ALPHA
+  - PIXELSNAP_ON
+  m_InvalidKeywords:
+  - _CCLAMPBLACK_ON
+  - _CCLAMPDITHERVARY_ON
+  - _CCLAMPDITHER_ON
+  - _EMISSION
+  - _RDISPKEEPALPHA_ON
+  - _SCOLOREXCLUDEALPHA_ON
+  - _TDISTINVERTB_ON
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RDispTex:
+        m_Texture: {fileID: 2800000, guid: d3ca2ef34fb053f4d9025ff77aa0340b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 1
+    - _Alpha: 1
+    - _CClampB: 0.9
+    - _CClampBlack: 1
+    - _CClampBrightness: 0.08
+    - _CClampDither: 1
+    - _CClampDitherChunk: 0.185
+    - _CClampDitherVary: 1
+    - _CClampEnabled: 0
+    - _CClampG: 0.574
+    - _CClampJitterB: 0
+    - _CClampJitterG: 0
+    - _CClampJitterR: 0
+    - _CClampR: 0.9
+    - _Cutoff: 0.5
+    - _Desaturation: 0
+    - _Elapsed: 1.9551677
+    - _EnableExternalAlpha: 0
+    - _HBleedAlphaRestrict: 0
+    - _HBleedChance: 0.447
+    - _HBleedChunking: 0.223
+    - _HBleedChunkingVariance: 0.597
+    - _HBleedEnabled: 0
+    - _HBleedTailing: 0.534
+    - _HBleedTailingVariance: 0.969
+    - _HDispChance: 0.834
+    - _HDispChunking: 0.658
+    - _HDispChunkingVariance: 0.5
+    - _HDispEnabled: 0
+    - _HDispPower: 0.504
+    - _HDispPowerVariance: 0.505
+    - _HDispSloppyPower: 0
+    - _PClampB: 1
+    - _PClampDither: 0
+    - _PClampDitherVary: 0
+    - _PClampEnabled: 0
+    - _PClampG: 1
+    - _PClampR: 1
+    - _PDistAlphaIncluded: 0
+    - _PDistEnabled: 0
+    - _PDistInvertB: 0
+    - _PDistInvertG: 0
+    - _PDistInvertR: 0
+    - _PDistMaxB: 0
+    - _PDistMaxG: 0
+    - _PDistMaxR: 0
+    - _PDistMonocolorChance: 0
+    - _PDistSimultaneousInvert: 0
+    - _PEdgeAmplitude: 0.5
+    - _PEdgeDepth: 0.8
+    - _PEdgeDepthMax: 0.5
+    - _PEdgeDepthMin: 0.2
+    - _PEdgeDistanceGrain: 0.6
+    - _PEdgeDuration: 0.5
+    - _PEdgeEnabled: 0
+    - _PEdgePower: 0.2
+    - _PEdgeUseWaveSource: 0
+    - _RDispChance: 0.244
+    - _RDispChunkVariance: 0.819
+    - _RDispChunkXSize: 0.44
+    - _RDispChunkYSize: 0.306
+    - _RDispCopyOnly: 0
+    - _RDispEnabled: 0
+    - _RDispInvertSource: 0
+    - _RDispKeepAlpha: 1
+    - _RDispMaxPowerX: 0.54
+    - _RDispMaxPowerY: 0.34
+    - _RDispMinPowerX: 0.12
+    - _RDispMinPowerY: -0.38
+    - _ResolutionX: 1066
+    - _ResolutionY: 600
+    - _SColorBleed: 0
+    - _SColorBrightness: 0.05
+    - _SColorChance: 0.616
+    - _SColorEnabled: 0
+    - _SColorExcludeAlpha: 1
+    - _SColorGap: 0.289
+    - _SColorStatic: 0
+    - _SColorVelocity: 0.41
+    - _SFrameAlphaIncluded: 0
+    - _SFrameChance: 0
+    - _SFrameChunking: 0.5
+    - _SFrameChunkingVariance: 0.5
+    - _SFrameEnabled: 0
+    - _SShiftChance: 0.456
+    - _SShiftEnabled: 0
+    - _SShiftPowerMax: 0.641
+    - _SShiftPowerMin: 0.588
+    - _TDispPreserveBrightness: 0
+    - _TDistChance: 0.708
+    - _TDistChunking: 0.635
+    - _TDistColorBarSize: 0.33
+    - _TDistDuration: 0.658
+    - _TDistEnabled: 0
+    - _TDistExcludeAlpha: 0
+    - _TDistHDisp: 0
+    - _TDistHDispPower: 0.208
+    - _TDistHDispPowerVariance: 0.5
+    - _TDistInvertB: 1
+    - _TDistInvertG: 0
+    - _TDistInvertR: 0
+    - _TDistStaticBarSize: 0.246
+    - _TDistStaticSize: 0
+    - _TDistTailoff: 0
+    - _VSyncChance: 0.5
+    - _VSyncDuration: 0.5
+    - _VSyncEnabled: 0
+    - _VSyncJitterChance: 0.5
+    - _VSyncJitterDuration: 0.5
+    - _VSyncPowerMax: 0.5
+    - _VSyncPowerMin: -0.5
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flash: {r: 1, g: 1, b: 1, a: 0}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _PClampTint: {r: 1, g: 1, b: 1, a: 1}
+    - _PDistMonocolor: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

@@ -1,6 +1,6 @@
 radio('LEADER', "Come in, Nika.")
-radio('CONTROL', "Oh good, you can still - ")
-radio('CONTROL', " - thought you'd be out range, but I can still sort of hear - ")
+radio('CONTROL', "Oh good, you can still - ", 'okay')
+radio('CONTROL', " - thought you'd be out range, but I can still sort of hear - ", 'okay')
 exitRadio()
 
 enterNVL()

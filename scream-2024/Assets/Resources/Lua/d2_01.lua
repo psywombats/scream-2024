@@ -1,6 +1,6 @@
 wait(9)
-radio('CONTROL', "Jeanne, come in. Can you guys -- ")
-radio('CONTROL', " -- I repeat, can you -- ?")
+radio('CONTROL', "Jeanne, come in. Can you guys -- ", 'bad')
+radio('CONTROL', " -- I repeat, can you -- ?", 'bad')
 exitRadio()
 
 wait(1.5)

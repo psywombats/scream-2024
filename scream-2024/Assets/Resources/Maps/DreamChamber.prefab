@@ -61,6 +61,7 @@ MonoBehaviour:
   spookiness: 0
   humidity: 0
   terrain: {fileID: 3852659569316397490}
+  initRadius: 1
 --- !u!114 &8489605036299559023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,7 +730,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ba83a2cc03307614cae10fbfc0c41645,
+      objectReference: {fileID: 21300000, guid: fce56a3a11f51814aa0cf7b03ea0734f,
         type: 3}
     - target: {fileID: 168415102217660312, guid: 2edb3768110c8f444a9833d7be9a8264,
         type: 3}
@@ -814,7 +815,7 @@ PrefabInstance:
     - target: {fileID: 5752128814111655026, guid: 2edb3768110c8f444a9833d7be9a8264,
         type: 3}
       propertyPath: speakerTag
-      value: PAL
+      value: PALD
       objectReference: {fileID: 0}
     - target: {fileID: 5752128814111655026, guid: 2edb3768110c8f444a9833d7be9a8264,
         type: 3}
