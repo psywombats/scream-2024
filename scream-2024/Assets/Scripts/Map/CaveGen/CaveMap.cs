@@ -11,7 +11,6 @@ public class CaveMap : GameMap
     [Header("Config")]
     [SerializeField] private NoiseGenerator noise;
     [SerializeField][Range(0, 1f)] private float caveSize;
-    [SerializeField][Range(0, 1f)] private float spookiness;
     [SerializeField] private Humidity humidity;
     [Space]
     [Header("References")]
@@ -23,7 +22,6 @@ public class CaveMap : GameMap
         base.OnTeleportTo(from);
         Regenerate(initRadius, Global.Instance.Avatar != null);
         AudioManager.Instance.SetGlobalParam("Cave Size", caveSize);
-        AudioManager.Instance.SetGlobalParam("Spookiness", spookiness);
         AudioManager.Instance.SetGlobalParam("cave_type", humidity.ToString());
     }
 

@@ -13,7 +13,9 @@ public abstract class GameMap : MonoBehaviour
     [SerializeField] public LightingMode lighting;
     [SerializeField] public bool allowAbseil = true;
     [SerializeField] public bool allowFlare = true;
+    [SerializeField] public bool allowCompass = false;
     [SerializeField] public float waterHeight = -1000;
+    [SerializeField] [Range(0, 1f)] public float spookiness;
     [Space]
     [SerializeField] public GameObject eventLayer;
 
@@ -49,9 +51,14 @@ public abstract class GameMap : MonoBehaviour
                     MapOverlayUI.Instance.setting.Show(setting);
                 }
             }
-            MapOverlayUI.Instance.ascendInfo.alpha = allowAbseil ? 1f : 0f;
-            MapOverlayUI.Instance.flareInfo.alpha = Global.Instance.Avatar.CanFlare ? 1f : 0f;
+            if (Global.Instance.Avatar != null)
+            {
+                MapOverlayUI.Instance.flareInfo.gameObject.SetActive(Global.Instance.Avatar.CanFlare);
+            }
+            MapOverlayUI.Instance.ascendInfo.gameObject.SetActive(allowAbseil);
+            MapOverlayUI.Instance.compass.gameObject.SetActive(allowCompass);
         }
+        AudioManager.Instance.SetGlobalParam("Spookiness", spookiness);
     }
 
     public virtual void OnTeleportAway(GameMap nextMap)

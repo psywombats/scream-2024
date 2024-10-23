@@ -66,5 +66,6 @@ enter('LEADER', 'b')
 speak('LEADER', "Talk with everyone. See what we're like here. We can ease you into it, no issue. Amador's vouched for you so I'm sure you'll be fine, and I'm sure you'll decide we're worth your time.")
 speak('YOU', "Okay. Thank you. Really, thank you. I'll talk with everyone. I'll do that.")
 exitNVL()
+showBasics(true)
 
 setSwitch('d1_01', true)

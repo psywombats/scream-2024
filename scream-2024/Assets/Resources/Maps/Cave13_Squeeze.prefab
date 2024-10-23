@@ -104,12 +104,15 @@ MonoBehaviour:
   lighting: 2
   allowAbseil: 1
   allowFlare: 1
+  allowCompass: 1
+  waterHeight: -1000
+  spookiness: 0.9
   eventLayer: {fileID: 9067036153116081544}
   noise: {fileID: 5875758627505855314}
   caveSize: 0.2
-  spookiness: 0.9
   humidity: 1
   terrain: {fileID: 3205676219633416915}
+  initRadius: 1
 --- !u!114 &5875758627505855314
 MonoBehaviour:
   m_ObjectHideFlags: 0

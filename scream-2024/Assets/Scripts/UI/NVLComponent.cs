@@ -44,6 +44,8 @@ public class NVLComponent : MonoBehaviour
             portrait.Clear();
         }
 
+        StartCoroutine(CoUtils.RunTween(MapOverlayUI.Instance.info.DOFade(0, bgTime)));
+
         if (!hideBackers)
         {
             backerArea.gameObject.SetActive(true);
@@ -73,6 +75,7 @@ public class NVLComponent : MonoBehaviour
         routines.Add(backer.HideRoutine());
         routines.Add(CoUtils.RunTween(fader.DOFade(0.0f, backer.duration)));
         routines.Add(CoUtils.RunTween(background.DOFade(0, bgTime)));
+        routines.Add(CoUtils.RunTween(MapOverlayUI.Instance.info.DOFade(1, bgTime)));
         yield return CoUtils.RunParallel(routines.ToArray(), this);
         Wipe();
         IsShown = false;

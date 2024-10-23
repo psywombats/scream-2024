@@ -75,6 +75,7 @@ public class LuaCutsceneContext : LuaContext
         Lua.Globals["showFlares"] = (Action)ShowFlares;
         Lua.Globals["endGame"] = (Action)EndGame;
         Lua.Globals["endGame2"] = (Action)EndGame2;
+        Lua.Globals["showBasics"] = (Action<DynValue>)ShowBasics;
     }
 
     // === LUA CALLABLE ============================================================================
@@ -180,6 +181,11 @@ public class LuaCutsceneContext : LuaContext
         return MapOverlayUI.Instance.cutin.DoCutin(key);
     }
 
+    private void ShowBasics(DynValue show)
+    {
+        Global.Instance.StartCoroutine(CoUtils.RunTween(MapOverlayUI.Instance.basics.DOFade(show.Boolean ? 1f : 0f, 1f)));
+    }
+
     public void Speak(DynValue speakerNameLua, DynValue messageLua)
     {
         var speaker = IndexDatabase.Instance.Speakers.GetData(speakerNameLua.String);
@@ -225,7 +231,7 @@ public class LuaCutsceneContext : LuaContext
 
     private void ShowFlares()
     {
-        MapOverlayUI.Instance.flareInfo.alpha = 1f;
+        MapOverlayUI.Instance.flareInfo.gameObject.SetActive(true);
     }
 
     private void EndGame()

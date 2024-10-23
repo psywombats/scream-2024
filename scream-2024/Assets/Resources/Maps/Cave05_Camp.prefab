@@ -48,6 +48,7 @@ MonoBehaviour:
   chunkPrefab: {fileID: 4519276177597075476}
   spawnRadius: 2
   cullDist: 3
+  pulsars: []
 --- !u!1 &979996554908446260
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +428,8 @@ MonoBehaviour:
   marchShader: {fileID: 7200000, guid: db23f073406cdad46a7481327ae01f60, type: 3}
   filter: {fileID: 2809125762052951703}
   collider: {fileID: 8566996600735189625}
+  pulsarPeriod: 0
+  pulsarAmplitude: 0
   weights: []
 --- !u!1 &3815772306422789819
 GameObject:
@@ -968,12 +971,16 @@ MonoBehaviour:
   - 600m
   lighting: 2
   allowAbseil: 0
+  allowFlare: 1
+  allowCompass: 1
+  waterHeight: -1000
+  spookiness: 0.1
   eventLayer: {fileID: 4883538153308633912}
   noise: {fileID: 4621358142903299125}
   caveSize: 0.6
-  spookiness: 0.1
   humidity: 0
   terrain: {fileID: 3661483948133305531}
+  initRadius: 1
 --- !u!114 &4621358142903299125
 MonoBehaviour:
   m_ObjectHideFlags: 0
