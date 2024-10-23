@@ -134,6 +134,9 @@
 		<property name="length">
 			<value>32.204374999999999</value>
 		</property>
+		<property name="spawnRate">
+			<value>38</value>
+		</property>
 		<relationship name="sound">
 			<destination>{7d5ee25f-1618-4f98-8839-4d224c6db377}</destination>
 		</relationship>

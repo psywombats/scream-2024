@@ -140,6 +140,9 @@
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{6d7b43be-ffe8-4c31-a8c2-8ffc36b881a4}">
+		<property name="playCount">
+			<value>1</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{6497e57e-1a97-4e70-b020-e06fa1c3fa95}</destination>
 		</relationship>
