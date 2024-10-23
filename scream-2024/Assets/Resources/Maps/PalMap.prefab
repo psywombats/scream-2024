@@ -261,13 +261,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayNames:
-  - '{date}'
   - A&M University
-  - '{time}'
+  - Cheap Apartment
   lighting: 0
   allowAbseil: 0
   allowFlare: 1
+  allowCompass: 0
   waterHeight: -1000
+  spookiness: 0
+  isNightmare: 0
   eventLayer: {fileID: 8745626077840585958}
   mesh: {fileID: 7764492765690164915}
 --- !u!114 &2301012690502123226
@@ -1093,7 +1095,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 5
-    m_Data: {fileID: 0, guid: a9346de22b9860745b82c9c5bbd09d3f, type: 3}
+    m_Data: {fileID: 0}
   - m_RefCount: 3
     m_Data: {fileID: -3731950398636664304, guid: a9346de22b9860745b82c9c5bbd09d3f,
       type: 3}

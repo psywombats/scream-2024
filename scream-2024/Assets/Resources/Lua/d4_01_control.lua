@@ -4,7 +4,7 @@ enter('YOU', 'd')
 if not getSwitch('d4_01_control') then
 	speak('CONTROL', "Hey Phoebe, check it out.")
 	expr('CONTROL', 'yay')
-	speak('CONTROL', "I've got AI exploration working in Spelonky.")
+	speak('CONTROL', "I've got AI exploration working in Chasm.")
 	speak('YOU', "That's... great, but, is that really what we should be worried about right now?")
 	expr('CONTROL', '')
 	speak('CONTROL', "I figure it's the best way to find Amador. He clearly went into the cave, right?")

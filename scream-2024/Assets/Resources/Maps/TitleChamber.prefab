@@ -332,17 +332,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ff804f2272d3649b0695c5e5258abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayNames:
-  - Really Dank Cave
-  - 1500m
+  displayNames: []
   lighting: 2
   allowAbseil: 1
+  allowFlare: 1
+  allowCompass: 0
+  waterHeight: -1000
+  spookiness: 0
+  isNightmare: 0
   eventLayer: {fileID: 8033848021120395650}
   noise: {fileID: 3381923086304788452}
   caveSize: 0
-  spookiness: 0
   humidity: 0
   terrain: {fileID: 5890368994968209910}
+  initRadius: 1
 --- !u!114 &3381923086304788452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +436,8 @@ MonoBehaviour:
   spawnRadius: 2
   cullDist: 3
   pulsars: []
+  toFollow: {fileID: 0}
+  bias: {x: 0, y: 0, z: 0}
 --- !u!1 &4602638061777598330
 GameObject:
   m_ObjectHideFlags: 0

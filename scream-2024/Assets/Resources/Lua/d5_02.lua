@@ -2,6 +2,7 @@ enterNVL()
 enter('LEADER', 'c')
 speak('LEADER', "Wh -")
 expr('LEADER', 'serious')
+playBGM('suspense')
 speak('LEADER', "The rope! Help!")
 exit('LEADER')
 speak('LEADER', "I can't die before I reach the bottom! My dream, my - ")
@@ -45,4 +46,5 @@ speak('YOU', "That's me, right down there, once I reach the bottom of this cave.
 speak('YOU', "I can do this. I've got to find Jeanne down there, and Amador too, and find the bottom.")
 exitNVL()
 
+playBGM('drone')
 setSwitch('d5_02', true)

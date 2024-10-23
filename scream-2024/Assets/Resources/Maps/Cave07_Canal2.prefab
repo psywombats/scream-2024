@@ -312,6 +312,8 @@ MonoBehaviour:
   spawnRadius: 3
   cullDist: 4
   pulsars: []
+  toFollow: {fileID: 0}
+  bias: {x: 0, y: 0, z: 0}
 --- !u!1 &4373302856356326750
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +366,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayNames:
-  - 3:30 PM
   - Canal Continues
   - 750m
   lighting: 2
@@ -373,6 +374,7 @@ MonoBehaviour:
   allowCompass: 1
   waterHeight: -1000
   spookiness: 0.7
+  isNightmare: 0
   eventLayer: {fileID: 1407766366845972896}
   noise: {fileID: 4875241940299639585}
   caveSize: 0.4

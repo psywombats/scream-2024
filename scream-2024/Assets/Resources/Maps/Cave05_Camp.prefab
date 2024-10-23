@@ -49,6 +49,8 @@ MonoBehaviour:
   spawnRadius: 2
   cullDist: 3
   pulsars: []
+  toFollow: {fileID: 0}
+  bias: {x: 0, y: 0, z: 0}
 --- !u!1 &979996554908446260
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,6 +950,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3931365108519488982}
   - {fileID: 5455182875159625178}
   - {fileID: 5690192305244813754}
   - {fileID: 3867253742178213279}
@@ -966,7 +969,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayNames:
-  - '{time}'
   - Camp Sixth Century
   - 600m
   lighting: 2
@@ -975,6 +977,7 @@ MonoBehaviour:
   allowCompass: 1
   waterHeight: -1000
   spookiness: 0.1
+  isNightmare: 0
   eventLayer: {fileID: 4883538153308633912}
   noise: {fileID: 4621358142903299125}
   caveSize: 0.6
@@ -1055,6 +1058,16 @@ PrefabInstance:
         type: 3}
       propertyPath: speakerTag
       value: LEADER
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: moonDistanceOn
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: moonDistanceOff
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2647834308474784002, guid: 8d1f65d374108ff439f0d65767db0ae5,
         type: 3}
@@ -1191,6 +1204,21 @@ PrefabInstance:
       propertyPath: speakerTag
       value: JERK
       objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: phaserDelay
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: moonDistanceOn
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: moonDistanceOff
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2647834308474784002, guid: 8d1f65d374108ff439f0d65767db0ae5,
         type: 3}
       propertyPath: luaOnInteract
@@ -1309,6 +1337,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3611560898478595684}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6043415483638531172
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3393160950545813870}
+    m_Modifications:
+    - target: {fileID: 1157537161652373687, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_Name
+      value: CaveBGM
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe9b937e9ab54464b986bd912672e842, type: 3}
+--- !u!4 &3931365108519488982 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+    type: 3}
+  m_PrefabInstance: {fileID: 6043415483638531172}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7395233393560757720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1342,6 +1444,21 @@ PrefabInstance:
         type: 3}
       propertyPath: speakerTag
       value: PAL
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: phaserDelay
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: moonDistanceOn
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: moonDistanceOff
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2647834308474784002, guid: 8d1f65d374108ff439f0d65767db0ae5,
         type: 3}
@@ -1479,6 +1596,21 @@ PrefabInstance:
         type: 3}
       propertyPath: speakerTag
       value: OLDGUY
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: phaserDelay
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: moonDistanceOn
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: moonDistanceOff
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2647834308474784002, guid: 8d1f65d374108ff439f0d65767db0ae5,
         type: 3}

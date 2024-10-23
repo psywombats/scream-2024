@@ -87,6 +87,11 @@ function cutin(key)
 	await()
 end
 
+function intertitle(s1, s2)
+	cs_intertitle(s1, s2)
+	await()
+end
+
 function walk(event, count, direction, wait)
     if wait == nil then wait = true end
     cs_walk(event, count, direction, wait)

@@ -1,6 +1,7 @@
 enterNVL()
 enter('YOU', 'c')
 speak('YOU', "Where'd he go?")
+expr('YOU', 'dis')
 speak('YOU', "This... This is the same spot as yesterday, isn't it?")
 exitNVL()
 

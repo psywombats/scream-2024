@@ -66,6 +66,7 @@ public class LuaCutsceneContext : LuaContext
         Lua.Globals["cs_radio"] = (Action<DynValue, DynValue, DynValue>)Radio;
         Lua.Globals["cs_expr"] = (Action<DynValue, DynValue>)Express;
         Lua.Globals["cs_cutin"] = (Action<DynValue>)Cutin;
+        Lua.Globals["cs_intertitle"] = (Action<DynValue, DynValue>)Intertitle;
         Lua.Globals["clear"] = (Action)ClearNVL;
         Lua.Globals["hideRadio"] = (Action)HideRadio;
         Lua.Globals["exitRadio"] = (Action)HideRadio;
@@ -249,5 +250,15 @@ public class LuaCutsceneContext : LuaContext
     private void EndGame2()
     {
         Global.Instance.StartCoroutine(UnityEngine.Object.FindObjectOfType<EndGameComponent>().EndGame2Routine());
+    }
+
+    private void Intertitle(DynValue s1, DynValue s2)
+    {
+        RunRoutineFromLua(IntertitleRoutine(s1.String, s2.String));
+    }
+
+    private IEnumerator IntertitleRoutine(string s1, string s2)
+    {
+        return MapOverlayUI.Instance.intertitle.DoIntertitleCommand(s1, s2);
     }
 }

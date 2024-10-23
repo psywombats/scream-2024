@@ -1,3 +1,4 @@
+playBGM('unforgettable_exp')
 enterNVL()
 enter('YOU', 'a')
 enter('OTHER', 'c')

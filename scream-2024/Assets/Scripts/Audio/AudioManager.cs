@@ -18,6 +18,8 @@ public class AudioManager : SingletonBehavior
 
     public static AudioManager Instance => Global.Instance.Audio;
 
+    [SerializeField] private StudioEventEmitter nightmareSnap;
+
     private EventInstance bgmEvent;
     private EventInstance sfxEvent;
     private Dictionary<string, EventInstance> envEvents = new();
@@ -143,6 +145,18 @@ public class AudioManager : SingletonBehavior
         bgmBus.setVolume(BaseVolume);
         uiBus.setVolume(BaseVolume);
         envBus.setVolume(BaseVolume);
+    }
+
+    public void SetNightmare(bool isNightmare)
+    {
+        if (!nightmareSnap.IsPlaying() && isNightmare)
+        {
+            nightmareSnap.Play();
+        } 
+        else if (nightmareSnap.IsPlaying() && !isNightmare)
+        {
+            nightmareSnap.Stop();
+        }
     }
 
     public IEnumerator FadeOutRoutine(float durationSeconds)

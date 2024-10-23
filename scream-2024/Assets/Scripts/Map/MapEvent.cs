@@ -44,17 +44,17 @@ public class MapEvent : MonoBehaviour
         get => isSwitchEnabled;
         set
         {
+            if (enableChild != null)
+            {
+                enableChild.SetActive(value);
+            }
+            if (collider != null)
+            {
+                collider.enabled = value;
+            }
             if (value != isSwitchEnabled)
             {
                 OnSwitchChanged?.Invoke(value);
-                if (enableChild != null)
-                {
-                    enableChild.SetActive(value);
-                }
-                if (collider != null)
-                {
-                    collider.enabled = value;
-                }
             }
             isSwitchEnabled = value;
         }

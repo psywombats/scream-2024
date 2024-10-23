@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3737488200913760301}
   - component: {fileID: 4526316139489940301}
   - component: {fileID: 4600706890275110005}
+  - component: {fileID: 163223806796194120}
   m_Layer: 0
   m_Name: Global
   m_TagString: Untagged
@@ -61,6 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f72cdc0aaa31cc4bbfdc6e9fbaf8198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nightmareSnap: {fileID: 163223806796194120}
 --- !u!114 &4600706890275110005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,3 +77,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatarPrefab: {fileID: 9104589717209446317, guid: 28c1b11a97646734b9a1faf8ad519043,
     type: 3}
+--- !u!114 &163223806796194120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8368498211227529305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: snapshot:/nightmare
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0

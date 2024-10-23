@@ -1,3 +1,4 @@
+play('unforgettable_exp')
 enterNVL()
 enter('OTHER', 'c')
 speak('OTHER', "Hello, me.")
@@ -42,6 +43,8 @@ wait(.5)
 exitNVL()
 
 fade('black', 4)
+intertitle("DAY 0x99", "if then")
+wait(1)
 setString('date', '')
 setString('time', '')
 setSwitch('d5_05', true)

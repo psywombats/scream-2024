@@ -9,13 +9,17 @@ public class MarchingTerrain : MonoBehaviour
     [SerializeField] private int cullDist = 2;
     [Space]
     [SerializeField] private List<Vector3Int> pulsars;
+    [SerializeField] private GameObject toFollow;
+    [SerializeField] private Vector3Int bias;
 
     private Dictionary<Vector3Int, Chunk> chunks = new();
     private Dictionary<int, GameObject> layers = new();
 
+    public GameObject Target => toFollow != null ? toFollow : Global.Instance.Avatar?.gameObject;
+
     public void Update()
     {
-        if (Global.Instance.Avatar != null)
+        if (Target != null)
         {
             EnsureChunks();
             CullChunks();
@@ -112,10 +116,10 @@ public class MarchingTerrain : MonoBehaviour
 
     private Vector3Int GetPlayerIndex()
     {
-        var playerPos = Global.Instance.Avatar.transform.position;
+        var playerPos = Target.transform.position;
         var myPos = transform.position;
         var atPos = playerPos - myPos;
-        var index = GetIndexForPos(atPos);
+        var index = GetIndexForPos(atPos) + bias;
         return index;
     }
 

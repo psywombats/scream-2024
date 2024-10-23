@@ -9,5 +9,6 @@ speak('YOU', "...Then I'll try to sleep. Goodnight.")
 exitNVL()
 
 fade('black', 2)
+intertitle("DAY 0x05", "volatile")
 setSwitch('d4_05', true)
 teleport("DreamChamber", 'start')

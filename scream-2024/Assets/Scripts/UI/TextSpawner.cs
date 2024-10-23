@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,12 +20,12 @@ public class TextSpawner : MonoBehaviour
 
     public IEnumerator Spawn()
     {
-        yield return Spawn(count1, slowBounds, slowDelay);
+        yield return Spawn(count1, slowBounds, slowDelay, true);
         yield return CoUtils.Wait(1);
-        yield return Spawn(count2, fastBounds, fastDelay);
+        yield return Spawn(count2, fastBounds, fastDelay, false);
     }
 
-    private IEnumerator Spawn(int count, Vector2 bounds, float delay)
+    private IEnumerator Spawn(int count, Vector2 bounds, float delay, bool shake)
     {
         for (var i = 0; i < count; i += 1)
         {
@@ -38,6 +39,7 @@ public class TextSpawner : MonoBehaviour
                 Random.Range(-bounds.x, bounds.x),
                 Random.Range(-bounds.y, bounds.y));
             rect.transform.localPosition = new Vector3(rect.transform.localPosition.x, rect.transform.localPosition.y, 0);
+            if (shake) StartCoroutine(CoUtils.RunTween(rect.transform.DOShakePosition(.2f)));
             yield return CoUtils.Wait(delay);
         }
     }

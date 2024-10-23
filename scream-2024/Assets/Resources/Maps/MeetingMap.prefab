@@ -86,11 +86,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayNames:
   - Outside Phoebe's Apartment
-  - '{time}'
   lighting: 0
   allowAbseil: 0
   allowFlare: 1
+  allowCompass: 0
   waterHeight: -1000
+  spookiness: 0
+  isNightmare: 0
   eventLayer: {fileID: 3473831592667386}
   mesh: {fileID: 6473528673539812963}
 --- !u!114 &3462636470823042657

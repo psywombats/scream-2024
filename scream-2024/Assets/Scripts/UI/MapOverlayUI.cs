@@ -28,6 +28,7 @@ public class MapOverlayUI : MonoBehaviour
     [SerializeField] public RadioUIComponent radio;
     [SerializeField] public CutinComponent cutin;
     [SerializeField] public GameObject compass;
+    [SerializeField] public IntertitleComponent intertitle;
     [SerializeField] public CanvasGroup basics;
     [SerializeField] public CanvasGroup info;
     [SerializeField] public CanvasGroup fader;

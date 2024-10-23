@@ -9,5 +9,6 @@ radio('YOU', "And what about the ecosystem? I don't want to blind any animals. O
 radio('JERK', "Then stick to your headlamp. But if you really need to see into the distance, you should know the tools available to you.")
 radio('JERK', "It's better than stumbling into a pit.")
 
+showFlares()
 setSwitch('enable_flares', true)
 setSwitch('d1_04', true)

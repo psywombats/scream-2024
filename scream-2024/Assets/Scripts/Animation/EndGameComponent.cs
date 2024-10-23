@@ -54,6 +54,7 @@ public class EndGameComponent : MonoBehaviour
     }
     private IEnumerator EndGameRoutine()
     {
+        Global.Instance.Audio.PlayBGM("drone");
         yield return CoUtils.RunParallel(Global.Instance,
             AudioManager.Instance.FadeOutRoutine(fadeDuration),
             CoUtils.RunTween(rawGroup.DOFade(0f, fadeDuration)));
@@ -90,11 +91,11 @@ public class EndGameComponent : MonoBehaviour
         yield return CoUtils.Wait(1.5f);
         yield return spawner.Spawn();
 
-        yield return CoUtils.Wait(1f);
+        yield return CoUtils.Wait(2f);
         yield return CoUtils.RunTween(stingerA.DOFade(1f, .5f));
-        yield return CoUtils.Wait(1f);
+        yield return CoUtils.Wait(2f);
         yield return CoUtils.RunTween(stingerB.DOFade(1f, .5f));
-        yield return CoUtils.Wait(3f);
+        yield return CoUtils.Wait(4f);
         yield return CoUtils.RunParallel(Global.Instance,
             CoUtils.RunTween(texterGroup.DOFade(0f, 2)),
             CoUtils.RunTween(stingerGroup.DOFade(0f, 2)));

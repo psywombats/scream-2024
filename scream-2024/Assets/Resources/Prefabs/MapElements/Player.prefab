@@ -688,6 +688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rot: {x: 0, y: 45, z: 0}
+  mot: {x: 0, y: 0, z: 0}
 --- !u!114 &5471364028983718290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2244,11 +2245,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -237488858
-      Data2: 1075116022
-      Data3: 280431246
-      Data4: -315215735
-    Path: event:/SFX/player/abseiling_rope
+      Data1: 497014935
+      Data2: 1341610914
+      Data3: -410105959
+      Data4: 829656565
+    Path: event:/SFX/player/abseiling_hanging
   Event: 
   PlayEvent: 0
   StopEvent: 0

@@ -203,6 +203,8 @@ MonoBehaviour:
   spawnRadius: 2
   cullDist: 3
   pulsars: []
+  toFollow: {fileID: 0}
+  bias: {x: 0, y: 0, z: 0}
 --- !u!1 &1901232712795311861
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,16 +781,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayNames:
-  - '{date}'
   - Last Refuge
   - 1250m
-  - '{time}'
   lighting: 2
   allowAbseil: 1
   allowFlare: 1
   allowCompass: 1
   waterHeight: -1000
   spookiness: 0
+  isNightmare: 0
   eventLayer: {fileID: 6998429450607315633}
   noise: {fileID: 3271041903779339112}
   caveSize: 0
@@ -942,6 +943,16 @@ PrefabInstance:
       propertyPath: speakerTag
       value: LEADER
       objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: moonDistanceOn
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: moonDistanceOff
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2647834308474784002, guid: 8d1f65d374108ff439f0d65767db0ae5,
         type: 3}
       propertyPath: luaCondition
@@ -1072,6 +1083,16 @@ PrefabInstance:
       propertyPath: speakerTag
       value: JERK
       objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: moonDistanceOn
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419673287300896840, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: moonDistanceOff
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2647834308474784002, guid: 8d1f65d374108ff439f0d65767db0ae5,
         type: 3}
       propertyPath: luaCondition
@@ -1101,6 +1122,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: jerk02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635215843826455287, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.09469501
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635215843826455287, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.09469501
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635215843826455287, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.09469501
       objectReference: {fileID: 0}
     - target: {fileID: 6761330124672803083, guid: 8d1f65d374108ff439f0d65767db0ae5,
         type: 3}
@@ -1157,6 +1193,12 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6ceb1aa5b82afd642a6284b768185adf,
+        type: 3}
+    - target: {fileID: 7234867771547733766, guid: 8d1f65d374108ff439f0d65767db0ae5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c0e8f8c0f7d1b5f4abaf78dba9e4738a,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

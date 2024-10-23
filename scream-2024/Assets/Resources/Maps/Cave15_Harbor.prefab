@@ -53,14 +53,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayNames:
-  - '"Captain Ahab''s Last Harbor"'
-  - The nadir
+  - '"Captain Ahab''s Last Stand"'
+  - The Nadir of the World
   lighting: 2
   allowAbseil: 0
   allowFlare: 0
   allowCompass: 0
   waterHeight: -1000
   spookiness: 0
+  isNightmare: 0
   eventLayer: {fileID: 4464321890118159954}
   noise: {fileID: 8489605036299559023}
   caveSize: 0.3
@@ -275,6 +276,8 @@ MonoBehaviour:
   spawnRadius: 2
   cullDist: 3
   pulsars: []
+  toFollow: {fileID: 0}
+  bias: {x: 0, y: 0, z: 0}
 --- !u!1 &2234361168294138810
 GameObject:
   m_ObjectHideFlags: 0

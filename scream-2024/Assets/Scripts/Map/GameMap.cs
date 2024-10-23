@@ -16,6 +16,7 @@ public abstract class GameMap : MonoBehaviour
     [SerializeField] public bool allowCompass = false;
     [SerializeField] public float waterHeight = -1000;
     [SerializeField] [Range(0, 1f)] public float spookiness;
+    [SerializeField] public bool isNightmare;
     [Space]
     [SerializeField] public GameObject eventLayer;
 
@@ -59,6 +60,7 @@ public abstract class GameMap : MonoBehaviour
             MapOverlayUI.Instance.compass.gameObject.SetActive(allowCompass);
         }
         AudioManager.Instance.SetGlobalParam("Spookiness", spookiness);
+        AudioManager.Instance.SetNightmare(isNightmare);
     }
 
     public virtual void OnTeleportAway(GameMap nextMap)

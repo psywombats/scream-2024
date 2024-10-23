@@ -4118,15 +4118,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayNames:
-  - '{date}'
   - University outskirts
-  - '{time}'
   lighting: 0
   allowAbseil: 0
   allowFlare: 1
   allowCompass: 0
   waterHeight: -1000
   spookiness: 0
+  isNightmare: 0
   eventLayer: {fileID: 8480509899435552877}
   mesh: {fileID: 7702724417612358988}
 --- !u!114 &2198301852889212252

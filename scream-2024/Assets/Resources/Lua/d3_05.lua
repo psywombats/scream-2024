@@ -21,4 +21,5 @@ exitNVL()
 
 setSwitch('d3_05', true)
 fade('black', 2)
+intertitle("DAY 0x04", "virtual")
 teleport('DreamChamber', 'start')

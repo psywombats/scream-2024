@@ -332,6 +332,8 @@ MonoBehaviour:
   spawnRadius: 3
   cullDist: 4
   pulsars: []
+  toFollow: {fileID: 0}
+  bias: {x: 0, y: 0, z: 0}
 --- !u!1 &4373302856356326750
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayNames:
-  - Drillshaft
+  - Death Spiral
   - 1800m
   lighting: 2
   allowAbseil: 1
@@ -391,6 +393,7 @@ MonoBehaviour:
   allowCompass: 1
   waterHeight: -1000
   spookiness: 0
+  isNightmare: 0
   eventLayer: {fileID: 1407766366845972896}
   noise: {fileID: 4875241940299639585}
   caveSize: 0.5
