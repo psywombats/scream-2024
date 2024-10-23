@@ -124,6 +124,8 @@ MonoBehaviour:
   spawnRadius: 3
   cullDist: 4
   pulsars: []
+  toFollow: {fileID: 0}
+  bias: {x: 0, y: 0, z: 0}
 --- !u!1 &3352601491019235624
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,10 +418,11 @@ MonoBehaviour:
   displayNames: []
   lighting: 2
   allowAbseil: 0
-  allowFlare: 1
+  allowFlare: 0
   allowCompass: 0
   waterHeight: -1000
   spookiness: 0
+  isNightmare: 1
   eventLayer: {fileID: 5013854137374017943}
   noise: {fileID: 4607397103986274725}
   caveSize: 0.5

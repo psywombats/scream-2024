@@ -234,7 +234,8 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: -5771323814814079387}
   MinDistance: 1
   MaxDistance: 20
   Length: 32204
@@ -266,6 +267,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5771323814814079387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/abseiling_up_down/Spookiness
+  m_EditorClassIdentifier: 
+  Name: Spookiness
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 44935439
+    data2: 177502786
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-5638840765579392448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,10 +333,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638652683892065735
+  lastModified: 638652845636554091
   FileSizes:
   - Name: Desktop
-    Value: 9205248
+    Value: 9202048
   Exists: 1
 --- !u!114 &-5197611917616149525
 MonoBehaviour:
@@ -328,10 +353,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Main.bank
   Name: Main
   StudioPath: bank:/Main
-  lastModified: 638652683883962598
+  lastModified: 638652845632025582
   FileSizes:
   - Name: Desktop
-    Value: 2705632
+    Value: 2829600
   Exists: 1
 --- !u!114 &-4904655649958765695
 MonoBehaviour:
@@ -374,7 +399,7 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638652683884101467
+  lastModified: 638652845632164463
   FileSizes:
   - Name: Desktop
     Value: 6104
@@ -432,7 +457,34 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 50463
+  Length: 17354
+--- !u!114 &-2837213681306130971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/in_game/ending_short
+  m_EditorClassIdentifier: 
+  Path: event:/UI/in_game/ending_short
+  Guid:
+    Data1: -9021267
+    Data2: 1338315717
+    Data3: -1319253613
+    Data4: -412204161
+  Banks:
+  - {fileID: -5197611917616149525}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1843735171507437879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,6 +536,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1324984545774053669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/nightmare
+  m_EditorClassIdentifier: 
+  Path: snapshot:/nightmare
+  Guid:
+    Data1: 215940153
+    Data2: 1197897716
+    Data3: -263237222
+    Data4: 698620444
+  Banks:
+  - {fileID: -4763852708050613231}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-1168312825331540716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/in_game/ending_long
+  m_EditorClassIdentifier: 
+  Path: event:/UI/in_game/ending_long
+  Guid:
+    Data1: 108644653
+    Data2: 1255675309
+    Data3: 2106035333
+    Data4: 12172617
+  Banks:
+  - {fileID: -5197611917616149525}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
 --- !u!114 &-995357628554202288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,7 +716,6 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -5991295665506389208}
   - {fileID: 6153157323093656440}
-  - {fileID: 3801018839563984082}
   - {fileID: -223053393791101202}
   - {fileID: -1536598014998311973}
   - {fileID: 4544495487345483357}
@@ -643,6 +748,10 @@ MonoBehaviour:
   - {fileID: -8625194217452042589}
   - {fileID: -6225998373485191377}
   - {fileID: 7034305222057575561}
+  - {fileID: -1168312825331540716}
+  - {fileID: 5624527022340088261}
+  - {fileID: -2837213681306130971}
+  - {fileID: -1324984545774053669}
   EditorParameters:
   - {fileID: 396220204858183252}
   - {fileID: -1843735171507437879}
@@ -652,7 +761,7 @@ MonoBehaviour:
   - {fileID: -4763852708050613231}
   StringsBanks:
   - {fileID: 971565201425812555}
-  cacheTime: 638652683892784935
+  cacheTime: 638652845637337774
   cacheVersion: 131603
 --- !u!114 &396220204858183252
 MonoBehaviour:
@@ -693,10 +802,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638652683884121305
+  lastModified: 638652845632179334
   FileSizes:
   - Name: Desktop
-    Value: 3066
+    Value: 3180
   Exists: 1
 --- !u!114 &1204330058058080618
 MonoBehaviour:
@@ -807,33 +916,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 92341
---- !u!114 &3801018839563984082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: snapshot:/Dead
-  m_EditorClassIdentifier: 
-  Path: snapshot:/Dead
-  Guid:
-    Data1: 215940153
-    Data2: 1197897716
-    Data3: -263237222
-    Data4: 698620444
-  Banks:
-  - {fileID: -4763852708050613231}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &4018732467759329697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1020,6 +1102,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5624527022340088261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/in_game/popups
+  m_EditorClassIdentifier: 
+  Path: event:/UI/in_game/popups
+  Guid:
+    Data1: -1144295071
+    Data2: 1303395782
+    Data3: -1896878967
+    Data4: -1044368235
+  Banks:
+  - {fileID: -5197611917616149525}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 714
 --- !u!114 &5869604307188290453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,10 +1335,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 638652683892784935
+  lastModified: 638652845637337774
   FileSizes:
   - Name: Desktop
-    Value: 2802080
+    Value: 2798880
   Exists: 1
 --- !u!114 &7724319492855852427
 MonoBehaviour:
@@ -1281,7 +1390,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 4016
+  Length: 2433
 --- !u!114 &8658497598644001137
 MonoBehaviour:
   m_ObjectHideFlags: 0

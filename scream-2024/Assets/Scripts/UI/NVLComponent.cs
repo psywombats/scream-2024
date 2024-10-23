@@ -44,6 +44,7 @@ public class NVLComponent : MonoBehaviour
             portrait.Clear();
         }
 
+        Global.Instance.Audio.PlaySFX("in_game/popups", null, AudioManager.Bank.UI);
         StartCoroutine(CoUtils.RunTween(MapOverlayUI.Instance.info.DOFade(0, bgTime)));
 
         if (!hideBackers)
@@ -117,6 +118,7 @@ public class NVLComponent : MonoBehaviour
         nameText.text = name;
         //yield return text.WriteLineRoutine(toType);
         yield return text.TypeRoutine(toType, waitForConfirm: true);
+        Global.Instance.Audio.PlaySFX("in_game/popups", null, AudioManager.Bank.UI);
     }
 
     public IEnumerator SetHighlightRoutine(SpeakerData speaker)

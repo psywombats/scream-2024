@@ -26,7 +26,7 @@ speak('PAL', "I know you used to do that to yourself when we were teenagers. I j
 speak('YOU', "I'll be alright. I'm just stressed at the moment, because, well, my life is falling apart.")
 speak('PAL', "A&M has decent therapists if you need 'em. Just know you're not alone out there.")
 expr('PAL', 'grin')
-speak('PAL', "Seeya in the cave tomomrrow.")
+speak('PAL', "Seeya in the cave tomorrow.")
 exit('PAL')
 speak('YOU', "Thanks, Amador. Really.")
 exitNVL()

@@ -61,7 +61,7 @@ MonoBehaviour:
   allowCompass: 0
   waterHeight: -1000
   spookiness: 0
-  isNightmare: 0
+  isNightmare: 1
   eventLayer: {fileID: 4464321890118159954}
   noise: {fileID: 8489605036299559023}
   caveSize: 0.3

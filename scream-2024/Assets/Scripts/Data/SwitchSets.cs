@@ -2,12 +2,12 @@ public static class SwitchSets
 {
     public static string[] BookmarkDates = new string[]
     {
-        "Monday 10/1",
-        "Tuesday 10/2",
-        "Wednesday 10/3",
-        "Thursday 10/4",
-        "Friday 10/5",
-        "Final Day",
+        "DAY 0x01",
+        "DAY 0x02",
+        "DAY 0x03",
+        "DAY 0x04",
+        "DAY 0x05",
+        "DAY 0x99",
     };
 
     public static string[] BookmarkTimes = new string[]
@@ -74,6 +74,7 @@ public static class SwitchSets
             "d3_04_leader",
             "d3_04_control",
             "d3_04_pal",
+            "d3_05",
         },
         new string[]
         {

@@ -12,6 +12,9 @@ public class TextSpawner : MonoBehaviour
     [SerializeField] private Vector2 slowBounds;
     [SerializeField] private Vector2 fastBounds;
     [SerializeField] private List<GameObject> objs;
+    [Space]
+    [SerializeField] private string hitSFX;
+    [SerializeField] private string riserSFX;
 
     public void Start()
     {
@@ -21,6 +24,7 @@ public class TextSpawner : MonoBehaviour
     public IEnumerator Spawn()
     {
         yield return Spawn(count1, slowBounds, slowDelay, true);
+        Global.Instance.Audio.PlaySFX(riserSFX, null, AudioManager.Bank.UI);
         yield return CoUtils.Wait(1);
         yield return Spawn(count2, fastBounds, fastDelay, false);
     }
@@ -39,7 +43,11 @@ public class TextSpawner : MonoBehaviour
                 Random.Range(-bounds.x, bounds.x),
                 Random.Range(-bounds.y, bounds.y));
             rect.transform.localPosition = new Vector3(rect.transform.localPosition.x, rect.transform.localPosition.y, 0);
-            if (shake) StartCoroutine(CoUtils.RunTween(rect.transform.DOShakePosition(.2f)));
+            if (shake)
+            {
+                StartCoroutine(CoUtils.RunTween(rect.transform.DOShakePosition(.2f)));
+                Global.Instance.Audio.PlaySFX(hitSFX, null, AudioManager.Bank.UI);
+            }
             yield return CoUtils.Wait(delay);
         }
     }

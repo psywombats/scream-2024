@@ -15,7 +15,7 @@ public class MarchingTerrain : MonoBehaviour
     private Dictionary<Vector3Int, Chunk> chunks = new();
     private Dictionary<int, GameObject> layers = new();
 
-    public GameObject Target => toFollow != null ? toFollow : Global.Instance.Avatar?.gameObject;
+    public GameObject Target => toFollow != null ? toFollow : (Global.Instance.Avatar == null ? null : Global.Instance.Avatar.gameObject);
 
     public void Update()
     {

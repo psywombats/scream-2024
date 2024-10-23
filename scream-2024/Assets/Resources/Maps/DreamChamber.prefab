@@ -36,6 +36,7 @@ Transform:
   - {fileID: 8676814677213603019}
   - {fileID: 3577409354604039895}
   - {fileID: 8893222537030891373}
+  - {fileID: 6963126234162543946}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3899064347245882968
@@ -57,6 +58,7 @@ MonoBehaviour:
   allowCompass: 0
   waterHeight: -15
   spookiness: 0
+  isNightmare: 1
   eventLayer: {fileID: 4464321890118159954}
   noise: {fileID: 8489605036299559023}
   caveSize: 0
@@ -342,6 +344,8 @@ MonoBehaviour:
   spawnRadius: 2
   cullDist: 3
   pulsars: []
+  toFollow: {fileID: 0}
+  bias: {x: 0, y: 0, z: 0}
 --- !u!1 &2234361168294138810
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,6 +975,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &427977800365094136
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 264988857917413577}
+    m_Modifications:
+    - target: {fileID: 1157537161652373687, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_Name
+      value: CaveBGM
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe9b937e9ab54464b986bd912672e842, type: 3}
+--- !u!4 &6963126234162543946 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7300763669337835954, guid: fe9b937e9ab54464b986bd912672e842,
+    type: 3}
+  m_PrefabInstance: {fileID: 427977800365094136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2139249321781355782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1078,12 +1156,12 @@ PrefabInstance:
     - target: {fileID: 5752128814111655026, guid: 2edb3768110c8f444a9833d7be9a8264,
         type: 3}
       propertyPath: moonDistanceOn
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5752128814111655026, guid: 2edb3768110c8f444a9833d7be9a8264,
         type: 3}
       propertyPath: moonDistanceOff
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5752128814111655026, guid: 2edb3768110c8f444a9833d7be9a8264,
         type: 3}
@@ -1509,12 +1587,12 @@ PrefabInstance:
     - target: {fileID: 5752128814111655026, guid: 2edb3768110c8f444a9833d7be9a8264,
         type: 3}
       propertyPath: moonDistanceOn
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5752128814111655026, guid: 2edb3768110c8f444a9833d7be9a8264,
         type: 3}
       propertyPath: moonDistanceOff
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5752128814111655026, guid: 2edb3768110c8f444a9833d7be9a8264,
         type: 3}

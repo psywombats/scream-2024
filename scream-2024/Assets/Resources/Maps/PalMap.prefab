@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 3022827631907575764}
   - component: {fileID: 5565056522554877861}
   - component: {fileID: 2301012690502123226}
+  - component: {fileID: 7051656725722087028}
   m_Layer: 0
   m_Name: PalMap
   m_TagString: Untagged
@@ -288,6 +289,19 @@ MonoBehaviour:
   envNames:
   - apartment
   killOtherEnvs: 1
+--- !u!114 &7051656725722087028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844996610015290092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6899a79a80c80947b1944c9551250df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmKey: none
 --- !u!1 &2917487081558337046
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +555,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -571,7 +585,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -601,7 +615,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -831,7 +845,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -861,7 +875,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1092,9 +1106,9 @@ Tilemap:
   - m_RefCount: 6
     m_Data: {fileID: -1602211849960596742, guid: a9346de22b9860745b82c9c5bbd09d3f,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 5
+    m_Data: {fileID: 0, guid: a9346de22b9860745b82c9c5bbd09d3f, type: 3}
+  - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 3
     m_Data: {fileID: -3731950398636664304, guid: a9346de22b9860745b82c9c5bbd09d3f,

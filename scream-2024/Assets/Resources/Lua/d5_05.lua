@@ -1,4 +1,4 @@
-play('unforgettable_exp')
+playBGM('unforgettable_exp')
 enterNVL()
 enter('OTHER', 'c')
 speak('OTHER', "Hello, me.")

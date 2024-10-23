@@ -52,7 +52,7 @@ public class AudioManager : SingletonBehavior
                 bgmEvent.stop(STOP_MODE.ALLOWFADEOUT);
                 bgmEvent.clearHandle();
             }
-            if (key == NoBGMKey)
+            if (key.StartsWith(NoBGMKey))
             {
                 return;
             }
@@ -151,11 +151,11 @@ public class AudioManager : SingletonBehavior
     {
         if (!nightmareSnap.IsPlaying() && isNightmare)
         {
-            nightmareSnap.Play();
+            //nightmareSnap.Play();
         } 
         else if (nightmareSnap.IsPlaying() && !isNightmare)
         {
-            nightmareSnap.Stop();
+            //nightmareSnap.Stop();
         }
     }
 
