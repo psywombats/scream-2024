@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerReturn" id="{82839ec3-ab91-437b-a713-8d6cb5786d7b}">
 		<property name="name">
-			<value>CaveReverbSystem</value>
+			<value>CaveRev</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{79e1488a-9df3-4d2e-bab1-684f79982a02}</destination>
