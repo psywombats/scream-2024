@@ -266,6 +266,8 @@ MonoBehaviour:
   - '{time}'
   lighting: 0
   allowAbseil: 0
+  allowFlare: 1
+  waterHeight: -1000
   eventLayer: {fileID: 8745626077840585958}
   mesh: {fileID: 7764492765690164915}
 --- !u!114 &2301012690502123226
@@ -283,6 +285,7 @@ MonoBehaviour:
   src: {fileID: 0}
   envNames:
   - apartment
+  killOtherEnvs: 1
 --- !u!1 &2917487081558337046
 GameObject:
   m_ObjectHideFlags: 0

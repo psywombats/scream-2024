@@ -131,6 +131,7 @@ class TitleComponent : MonoBehaviour, IInputListener
 
     public IEnumerator StartGameRoutine(string map, string target, OrthoDir dir)
     {
+        avatar.body.useGravity = true;
         Global.Instance.Data.SetStringVariable("date", "Tuesday 10/1");
         Global.Instance.Data.SetStringVariable("time", "10:00 AM");
 

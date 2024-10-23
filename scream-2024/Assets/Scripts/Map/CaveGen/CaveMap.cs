@@ -16,11 +16,12 @@ public class CaveMap : GameMap
     [Space]
     [Header("References")]
     [SerializeField] public MarchingTerrain terrain;
+    [SerializeField] public int initRadius = 1;
 
     public override void OnTeleportTo(GameMap from)
     {
         base.OnTeleportTo(from);
-        Regenerate(1, true);
+        Regenerate(initRadius, Global.Instance.Avatar != null);
         AudioManager.Instance.SetGlobalParam("Cave Size", caveSize);
         AudioManager.Instance.SetGlobalParam("Spookiness", spookiness);
         AudioManager.Instance.SetGlobalParam("cave_type", humidity.ToString());

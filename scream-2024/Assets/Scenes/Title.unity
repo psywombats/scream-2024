@@ -1129,6 +1129,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestChamber
       objectReference: {fileID: 0}
+    - target: {fileID: 4464967469740108560, guid: b6f4ff4681d886c4ebcd399f1fc58b16,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5903816728811778536, guid: b6f4ff4681d886c4ebcd399f1fc58b16,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1179,7 +1184,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6391411416858143900, guid: b6f4ff4681d886c4ebcd399f1fc58b16,
+        type: 3}
+      propertyPath: initRadius
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4464967469740108560, guid: b6f4ff4681d886c4ebcd399f1fc58b16, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7140526158851391482, guid: b6f4ff4681d886c4ebcd399f1fc58b16,
@@ -1282,6 +1293,7 @@ MonoBehaviour:
   src: {fileID: 707065153}
   envNames:
   - title_screen
+  killOtherEnvs: 0
 --- !u!1 &1473556779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,6 +2086,11 @@ PrefabInstance:
     - target: {fileID: 8172904682758577246, guid: 28c1b11a97646734b9a1faf8ad519043,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8655773204828170593, guid: 28c1b11a97646734b9a1faf8ad519043,
+        type: 3}
+      propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9104589717209446317, guid: 28c1b11a97646734b9a1faf8ad519043,

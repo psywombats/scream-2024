@@ -6,6 +6,7 @@ public class PlayEnvComponent : MonoBehaviour
 {
     [SerializeField] private GameObject src = null;
     [SerializeField] private List<string> envNames;
+    [SerializeField] private bool killOtherEnvs;
 
     public void OnEnable()
     {
@@ -15,6 +16,10 @@ public class PlayEnvComponent : MonoBehaviour
     private IEnumerator Routine()
     {
         yield return null;
+        if (killOtherEnvs)
+        {
+            AudioManager.Instance.StopENV();
+        }
         foreach (var key in envNames)
         {
             AudioManager.Instance.PlayENV(key, src);
