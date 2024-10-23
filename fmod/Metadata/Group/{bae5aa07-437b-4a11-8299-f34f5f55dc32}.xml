@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>BGM</value>
 		</property>
+		<property name="instanceStealing">
+			<value>1</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{296001c4-30da-415c-830e-c61ef189f7e4}</destination>
 		</relationship>
