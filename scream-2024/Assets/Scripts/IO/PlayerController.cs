@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour, IInputListener
     [SerializeField] private float abseilOscPeriod = 3f;
     [SerializeField] private float abseilOscSpeed = 3f;
     [SerializeField] private float climbSpeed = 3f;
+    [SerializeField] private StudioEventEmitter climbEmitter;
     [SerializeField] private StudioEventEmitter abseilEmitter;
     [Space]
     [SerializeField] private GameObject flarePrefab = null;
@@ -38,12 +39,13 @@ public class PlayerController : MonoBehaviour, IInputListener
     [SerializeField] private RenderTexture transTex;
 
     private bool godMode;
-    private bool isAbseiling, isAbsDown, isAbsUp;
+    private bool isAbseiling, isAbsDown, isAbsUp, wasAbseiling;
     private bool isClimbing, wasClimbing;
     private int pauseCount;
     private float currentAbsV, absTimer, oldV;
     private Vector3 targetFrameV;
-    private float timeSinceGrounding;
+    private float lastVelY;
+    private float timeSinceGrounding, timeSinceJumping, timeSinceAbsing;
 
     public GameObject OldFlare { get; private set; }
 
@@ -68,9 +70,7 @@ public class PlayerController : MonoBehaviour, IInputListener
         HandleAbseil();
 
         targetFrameV = Vector3.zero;
-
         
-
         var floorType = "Rock";
         if (Global.Instance.Maps.ActiveMap.lighting == LightingMode.Cave)
         {
@@ -90,6 +90,14 @@ public class PlayerController : MonoBehaviour, IInputListener
         AudioManager.Instance.SetGlobalParam("FallSpeed", fallSpeed);
 
         timeSinceGrounding += Time.deltaTime;
+
+        //Debug.Log("lastVelY: " + lastVelY + " , " + IsGrounded);
+        if (lastVelY < abseilCutoff * .1f && IsGrounded)
+        {
+            AudioManager.Instance.PlaySFX("player/landing", gameObject);
+            lastVelY = 0f;
+        }
+        lastVelY = lastVelY * 3 / 4 + body.velocity.y / 4;
     }
 
     public void OnEnable()
@@ -102,10 +110,15 @@ public class PlayerController : MonoBehaviour, IInputListener
         InputManager.Instance?.RemoveListener(this);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.transform.GetComponent<Chunk>() != null)
         {
+            var contact = collision.GetContact(0);
+            if ((transform.position + Vector3.up - contact.point).normalized.y > .4f)
+            {
+                timeSinceGrounding = 0f;
+            }
             timeSinceGrounding = 0f;
         }
     }
@@ -140,7 +153,7 @@ public class PlayerController : MonoBehaviour, IInputListener
         camera.transform.localEulerAngles = localEulers;
     }
 
-    public bool IsGrounded => timeSinceGrounding < .5f;
+    public bool IsGrounded => timeSinceGrounding < .1f;
 
     private Vector2Int GetMouse()
     {
@@ -228,7 +241,6 @@ public class PlayerController : MonoBehaviour, IInputListener
                         isAbsUp = true;
                         if (!isAbseiling)
                         {
-                            currentAbsV = climbSpeed * 2f;
                             SetAbseil(true, playAudio: true);
                         }
                         break;
@@ -373,7 +385,7 @@ public class PlayerController : MonoBehaviour, IInputListener
         if (isAbseiling)
         {
             isClimbing = isAbsDown || isAbsUp;
-            if (IsGrounded)
+            if (IsGrounded && timeSinceAbsing > .2f)
             {
                 SetAbseil(false, playAudio: true);
             }
@@ -421,15 +433,27 @@ public class PlayerController : MonoBehaviour, IInputListener
             SetAbseil(true, playAudio: true);
         }
 
+        timeSinceJumping += Time.deltaTime;
+
         if (isClimbing && !wasClimbing)
         {
-            abseilEmitter.Play();
+            climbEmitter.Play();
         }
         if (!isClimbing && wasClimbing)
         {
-            abseilEmitter.Stop();
+            climbEmitter.Stop();
         }
         wasClimbing = isClimbing;
+
+        if (isAbseiling && !wasAbseiling)
+        {
+            abseilEmitter.Play();
+        }
+        if (!isAbseiling && wasAbseiling)
+        {
+            abseilEmitter.Stop();
+        }
+        wasAbseiling = isAbseiling;
     }
 
     private void SetAbseil(bool on, bool playAudio)
@@ -446,6 +470,7 @@ public class PlayerController : MonoBehaviour, IInputListener
         if (on)
         {
             oldV = body.velocity.y;
+            timeSinceAbsing = 0f;
         }
 
         if (playAudio)
@@ -454,11 +479,16 @@ public class PlayerController : MonoBehaviour, IInputListener
             {
                 if (PastSafetyThreshold)
                 {
-                    Global.Instance.Audio.PlaySFX("player/abseiling_drop", gameObject);
+                    Global.Instance.Audio.PlaySFX("player/abseiling_clipping", gameObject);
                 }
                 else
                 {
-                    Global.Instance.Audio.PlaySFX("player/jumping", gameObject);
+                    if (timeSinceJumping > 1f && IsGrounded)
+                    {
+                        currentAbsV = climbSpeed * 2f;
+                        Global.Instance.Audio.PlaySFX("player/jumping", gameObject);
+                        timeSinceJumping = 0f;
+                    }
                 }
             }
             else

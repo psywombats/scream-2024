@@ -227,10 +227,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638652378100366715
+  lastModified: 638652408218845678
   FileSizes:
   - Name: Desktop
-    Value: 8707968
+    Value: 8823584
   Exists: 1
 --- !u!114 &-5197611917616149525
 MonoBehaviour:
@@ -247,10 +247,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Main.bank
   Name: Main
   StudioPath: bank:/Main
-  lastModified: 638652378099076581
+  lastModified: 638652408217506472
   FileSizes:
   - Name: Desktop
-    Value: 2627520
+    Value: 2628416
   Exists: 1
 --- !u!114 &-4904655649958765695
 MonoBehaviour:
@@ -293,10 +293,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638652378099195620
+  lastModified: 638652408217630471
   FileSizes:
   - Name: Desktop
-    Value: 4642
+    Value: 4988
   Exists: 1
 --- !u!114 &-4356153807621144668
 MonoBehaviour:
@@ -347,11 +347,11 @@ MonoBehaviour:
   - {fileID: -5249083659957652130}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 13327
+  Length: 50463
 --- !u!114 &-1843735171507437879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,6 +457,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-33124292113585741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wind_strong/FallSpeed
+  m_EditorClassIdentifier: 
+  Name: FallSpeed
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4172344735
+    data2: 4210997163
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,18 +525,21 @@ MonoBehaviour:
   - {fileID: -2978922474255270938}
   - {fileID: 2617452021202065820}
   - {fileID: -5638840765579392448}
-  - {fileID: 4813926902679255665}
   - {fileID: -6076419637415339154}
   - {fileID: 4068989527712369039}
+  - {fileID: 8805847117981973369}
+  - {fileID: 2565538021706973055}
+  - {fileID: 8105528028594585549}
   EditorParameters:
   - {fileID: 396220204858183252}
   - {fileID: -1843735171507437879}
   - {fileID: 6805149091791167573}
+  - {fileID: 7724319492855852427}
   MasterBanks:
   - {fileID: -4763852708050613231}
   StringsBanks:
   - {fileID: 971565201425812555}
-  cacheTime: 638652378107298820
+  cacheTime: 638652408219649691
   cacheVersion: 131603
 --- !u!114 &396220204858183252
 MonoBehaviour:
@@ -553,10 +580,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638652378099210493
+  lastModified: 638652408217650311
   FileSizes:
   - Name: Desktop
-    Value: 2556
+    Value: 2730
   Exists: 1
 --- !u!114 &1204330058058080618
 MonoBehaviour:
@@ -612,6 +639,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2565538021706973055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/player/abseiling_rope
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/player/abseiling_rope
+  Guid:
+    Data1: -237488858
+    Data2: 1075116022
+    Data3: 280431246
+    Data4: -315215735
+  Banks:
+  - {fileID: -5197611917616149525}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10662
 --- !u!114 &2617452021202065820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,7 +687,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -5249083659957652130}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters:
   - {fileID: 4018732467759329697}
@@ -826,33 +880,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4813926902679255665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/player/abseiling_drop
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/player/abseiling_drop
-  Guid:
-    Data1: -616747484
-    Data2: 1150333886
-    Data3: 746943934
-    Data4: 2114157991
-  Banks:
-  - {fileID: -5197611917616149525}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 12662
 --- !u!114 &5506358196972287878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,7 +934,7 @@ MonoBehaviour:
   - {fileID: -4904655649958765695}
   MinDistance: 1
   MaxDistance: 20
-  Length: 91000
+  Length: 41000
 --- !u!114 &6153157323093656440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -989,7 +1016,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 108000
+  Length: 111000
 --- !u!114 &6803611690436762477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,11 +1086,62 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 638652378107298820
+  lastModified: 638652408219649691
   FileSizes:
   - Name: Desktop
-    Value: 2802816
+    Value: 2803040
   Exists: 1
+--- !u!114 &7724319492855852427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FallSpeed
+  m_EditorClassIdentifier: 
+  Name: FallSpeed
+  StudioPath: parameter:/FallSpeed
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4172344735
+    data2: 4210997163
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &8105528028594585549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/player/abseiling_clipping
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/player/abseiling_clipping
+  Guid:
+    Data1: -1419420465
+    Data2: 1214786413
+    Data3: 793176231
+    Data4: 1437640941
+  Banks:
+  - {fileID: -5197611917616149525}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4016
 --- !u!114 &8658497598644001137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,6 +1169,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8805847117981973369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/player/wind_strong
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/player/wind_strong
+  Guid:
+    Data1: -2107828698
+    Data2: 1183053002
+    Data3: -2046467179
+    Data4: 819072171
+  Banks:
+  - {fileID: -5197611917616149525}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -33124292113585741}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10662
 --- !u!114 &8966429159772846228
 MonoBehaviour:
   m_ObjectHideFlags: 0
