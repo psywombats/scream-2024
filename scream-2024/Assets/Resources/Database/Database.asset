@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Database
   m_EditorClassIdentifier: 
   Speakers: {fileID: 11400000, guid: d43950314adfd05439822e8372b57c4d, type: 2}
+  Cutins: {fileID: 11400000, guid: be522a545ffc76946ab7f1adf88d7b8f, type: 2}

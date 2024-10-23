@@ -124,7 +124,7 @@ class TitleComponent : MonoBehaviour, IInputListener
 
     private void Advance()
     {
-        AudioManager.Instance.PlaySFX("menu/select", AudioManager.Bank.UI);
+        AudioManager.Instance.PlaySFX("menu/select", null, AudioManager.Bank.UI);
         InputManager.Instance.RemoveListener(this);
         Global.Instance.StartCoroutine(StartGameRoutine("PalMap", "start", OrthoDir.North));
     }
@@ -174,7 +174,7 @@ class TitleComponent : MonoBehaviour, IInputListener
 
     private void ShowDates(bool show)
     {
-        AudioManager.Instance.PlaySFX("menu/select", AudioManager.Bank.UI);
+        AudioManager.Instance.PlaySFX("menu/select", null, AudioManager.Bank.UI);
         datesOnGroup.SetActive(show);
         datesOffGroup.SetActive(!show);
         selectingDate = show;
@@ -182,7 +182,7 @@ class TitleComponent : MonoBehaviour, IInputListener
 
     private void IncrDate(int delta)
     {
-        AudioManager.Instance.PlaySFX("menu/config_slider", AudioManager.Bank.UI);
+        AudioManager.Instance.PlaySFX("menu/config_slider", null, AudioManager.Bank.UI);
         dateIndex += delta;
         if (dateIndex >= SwitchSets.Sets.Length)
         {
@@ -200,14 +200,14 @@ class TitleComponent : MonoBehaviour, IInputListener
     private void LaunchBookmark()
     {
         AudioManager.Instance.StopENV();
-        AudioManager.Instance.PlaySFX("menu/select", AudioManager.Bank.UI);
+        AudioManager.Instance.PlaySFX("menu/select", null, AudioManager.Bank.UI);
         InputManager.Instance.RemoveListener(this);
         Global.Instance.StartCoroutine(ResumeGameRoutine());
     }
 
     private void ToggleMainCursor()
     {
-        AudioManager.Instance.PlaySFX("menu/up_down", AudioManager.Bank.UI);
+        AudioManager.Instance.PlaySFX("menu/up_down", null, AudioManager.Bank.UI);
         mainCursorOnDates = !mainCursorOnDates;
         datesCursorGroup.SetActive(mainCursorOnDates);
         datesNoCursorGroup.SetActive(!mainCursorOnDates);

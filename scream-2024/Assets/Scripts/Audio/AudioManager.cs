@@ -71,9 +71,13 @@ public class AudioManager : SingletonBehavior
         }
     }
 
-    public void PlaySFX(string sfxKey, Bank bank = Bank.SFX)
+    public void PlaySFX(string sfxKey, GameObject src = null, Bank bank = Bank.SFX)
     {
         sfxEvent = RuntimeManager.CreateInstance($"event:/{bank}/{sfxKey}");
+        if (src != null)
+        {
+            RuntimeManager.AttachInstanceToGameObject(sfxEvent, src.transform);
+        }
         sfxEvent.start();
     }
 

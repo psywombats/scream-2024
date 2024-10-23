@@ -24,33 +24,6 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-8743561747820935657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/testing/footsteps
-  m_EditorClassIdentifier: 
-  Path: event:/testing/footsteps
-  Guid:
-    Data1: 1954058387
-    Data2: 1198508308
-    Data3: -1183362899
-    Data4: -1162643252
-  Banks:
-  - {fileID: -5197611917616149525}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 25454
 --- !u!114 &-7490728343601726425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +130,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-6461200730499402050
+--- !u!114 &-6076419637415339154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,23 +140,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/testing/birdsong
+  m_Name: event:/SFX/player/abseiling_up_down
   m_EditorClassIdentifier: 
-  Path: event:/testing/birdsong
+  Path: event:/SFX/player/abseiling_up_down
   Guid:
-    Data1: -133473486
-    Data2: 1105407168
-    Data3: -1305555070
-    Data4: 724578857
+    Data1: 1056989887
+    Data2: 1208774662
+    Data3: -613914953
+    Data4: 487951144
   Banks:
   - {fileID: -5197611917616149525}
   IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
+  Is3D: 1
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 35618
+  Length: 32204
 --- !u!114 &-5991295665506389208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,10 +227,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638651994941549388
+  lastModified: 638652378100366715
   FileSizes:
   - Name: Desktop
-    Value: 8707712
+    Value: 8707968
   Exists: 1
 --- !u!114 &-5197611917616149525
 MonoBehaviour:
@@ -274,10 +247,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Main.bank
   Name: Main
   StudioPath: bank:/Main
-  lastModified: 638651994917195663
+  lastModified: 638652378099076581
   FileSizes:
   - Name: Desktop
-    Value: 2964800
+    Value: 2627520
   Exists: 1
 --- !u!114 &-4904655649958765695
 MonoBehaviour:
@@ -320,10 +293,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638651994917329580
+  lastModified: 638652378099195620
   FileSizes:
   - Name: Desktop
-    Value: 4548
+    Value: 4642
   Exists: 1
 --- !u!114 &-4356153807621144668
 MonoBehaviour:
@@ -403,33 +376,6 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-1575212144298928208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/testing/cave
-  m_EditorClassIdentifier: 
-  Path: event:/testing/cave
-  Guid:
-    Data1: 983544083
-    Data2: 1228777991
-    Data3: -1613655636
-    Data4: -727544917
-  Banks:
-  - {fileID: -5197611917616149525}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-1536598014998311973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,10 +484,6 @@ MonoBehaviour:
   - {fileID: -1536598014998311973}
   - {fileID: 4544495487345483357}
   - {fileID: -995357628554202288}
-  - {fileID: -1575212144298928208}
-  - {fileID: -6461200730499402050}
-  - {fileID: 7483668337875326329}
-  - {fileID: -8743561747820935657}
   - {fileID: 2485479634853997085}
   - {fileID: -6664053956446155595}
   - {fileID: 8658497598644001137}
@@ -559,6 +501,9 @@ MonoBehaviour:
   - {fileID: -2978922474255270938}
   - {fileID: 2617452021202065820}
   - {fileID: -5638840765579392448}
+  - {fileID: 4813926902679255665}
+  - {fileID: -6076419637415339154}
+  - {fileID: 4068989527712369039}
   EditorParameters:
   - {fileID: 396220204858183252}
   - {fileID: -1843735171507437879}
@@ -567,7 +512,7 @@ MonoBehaviour:
   - {fileID: -4763852708050613231}
   StringsBanks:
   - {fileID: 971565201425812555}
-  cacheTime: 638651994942710024
+  cacheTime: 638652378107298820
   cacheVersion: 131603
 --- !u!114 &396220204858183252
 MonoBehaviour:
@@ -608,10 +553,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638651994917344452
+  lastModified: 638652378099210493
   FileSizes:
   - Name: Desktop
-    Value: 2606
+    Value: 2556
   Exists: 1
 --- !u!114 &1204330058058080618
 MonoBehaviour:
@@ -746,6 +691,33 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &4068989527712369039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ENV/Gong
+  m_EditorClassIdentifier: 
+  Path: event:/ENV/Gong
+  Guid:
+    Data1: -157119552
+    Data2: 1163539532
+    Data3: -96515151
+    Data4: 397048540
+  Banks:
+  - {fileID: 7068862522396925872}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4203100035898798932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,6 +826,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &4813926902679255665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/player/abseiling_drop
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/player/abseiling_drop
+  Guid:
+    Data1: -616747484
+    Data2: 1150333886
+    Data3: 746943934
+    Data4: 2114157991
+  Banks:
+  - {fileID: -5197611917616149525}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12662
 --- !u!114 &5506358196972287878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,7 +873,7 @@ MonoBehaviour:
     Data4: 1529150090
   Banks:
   - {fileID: 7068862522396925872}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
@@ -1060,38 +1059,11 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 638651994942710024
+  lastModified: 638652378107298820
   FileSizes:
   - Name: Desktop
-    Value: 3688384
+    Value: 2802816
   Exists: 1
---- !u!114 &7483668337875326329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/testing/pigeons_rising
-  m_EditorClassIdentifier: 
-  Path: event:/testing/pigeons_rising
-  Guid:
-    Data1: -1757298833
-    Data2: 1250543273
-    Data3: 2061727881
-    Data4: 1511002629
-  Banks:
-  - {fileID: -5197611917616149525}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &8658497598644001137
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6855ee3aa62ce0a4bba9b55b2fea5781, type: 3}
   m_Name: CutinIndexData
   m_EditorClassIdentifier: 
-  dataObjects: []
+  dataObjects:
+  - tag: pal
+    sprite: {fileID: 21300000, guid: 17458695fdc3de9458301f63fb1c28e3, type: 3}
+  - tag: jerk
+    sprite: {fileID: 21300000, guid: 71222a8af253c994da8330996b280149, type: 3}
+  - tag: leader
+    sprite: {fileID: 21300000, guid: 84e7d3b7dce0e4e45a91e810ed30842b, type: 3}
+  - tag: you
+    sprite: {fileID: 21300000, guid: d8e62d2c08c6c504aa931c35a70d44b3, type: 3}
