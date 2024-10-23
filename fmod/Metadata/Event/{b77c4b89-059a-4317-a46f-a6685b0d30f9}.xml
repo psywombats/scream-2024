@@ -64,7 +64,7 @@
 			<value>true</value>
 		</property>
 		<property name="dopplerScale">
-			<value>205</value>
+			<value>180</value>
 		</property>
 		<property name="minimumDistance">
 			<value>0.900000036</value>
@@ -117,8 +117,14 @@
 	</object>
 	<object class="MixerBusFader" id="{1103ffa6-4b23-43a4-b641-ab6bd7817dec}" />
 	<object class="SpatialiserEffect" id="{ff79b63c-9b03-4cce-961f-72c012432e54}">
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
 		<property name="soundSize">
-			<value>0.200000003</value>
+			<value>3.20000005</value>
 		</property>
 		<property name="minimumExtent">
 			<value>360</value>

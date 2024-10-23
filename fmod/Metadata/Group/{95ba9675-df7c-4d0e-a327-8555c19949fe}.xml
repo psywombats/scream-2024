@@ -23,6 +23,20 @@
 	</object>
 	<object class="MixerBusPanner" id="{a2d71ef9-6a8a-402e-a283-97e2d7b29e6f}" />
 	<object class="MixerBusFader" id="{f39d0b98-894d-4e6f-9d45-96fa975c0923}" />
-	<object class="DelayEffect" id="{edcef494-2ebb-447c-8e18-4cec06a5d350}" />
-	<object class="SFXReverbEffect" id="{b8bb4a5c-bac7-4e5f-b0a6-16a706755a47}" />
+	<object class="DelayEffect" id="{edcef494-2ebb-447c-8e18-4cec06a5d350}">
+		<property name="delay">
+			<value>42</value>
+		</property>
+		<property name="level">
+			<value>-41</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{b8bb4a5c-bac7-4e5f-b0a6-16a706755a47}">
+		<property name="decayTime">
+			<value>1400</value>
+		</property>
+		<property name="wetLevel">
+			<value>-19.5</value>
+		</property>
+	</object>
 </objects>

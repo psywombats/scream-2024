@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>SFX</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{b65ffdc1-6f73-4c6c-a671-1aaa190e497e}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{139943c6-d365-49e5-afef-287edf786ff6}</destination>
 		</relationship>
@@ -12,6 +15,20 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{5af502cd-8836-4d9c-b345-8f72735fb99f}</destination>
+		</relationship>
+	</object>
+	<object class="SidechainModulator" id="{b65ffdc1-6f73-4c6c-a671-1aaa190e497e}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>30.5</value>
+		</property>
+		<property name="releaseTime">
+			<value>520</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{722899f6-6e0a-4942-8235-498251f9c650}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{139943c6-d365-49e5-afef-287edf786ff6}">
@@ -24,6 +41,9 @@
 	<object class="MixerBusPanner" id="{eca2b646-6cbc-4a2e-b806-ff81cbd85040}" />
 	<object class="MixerBusFader" id="{534f94dd-f3a2-448e-9cd0-fce6a925d15e}" />
 	<object class="MixerSend" id="{29f8a4a7-6f4f-4dd8-9d3f-b4fd12928fe4}">
+		<property name="level">
+			<value>-18</value>
+		</property>
 		<property name="inputFormat">
 			<value>2</value>
 		</property>

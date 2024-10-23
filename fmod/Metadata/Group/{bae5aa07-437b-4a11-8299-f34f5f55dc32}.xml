@@ -4,9 +4,6 @@
 		<property name="name">
 			<value>BGM</value>
 		</property>
-		<property name="maxInstances">
-			<value>5</value>
-		</property>
 		<relationship name="modulators">
 			<destination>{b286ca41-e6a4-4cdb-863d-37797e358053}</destination>
 		</relationship>
@@ -25,13 +22,13 @@
 			<value>volume</value>
 		</property>
 		<property name="amount">
-			<value>37</value>
+			<value>5.5</value>
 		</property>
 		<property name="attackTime">
-			<value>63</value>
+			<value>73</value>
 		</property>
 		<property name="releaseTime">
-			<value>3700</value>
+			<value>3000</value>
 		</property>
 		<property name="minimumThreshold">
 			<value>-25.5</value>
@@ -39,6 +36,9 @@
 		<property name="maximumThreshold">
 			<value>-15.3000002</value>
 		</property>
+		<relationship name="sidechains">
+			<destination>{722899f6-6e0a-4942-8235-498251f9c650}</destination>
+		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{296001c4-30da-415c-830e-c61ef189f7e4}">
 		<relationship name="effects">

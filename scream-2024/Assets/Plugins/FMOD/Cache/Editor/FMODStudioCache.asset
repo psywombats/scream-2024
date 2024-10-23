@@ -317,7 +317,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 58800
+  Length: 55200
 --- !u!114 &-5249083659957652130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,10 +333,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638652845636554091
+  lastModified: 638653165368390721
   FileSizes:
   - Name: Desktop
-    Value: 9202048
+    Value: 10324736
   Exists: 1
 --- !u!114 &-5197611917616149525
 MonoBehaviour:
@@ -353,11 +353,38 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Main.bank
   Name: Main
   StudioPath: bank:/Main
-  lastModified: 638652845632025582
+  lastModified: 638653171423688272
   FileSizes:
   - Name: Desktop
-    Value: 2829600
+    Value: 2825760
   Exists: 1
+--- !u!114 &-5005378991637103536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM/happily_ever_after
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/happily_ever_after
+  Guid:
+    Data1: 1756108709
+    Data2: 1207422714
+    Data3: -777502820
+    Data4: -357929480
+  Banks:
+  - {fileID: -5249083659957652130}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 31200
 --- !u!114 &-4904655649958765695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,10 +426,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638652845632164463
+  lastModified: 638653163132929619
   FileSizes:
   - Name: Desktop
-    Value: 6104
+    Value: 6726
   Exists: 1
 --- !u!114 &-4356153807621144668
 MonoBehaviour:
@@ -752,6 +779,7 @@ MonoBehaviour:
   - {fileID: 5624527022340088261}
   - {fileID: -2837213681306130971}
   - {fileID: -1324984545774053669}
+  - {fileID: -5005378991637103536}
   EditorParameters:
   - {fileID: 396220204858183252}
   - {fileID: -1843735171507437879}
@@ -761,7 +789,7 @@ MonoBehaviour:
   - {fileID: -4763852708050613231}
   StringsBanks:
   - {fileID: 971565201425812555}
-  cacheTime: 638652845637337774
+  cacheTime: 638653171423688272
   cacheVersion: 131603
 --- !u!114 &396220204858183252
 MonoBehaviour:
@@ -802,10 +830,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638652845632179334
+  lastModified: 638653163132949281
   FileSizes:
   - Name: Desktop
-    Value: 3180
+    Value: 3230
   Exists: 1
 --- !u!114 &1204330058058080618
 MonoBehaviour:
@@ -1128,7 +1156,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 714
+  Length: 648
 --- !u!114 &5869604307188290453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1335,7 +1363,7 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 638652845637337774
+  lastModified: 638653047703632587
   FileSizes:
   - Name: Desktop
     Value: 2798880
