@@ -65,6 +65,7 @@ public class LuaCutsceneContext : LuaContext
         Lua.Globals["cs_speak"] = (Action<DynValue, DynValue>)Speak;
         Lua.Globals["cs_radio"] = (Action<DynValue, DynValue, DynValue>)Radio;
         Lua.Globals["cs_expr"] = (Action<DynValue, DynValue>)Express;
+        Lua.Globals["cs_cutin"] = (Action<DynValue>)Cutin;
         Lua.Globals["clear"] = (Action)ClearNVL;
         Lua.Globals["hideRadio"] = (Action)HideRadio;
         Lua.Globals["exitRadio"] = (Action)HideRadio;
@@ -168,6 +169,15 @@ public class LuaCutsceneContext : LuaContext
     public void ClearNVL()
     {
         MapOverlayUI.Instance.nvl.Wipe();
+    }
+
+    private void Cutin(DynValue cutinKey)
+    {
+        RunRoutineFromLua(CutinRoutine(cutinKey.String));
+    }
+    private IEnumerator CutinRoutine(string key)
+    {
+        return MapOverlayUI.Instance.cutin.DoCutin(key);
     }
 
     public void Speak(DynValue speakerNameLua, DynValue messageLua)

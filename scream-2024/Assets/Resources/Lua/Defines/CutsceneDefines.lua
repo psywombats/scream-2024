@@ -82,6 +82,11 @@ function clue(item)
 	return selection
 end
 
+function cutin(key)
+	cs_cutin(key)
+	await()
+end
+
 function walk(event, count, direction, wait)
     if wait == nil then wait = true end
     cs_walk(event, count, direction, wait)
