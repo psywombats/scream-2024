@@ -231,6 +231,9 @@
 		<property name="length">
 			<value>69</value>
 		</property>
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
 		<property name="triggerProbability">
 			<value>0</value>
 		</property>
@@ -239,6 +242,9 @@
 		</relationship>
 		<relationship name="markerTrack">
 			<destination>{ee0393d3-b66b-444f-b800-4d4545e13600}</destination>
+		</relationship>
+		<relationship name="triggerConditions">
+			<destination>{5a395d1a-36f7-4bcd-93ee-be241b2eae60}</destination>
 		</relationship>
 	</object>
 	<object class="ADSRModulator" id="{5c10a086-9d35-4c61-8a71-c78a148989b1}">
@@ -252,13 +258,13 @@
 			<value>0</value>
 		</property>
 		<property name="releaseTime">
-			<value>8673.07617</value>
+			<value>5846.15283</value>
 		</property>
 		<property name="releaseShape">
-			<value>-0.541287065</value>
+			<value>-0.286460251</value>
 		</property>
 		<property name="finalValue">
-			<value>-72.2962952</value>
+			<value>-80</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{78dfa798-5663-42a8-833a-8cb9f4647f94}">
@@ -274,6 +280,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{637fcb21-738b-469c-9ffe-a050bab8fc4d}" />
+	<object class="EventCondition" id="{5a395d1a-36f7-4bcd-93ee-be241b2eae60}">
+		<property name="eventState">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{af235536-bd2e-4da6-8146-304869a860a4}" />
 	<object class="MixerBusFader" id="{10870811-c7a1-4156-9167-468b9bb1a6ff}" />
 </objects>

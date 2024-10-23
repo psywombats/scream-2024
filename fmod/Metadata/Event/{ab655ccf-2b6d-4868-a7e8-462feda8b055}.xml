@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{ab655ccf-2b6d-4868-a7e8-462feda8b055}">
 		<property name="name">
-			<value>Nested Event</value>
+			<value>abseiling_clipping</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

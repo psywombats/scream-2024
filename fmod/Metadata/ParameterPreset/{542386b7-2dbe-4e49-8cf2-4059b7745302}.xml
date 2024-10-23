@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{542386b7-2dbe-4e49-8cf2-4059b7745302}">
+		<property name="name">
+			<value>cavetypedontuse</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f48737bb-e56a-412f-8bf0-08b5eb516081}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e97c4543-e0fc-4788-be22-73591e8201a3}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e97c4543-e0fc-4788-be22-73591e8201a3}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>35</value>
+		</property>
+		<property name="seekSpeedDescending">
+			<value>35</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
+		</property>
+		<relationship name="automators">
+			<destination>{25330454-6960-4a0e-9904-b1a37897fbbf}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{25330454-6960-4a0e-9904-b1a37897fbbf}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{6aa09442-88f7-4977-bf2b-0bfc68b2be02}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{6aa09442-88f7-4977-bf2b-0bfc68b2be02}">
+		<relationship name="parameter">
+			<destination>{8dde6d8d-07dc-4b67-a130-a7195e1268f3}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{f6ae6c79-0116-461b-8759-5959abc5db4d}</destination>
+			<destination>{4a216c18-066e-4e3f-9109-8533d1c8caa5}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{f6ae6c79-0116-461b-8759-5959abc5db4d}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{4a216c18-066e-4e3f-9109-8533d1c8caa5}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>100</value>
+		</property>
+	</object>
+</objects>
