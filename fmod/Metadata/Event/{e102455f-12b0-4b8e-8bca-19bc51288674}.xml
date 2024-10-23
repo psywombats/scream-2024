@@ -262,16 +262,16 @@
 			<value>6</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
-			<value>450</value>
+			<value>1000</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>2500</value>
+			<value>4000</value>
 		</property>
 		<property name="spawnRate">
-			<value>78</value>
+			<value>56</value>
 		</property>
 		<property name="pitchRandomization">
-			<value>1.5</value>
+			<value>2.29999995</value>
 		</property>
 		<relationship name="sound">
 			<destination>{c1887432-02f2-4c2c-90f8-c6e7c9120ccd}</destination>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{95ba9675-df7c-4d0e-a327-8555c19949fe}">
+		<property name="name">
+			<value>sgmusic</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{9e56c298-59e6-4fa8-bfcf-efdd8c1068a2}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{a2d71ef9-6a8a-402e-a283-97e2d7b29e6f}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{bae5aa07-437b-4a11-8299-f34f5f55dc32}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{9e56c298-59e6-4fa8-bfcf-efdd8c1068a2}">
+		<relationship name="effects">
+			<destination>{f39d0b98-894d-4e6f-9d45-96fa975c0923}</destination>
+			<destination>{edcef494-2ebb-447c-8e18-4cec06a5d350}</destination>
+			<destination>{b8bb4a5c-bac7-4e5f-b0a6-16a706755a47}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{a2d71ef9-6a8a-402e-a283-97e2d7b29e6f}" />
+	<object class="MixerBusFader" id="{f39d0b98-894d-4e6f-9d45-96fa975c0923}" />
+	<object class="DelayEffect" id="{edcef494-2ebb-447c-8e18-4cec06a5d350}" />
+	<object class="SFXReverbEffect" id="{b8bb4a5c-bac7-4e5f-b0a6-16a706755a47}" />
+</objects>

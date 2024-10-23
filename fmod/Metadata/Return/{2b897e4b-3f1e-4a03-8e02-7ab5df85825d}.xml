@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerReturn" id="{2b897e4b-3f1e-4a03-8e02-7ab5df85825d}">
+		<property name="name">
+			<value>CaveDelaySystem</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{8ce6cfdd-8c0a-4beb-ac28-6335c5dc2cc1}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{7b612794-f8f6-46ae-80e4-892f7e4c6b77}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5af502cd-8836-4d9c-b345-8f72735fb99f}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{8ce6cfdd-8c0a-4beb-ac28-6335c5dc2cc1}">
+		<relationship name="effects">
+			<destination>{5398b5b7-4305-4484-848e-4cc70d392733}</destination>
+			<destination>{5a2d6bbe-79c2-409c-bd6f-565e0b84d906}</destination>
+			<destination>{a000bf39-4eb4-41b9-8e0f-a073556766bd}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{7b612794-f8f6-46ae-80e4-892f7e4c6b77}" />
+	<object class="MixerBusFader" id="{5398b5b7-4305-4484-848e-4cc70d392733}" />
+	<object class="DelayEffect" id="{5a2d6bbe-79c2-409c-bd6f-565e0b84d906}">
+		<property name="delay">
+			<value>12</value>
+		</property>
+		<property name="feedback">
+			<value>7</value>
+		</property>
+		<property name="level">
+			<value>-3.5</value>
+		</property>
+		<property name="dryLevel">
+			<value>-80</value>
+		</property>
+		<relationship name="automators">
+			<destination>{84cc92d1-65a8-4221-b881-d109a87c0473}</destination>
+		</relationship>
+	</object>
+	<object class="MixerSend" id="{a000bf39-4eb4-41b9-8e0f-a073556766bd}">
+		<property name="level">
+			<value>-2</value>
+		</property>
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{82839ec3-ab91-437b-a713-8d6cb5786d7b}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{84cc92d1-65a8-4221-b881-d109a87c0473}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>delay</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{dc927b7c-f317-4451-beb3-174fb64c04c3}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{dc927b7c-f317-4451-beb3-174fb64c04c3}">
+		<relationship name="parameter">
+			<destination>{64326807-6f5d-4eb7-990d-a933d63dabda}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{4d2fa685-0027-4d67-abe5-7b6a41ecb38c}</destination>
+			<destination>{15812b80-0ffc-4d37-b340-01e213b67340}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{4d2fa685-0027-4d67-abe5-7b6a41ecb38c}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>55</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{15812b80-0ffc-4d37-b340-01e213b67340}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>100</value>
+		</property>
+	</object>
+</objects>
