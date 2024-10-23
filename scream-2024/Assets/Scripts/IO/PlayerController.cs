@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour, IInputListener
     private float currentAbsV, absTimer, oldV;
     private Vector3 targetFrameV;
     private float lastVelY;
-    private float timeSinceGrounding, timeSinceJumping, timeSinceAbsing;
+    private float timeSinceGrounding, timeSinceJumping, timeSinceAbsing, timeSinceStep;
 
     public GameObject OldFlare { get; private set; }
 
@@ -65,6 +65,17 @@ public class PlayerController : MonoBehaviour, IInputListener
         {
             HandleFPC();
         }
+
+        if (targetFrameV == Vector3.zero || !IsGrounded)
+        {
+            timeSinceStep = 10f;
+        }
+        else if (timeSinceStep > .5f)
+        {
+            timeSinceStep = 0f;
+            Global.Instance.Audio.PlaySFX("player/footsteps", gameObject);
+        }
+        timeSinceStep += Time.deltaTime;
 
         HandleRay();
         HandleAbseil();
