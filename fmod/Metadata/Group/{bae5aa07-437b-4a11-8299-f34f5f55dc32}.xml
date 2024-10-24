@@ -4,8 +4,8 @@
 		<property name="name">
 			<value>BGM</value>
 		</property>
-		<relationship name="modulators">
-			<destination>{b286ca41-e6a4-4cdb-863d-37797e358053}</destination>
+		<relationship name="masters">
+			<destination>{44989749-f7fe-433e-9838-f33837437af5}</destination>
 		</relationship>
 		<relationship name="effectChain">
 			<destination>{296001c4-30da-415c-830e-c61ef189f7e4}</destination>
@@ -17,34 +17,20 @@
 			<destination>{5af502cd-8836-4d9c-b345-8f72735fb99f}</destination>
 		</relationship>
 	</object>
-	<object class="SidechainModulator" id="{b286ca41-e6a4-4cdb-863d-37797e358053}">
-		<property name="nameOfPropertyBeingModulated">
-			<value>volume</value>
-		</property>
-		<property name="amount">
-			<value>5.5</value>
-		</property>
-		<property name="attackTime">
-			<value>73</value>
-		</property>
-		<property name="releaseTime">
-			<value>3000</value>
-		</property>
-		<property name="minimumThreshold">
-			<value>-25.5</value>
-		</property>
-		<property name="maximumThreshold">
-			<value>-15.3000002</value>
-		</property>
-		<relationship name="sidechains">
-			<destination>{722899f6-6e0a-4942-8235-498251f9c650}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusEffectChain" id="{296001c4-30da-415c-830e-c61ef189f7e4}">
 		<relationship name="effects">
+			<destination>{1c8d3fd0-a58a-46f7-8029-bfe0e09dfa05}</destination>
 			<destination>{4bf3f166-22e2-4722-9fc9-1181cee9e338}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7ce1a9f8-e7bf-4e34-bbcb-744657aa569d}" />
+	<object class="MixerSend" id="{1c8d3fd0-a58a-46f7-8029-bfe0e09dfa05}">
+		<property name="inputFormat">
+			<value>5</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{3f6e32ff-ea0c-4cfc-8502-c9fdef3b4b50}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{4bf3f166-22e2-4722-9fc9-1181cee9e338}" />
 </objects>

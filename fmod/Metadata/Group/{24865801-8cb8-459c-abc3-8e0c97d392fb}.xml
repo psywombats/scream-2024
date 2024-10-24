@@ -4,8 +4,8 @@
 		<property name="name">
 			<value>ENV</value>
 		</property>
-		<relationship name="modulators">
-			<destination>{ceba3a9b-1688-4022-8f31-daa2ebbede85}</destination>
+		<relationship name="masters">
+			<destination>{44989749-f7fe-433e-9838-f33837437af5}</destination>
 		</relationship>
 		<relationship name="effectChain">
 			<destination>{6bb408e8-552c-491d-9154-164740fb9950}</destination>
@@ -14,40 +14,26 @@
 			<destination>{6dc5580c-d533-48d8-bcbf-c8b2350735d0}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{5af502cd-8836-4d9c-b345-8f72735fb99f}</destination>
-		</relationship>
-	</object>
-	<object class="SidechainModulator" id="{ceba3a9b-1688-4022-8f31-daa2ebbede85}">
-		<property name="nameOfPropertyBeingModulated">
-			<value>volume</value>
-		</property>
-		<property name="amount">
-			<value>13.5</value>
-		</property>
-		<property name="attackTime">
-			<value>99</value>
-		</property>
-		<property name="releaseTime">
-			<value>980</value>
-		</property>
-		<property name="minimumThreshold">
-			<value>-17</value>
-		</property>
-		<property name="maximumThreshold">
-			<value>-6.5</value>
-		</property>
-		<relationship name="sidechains">
-			<destination>{722899f6-6e0a-4942-8235-498251f9c650}</destination>
+			<destination>{e9d10bc9-e534-4bdf-a8d5-847e2546a444}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{6bb408e8-552c-491d-9154-164740fb9950}">
 		<relationship name="effects">
+			<destination>{e024b0a7-3a56-4853-a1b0-9d2156659dca}</destination>
 			<destination>{927a5ec1-fd7a-4ca3-9810-ec76124d926b}</destination>
 			<destination>{4fa7b707-d7b3-4c2c-8436-c97cca95add3}</destination>
 			<destination>{77b08dcc-0352-4b4a-825f-81e8aad04186}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{6dc5580c-d533-48d8-bcbf-c8b2350735d0}" />
+	<object class="MixerSend" id="{e024b0a7-3a56-4853-a1b0-9d2156659dca}">
+		<property name="inputFormat">
+			<value>5</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{3f6e32ff-ea0c-4cfc-8502-c9fdef3b4b50}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{927a5ec1-fd7a-4ca3-9810-ec76124d926b}" />
 	<object class="MixerSend" id="{4fa7b707-d7b3-4c2c-8436-c97cca95add3}">
 		<property name="level">

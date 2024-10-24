@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>CaveDel</value>
 		</property>
+		<relationship name="masters">
+			<destination>{44989749-f7fe-433e-9838-f33837437af5}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{8ce6cfdd-8c0a-4beb-ac28-6335c5dc2cc1}</destination>
 		</relationship>
