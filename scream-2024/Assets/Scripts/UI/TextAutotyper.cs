@@ -29,7 +29,7 @@ public class TextAutotyper : MonoBehaviour, IInputListener
             case InputManager.Event.Hold:
                 if (command == InputManager.Command.Primary || command == InputManager.Command.Click)
                 {
-                    hurried = true;
+                    //hurried = true;
                 }
                 break;
             case InputManager.Event.Up:

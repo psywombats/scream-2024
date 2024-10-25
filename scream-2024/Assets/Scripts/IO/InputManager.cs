@@ -243,15 +243,11 @@ public class InputManager : SingletonBehavior
         var started = false;
         PushListener(id, (command, type) =>
         {
-            if (started && type == Event.Up && (command == Command.Primary || command == Command.Click))
+            if (type == Event.Down && (command == Command.Primary || command == Command.Click))
             {
                 RemoveListener(id);
                 done = true;
                 return true;
-            }
-            if (type == Event.Down && (command == Command.Primary || command == Command.Click))
-            {
-                started = true;
             }
             return eatsOthers;
         });
