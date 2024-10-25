@@ -2,6 +2,8 @@
 
 public class NoiseGenerator : MonoBehaviour
 {
+    [SerializeField] private ChunkHolder chunker;
+    [Space]
     [SerializeField, Range(.1f, 10f)] private float noiseScale = 1f;
     [SerializeField, Range(1f, 10f)] private float amplitude = 5f;
     [SerializeField, Range(0f, 1f)] private float frequency = 0.005f;
@@ -10,12 +12,8 @@ public class NoiseGenerator : MonoBehaviour
     [Space]
     [SerializeField] public NoiseType noiseType = NoiseType.NOISE_OPENSIMPLEX2;
     [SerializeField] public FractalType fractalType = FractalType.FRACTAL_RIDGED;
-    [Space]
-    [SerializeField] private ComputeNoiseSource computeSource;
-    [SerializeField] private WebNoiseSource webSource;
 
-    [SerializeField] private bool useWebSource = true;
-    protected NoiseSource Source => useWebSource ? webSource : computeSource;
+    protected NoiseSource Source => chunker.NoiseSource;
 
     public enum NoiseType
     {

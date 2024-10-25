@@ -13,10 +13,9 @@ public class MarchingTerrain : MonoBehaviour
     [SerializeField] private GameObject toFollow;
     [SerializeField] private Vector3Int bias;
 
+
     private Dictionary<Vector3Int, Chunk> chunks = new();
     private Dictionary<int, GameObject> layers = new();
-
-    private bool isSpawningChunks;
 
     public NoiseGenerator Noise => map.noise;
 
@@ -24,9 +23,8 @@ public class MarchingTerrain : MonoBehaviour
 
     public void Update()
     {
-        if (Target != null && !isSpawningChunks)
+        if (Target != null)
         {
-            isSpawningChunks = true;
             CullChunks();
             EnsureChunks(spawnRadius, usePlayer: true, allowInterrupts: true);
         }
@@ -67,7 +65,11 @@ public class MarchingTerrain : MonoBehaviour
                 for (var z = index.z - radius; z <= index.z + radius; z += 1)
                 {
                     var checkIndex = new Vector3Int(x, y, z);
-                    if (!allowInterrupts && EnsureChunk(checkIndex))
+                    if (Vector3.Distance(checkIndex, index) > radius + .5f)
+                    {
+                        continue;
+                    }
+                    if (EnsureChunk(checkIndex) && !allowInterrupts)
                     {
                         return false;
                     }
@@ -130,7 +132,8 @@ public class MarchingTerrain : MonoBehaviour
         var playerPos = Target.transform.position;
         var myPos = transform.position;
         var atPos = playerPos - myPos;
-        var index = GetIndexForPos(atPos) + bias;
+        var index = GetIndexForPos(atPos);
+        index += bias;
         return index;
     }
 

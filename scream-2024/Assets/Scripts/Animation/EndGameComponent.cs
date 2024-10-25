@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class EndGameComponent : MonoBehaviour
 {
     [SerializeField] private float fadeDuration = .7f;
-    [SerializeField] private float moveDuration = .7f;
     [SerializeField] private float closeDuration = .5f;
     [SerializeField] private float closeDuration2 = 1.5f;
     [SerializeField] private CanvasGroup rawGroup;

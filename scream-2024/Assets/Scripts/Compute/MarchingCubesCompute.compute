@@ -31,14 +31,14 @@ void march(uint3 id : SV_DispatchThreadID)
     }
 
     float cubeValues[8] = {
-       _Weights[indexFromCoord(id.x, id.y, id.z + 1)],
-       _Weights[indexFromCoord(id.x + 1, id.y, id.z + 1)],
-       _Weights[indexFromCoord(id.x + 1, id.y, id.z)],
-       _Weights[indexFromCoord(id.x, id.y, id.z)],
-       _Weights[indexFromCoord(id.x, id.y + 1, id.z + 1)],
-       _Weights[indexFromCoord(id.x + 1, id.y + 1, id.z + 1)],
-       _Weights[indexFromCoord(id.x + 1, id.y + 1, id.z)],
-       _Weights[indexFromCoord(id.x, id.y + 1, id.z)]
+       _Weights[indexFromCoord(id.x,        id.y,       id.z + 1)],
+       _Weights[indexFromCoord(id.x + 1,    id.y,       id.z + 1)],
+       _Weights[indexFromCoord(id.x + 1,    id.y,       id.z)],
+       _Weights[indexFromCoord(id.x,        id.y,       id.z)],
+       _Weights[indexFromCoord(id.x,        id.y + 1,   id.z + 1)],
+       _Weights[indexFromCoord(id.x + 1,    id.y + 1,   id.z + 1)],
+       _Weights[indexFromCoord(id.x + 1,    id.y + 1,   id.z)],
+       _Weights[indexFromCoord(id.x,        id.y + 1,   id.z)]
     };
 
     int cubeIndex = 0;

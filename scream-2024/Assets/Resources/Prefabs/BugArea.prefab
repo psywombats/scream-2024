@@ -157,6 +157,92 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5215857274966693684}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8432467672472615480
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3704165617658876169}
+    m_Modifications:
+    - target: {fileID: 3163708400304993534, guid: 69366075bbe1a9f44902653bddc84c7b,
+        type: 3}
+      propertyPath: m_Name
+      value: ChunkerChamber
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751830297335422740, guid: 69366075bbe1a9f44902653bddc84c7b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751830297335422740, guid: 69366075bbe1a9f44902653bddc84c7b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751830297335422740, guid: 69366075bbe1a9f44902653bddc84c7b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -108.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751830297335422740, guid: 69366075bbe1a9f44902653bddc84c7b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751830297335422740, guid: 69366075bbe1a9f44902653bddc84c7b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751830297335422740, guid: 69366075bbe1a9f44902653bddc84c7b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751830297335422740, guid: 69366075bbe1a9f44902653bddc84c7b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751830297335422740, guid: 69366075bbe1a9f44902653bddc84c7b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751830297335422740, guid: 69366075bbe1a9f44902653bddc84c7b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751830297335422740, guid: 69366075bbe1a9f44902653bddc84c7b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 69366075bbe1a9f44902653bddc84c7b, type: 3}
+--- !u!4 &2202871814055011628 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7751830297335422740, guid: 69366075bbe1a9f44902653bddc84c7b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8432467672472615480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9204785588082856519 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 773443839294810239, guid: 69366075bbe1a9f44902653bddc84c7b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8432467672472615480}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6c0ab18a6832a43a3fad378733303c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8948361013992055758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -165,6 +251,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8831545535155215303}
     m_Modifications:
+    - target: {fileID: 956444509961331001, guid: f2157f3e3e5961146880341a44e53a1b,
+        type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 5909568147513902796}
+    - target: {fileID: 1023710968772614200, guid: f2157f3e3e5961146880341a44e53a1b,
+        type: 3}
+      propertyPath: chunker
+      value: 
+      objectReference: {fileID: 9204785588082856519}
     - target: {fileID: 2074032810307423603, guid: f2157f3e3e5961146880341a44e53a1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -220,6 +316,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3327586201173812482, guid: f2157f3e3e5961146880341a44e53a1b,
+        type: 3}
+      propertyPath: chunker
+      value: 
+      objectReference: {fileID: 9204785588082856519}
     - target: {fileID: 3810323658889052324, guid: f2157f3e3e5961146880341a44e53a1b,
         type: 3}
       propertyPath: m_Name
@@ -231,9 +332,32 @@ PrefabInstance:
     - {fileID: 1350974702916220708, guid: f2157f3e3e5961146880341a44e53a1b, type: 3}
     - {fileID: 5744274242919613782, guid: f2157f3e3e5961146880341a44e53a1b, type: 3}
     - {fileID: 652207376907994968, guid: f2157f3e3e5961146880341a44e53a1b, type: 3}
-    m_AddedGameObjects: []
+    - {fileID: 6376201388954897198, guid: f2157f3e3e5961146880341a44e53a1b, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5713134910482854599, guid: f2157f3e3e5961146880341a44e53a1b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2202871814055011628}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2157f3e3e5961146880341a44e53a1b, type: 3}
+--- !u!4 &3704165617658876169 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5713134910482854599, guid: f2157f3e3e5961146880341a44e53a1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8948361013992055758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5909568147513902796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3327586201173812482, guid: f2157f3e3e5961146880341a44e53a1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8948361013992055758}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ff804f2272d3649b0695c5e5258abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6982416932478807741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2074032810307423603, guid: f2157f3e3e5961146880341a44e53a1b,

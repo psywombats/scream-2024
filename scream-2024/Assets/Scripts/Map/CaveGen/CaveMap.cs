@@ -16,8 +16,9 @@ public class CaveMap : GameMap
     [Header("References")]
     [SerializeField] public MarchingTerrain terrain;
     [SerializeField] public NoiseGenerator noise;
-    [SerializeField] private WebChunk webChunkPrefab;
-    [SerializeField] private ComputeChunk computeChunkPrefab;
+    [SerializeField] public ChunkHolder chunker;
+
+    public ChunkHolder Chunker => chunker;
 
     public override void OnTeleportTo(GameMap from)
     {
@@ -38,8 +39,5 @@ public class CaveMap : GameMap
         terrain.CullAll();
     }
 
-    public GameObject GetChunkPrefab()
-    {
-        return computeChunkPrefab.gameObject;
-    }
+    public GameObject GetChunkPrefab() => Chunker.GetChunk();
 }
