@@ -39,6 +39,6 @@ void GenerateNoise(uint3 id : SV_DispatchThreadID)
     if (offCenter < _PitRad) {
         n -= (1.0 - offCenter / _PitRad) * _PitHard;
     }
-
+    //n = 1 - (pos.z / 24);
     _Weights[indexFromCoord(id.x, id.y, id.z)] = n;
 }

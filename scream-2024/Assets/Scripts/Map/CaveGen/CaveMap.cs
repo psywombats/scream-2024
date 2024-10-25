@@ -14,8 +14,8 @@ public class CaveMap : GameMap
     [SerializeField] public int initRadius = 1;
     [Space]
     [Header("References")]
-    [SerializeField] public NoiseGenerator noise;
     [SerializeField] public MarchingTerrain terrain;
+    [SerializeField] public NoiseGenerator noise;
     [SerializeField] private WebChunk webChunkPrefab;
     [SerializeField] private ComputeChunk computeChunkPrefab;
 
@@ -30,7 +30,7 @@ public class CaveMap : GameMap
     public void Regenerate(int radius = 0, bool usePlayer = false)
     {
         DestroyChunks();
-        StartCoroutine(terrain.EnsureChunksRoutine(radius: radius, usePlayer: usePlayer));
+        terrain.EnsureChunks(radius, usePlayer: usePlayer);
     }
 
     public void DestroyChunks()

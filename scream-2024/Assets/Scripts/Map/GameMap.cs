@@ -22,10 +22,13 @@ public abstract class GameMap : MonoBehaviour
 
     public virtual void Start()
     {
-        if (Global.Instance.Maps.ActiveMap == null)
+        if (Application.isPlaying)
         {
-            Global.Instance.Maps.ActiveMap = this;
-            OnTeleportTo(null);
+            if (Global.Instance.Maps.ActiveMap == null)
+            {
+                Global.Instance.Maps.ActiveMap = this;
+                OnTeleportTo(null);
+            }
         }
     }
 

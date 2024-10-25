@@ -28,7 +28,7 @@ public class MarchingTerrain : MonoBehaviour
         {
             isSpawningChunks = true;
             CullChunks();
-            StartCoroutine(EnsureChunksRoutine());
+            EnsureChunks(spawnRadius, usePlayer: true, allowInterrupts: true);
         }
     }
 
@@ -52,13 +52,13 @@ public class MarchingTerrain : MonoBehaviour
         }
     }
 
-    public IEnumerator EnsureChunksRoutine(int radius = 0, bool usePlayer = false)
+    /// <returns>True if everything was already built</returns>
+    public bool EnsureChunks(int radius, bool usePlayer = false, bool allowInterrupts = false)
     {
-        isSpawningChunks = true;
         var index = usePlayer ? GetPlayerIndex() : Vector3Int.zero;
         if (radius == 0)
         {
-            radius = spawnRadius;
+            //radius = spawnRadius;
         }
         for (var x = index.x - radius; x <= index.x + radius; x += 1)
         {
@@ -67,11 +67,14 @@ public class MarchingTerrain : MonoBehaviour
                 for (var z = index.z - radius; z <= index.z + radius; z += 1)
                 {
                     var checkIndex = new Vector3Int(x, y, z);
-                    yield return EnsureChunkRoutine(checkIndex);
+                    if (!allowInterrupts && EnsureChunk(checkIndex))
+                    {
+                        return false;
+                    }
                 }
             }
         }
-        isSpawningChunks = false;
+        return true;
     }
 
     public void CullAll()
@@ -132,13 +135,15 @@ public class MarchingTerrain : MonoBehaviour
     }
 
     /// <param name="checkIndex">True if the chunk already exists</param>
-    private IEnumerator EnsureChunkRoutine(Vector3Int checkIndex)
+    private bool EnsureChunk(Vector3Int checkIndex)
     {
         if (!chunks.ContainsKey(checkIndex))
         {
             var chunk = MakeChunk(checkIndex);
-            yield return chunk.ConstructMeshRoutine();
+            chunk.ConstructMesh();
+            return false;
         }
+        return true;
     }
 
     private Vector3Int GetIndexForPos(Vector3 pos)

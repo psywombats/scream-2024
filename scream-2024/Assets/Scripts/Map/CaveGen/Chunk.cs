@@ -22,24 +22,9 @@ public abstract class Chunk : MonoBehaviour
         this.pos = pos;
     }
 
-    public IEnumerator ConstructMeshRoutine()
+    public void ConstructMesh()
     {
-        RequestNoise();
-        while (!Terrain.Noise.IsReadReady)
-        {
-            yield return null;
-        }
-        GenerateMesh();
-    }
-
-    public void RequestNoise()
-    {
-        Terrain.Noise.RequestGenerate(pos);
-    }
-
-    public void GenerateMesh()
-    {
-        weights = Terrain.Noise.ReadNoise();
+        weights = Terrain.Noise.GenerateNoise(pos);
         UpdateMesh();
     }
 

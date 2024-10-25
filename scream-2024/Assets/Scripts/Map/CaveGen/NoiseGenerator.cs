@@ -14,9 +14,8 @@ public class NoiseGenerator : MonoBehaviour
     [SerializeField] private ComputeNoiseSource computeSource;
     [SerializeField] private WebNoiseSource webSource;
 
-    protected NoiseSource Source => computeSource;
-
-    public bool IsReadReady => Source.IsReady;
+    [SerializeField] private bool useWebSource = true;
+    protected NoiseSource Source => useWebSource ? webSource : computeSource;
 
     public enum NoiseType
     {
@@ -43,12 +42,12 @@ public class NoiseGenerator : MonoBehaviour
         // Source = computeSource;
     }
 
-    public void RequestGenerate(Vector3 pos)
+    public float[] GenerateNoise(Vector3 pos)
     {
         Source.SetInt("_ChunkSize", GridMetrics.PointsPerChunk);
         Source.SetFloat("_NoiseScale", noiseScale);
         Source.SetFloat("_Amplitude", amplitude);
-        Source.SetFloat("_Freq", frequency);
+        Source.SetFloat("_Frequency", frequency);
         Source.SetInt("_Octaves", octaves);
         Source.SetFloat("_BaseX", pos.x);
         Source.SetFloat("_BaseY", pos.y);
@@ -59,13 +58,8 @@ public class NoiseGenerator : MonoBehaviour
 
         SetSpecificNoiseVars();
 
-        Source.RequestGenerate();
-    }
-
-    public float[] ReadNoise()
-    {
         var noise = new float[GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk];
-        Source.ReadNoise(noise);
+        Source.GenerateNoise(noise);
         return noise;
     }
 

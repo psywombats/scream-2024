@@ -2,47 +2,51 @@
 
 public class WebNoiseSource : NoiseSource
 {
-    [SerializeField] private Material origMaterial;
-    private Material newMat;
-    private CustomRenderTexture renderTex;
+    [SerializeField] private RenderTexture renderTex;
+    [SerializeField] private Material referenceMat;
+    [SerializeField] private Texture dummyTex;
+    private Texture2D bufferTex;
 
-    private bool updating;
-    private float[] noiseRef;
-
-    public void Start()
+    private Material mat;
+    private Material Mat
     {
-        newMat = new Material(origMaterial);
-    }
-
-    public void Update()
-    {
-        if (updating)
+        get
         {
-            updating = false;
-            IsReady = true;
+            if (mat == null)
+            {
+                mat = new Material(referenceMat);
+            }
+            return mat;
         }
     }
 
-    public override void SetFloat(string name, float value) => newMat.SetFloat(name, value);
-    public override void SetInt(string name, int value) => newMat.SetInteger(name, value);
+    public override void SetFloat(string name, float value) => Mat.SetFloat(name, value);
+    public override void SetInt(string name, int value) => Mat.SetInteger(name, value);
 
-    public override void RequestGenerate()
+    public override void GenerateNoise(float[] weights)
     {
-        renderTex.material = newMat;
-        renderTex.Update();
-        updating = true;
-    }
+        if (bufferTex == null)
+        {
+            bufferTex = new Texture2D(24, 576, TextureFormat.RFloat, false);
+        }
 
-    public override void ReadNoise(float[] noise)
-    {
-        //Texture2D tex = new Texture2D(…);
-        //RenderTexture.active = < your render texture>
-        //tex.ReadPixels(…);
-        //RenderTexture.active = null;
+        Graphics.Blit(dummyTex, renderTex, Mat, 0);
+        RenderTexture.active = renderTex;
+        bufferTex.ReadPixels(new Rect(0, 0, 24, 576), 0, 0);
+        RenderTexture.active = null;
+
+        var nativeArr = bufferTex.GetPixelData<float>(0);
+        nativeArr.CopyTo(weights);
+        if (!Application.isPlaying)
+        {
+            DestroyImmediate(mat);
+            mat = null;
+        }
     }
 
     private void OnDestroy()
     {
-        Destroy(newMat);
+        Destroy(bufferTex);
+        Destroy(mat);
     }
 }

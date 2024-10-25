@@ -7,6 +7,6 @@ public class CaveAutogen : MonoBehaviour
 
     public void Start()
     {
-        StartCoroutine(GetComponent<CaveMap>().terrain.EnsureChunksRoutine(radius: radius));
+        GetComponent<CaveMap>().terrain.EnsureChunks(radius);
     }
 }

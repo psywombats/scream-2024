@@ -9,7 +9,7 @@ public class ComputeNoiseSource : NoiseSource
 
     private ComputeBuffer weightsBuffer;
 
-    public override void RequestGenerate()
+    public override void GenerateNoise(float[] noise)
     {
         if (weightsBuffer == null)
         {
@@ -22,11 +22,6 @@ public class ComputeNoiseSource : NoiseSource
             GridMetrics.PointsPerChunk / GridMetrics.ThreadCount,
             GridMetrics.PointsPerChunk / GridMetrics.ThreadCount);
 
-        IsReady = true;
-    }
-
-    public override void ReadNoise(float[] noise)
-    {
         weightsBuffer.GetData(noise);
     }
 
@@ -44,6 +39,9 @@ public class ComputeNoiseSource : NoiseSource
 
     private void ReleaseBuffers()
     {
-        weightsBuffer.Dispose();
+        if (weightsBuffer != null)
+        {
+            weightsBuffer.Dispose();
+        }
     }
 }

@@ -56,6 +56,11 @@ public class ComputeChunk : Chunk
 
     protected override Mesh ConstructMesh(float[] weights)
     {
+        if (weightsBuffer == null)
+        {
+            CreateBuffers();
+        }
+
         marchShader.SetBuffer(0, "_Triangles", trianglesBuffer);
         marchShader.SetBuffer(0, "_Weights", weightsBuffer);
 

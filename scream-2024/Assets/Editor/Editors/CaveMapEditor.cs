@@ -12,7 +12,7 @@ public class CaveMapEditor : Editor
 
         if (GUILayout.Button("Regenerate"))
         {
-            cave.Regenerate(3);
+            cave.Regenerate(0);
         }
         if (GUILayout.Button("Destroy"))
         {
