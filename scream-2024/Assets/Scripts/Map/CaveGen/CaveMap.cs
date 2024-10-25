@@ -25,17 +25,20 @@ public class CaveMap : GameMap
     public override void OnTeleportTo(GameMap from)
     {
         base.OnTeleportTo(from);
-        //if (Application.platform == RuntimePlatform.WebGLPlayer)
-       // {
-            Global.Instance.Avatar.PauseInput();
-            Global.Instance.Avatar.body.useGravity = false;
-            awaitingUnpause = true;
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            if (Global.Instance.Avatar != null)
+            {
+                Global.Instance.Avatar.PauseInput();
+                Global.Instance.Avatar.body.useGravity = false;
+                awaitingUnpause = true;
+            }
             Regenerate(0, Global.Instance.Avatar != null);
-        //}
-       // else
-       /// {
-        //    Regenerate(initRadius, Global.Instance.Avatar != null);
-        //}
+        }
+        else
+        {
+            Regenerate(initRadius, Global.Instance.Avatar != null);
+        }
         
         AudioManager.Instance.SetGlobalParam("Cave Size", caveSize);
         AudioManager.Instance.SetGlobalParam("cave_type", humidity.ToString());
