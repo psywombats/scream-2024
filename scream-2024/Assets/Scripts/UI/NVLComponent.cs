@@ -117,7 +117,8 @@ public class NVLComponent : MonoBehaviour
         string toType = message;
         nameText.text = name;
         //yield return text.WriteLineRoutine(toType);
-        yield return text.TypeRoutine(toType, waitForConfirm: true);
+        yield return text.TypeRoutine(toType, waitForConfirm: false);
+        yield return InputManager.Instance.ConfirmRoutine();
         Global.Instance.Audio.PlaySFX("in_game/popups", null, AudioManager.Bank.UI);
     }
 

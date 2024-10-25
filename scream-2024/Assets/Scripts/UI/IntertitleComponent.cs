@@ -20,16 +20,17 @@ public class IntertitleComponent : MonoBehaviour
         big.text = "CHASM.EXE";
         small.text = "";
 
-        yield return CoUtils.RunTween(fader.DOFade(1f, t1));
         enableChild.SetActive(true);
+
+        yield return CoUtils.RunTween(fader.DOFade(1f, t1));
         yield return CoUtils.RunTween(renderGroup.DOFade(1f, t1));
         yield return CoUtils.Wait(t2 / 2f);
 
-        yield return big.DOFade(0f, .4f);
+        yield return CoUtils.RunTween(big.DOFade(0f, .4f));
         big.text = s1;
         small.text = s2;
         StartCoroutine(CoUtils.RunTween(small.DOFade(1f, .4f)));
-        yield return big.DOFade(1f, .4f);
+        yield return CoUtils.RunTween(big.DOFade(1f, .4f));
         
         yield return CoUtils.Wait(t2 / 2f);
         yield return CoUtils.RunTween(renderGroup.DOFade(0f, t1));

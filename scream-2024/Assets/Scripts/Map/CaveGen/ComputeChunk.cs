@@ -23,9 +23,12 @@ public class ComputeChunk : Chunk
 
     private void ReleaseBuffers()
     {
-        trianglesBuffer.Release();
-        trianglesCountBuffer.Release();
-        weightsBuffer.Release();
+        if (weightsBuffer != null)
+        {
+            trianglesBuffer.Release();
+            trianglesCountBuffer.Release();
+            weightsBuffer.Release();
+        }
     }
 
     public override void AdjustWeights(Vector3 hit, float r, float mult, bool alwaysApply = false)

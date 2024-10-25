@@ -240,13 +240,21 @@ public class InputManager : SingletonBehavior
     {
         var id = "confirm" + UnityEngine.Random.Range(0, 100000);
         var done = false;
+        var started = false;
         PushListener(id, (command, type) =>
         {
-            if (type == Event.Up && (command == Command.Primary || command == Command.Click))
+            if (command == Command.Primary || command == Command.Click)
             {
-                RemoveListener(id);
-                done = true;
-                return true;
+                if (type == Event.Up && started)
+                {
+                    RemoveListener(id);
+                    done = true;
+                    return true;
+                }
+                if (type == Event.Down)
+                {
+                    started = true;
+                }
             }
             return eatsOthers;
         });

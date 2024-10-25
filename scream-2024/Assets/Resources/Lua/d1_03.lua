@@ -9,6 +9,6 @@ radio('PAL', "It's what you're doing now. It's a slow descent via rope. The safe
 radio('JERK', "Don't go jumping down any pits without us though.")
 radio('YOU', "Alright. I think I'm getting the hang of it.")
 radio('CONTROL', "I knew you looked like a natural.")
-radio('LEADER', "Once you're at the bottom of Rocklift, you'll be at Entry Chasm. Just follow us, and keep heading down.")
+radio('LEADER', "Once you're at the bottom of Rocklift, you'll be at Entry Chasm. Just follow us, and when in doubt, keep going down! We're here to hit bottom!")
 
 setSwitch('d1_03', true)

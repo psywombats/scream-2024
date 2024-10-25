@@ -65,7 +65,7 @@ public class MarchingTerrain : MonoBehaviour
                 for (var z = index.z - radius; z <= index.z + radius; z += 1)
                 {
                     var checkIndex = new Vector3Int(x, y, z);
-                    if (Vector3.Distance(checkIndex, index) > radius + .5f)
+                    if (Vector3.Distance(checkIndex, index) > radius + 1.5f)
                     {
                         continue;
                     }

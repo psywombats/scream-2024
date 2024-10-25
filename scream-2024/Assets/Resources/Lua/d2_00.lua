@@ -8,6 +8,7 @@ radio('LEADER', "Virgin territory. This is a first for you, right Phoebe?")
 radio('YOU', "No one's ever been here before...")
 radio('LEADER', "That means it's sacred ground. So treat it with respect.")
 radio('JERK', "Respect and caution.")
+radio('LEADER', "There should be branches to the north and south of this gallery. Let's get hiking.")
 radio('LEADER', "And if anyone sees a good spot for a camp, let me know. We're deep in enough that anywhere around here could be a good stopping point.")
 
 setSwitch('d2_00')
