@@ -16,15 +16,32 @@
 		<relationship name="listeners">
 			<destination>{08d7a623-6da7-4c29-9664-11a9190bac47}</destination>
 		</relationship>
+		<relationship name="emitters">
+			<destination>{fbcb89eb-465e-47ac-8fcc-a38cc7693a79}</destination>
+		</relationship>
 	</object>
 	<object class="MarkerTrack" id="{349a23fc-5aad-4ead-a567-611a0d88def1}" />
 	<object class="Timeline" id="{ec250941-3e3a-49a8-93b1-2caa99a62009}" />
 	<object class="SandboxListener" id="{08d7a623-6da7-4c29-9664-11a9190bac47}">
 		<property name="positionX">
-			<value>0.0250000004</value>
+			<value>-0.075000003</value>
 		</property>
 		<property name="positionZ">
-			<value>-0.100000001</value>
+			<value>0.0249999985</value>
 		</property>
+		<property name="rotationY">
+			<value>14.6289492</value>
+		</property>
+	</object>
+	<object class="SandboxEmitter" id="{fbcb89eb-465e-47ac-8fcc-a38cc7693a79}">
+		<property name="positionX">
+			<value>0.200000003</value>
+		</property>
+		<property name="positionZ">
+			<value>0.150000006</value>
+		</property>
+		<relationship name="event">
+			<destination>{1133cd12-301f-4692-8377-891c6ff590b0}</destination>
+		</relationship>
 	</object>
 </objects>

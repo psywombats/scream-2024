@@ -4,9 +4,6 @@
 		<property name="assetPath">
 			<value>Env/env_amb_wind_var_02.wav</value>
 		</property>
-		<property name="isStreaming">
-			<value>true</value>
-		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
 		</property>

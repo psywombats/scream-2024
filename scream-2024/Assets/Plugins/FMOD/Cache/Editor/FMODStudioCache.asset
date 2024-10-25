@@ -204,7 +204,7 @@ MonoBehaviour:
     Data4: -852768600
   Banks:
   - {fileID: -5249083659957652130}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
@@ -231,7 +231,7 @@ MonoBehaviour:
     Data4: 487951144
   Banks:
   - {fileID: -5197611917616149525}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
@@ -311,7 +311,7 @@ MonoBehaviour:
     Data4: 187693226
   Banks:
   - {fileID: -5249083659957652130}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -333,10 +333,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638652960166926291
+  lastModified: 638654082586481261
   FileSizes:
   - Name: Desktop
-    Value: 10324736
+    Value: 18156128
   Exists: 1
 --- !u!114 &-5197611917616149525
 MonoBehaviour:
@@ -353,10 +353,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Main.bank
   Name: Main
   StudioPath: bank:/Main
-  lastModified: 638652960155547942
+  lastModified: 638654076602328066
   FileSizes:
   - Name: Desktop
-    Value: 2825760
+    Value: 5893312
   Exists: 1
 --- !u!114 &-4904655649958765695
 MonoBehaviour:
@@ -399,10 +399,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638652960155731466
+  lastModified: 638654090918367960
   FileSizes:
   - Name: Desktop
-    Value: 6726
+    Value: 11262
   Exists: 1
 --- !u!114 &-4356153807621144668
 MonoBehaviour:
@@ -753,6 +753,8 @@ MonoBehaviour:
   - {fileID: -2837213681306130971}
   - {fileID: -1324984545774053669}
   - {fileID: 7671416796569715606}
+  - {fileID: 5920464610746143025}
+  - {fileID: 2453332833967700809}
   EditorParameters:
   - {fileID: 396220204858183252}
   - {fileID: -1843735171507437879}
@@ -762,7 +764,7 @@ MonoBehaviour:
   - {fileID: -4763852708050613231}
   StringsBanks:
   - {fileID: 971565201425812555}
-  cacheTime: 638652960166926291
+  cacheTime: 638654090918387899
   cacheVersion: 131603
 --- !u!114 &396220204858183252
 MonoBehaviour:
@@ -803,10 +805,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638652960155751304
+  lastModified: 638654090918387899
   FileSizes:
   - Name: Desktop
-    Value: 3230
+    Value: 3438
   Exists: 1
 --- !u!114 &1204330058058080618
 MonoBehaviour:
@@ -828,13 +830,40 @@ MonoBehaviour:
     Data4: 659158562
   Banks:
   - {fileID: -5249083659957652130}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 71000
+  Length: 73000
+--- !u!114 &2453332833967700809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/inDialogue
+  m_EditorClassIdentifier: 
+  Path: snapshot:/inDialogue
+  Guid:
+    Data1: -1740865074
+    Data2: 1169263619
+    Data3: -470924902
+    Data4: -509380036
+  Banks:
+  - {fileID: -4763852708050613231}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &2485479634853997085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -882,7 +911,7 @@ MonoBehaviour:
     Data4: -315215735
   Banks:
   - {fileID: -5197611917616149525}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
@@ -1129,7 +1158,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 648
+  Length: 523
 --- !u!114 &5869604307188290453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1158,6 +1187,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 41000
+--- !u!114 &5920464610746143025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/PauseMenu
+  m_EditorClassIdentifier: 
+  Path: snapshot:/PauseMenu
+  Guid:
+    Data1: -1697778511
+    Data2: 1112432324
+    Data3: 2011199644
+    Data4: 130517316
+  Banks:
+  - {fileID: -4763852708050613231}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &6153157323093656440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,7 +1234,7 @@ MonoBehaviour:
     Data4: -970335871
   Banks:
   - {fileID: -5197611917616149525}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
@@ -1206,7 +1262,7 @@ MonoBehaviour:
     Data4: -114291365
   Banks:
   - {fileID: -5197611917616149525}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
@@ -1233,13 +1289,13 @@ MonoBehaviour:
     Data4: 1578309697
   Banks:
   - {fileID: -5249083659957652130}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 111000
+  Length: 109500
 --- !u!114 &6803611690436762477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1314,7 +1370,7 @@ MonoBehaviour:
     Data4: 809534506
   Banks:
   - {fileID: -5249083659957652130}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
@@ -1336,10 +1392,10 @@ MonoBehaviour:
   Path: ../fmod/Build/Desktop/Title.bank
   Name: Title
   StudioPath: bank:/Title
-  lastModified: 638652845637337774
+  lastModified: 638654016192411860
   FileSizes:
   - Name: Desktop
-    Value: 2798880
+    Value: 6399936
   Exists: 1
 --- !u!114 &7671416796569715606
 MonoBehaviour:
@@ -1361,7 +1417,7 @@ MonoBehaviour:
     Data4: -357929480
   Banks:
   - {fileID: -5249083659957652130}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -1466,7 +1522,7 @@ MonoBehaviour:
     Data4: 819072171
   Banks:
   - {fileID: -5197611917616149525}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:

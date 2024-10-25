@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>CaveRev</value>
 		</property>
+		<relationship name="masters">
+			<destination>{44989749-f7fe-433e-9838-f33837437af5}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{79e1488a-9df3-4d2e-bab1-684f79982a02}</destination>
 		</relationship>
