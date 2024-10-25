@@ -8,10 +8,17 @@ public class PitOpenerComponent : MonoBehaviour
     public void Update()
     {
         var av = Global.Instance.Avatar;
-        if (Physics.Raycast(av.transform.position, new Vector3(0, -1, 0), out var info, 100, LayerMask.GetMask("Chunk"))) 
+        if (Physics.Raycast(av.transform.position, new Vector3(0, -1, 0), out var info, 100, LayerMask.GetMask("Chunk")))
         {
             var chunk = info.collider.GetComponent<Chunk>();
-            chunk.Terrain.AdjustWeights(chunk, info.point, r, -1 * Time.deltaTime * rate);
+            if (Application.platform == RuntimePlatform.WebGLPlayer)
+            {
+                chunk.gameObject.SetActive(false);
+            }
+            else
+            {
+                chunk.Terrain.AdjustWeights(chunk, info.point, r, -1 * Time.deltaTime * rate);
+            }
         }
     }
 }

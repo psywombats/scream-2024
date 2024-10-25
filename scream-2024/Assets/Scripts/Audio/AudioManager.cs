@@ -75,6 +75,7 @@ public class AudioManager : SingletonBehavior
 
     public void PlaySFX(string sfxKey, GameObject src = null, Bank bank = Bank.SFX)
     {
+        //var banksy = bank == Bank.BGM ? "BGM" : "Other/" + bank;
         sfxEvent = RuntimeManager.CreateInstance($"event:/{bank}/{sfxKey}");
         if (src != null)
         {
@@ -137,25 +138,25 @@ public class AudioManager : SingletonBehavior
 
     public void SetVolume()
     {
-        var sfxBus = RuntimeManager.GetBus("bus:/SFX");
+        //var sfxBus = RuntimeManager.GetBus("bus:/SFX");
         var bgmBus = RuntimeManager.GetBus("bus:/BGM");
-        var envBus = RuntimeManager.GetBus("bus:/UI");
-        var uiBus = RuntimeManager.GetBus("bus:/ENV");
-        sfxBus.setVolume(BaseVolume);
+        //var envBus = RuntimeManager.GetBus("bus:/UI");
+        //var uiBus = RuntimeManager.GetBus("bus:/ENV");
+        //sfxBus.setVolume(BaseVolume);
         bgmBus.setVolume(BaseVolume);
-        uiBus.setVolume(BaseVolume);
-        envBus.setVolume(BaseVolume);
+        //uiBus.setVolume(BaseVolume);
+        //envBus.setVolume(BaseVolume);
     }
 
     public void SetNightmare(bool isNightmare)
     {
         if (!nightmareSnap.IsPlaying() && isNightmare)
         {
-            //nightmareSnap.Play();
+            nightmareSnap.Play();
         } 
         else if (nightmareSnap.IsPlaying() && !isNightmare)
         {
-            //nightmareSnap.Stop();
+            nightmareSnap.Stop();
         }
     }
 

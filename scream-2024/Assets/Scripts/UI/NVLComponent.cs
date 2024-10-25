@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ public class NVLComponent : MonoBehaviour
     public Text nameText;
     public CanvasGroup fader;
     public CanvasGroup background;
+    public StudioEventEmitter eventEmitter;
 
     public bool IsShown { get; private set; }
 
@@ -36,6 +38,7 @@ public class NVLComponent : MonoBehaviour
     public IEnumerator ShowRoutine(bool hideBackers = false)
     {
         IsShown = true;
+        eventEmitter.Play();
         backer.Hide();
         fader.alpha = 0.0f;
         background.alpha = 0f;
@@ -63,6 +66,7 @@ public class NVLComponent : MonoBehaviour
 
     public IEnumerator HideRoutine()
     {
+        eventEmitter.Stop();
         var routines = new List<IEnumerator>();
         foreach (var portrait in GetPortraits())
         {
@@ -117,8 +121,8 @@ public class NVLComponent : MonoBehaviour
         string toType = message;
         nameText.text = name;
         //yield return text.WriteLineRoutine(toType);
-        yield return text.TypeRoutine(toType, waitForConfirm: false);
-        yield return InputManager.Instance.ConfirmRoutine();
+        yield return text.TypeRoutine(toType, waitForConfirm: true);
+        //yield return InputManager.Instance.ConfirmRoutine();
         Global.Instance.Audio.PlaySFX("in_game/popups", null, AudioManager.Bank.UI);
     }
 

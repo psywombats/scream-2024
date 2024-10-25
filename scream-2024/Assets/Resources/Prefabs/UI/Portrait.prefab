@@ -137,7 +137,9 @@ MonoBehaviour:
   nvl: {fileID: 0}
   sprite: {fileID: 300676493698467070}
   altSprite: {fileID: 2525060273137790533}
+  trans: {fileID: 21300000, guid: dfaca9549b1af2c4e8066adb6a370113, type: 3}
   moveSibling: 0
+  crater: 0
 --- !u!1 &7290723757946019679
 GameObject:
   m_ObjectHideFlags: 0

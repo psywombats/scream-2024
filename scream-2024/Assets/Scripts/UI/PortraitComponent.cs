@@ -13,6 +13,7 @@ public class PortraitComponent : MonoBehaviour
     public NVLComponent nvl;
     public Image sprite;
     public Image altSprite;
+    public Sprite trans;
     public bool moveSibling;
     public bool crater;
 
@@ -22,8 +23,8 @@ public class PortraitComponent : MonoBehaviour
     public void Clear()
     {
         Speaker = null;
-        sprite.sprite = null;
-        altSprite.sprite = null;
+        sprite.sprite = trans;
+        altSprite.sprite = trans;
         IsHighlighted = false;
     }
 

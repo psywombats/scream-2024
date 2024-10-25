@@ -1,4 +1,4 @@
-playBGM('unforgettable_exp')
+playBGM('suspense')
 enterNVL()
 enter('YOU', 'b')
 speak('YOU', "You're... me?")

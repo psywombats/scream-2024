@@ -20,10 +20,23 @@ public class CaveMap : GameMap
 
     public ChunkHolder Chunker => chunker;
 
+    public bool awaitingUnpause;
+
     public override void OnTeleportTo(GameMap from)
     {
         base.OnTeleportTo(from);
-        Regenerate(initRadius, Global.Instance.Avatar != null);
+        //if (Application.platform == RuntimePlatform.WebGLPlayer)
+       // {
+            Global.Instance.Avatar.PauseInput();
+            Global.Instance.Avatar.body.useGravity = false;
+            awaitingUnpause = true;
+            Regenerate(0, Global.Instance.Avatar != null);
+        //}
+       // else
+       /// {
+        //    Regenerate(initRadius, Global.Instance.Avatar != null);
+        //}
+        
         AudioManager.Instance.SetGlobalParam("Cave Size", caveSize);
         AudioManager.Instance.SetGlobalParam("cave_type", humidity.ToString());
     }

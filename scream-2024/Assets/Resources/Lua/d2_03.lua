@@ -3,7 +3,7 @@ enter('YOU', 'c')
 speak('YOU', "Oh shi -")
 exitNVL()
 
-playBGM('suspense')
+playBGM('unforgettable_exp')
 wait(.6)
 
 radio('YOU', "Guys! Get over here! Quick! Amador! Jeanne!")

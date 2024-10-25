@@ -1100,6 +1100,11 @@ PrefabInstance:
       propertyPath: initRadius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6899768111566482306, guid: b6f4ff4681d886c4ebcd399f1fc58b16,
+        type: 3}
+      propertyPath: webOverride
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4464967469740108560, guid: b6f4ff4681d886c4ebcd399f1fc58b16, type: 3}
     m_RemovedGameObjects: []

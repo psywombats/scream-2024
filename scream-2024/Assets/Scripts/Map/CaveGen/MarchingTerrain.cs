@@ -8,6 +8,7 @@ public class MarchingTerrain : MonoBehaviour
     [Space]
     [SerializeField] private int spawnRadius = 1;
     [SerializeField] private int cullDist = 2;
+    [SerializeField] private bool webglLimited;
     [Space]
     [SerializeField] private List<Vector3Int> pulsars;
     [SerializeField] private GameObject toFollow;
@@ -75,6 +76,12 @@ public class MarchingTerrain : MonoBehaviour
                     }
                 }
             }
+        }
+        if (map.awaitingUnpause)
+        {
+            Global.Instance.Avatar.UnpauseInput();
+            Global.Instance.Avatar.body.useGravity = true;
+            map.awaitingUnpause = false;
         }
         return true;
     }

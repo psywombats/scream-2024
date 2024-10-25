@@ -1,4 +1,4 @@
-playBGM('unforgettable_exp')
+playBGM('suspense')
 enterNVL()
 enter('YOU', 'a')
 enter('OTHER', 'c')

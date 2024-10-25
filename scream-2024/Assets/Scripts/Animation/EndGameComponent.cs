@@ -68,6 +68,7 @@ public class EndGameComponent : MonoBehaviour
 
     public IEnumerator EndGame2Routine()
     {
+        Global.Instance.Audio.PlayBGM("ending_music");
         cameraToMove.enabled = false;
         cameraToMove.targetTexture = lapTex;
         cameraToMove.Render();

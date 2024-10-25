@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour, IInputListener
     private int pauseCount;
     private float currentAbsV, absTimer, oldV;
     private Vector3 targetFrameV;
-    private float lastVelY;
+    private float lastVelY, deltaYVal, deltaYElapsed;
     private float timeSinceGrounding, timeSinceJumping, timeSinceAbsing, timeSinceStep;
 
     public GameObject OldFlare { get; private set; }
@@ -103,13 +103,25 @@ public class PlayerController : MonoBehaviour, IInputListener
 
         timeSinceGrounding += Time.deltaTime;
 
-        //Debug.Log("lastVelY: " + lastVelY + " , " + IsGrounded);
-        if (lastVelY < abseilCutoff * .1f && IsGrounded)
+        var delY = lastVelY - body.velocity.y;
+        if (delY < deltaYVal)
+        {
+            deltaYVal = delY;
+            deltaYElapsed = 0f;
+        }
+        if (deltaYElapsed > .1f)
+        {
+            deltaYVal = 0f;
+            deltaYElapsed = 0f;
+        }
+        if (deltaYVal < abseilCutoff * .4f && IsGrounded)
         {
             AudioManager.Instance.PlaySFX("player/landing", gameObject);
-            lastVelY = 0f;
+            deltaYVal = 0f;
+            deltaYElapsed = 0f;
         }
-        lastVelY = lastVelY * 3 / 4 + body.velocity.y / 4;
+        deltaYElapsed += Time.deltaTime;
+        lastVelY = body.velocity.y;
     }
 
     public void OnEnable()
@@ -211,6 +223,7 @@ public class PlayerController : MonoBehaviour, IInputListener
 
     public bool OnCommand(InputManager.Command command, InputManager.Event eventType)
     {
+        /*
         if (command == InputManager.Command.Menu && eventType == InputManager.Event.Up)
         {
             if (selfPaused)
@@ -224,6 +237,7 @@ public class PlayerController : MonoBehaviour, IInputListener
                 selfPaused = true;
             }
         }
+        */
         
         if (IsPaused)
         {
@@ -339,6 +353,8 @@ public class PlayerController : MonoBehaviour, IInputListener
 
         var trans = camera.transform;
 
+        var sense = mouseRotateSensitivity;
+        if (Application.platform == RuntimePlatform.WebGLPlayer) sense *= 10;
         trans.rotation *= Quaternion.AngleAxis(inY * mouseRotateSensitivity, Vector3.left);
 
         var ang = trans.eulerAngles.x;

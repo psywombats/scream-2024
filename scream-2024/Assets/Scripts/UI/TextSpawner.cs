@@ -45,7 +45,7 @@ public class TextSpawner : MonoBehaviour
             rect.transform.localPosition = new Vector3(rect.transform.localPosition.x, rect.transform.localPosition.y, 0);
             if (shake)
             {
-                StartCoroutine(CoUtils.RunTween(rect.transform.DOShakePosition(.2f)));
+                StartCoroutine(CoUtils.RunTween(rect.transform.DOShakePosition(.2f, 8f)));
                 Global.Instance.Audio.PlaySFX(hitSFX, null, AudioManager.Bank.UI);
             }
             yield return CoUtils.Wait(delay);

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9173356733463814441}
   - component: {fileID: 1628695128561964589}
   - component: {fileID: 1504746333263614029}
+  - component: {fileID: 845222538050844069}
   m_Layer: 5
   m_Name: NVL
   m_TagString: Untagged
@@ -63,6 +64,7 @@ MonoBehaviour:
   nameText: {fileID: 9147853343624926020}
   fader: {fileID: 1937924116460554883}
   background: {fileID: 2170899432668902430}
+  eventEmitter: {fileID: 845222538050844069}
 --- !u!225 &1504746333263614029
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -75,6 +77,37 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &845222538050844069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626969297393849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1697778511
+      Data2: 1112432324
+      Data3: 2011199644
+      Data4: 130517316
+    Path: snapshot:/PauseMenu
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &125801899332403486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,6 +1201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3169689827844674434}
   - component: {fileID: 2076174339425846598}
+  - component: {fileID: 3437264084177774779}
   m_Layer: 5
   m_Name: Radio
   m_TagString: Untagged
@@ -1213,6 +1247,38 @@ MonoBehaviour:
   portraitGood: {fileID: 5957568764383917230}
   portraitOkay: {fileID: 9222538059186725930}
   portraitBad: {fileID: 264559445341752948}
+  emitter: {fileID: 3437264084177774779}
+--- !u!114 &3437264084177774779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209541219667797199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1697778511
+      Data2: 1112432324
+      Data3: 2011199644
+      Data4: 130517316
+    Path: snapshot:/PauseMenu
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &2265227247937275813
 GameObject:
   m_ObjectHideFlags: 0
@@ -3648,7 +3714,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 53f26010cd70d5047848892ac4d1a7e5,
+      objectReference: {fileID: 21300000, guid: dfaca9549b1af2c4e8066adb6a370113,
         type: 3}
     - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
@@ -3760,6 +3826,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2525060273137790533, guid: 6eb9ca1eba45b124ba2216440205109f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfaca9549b1af2c4e8066adb6a370113,
+        type: 3}
     - target: {fileID: 3261420035815512951, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
       propertyPath: nvl
@@ -3801,6 +3873,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2446772113619355555}
     m_Modifications:
+    - target: {fileID: 300676493698467070, guid: 6eb9ca1eba45b124ba2216440205109f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfaca9549b1af2c4e8066adb6a370113,
+        type: 3}
     - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3901,6 +3979,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2525060273137790533, guid: 6eb9ca1eba45b124ba2216440205109f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfaca9549b1af2c4e8066adb6a370113,
+        type: 3}
     - target: {fileID: 3261420035815512951, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
       propertyPath: nvl
@@ -4107,7 +4191,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: dfaca9549b1af2c4e8066adb6a370113,
+        type: 3}
     - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4218,6 +4303,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2525060273137790533, guid: 6eb9ca1eba45b124ba2216440205109f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfaca9549b1af2c4e8066adb6a370113,
+        type: 3}
     - target: {fileID: 3261420035815512951, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
       propertyPath: nvl
@@ -4353,6 +4444,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2446772113619355555}
     m_Modifications:
+    - target: {fileID: 300676493698467070, guid: 6eb9ca1eba45b124ba2216440205109f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfaca9549b1af2c4e8066adb6a370113,
+        type: 3}
     - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4453,6 +4550,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2525060273137790533, guid: 6eb9ca1eba45b124ba2216440205109f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfaca9549b1af2c4e8066adb6a370113,
+        type: 3}
     - target: {fileID: 3261420035815512951, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
       propertyPath: nvl
@@ -4611,7 +4714,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 53f26010cd70d5047848892ac4d1a7e5,
+      objectReference: {fileID: 21300000, guid: dfaca9549b1af2c4e8066adb6a370113,
         type: 3}
     - target: {fileID: 1867253135338556750, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
@@ -4718,6 +4821,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2525060273137790533, guid: 6eb9ca1eba45b124ba2216440205109f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfaca9549b1af2c4e8066adb6a370113,
+        type: 3}
     - target: {fileID: 3261420035815512951, guid: 6eb9ca1eba45b124ba2216440205109f,
         type: 3}
       propertyPath: nvl

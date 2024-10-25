@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using FMODUnity;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,7 @@ public class RadioUIComponent : MonoBehaviour
     [SerializeField] private Image portraitGood;
     [SerializeField] private Image portraitOkay;
     [SerializeField] private Image portraitBad;
+    [SerializeField] private StudioEventEmitter emitter;
     
     public bool IsShown { get; private set; }
 
@@ -54,6 +56,7 @@ public class RadioUIComponent : MonoBehaviour
 
         if (!IsShown)
         {
+            emitter.Play();
             if (qual == RadioQual.bad)
             {
                 Global.Instance.Audio.PlaySFX("in_game/radio_broken", null, AudioManager.Bank.UI);
@@ -71,6 +74,7 @@ public class RadioUIComponent : MonoBehaviour
 
     public IEnumerator HideRoutine()
     {
+        emitter.Stop();
         Global.Instance.Audio.PlaySFX("in_game/radio_off", null, AudioManager.Bank.UI);
         yield return expander.HideRoutine();
         textTyper.Clear();
