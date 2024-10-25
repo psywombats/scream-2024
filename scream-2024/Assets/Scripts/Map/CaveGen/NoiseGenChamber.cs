@@ -15,13 +15,13 @@ public class NoiseGenChamber : NoiseGenerator
     protected override void SetSpecificNoiseVars()
     {
         base.SetSpecificNoiseVars();
-        noiseShader.SetFloat("_ChamberR", chamberR);
-        noiseShader.SetFloat("_ChamberOblX", chamberOblX);
-        noiseShader.SetFloat("_ChamberOblZ", chamberOblZ);
-        noiseShader.SetFloat("_CeilHardness", floorHard);
-        noiseShader.SetFloat("_FloorHardness", ceilHard);
-        noiseShader.SetFloat("_WallHardness", wallHard);
-        noiseShader.SetFloat("_ChamberWeight", chamberWeight);
-        noiseShader.SetFloat("_NoiseWeight", noiseWeight);
+        Source.SetFloat("_ChamberR", chamberR);
+        Source.SetFloat("_ChamberOblX", chamberOblX);
+        Source.SetFloat("_ChamberOblZ", chamberOblZ);
+        Source.SetFloat("_CeilHardness", floorHard);
+        Source.SetFloat("_FloorHardness", ceilHard);
+        Source.SetFloat("_WallHardness", wallHard);
+        Source.SetFloat("_ChamberWeight", chamberWeight);
+        Source.SetFloat("_NoiseWeight", noiseWeight);
     }
 }

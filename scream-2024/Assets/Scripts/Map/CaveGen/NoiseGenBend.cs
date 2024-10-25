@@ -13,15 +13,15 @@ public class NoiseGenBend : NoiseGenerator
     protected override void SetSpecificNoiseVars()
     {
         base.SetSpecificNoiseVars();
-        noiseShader.SetFloat("_PitRad", pitRadius);
-        noiseShader.SetFloat("_NoiseWeight", noiseWeight);
-        noiseShader.SetFloat("_ScaleX", scaleX);
-        noiseShader.SetFloat("_ScaleY", scaleY);
-        noiseShader.SetFloat("_X1", xCoefs.x);
-        noiseShader.SetFloat("_X2", xCoefs.y);
-        noiseShader.SetFloat("_X3", xCoefs.z);
-        noiseShader.SetFloat("_Y1", yCoefs.x);
-        noiseShader.SetFloat("_Y2", yCoefs.y);
-        noiseShader.SetFloat("_Y3", yCoefs.z);
+        Source.SetFloat("_PitRad", pitRadius);
+        Source.SetFloat("_NoiseWeight", noiseWeight);
+        Source.SetFloat("_ScaleX", scaleX);
+        Source.SetFloat("_ScaleY", scaleY);
+        Source.SetFloat("_X1", xCoefs.x);
+        Source.SetFloat("_X2", xCoefs.y);
+        Source.SetFloat("_X3", xCoefs.z);
+        Source.SetFloat("_Y1", yCoefs.x);
+        Source.SetFloat("_Y2", yCoefs.y);
+        Source.SetFloat("_Y3", yCoefs.z);
     }
 }

@@ -1,9 +1,10 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MarchingTerrain : MonoBehaviour
 {
-    [SerializeField] private Chunk chunkPrefab;
+    [SerializeField] private CaveMap map;
     [Space]
     [SerializeField] private int spawnRadius = 1;
     [SerializeField] private int cullDist = 2;
@@ -15,14 +16,19 @@ public class MarchingTerrain : MonoBehaviour
     private Dictionary<Vector3Int, Chunk> chunks = new();
     private Dictionary<int, GameObject> layers = new();
 
+    private bool isSpawningChunks;
+
+    public NoiseGenerator Noise => map.noise;
+
     public GameObject Target => toFollow != null ? toFollow : (Global.Instance.Avatar == null ? null : Global.Instance.Avatar.gameObject);
 
     public void Update()
     {
-        if (Target != null)
+        if (Target != null && !isSpawningChunks)
         {
-            EnsureChunks();
+            isSpawningChunks = true;
             CullChunks();
+            StartCoroutine(EnsureChunksRoutine());
         }
     }
 
@@ -36,16 +42,20 @@ public class MarchingTerrain : MonoBehaviour
                 for (var z = index.z - 1; z <= index.z + 1; z += 1)
                 {
                     var checkIndex = new Vector3Int(x, y, z);
-                    EnsureChunk(checkIndex);
-                    chunks[checkIndex].AdjustWeights(hit, r, mult);
+                    if (chunks.ContainsKey(checkIndex))
+                    {
+                        chunks[checkIndex].AdjustWeights(hit, r, mult);
+                    }
+                    // TODO: we should always have that chunk
                 }
             }
         }
     }
 
-    public void EnsureChunks(bool ensureAll = false, int radius = 0, bool usePlayer = false)
+    public IEnumerator EnsureChunksRoutine(int radius = 0, bool usePlayer = false)
     {
-        var index = (ensureAll && !usePlayer) ? Vector3Int.zero : GetPlayerIndex();
+        isSpawningChunks = true;
+        var index = usePlayer ? GetPlayerIndex() : Vector3Int.zero;
         if (radius == 0)
         {
             radius = spawnRadius;
@@ -57,13 +67,11 @@ public class MarchingTerrain : MonoBehaviour
                 for (var z = index.z - radius; z <= index.z + radius; z += 1)
                 {
                     var checkIndex = new Vector3Int(x, y, z);
-                    if (!EnsureChunk(checkIndex) && !ensureAll)
-                    {
-                        return;
-                    }
+                    yield return EnsureChunkRoutine(checkIndex);
                 }
             }
         }
+        isSpawningChunks = false;
     }
 
     public void CullAll()
@@ -124,14 +132,13 @@ public class MarchingTerrain : MonoBehaviour
     }
 
     /// <param name="checkIndex">True if the chunk already exists</param>
-    private bool EnsureChunk(Vector3Int checkIndex)
+    private IEnumerator EnsureChunkRoutine(Vector3Int checkIndex)
     {
         if (!chunks.ContainsKey(checkIndex))
         {
-            MakeChunk(checkIndex);
-            return false;
+            var chunk = MakeChunk(checkIndex);
+            yield return chunk.ConstructMeshRoutine();
         }
-        return true;
     }
 
     private Vector3Int GetIndexForPos(Vector3 pos)
@@ -145,30 +152,20 @@ public class MarchingTerrain : MonoBehaviour
         return atPos;
     }
 
-    private void MakeChunk(Vector3Int chunkIndex)
+    private Chunk MakeChunk(Vector3Int chunkIndex)
     {
-        var isPulsar = false;
-        foreach (var index in pulsars)
-        {
-            if (chunkIndex == index)
-            {
-                isPulsar = true;
-            }
-            break;
-        }
-
-        var chunk = Instantiate(chunkPrefab.gameObject).GetComponent<Chunk>();
+        var chunk = Instantiate(map.GetChunkPrefab()).GetComponent<Chunk>();
         var pos = (Vector3)(chunkIndex * GridMetrics.ChunkSize);
         var off = GridMetrics.ChunkSize / 2f;
         chunk.Init(this, chunkIndex, pos);
         chunks[chunkIndex] = chunk;
 
         chunk.gameObject.SetActive(true);
-        chunk.IsPulsar = isPulsar;
         chunk.gameObject.name = $"{chunkIndex.x}, {chunkIndex.z}";
 
         EnsureLayer(chunkIndex.y);
         chunk.transform.SetParent(layers[chunkIndex.y].transform);
         chunk.gameObject.transform.position = pos - new Vector3(off, off, off);
+        return chunk;
     }
 }

@@ -2,8 +2,6 @@
 
 public class NoiseGenerator : MonoBehaviour
 {
-    [SerializeField] protected ComputeShader noiseShader;
-    [Space]
     [SerializeField, Range(.1f, 10f)] private float noiseScale = 1f;
     [SerializeField, Range(1f, 10f)] private float amplitude = 5f;
     [SerializeField, Range(0f, 1f)] private float frequency = 0.005f;
@@ -12,6 +10,13 @@ public class NoiseGenerator : MonoBehaviour
     [Space]
     [SerializeField] public NoiseType noiseType = NoiseType.NOISE_OPENSIMPLEX2;
     [SerializeField] public FractalType fractalType = FractalType.FRACTAL_RIDGED;
+    [Space]
+    [SerializeField] private ComputeNoiseSource computeSource;
+    [SerializeField] private WebNoiseSource webSource;
+
+    protected NoiseSource Source => computeSource;
+
+    public bool IsReadReady => Source.IsReady;
 
     public enum NoiseType
     {
@@ -33,54 +38,34 @@ public class NoiseGenerator : MonoBehaviour
         FRACTAL_DOMAIN_WARP_INDEPENDENT = 5,
     }
 
-    private ComputeBuffer weightsBuffer;
-
-    private void OnDestroy()
+    public void Start()
     {
-        ReleaseBuffers();
+        // Source = computeSource;
     }
 
-    private void CreateBuffers()
+    public void RequestGenerate(Vector3 pos)
     {
-        weightsBuffer = new ComputeBuffer(
-            GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk, sizeof(float)
-        );
-    }
+        Source.SetInt("_ChunkSize", GridMetrics.PointsPerChunk);
+        Source.SetFloat("_NoiseScale", noiseScale);
+        Source.SetFloat("_Amplitude", amplitude);
+        Source.SetFloat("_Freq", frequency);
+        Source.SetInt("_Octaves", octaves);
+        Source.SetFloat("_BaseX", pos.x);
+        Source.SetFloat("_BaseY", pos.y);
+        Source.SetFloat("_BaseZ", pos.z);
 
-    private void ReleaseBuffers()
-    {
-        weightsBuffer.Dispose();
-    }
-
-    public float[] GenerateNoise(Vector3 pos)
-    {
-        if (weightsBuffer == null)
-        {
-            CreateBuffers();
-        }
-
-        var noise = new float[GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk];
-        noiseShader.SetBuffer(0, "_Weights", weightsBuffer);
-
-        noiseShader.SetInt("_ChunkSize", GridMetrics.PointsPerChunk);
-        noiseShader.SetFloat("_NoiseScale", noiseScale);
-        noiseShader.SetFloat("_Amplitude", amplitude);
-        noiseShader.SetFloat("_Frequency", frequency);
-        noiseShader.SetInt("_Octaves", octaves);
-        noiseShader.SetFloat("_BaseX", pos.x);
-        noiseShader.SetFloat("_BaseY", pos.y);
-        noiseShader.SetFloat("_BaseZ", pos.z);
-
-        noiseShader.SetInt("_NoiseTypeIn", (int)noiseType);
-        noiseShader.SetInt("_FractalTypeIn", (int)fractalType);
+        Source.SetInt("_NoiseTypeIn", (int)noiseType);
+        Source.SetInt("_FractalTypeIn", (int)fractalType);
 
         SetSpecificNoiseVars();
 
-        noiseShader.Dispatch(0,
-            GridMetrics.PointsPerChunk / GridMetrics.ThreadCount,
-            GridMetrics.PointsPerChunk / GridMetrics.ThreadCount,
-            GridMetrics.PointsPerChunk / GridMetrics.ThreadCount);
-        weightsBuffer.GetData(noise);
+        Source.RequestGenerate();
+    }
+
+    public float[] ReadNoise()
+    {
+        var noise = new float[GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk];
+        Source.ReadNoise(noise);
         return noise;
     }
 

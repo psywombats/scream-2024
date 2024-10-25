@@ -9,13 +9,15 @@ public class CaveMap : GameMap
     }
 
     [Header("Config")]
-    [SerializeField] private NoiseGenerator noise;
     [SerializeField][Range(0, 1f)] private float caveSize;
     [SerializeField] private Humidity humidity;
+    [SerializeField] public int initRadius = 1;
     [Space]
     [Header("References")]
+    [SerializeField] public NoiseGenerator noise;
     [SerializeField] public MarchingTerrain terrain;
-    [SerializeField] public int initRadius = 1;
+    [SerializeField] private WebChunk webChunkPrefab;
+    [SerializeField] private ComputeChunk computeChunkPrefab;
 
     public override void OnTeleportTo(GameMap from)
     {
@@ -28,11 +30,16 @@ public class CaveMap : GameMap
     public void Regenerate(int radius = 0, bool usePlayer = false)
     {
         DestroyChunks();
-        terrain.EnsureChunks(ensureAll: true, radius: radius, usePlayer: usePlayer);
+        StartCoroutine(terrain.EnsureChunksRoutine(radius: radius, usePlayer: usePlayer));
     }
 
     public void DestroyChunks()
     {
         terrain.CullAll();
+    }
+
+    public GameObject GetChunkPrefab()
+    {
+        return computeChunkPrefab.gameObject;
     }
 }

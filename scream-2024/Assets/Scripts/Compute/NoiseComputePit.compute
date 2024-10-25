@@ -9,7 +9,6 @@ float _NoiseScale;
 float _Amplitude;
 float _Frequency;
 int _Octaves;
-float _GroundPercent;
 
 float _BaseX, _BaseY, _BaseZ;
 

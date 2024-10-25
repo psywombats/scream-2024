@@ -1,134 +1,76 @@
+﻿using System.Collections;
 using UnityEngine;
 
-public class Chunk : MonoBehaviour
+public abstract class Chunk : MonoBehaviour
 {
-    [SerializeField] private NoiseGenerator noise;
-    [SerializeField] private ComputeShader marchShader;
-    [Space]
     [SerializeField] private MeshFilter filter;
     [SerializeField] private new MeshCollider collider;
     [Space]
     [SerializeField] private float pulsarPeriod;
     [SerializeField] private float pulsarAmplitude;
 
-    [SerializeField] [HideInInspector] private float[] weights;
+    protected Vector3 pos;
+    protected float[] weights;
 
     public MarchingTerrain Terrain { get; private set; }
     public Vector3Int Index { get; private set; }
-
-    public bool IsPulsar { get; set; }
-
-    private ComputeBuffer trianglesBuffer;
-    private ComputeBuffer trianglesCountBuffer;
-    private ComputeBuffer weightsBuffer;
-
-    private float elapsed;
 
     public void Init(MarchingTerrain terrain, Vector3Int index, Vector3 pos)
     {
         Index = index;
         Terrain = terrain;
-
-        CreateBuffers();
-
-        weights = noise.GenerateNoise(pos);
-        UpdateMesh();
+        this.pos = pos;
     }
 
-    public void Update()
+    public IEnumerator ConstructMeshRoutine()
     {
-        if (IsPulsar)
+        RequestNoise();
+        while (!Terrain.Noise.IsReadReady)
         {
-            elapsed += Time.deltaTime;
-            var pulsarRate = Mathf.Sin(elapsed / pulsarPeriod) * pulsarAmplitude;
-            AdjustWeights(Vector3.zero, 0f, Time.deltaTime * pulsarRate, alwaysApply: true);
+            yield return null;
         }
+        GenerateMesh();
     }
 
-    public void AdjustWeights(Vector3 hit, float r, float mult, bool alwaysApply = false)
+    public void RequestNoise()
     {
-        var kernel = marchShader.FindKernel("updateWeights");
+        Terrain.Noise.RequestGenerate(pos);
+    }
 
-        weightsBuffer.SetData(weights);
-        marchShader.SetBuffer(kernel, "_Weights", weightsBuffer);
-        marchShader.SetInt("_ChunkSize", GridMetrics.PointsPerChunk);
-        marchShader.SetVector("_HitPosition", hit - transform.position);
-        marchShader.SetFloat("_Radius", r);
-        marchShader.SetFloat("_Delta", mult);
-        marchShader.SetFloat("_AllGood", alwaysApply ? 1 : 0);
-
-        marchShader.Dispatch(kernel, 
-            GridMetrics.PointsPerChunk / GridMetrics.ThreadCount, 
-            GridMetrics.PointsPerChunk / GridMetrics.ThreadCount, 
-            GridMetrics.PointsPerChunk / GridMetrics.ThreadCount);
-
-        weightsBuffer.GetData(weights);
+    public void GenerateMesh()
+    {
+        weights = Terrain.Noise.ReadNoise();
         UpdateMesh();
     }
+
+    public abstract void AdjustWeights(Vector3 hit, float r, float mult, bool alwaysApply = false);
 
     private void OnDestroy()
     {
-        ReleaseBuffers();
+        InternalDestroy();
         if (filter.sharedMesh != null)
         {
             Destroy(filter.sharedMesh);
         }
     }
 
-    private void CreateBuffers()
-    {
-        trianglesBuffer = new ComputeBuffer(5 * (GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk), Triangle.SizeOf, ComputeBufferType.Append);
-        trianglesCountBuffer = new ComputeBuffer(1, sizeof(int), ComputeBufferType.Raw);
-        weightsBuffer = new ComputeBuffer(GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk * GridMetrics.PointsPerChunk, sizeof(float));
-    }
+    protected virtual void InternalDestroy() { }
 
-    private void ReleaseBuffers()
-    {
-        trianglesBuffer.Release();
-        trianglesCountBuffer.Release();
-        weightsBuffer.Release();
-    }
-
-    private void UpdateMesh()
+    protected void UpdateMesh()
     {
         var mesh = ConstructMesh(weights);
         filter.sharedMesh = mesh;
         collider.sharedMesh = mesh;
     }
 
-    private Mesh ConstructMesh(float[] weights)
+    protected abstract Mesh ConstructMesh(float[] weights);
+
+    protected Mesh CreateMeshFromTriangles(Triangle[] triangles, int triLength)
     {
-        marchShader.SetBuffer(0, "_Triangles", trianglesBuffer);
-        marchShader.SetBuffer(0, "_Weights", weightsBuffer);
+        var verts = new Vector3[triLength * 3];
+        var tris = new int[triLength * 3];
 
-        marchShader.SetInt("_ChunkSize", GridMetrics.PointsPerChunk);
-        marchShader.SetFloat("_IsoLevel", noise.isoLevel);
-
-        weightsBuffer.SetData(weights);
-        trianglesBuffer.SetCounterValue(0);
-
-        marchShader.Dispatch(0, 
-            GridMetrics.PointsPerChunk / GridMetrics.ThreadCount, 
-            GridMetrics.PointsPerChunk / GridMetrics.ThreadCount, 
-            GridMetrics.PointsPerChunk / GridMetrics.ThreadCount);
-
-        var triCounts = new int[1];
-        ComputeBuffer.CopyCount(trianglesBuffer, trianglesCountBuffer, 0);
-        trianglesCountBuffer.GetData(triCounts);
-        var triCount = triCounts[0];
-
-        var triangles = new Triangle[triCount];
-        trianglesBuffer.GetData(triangles);
-
-        return CreateMeshFromTriangles(triangles);
-    }
-
-    private Mesh CreateMeshFromTriangles(Triangle[] triangles)
-    {
-        var verts = new Vector3[triangles.Length * 3];
-        var tris = new int[triangles.Length * 3];
-
-        for (var i = 0; i < triangles.Length; i++)
+        for (var i = 0; i < triLength; i++)
         {
             var startIndex = i * 3;
             verts[startIndex + 0] = triangles[i].a;
@@ -148,7 +90,7 @@ public class Chunk : MonoBehaviour
         return mesh;
     }
 
-    struct Triangle
+    protected struct Triangle
     {
         public Vector3 a;
         public Vector3 b;

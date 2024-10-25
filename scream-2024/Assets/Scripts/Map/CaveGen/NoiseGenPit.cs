@@ -11,9 +11,9 @@ public class NoiseGenPit : NoiseGenerator
     protected override void SetSpecificNoiseVars()
     {
         base.SetSpecificNoiseVars();
-        noiseShader.SetFloat("_PitRad", pitRadius);
-        noiseShader.SetFloat("_PitHard", pitHardness);
-        noiseShader.SetFloat("_PitOffX", pitSlopeX);
-        noiseShader.SetFloat("_PitOffZ", pitSlopeZ);
+        Source.SetFloat("_PitRad", pitRadius);
+        Source.SetFloat("_PitHard", pitHardness);
+        Source.SetFloat("_PitOffX", pitSlopeX);
+        Source.SetFloat("_PitOffZ", pitSlopeZ);
     }
 }
