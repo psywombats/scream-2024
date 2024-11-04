@@ -237,10 +237,10 @@
 			<value>24</value>
 		</property>
 		<property name="minimumScatterDistance">
-			<value>7.80000019</value>
+			<value>8.80000019</value>
 		</property>
 		<property name="maximumScatterDistance">
-			<value>45</value>
+			<value>42.5</value>
 		</property>
 		<relationship name="sound">
 			<destination>{7da7bd46-5382-4cc5-9779-04f46a447710}</destination>
@@ -267,7 +267,6 @@
 		<property name="length">
 			<value>0.7999999999999996</value>
 		</property>
-		<property name="name" />
 		<property name="polyphony">
 			<value>3</value>
 		</property>
@@ -281,10 +280,10 @@
 			<value>20</value>
 		</property>
 		<property name="minimumScatterDistance">
-			<value>6</value>
+			<value>20</value>
 		</property>
 		<property name="maximumScatterDistance">
-			<value>9.60000038</value>
+			<value>60</value>
 		</property>
 		<relationship name="sound">
 			<destination>{67691d8f-8500-49ad-ab69-ddb2ddd7baab}</destination>
@@ -498,6 +497,9 @@
 	</object>
 	<object class="MixerBusFader" id="{c9007969-d246-4e1e-bd48-1d09b43ef338}" />
 	<object class="SingleSound" id="{84ae6a40-ca9b-4423-be4e-d509edb99c6a}">
+		<property name="volume">
+			<value>-13</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{32b614ea-9027-47ef-9d6a-cfe7f1d86c40}</destination>
 		</relationship>

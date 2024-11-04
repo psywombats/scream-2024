@@ -60,14 +60,20 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{79f1e45d-e05a-4557-bb30-1e28b36c94b1}">
+		<property name="priority">
+			<value>3</value>
+		</property>
 		<property name="dopplerEnabled">
 			<value>true</value>
 		</property>
 		<property name="dopplerScale">
-			<value>180</value>
+			<value>200</value>
 		</property>
 		<property name="minimumDistance">
-			<value>0.900000036</value>
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>50</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{c71daa9f-a92e-4794-be1c-8b777f12c9ef}" />
@@ -112,7 +118,14 @@
 			<destination>{de2f3327-943e-4631-88ef-28278daa447f}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{3cf992d3-84f0-4aef-99bc-38564476fac3}" />
+	<object class="MixerBusPanner" id="{3cf992d3-84f0-4aef-99bc-38564476fac3}">
+		<property name="surroundPanDirection">
+			<value>-90</value>
+		</property>
+		<property name="surroundPanExtent">
+			<value>293.133331</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{1a56ab30-2326-4ae8-9020-7a438b13010e}">
 		<relationship name="audioFile">
 			<destination>{d56d4ce2-787b-4e27-b755-a33341741a2c}</destination>
@@ -120,17 +133,14 @@
 	</object>
 	<object class="MixerBusFader" id="{1103ffa6-4b23-43a4-b641-ab6bd7817dec}" />
 	<object class="SpatialiserEffect" id="{ff79b63c-9b03-4cce-961f-72c012432e54}">
-		<property name="distanceRolloffType">
-			<value>1</value>
-		</property>
 		<property name="extentMode">
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>3.20000005</value>
+			<value>120</value>
 		</property>
 		<property name="minimumExtent">
-			<value>360</value>
+			<value>284</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{de2f3327-943e-4631-88ef-28278daa447f}" />
